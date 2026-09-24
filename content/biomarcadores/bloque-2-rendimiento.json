@@ -1,0 +1,70 @@
+{
+  "bloque_id": "bloque-2-rendimiento",
+  "titulo": "Salud y rendimiento",
+  "descripcion": "Hormonas, energía y recuperación: marcadores relacionados con el rendimiento físico y el bienestar diario.",
+  "biomarcadores": [
+    {
+      "id": "testosterona-total",
+      "nombre": "Testosterona total",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "cortisol",
+      "nombre": "Cortisol",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "dhea-s",
+      "nombre": "DHEA-S",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "igf-1",
+      "nombre": "IGF-1",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "magnesio",
+      "nombre": "Magnesio",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "zinc",
+      "nombre": "Zinc",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "creatina-quinasa",
+      "nombre": "Creatina quinasa (CK)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "acido-urico",
+      "nombre": "Ácido úrico",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    },
+    {
+      "id": "homocisteina",
+      "nombre": "Homocisteína",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "rendimiento"
+    }
+  ]
+}

@@ -3,25 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Base oscura cálida: azul-carbón profundo, no negro puro */
+  --color-bg: #13161f;
+  --color-bg-soft: #191d29;
+  --color-surface: #1e2330;
+  --color-surface-hover: #262c3c;
+  --color-border: #2e3547;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Texto en crema cálido para evitar la frialdad del blanco puro */
+  --color-text: #f2efe8;
+  --color-text-muted: #a8adbd;
+
+  /* Azul principal/de acento con matiz cálido (índigo, no cian frío) */
+  --color-accent: #6c8fe0;
+  --color-accent-hover: #85a3ec;
+  --color-accent-soft: rgba(108, 143, 224, 0.14);
+  --color-accent-dark: #3c5688;
+  --color-accent-light: #a8c0f5;
+
+  /* Toque cálido secundario (terracota suave), uso muy moderado */
+  --color-warm: #e3a369;
+  --color-warm-soft: rgba(227, 164, 105, 0.14);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
   }
 }

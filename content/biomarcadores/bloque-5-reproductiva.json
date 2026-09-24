@@ -1,0 +1,56 @@
+{
+  "bloque_id": "bloque-5-reproductiva",
+  "titulo": "Salud reproductiva femenina",
+  "descripcion": "Hormonas clave del ciclo y la fertilidad, para entender mejor tu cuerpo en cada etapa.",
+  "biomarcadores": [
+    {
+      "id": "fsh",
+      "nombre": "FSH (hormona folículoestimulante)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "reproductiva"
+    },
+    {
+      "id": "lh",
+      "nombre": "LH (hormona luteinizante)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "reproductiva"
+    },
+    {
+      "id": "estradiol",
+      "nombre": "Estradiol",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "reproductiva"
+    },
+    {
+      "id": "progesterona",
+      "nombre": "Progesterona",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "reproductiva"
+    },
+    {
+      "id": "amh",
+      "nombre": "AMH (hormona antimülleriana)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "reproductiva"
+    },
+    {
+      "id": "prolactina",
+      "nombre": "Prolactina",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "reproductiva"
+    },
+    {
+      "id": "shbg",
+      "nombre": "SHBG (globulina transportadora de hormonas sexuales)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "reproductiva"
+    }
+  ]
+}

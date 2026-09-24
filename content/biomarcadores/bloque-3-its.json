@@ -1,0 +1,70 @@
+{
+  "bloque_id": "bloque-3-its",
+  "titulo": "Salud sexual / ITS",
+  "descripcion": "Cribado de infecciones de transmisión sexual habituales, de forma privada y sin cita previa.",
+  "biomarcadores": [
+    {
+      "id": "clamidia",
+      "nombre": "Chlamydia trachomatis (clamidia)",
+      "muestra": "Orina (primera micción) o hisopo vaginal/vulvar (autotoma)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "gonorrea",
+      "nombre": "Neisseria gonorrhoeae (gonorrea)",
+      "muestra": "Orina (primera micción) o hisopo vaginal/vulvar (autotoma)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "vih",
+      "nombre": "VIH (anticuerpos/antígeno)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "sifilis",
+      "nombre": "Sífilis (Treponema pallidum)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "herpes-vhs2",
+      "nombre": "Herpes simple tipo 2 (VHS-2)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "hepatitis-b",
+      "nombre": "Hepatitis B (HBsAg)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "hepatitis-c",
+      "nombre": "Hepatitis C (anticuerpos)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "trichomonas",
+      "nombre": "Trichomonas vaginalis",
+      "muestra": "Hisopo vaginal/vulvar (autotoma) u orina",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    },
+    {
+      "id": "mycoplasma-genitalium",
+      "nombre": "Mycoplasma genitalium",
+      "muestra": "Orina (primera micción) o hisopo vaginal/vulvar (autotoma)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "its"
+    }
+  ]
+}

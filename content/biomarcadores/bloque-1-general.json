@@ -1,0 +1,112 @@
+{
+  "bloque_id": "bloque-1-general",
+  "titulo": "Chequeo general",
+  "descripcion": "Una foto de tu estado de salud general: metabolismo, corazón, hígado, riñones y niveles de vitaminas clave.",
+  "biomarcadores": [
+    {
+      "id": "hemograma-completo",
+      "nombre": "Hemograma completo",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "glucosa",
+      "nombre": "Glucosa",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "colesterol-total",
+      "nombre": "Colesterol total",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "colesterol-ldl",
+      "nombre": "Colesterol LDL",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "colesterol-hdl",
+      "nombre": "Colesterol HDL",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "trigliceridos",
+      "nombre": "Triglicéridos",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "alt-gpt",
+      "nombre": "ALT (GPT) - función hepática",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "ast-got",
+      "nombre": "AST (GOT) - función hepática",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "ggt",
+      "nombre": "GGT - función hepática",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "creatinina",
+      "nombre": "Creatinina - función renal",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "vitamina-d",
+      "nombre": "Vitamina D",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "vitamina-b12",
+      "nombre": "Vitamina B12",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "hierro-ferritina",
+      "nombre": "Hierro y ferritina",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "tsh",
+      "nombre": "TSH - tiroides",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    },
+    {
+      "id": "proteina-c-reactiva",
+      "nombre": "Proteína C reactiva (PCR)",
+      "muestra": "Sangre (punción capilar)",
+      "explicacion": "PENDIENTE DE REDACTAR",
+      "categoria_bloque": "general"
+    }
+  ]
+}

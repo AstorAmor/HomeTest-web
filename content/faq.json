@@ -1,0 +1,29 @@
+{
+  "preguntas": [
+    {
+      "id": "que-es-esto",
+      "pregunta": "¿Qué es [NOMBRE PENDIENTE]?",
+      "respuesta": "Somos un servicio de test diagnósticos a domicilio: te enviamos un kit para que recojas tu propia muestra en casa, sin cita previa ni agujas. La muestra se analiza en laboratorio y recibes tus resultados explicados de forma clara en la app, con recomendaciones sobre qué comentar con tu médico."
+    },
+    {
+      "id": "sustituye-a-mi-medico",
+      "pregunta": "¿Sustituye a mi médico?",
+      "respuesta": "No. Nuestros resultados son información para ti y para compartir con un profesional sanitario, no un diagnóstico médico. Te damos señales claras y recomendaciones para que la conversación con tu médico sea más informada, pero la valoración clínica y cualquier decisión médica siempre corresponden a un profesional."
+    },
+    {
+      "id": "como-se-recoge-la-muestra",
+      "pregunta": "¿Cómo se recoge la muestra?",
+      "respuesta": "Depende del test, pero siempre pensado para hacerlo tú mismo en casa: puede ser una punción capilar (una gota de sangre del dedo), una muestra de orina o un hisopo de autotoma, según el biomarcador. El kit incluye instrucciones paso a paso y todo el material necesario, sin necesidad de acudir a ningún centro."
+    },
+    {
+      "id": "cuanto-tardan-los-resultados",
+      "pregunta": "¿Cuánto tardan los resultados?",
+      "respuesta": "PENDIENTE DE REDACTAR"
+    },
+    {
+      "id": "que-laboratorio-procesa-mis-datos",
+      "pregunta": "¿Qué laboratorio procesa mis datos y cómo los protege?",
+      "respuesta": "PENDIENTE DE REDACTAR"
+    }
+  ]
+}
