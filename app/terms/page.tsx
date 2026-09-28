@@ -5,16 +5,16 @@ import LegalDoc from "@/components/legal/LegalDoc";
 import { termsEn, termsEs } from "@/content/legal";
 
 export const metadata: Metadata = {
-  title: "Condiciones de uso — HomeTest",
-  description: "Condiciones de uso de la app y la web de HomeTest. Terms of use.",
+  title: "Terms of Use — HomeTest",
+  description: "Terms of use of the HomeTest app and website. Condiciones de uso en español incluidas.",
 };
 
 export default function TermsPage() {
   return (
     <>
-      <PageHero title="Condiciones de uso" subtitle="Terms of Use" />
+      <PageHero title="Terms of Use" subtitle="Condiciones de uso" />
       <Section>
-        <LegalDoc es={termsEs} en={termsEn} />
+        <LegalDoc en={termsEn} es={termsEs} />
       </Section>
     </>
   );
