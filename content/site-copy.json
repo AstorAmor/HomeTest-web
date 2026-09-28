@@ -155,7 +155,9 @@
         "titulo": "Empresa",
         "enlaces": [
           { "label": "Contacto", "href": "/contacto" },
-          { "label": "Aviso legal y privacidad", "href": "/legal" }
+          { "label": "Aviso legal", "href": "/legal" },
+          { "label": "Política de privacidad", "href": "/privacidad" },
+          { "label": "Condiciones de uso", "href": "/condiciones" }
         ]
       }
     ],
