@@ -1,0 +1,9 @@
+{
+  "preguntas": [
+    { "id": "que-es-esto", "pregunta": "What is HomeTest?", "respuesta": "We are an at-home diagnostic testing service: we send you a kit so you can collect your own sample at home, with no appointment and no needles. The sample is analysed in a lab and you get your results clearly explained in the app, with recommendations on what to discuss with your doctor." },
+    { "id": "sustituye-a-mi-medico", "pregunta": "Does it replace my doctor?", "respuesta": "No. Our results are information for you and to share with a healthcare professional, not a medical diagnosis. We give you clear signals and recommendations so your conversation with your doctor is better informed, but clinical assessment and any medical decision always belong to a professional." },
+    { "id": "como-se-recoge-la-muestra", "pregunta": "How is the sample collected?", "respuesta": "It depends on the test, but it is always designed for you to do it yourself at home: a finger-prick (a drop of blood from your finger), a urine sample or a self-collected swab, depending on the biomarker. The kit includes step-by-step instructions and everything you need, with no need to visit any centre." },
+    { "id": "cuanto-tardan-los-resultados", "pregunta": "How long do results take?", "respuesta": "PENDIENTE DE REDACTAR" },
+    { "id": "que-laboratorio-procesa-mis-datos", "pregunta": "Which lab processes my data and how is it protected?", "respuesta": "PENDIENTE DE REDACTAR" }
+  ]
+}

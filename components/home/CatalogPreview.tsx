@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
-import { bloquesBiomarcadores, siteCopy } from "@/lib/content";
+import { getContent, fill } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function CatalogPreview() {
-  const { catalogo_preview } = siteCopy;
+  const { siteCopy, bloquesBiomarcadores } = getContent(getLang());
+  const { catalogo_preview, ui } = siteCopy;
 
   return (
     <Section>
@@ -27,7 +29,7 @@ export default function CatalogPreview() {
             <div className="mt-6 flex items-center justify-between">
               {/* Conteo calculado dinámicamente a partir del JSON, nunca a mano */}
               <span className="text-sm font-medium text-accent-light">
-                {bloque.biomarcadores.length} biomarcadores
+                {fill(ui.n_biomarcadores, bloque.biomarcadores.length)}
               </span>
               <span className="text-accent transition-transform group-hover:translate-x-1">
                 →

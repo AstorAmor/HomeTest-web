@@ -1,9 +1,10 @@
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function ShareResults() {
-  const { compartir_resultados } = siteCopy;
+  const { compartir_resultados, ui } = getContent(getLang()).siteCopy;
 
   return (
     <Section soft>
@@ -29,10 +30,10 @@ export default function ShareResults() {
         <div className="relative mx-auto w-full max-w-sm">
           <div className="rounded-2xl border border-border bg-surface p-6 shadow-2xl shadow-black/40">
             <p className="text-xs font-semibold uppercase tracking-wide text-accent-light">
-              Tus resultados
+              {ui.tus_resultados}
             </p>
             <div className="mt-4 space-y-3">
-              {["Vitamina D", "Hierro y ferritina", "TSH"].map((item) => (
+              {ui.demo_resultados.map((item) => (
                 <div
                   key={item}
                   className="flex items-center justify-between rounded-xl bg-bg-soft px-4 py-3"
@@ -45,7 +46,7 @@ export default function ShareResults() {
           </div>
           <div className="absolute -bottom-6 -right-4 max-w-[12rem] rounded-2xl border border-border bg-bg p-4 shadow-xl shadow-black/40 sm:-right-8">
             <p className="text-xs text-text-muted">
-              &ldquo;Aquí tienes 3 preguntas para tu próxima cita médica&rdquo;
+              &ldquo;{ui.burbuja_chat}&rdquo;
             </p>
           </div>
         </div>

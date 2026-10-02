@@ -2,7 +2,7 @@
   "preguntas": [
     {
       "id": "que-es-esto",
-      "pregunta": "¿Qué es [NOMBRE PENDIENTE]?",
+      "pregunta": "¿Qué es HomeTest?",
       "respuesta": "Somos un servicio de test diagnósticos a domicilio: te enviamos un kit para que recojas tu propia muestra en casa, sin cita previa ni agujas. La muestra se analiza en laboratorio y recibes tus resultados explicados de forma clara en la app, con recomendaciones sobre qué comentar con tu médico."
     },
     {

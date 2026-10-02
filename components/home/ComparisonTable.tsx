@@ -1,9 +1,10 @@
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function ComparisonTable() {
-  const { comparativa } = siteCopy;
+  const { comparativa, ui } = getContent(getLang()).siteCopy;
 
   return (
     <Section>
@@ -16,7 +17,7 @@ export default function ComparisonTable() {
         <table className="w-full min-w-[640px] border-collapse text-left">
           <thead>
             <tr className="border-b border-border bg-surface">
-              <th className="p-4 text-sm font-semibold text-text-muted">Criterio</th>
+              <th className="p-4 text-sm font-semibold text-text-muted">{ui.criterio}</th>
               <th className="p-4 text-sm font-semibold text-text-muted">
                 {comparativa.columna_tradicional}
               </th>

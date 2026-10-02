@@ -1,8 +1,9 @@
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 // Hueco reservado para prensa/consejo médico, sin inventar avales.
 export default function ComingSoon() {
-  const { prensa_y_avales } = siteCopy;
+  const { prensa_y_avales } = getContent(getLang()).siteCopy;
 
   return (
     <section className="border-y border-border bg-bg-soft py-10">

@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ContactForm";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: siteCopy.seo.contacto.title,
-  description: siteCopy.seo.contacto.description,
-};
+export function generateMetadata(): Metadata {
+  const { seo } = getContent(getLang()).siteCopy;
+  return { title: seo.contacto.title, description: seo.contacto.description };
+}
 
 export default function ContactoPage() {
-  const { pagina_contacto } = siteCopy;
+  const { pagina_contacto, ui, waitlist_form } = getContent(getLang()).siteCopy;
 
   return (
     <>
@@ -22,9 +23,9 @@ export default function ContactoPage() {
       <Section>
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-xl font-semibold text-text">Escríbenos directamente</h2>
+            <h2 className="text-xl font-semibold text-text">{ui.contacto_directo_titulo}</h2>
             <p className="mt-3 text-text-muted">
-              También puedes escribirnos a{" "}
+              {ui.contacto_directo_texto}{" "}
               <a
                 href={`mailto:${pagina_contacto.email_contacto}`}
                 className="font-medium text-accent-light hover:text-accent"
@@ -34,7 +35,7 @@ export default function ContactoPage() {
               .
             </p>
           </div>
-          <ContactForm />
+          <ContactForm ui={ui} nameLabel={waitlist_form.campo_nombre} />
         </div>
       </Section>
     </>

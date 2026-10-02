@@ -3,15 +3,16 @@ import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
 import HowItWorksSteps from "@/components/home/HowItWorksSteps";
 import Button from "@/components/ui/Button";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: siteCopy.seo.como_funciona.title,
-  description: siteCopy.seo.como_funciona.description,
-};
+export function generateMetadata(): Metadata {
+  const { seo } = getContent(getLang()).siteCopy;
+  return { title: seo.como_funciona.title, description: seo.como_funciona.description };
+}
 
 export default function ComoFuncionaPage() {
-  const { pagina_como_funciona, hero } = siteCopy;
+  const { pagina_como_funciona, hero } = getContent(getLang()).siteCopy;
 
   return (
     <>

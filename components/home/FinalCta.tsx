@@ -1,9 +1,10 @@
 import Section from "../ui/Section";
 import WaitlistForm from "../WaitlistForm";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function FinalCta() {
-  const { cta_final } = siteCopy;
+  const { cta_final, waitlist_form, ui } = getContent(getLang()).siteCopy;
 
   return (
     <Section id="lista-de-espera">
@@ -14,7 +15,7 @@ export default function FinalCta() {
           </h2>
           <p className="mt-4 text-text-muted">{cta_final.descripcion}</p>
         </div>
-        <WaitlistForm />
+        <WaitlistForm copy={waitlist_form} ui={ui} />
       </div>
     </Section>
   );

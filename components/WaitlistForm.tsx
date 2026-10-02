@@ -1,10 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { siteCopy } from "@/lib/content";
+import type { SiteCopy } from "@/lib/content";
 
-export default function WaitlistForm() {
-  const { waitlist_form } = siteCopy;
+export default function WaitlistForm({ copy: waitlist_form, ui }: { copy: SiteCopy["waitlist_form"]; ui: SiteCopy["ui"] }) {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -39,7 +38,7 @@ export default function WaitlistForm() {
           type="text"
           required
           className="w-full rounded-xl border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          placeholder="Tu nombre"
+          placeholder={ui.placeholder_nombre}
         />
       </div>
 
@@ -53,7 +52,7 @@ export default function WaitlistForm() {
           type="email"
           required
           className="w-full rounded-xl border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          placeholder="tu@email.com"
+          placeholder={ui.placeholder_email}
         />
       </div>
 

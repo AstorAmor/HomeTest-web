@@ -1,8 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import type { SiteCopy } from "@/lib/content";
 
-export default function ContactForm() {
+export default function ContactForm({ ui, nameLabel }: { ui: SiteCopy["ui"]; nameLabel: string }) {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -17,7 +18,7 @@ export default function ContactForm() {
     return (
       <div className="rounded-2xl border border-accent/40 bg-accent-soft p-6 text-center">
         <p className="font-medium text-text">
-          Gracias por escribirnos. Te responderemos lo antes posible.
+          {ui.contacto_exito}
         </p>
       </div>
     );
@@ -27,7 +28,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="contacto-nombre" className="mb-1.5 block text-sm font-medium text-text">
-          Nombre
+          {nameLabel}
         </label>
         <input
           id="contacto-nombre"
@@ -35,7 +36,7 @@ export default function ContactForm() {
           type="text"
           required
           className="w-full rounded-xl border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          placeholder="Tu nombre"
+          placeholder={ui.placeholder_nombre}
         />
       </div>
 
@@ -49,13 +50,13 @@ export default function ContactForm() {
           type="email"
           required
           className="w-full rounded-xl border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          placeholder="tu@email.com"
+          placeholder={ui.placeholder_email}
         />
       </div>
 
       <div>
         <label htmlFor="contacto-mensaje" className="mb-1.5 block text-sm font-medium text-text">
-          Mensaje
+          {ui.contacto_mensaje}
         </label>
         <textarea
           id="contacto-mensaje"
@@ -63,7 +64,7 @@ export default function ContactForm() {
           required
           rows={4}
           className="w-full rounded-xl border border-border bg-bg px-4 py-3 text-text placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          placeholder="¿En qué podemos ayudarte?"
+          placeholder={ui.contacto_placeholder_mensaje}
         />
       </div>
 
@@ -71,7 +72,7 @@ export default function ContactForm() {
         type="submit"
         className="w-full rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover sm:w-auto"
       >
-        Enviar mensaje
+        {ui.contacto_enviar}
       </button>
     </form>
   );

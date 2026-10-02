@@ -1,9 +1,10 @@
 import Button from "../ui/Button";
 import Container from "../ui/Container";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function Hero() {
-  const { hero } = siteCopy;
+  const { hero } = getContent(getLang()).siteCopy;
 
   return (
     <section className="relative overflow-hidden border-b border-border">

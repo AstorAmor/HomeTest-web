@@ -1,10 +1,11 @@
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import HowItWorksSteps from "./HowItWorksSteps";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function HowItWorksSection() {
-  const { como_funciona } = siteCopy;
+  const { como_funciona } = getContent(getLang()).siteCopy;
 
   return (
     <Section soft>

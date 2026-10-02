@@ -1,46 +1,54 @@
 {
   "marca": {
-    "nombre": "[NOMBRE PENDIENTE]",
+    "nombre": "HomeTest",
     "descripcion_corta": "Test diagnósticos a domicilio, en España."
   },
   "nav": {
     "enlaces": [
-      { "label": "Cómo funciona", "href": "/como-funciona" },
-      { "label": "Catálogo", "href": "/catalogo" },
-      { "label": "FAQ", "href": "/faq" },
-      { "label": "Contacto", "href": "/contacto" }
+      {
+        "label": "Cómo funciona",
+        "href": "/como-funciona"
+      },
+      {
+        "label": "Catálogo",
+        "href": "/catalogo"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "Contacto",
+        "href": "/contacto"
+      }
     ],
     "cta": "Únete a la lista de espera"
   },
   "seo": {
     "home": {
-      "title": "[NOMBRE PENDIENTE] — Test diagnósticos a domicilio en España",
+      "title": "HomeTest — Test diagnósticos a domicilio en España",
       "description": "Controla tu salud desde casa: recoge tu propia muestra, envíala con etiqueta prepagada y recibe tus resultados explicados en la app. Sin cita previa."
     },
     "como_funciona": {
-      "title": "Cómo funciona — [NOMBRE PENDIENTE]",
+      "title": "Cómo funciona — HomeTest",
       "description": "Descubre en 3 pasos cómo pedir tu kit, recoger la muestra en casa y recibir tus resultados explicados, sin cita previa ni agujas."
     },
     "catalogo": {
-      "title": "Catálogo de biomarcadores — [NOMBRE PENDIENTE]",
+      "title": "Catálogo de biomarcadores — HomeTest",
       "description": "Explora todos los biomarcadores disponibles agrupados por bloque: chequeo general, rendimiento, salud sexual y salud reproductiva."
     },
     "faq": {
-      "title": "Preguntas frecuentes — [NOMBRE PENDIENTE]",
+      "title": "Preguntas frecuentes — HomeTest",
       "description": "Resolvemos las dudas más habituales sobre nuestros test diagnósticos a domicilio, la recogida de muestras y la privacidad de tus datos."
     },
     "contacto": {
-      "title": "Contacto — [NOMBRE PENDIENTE]",
-      "description": "¿Tienes dudas? Ponte en contacto con nosotros o únete a la lista de espera para ser de los primeros en probar [NOMBRE PENDIENTE]."
-    },
-    "legal": {
-      "title": "Aviso legal y privacidad — [NOMBRE PENDIENTE]",
-      "description": "Aviso legal, términos de uso y política de privacidad de [NOMBRE PENDIENTE]."
+      "title": "Contacto — HomeTest",
+      "description": "¿Tienes dudas? Ponte en contacto con nosotros o únete a la lista de espera para ser de los primeros en probar HomeTest."
     }
   },
   "hero": {
     "titulo": "Controla tu salud, desde casa",
-    "subtitulo": "[NOMBRE PENDIENTE] es un servicio de test diagnósticos a domicilio: recoges tu propia muestra sin agujas ni cita previa, la envías a nuestro laboratorio y recibes tus resultados explicados en la app.",
+    "subtitulo": "HomeTest es un servicio de test diagnósticos a domicilio: recoges tu propia muestra sin agujas ni cita previa, la envías a nuestro laboratorio y recibes tus resultados explicados en la app.",
     "cta_principal": "Únete a la lista de espera",
     "cta_secundaria": "Ver cómo funciona",
     "nota_legal": "No sustituye a tu médico. Te ayudamos a entender señales para compartir con un profesional sanitario."
@@ -81,10 +89,10 @@
     ]
   },
   "comparativa": {
-    "titulo_seccion": "¿Por qué [NOMBRE PENDIENTE]?",
+    "titulo_seccion": "¿Por qué HomeTest?",
     "subtitulo_seccion": "Comparado con el chequeo tradicional",
     "columna_tradicional": "Chequeo tradicional",
-    "columna_nosotros": "[NOMBRE PENDIENTE]",
+    "columna_nosotros": "HomeTest",
     "filas": [
       {
         "criterio": "Cita previa",
@@ -146,27 +154,53 @@
       {
         "titulo": "Producto",
         "enlaces": [
-          { "label": "Cómo funciona", "href": "/como-funciona" },
-          { "label": "Catálogo", "href": "/catalogo" },
-          { "label": "FAQ", "href": "/faq" }
+          {
+            "label": "Cómo funciona",
+            "href": "/como-funciona"
+          },
+          {
+            "label": "Catálogo",
+            "href": "/catalogo"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
+          }
         ]
       },
       {
         "titulo": "Empresa",
         "enlaces": [
-          { "label": "Contacto", "href": "/contacto" },
-          { "label": "Aviso legal", "href": "/legal" },
-          { "label": "Política de privacidad", "href": "/privacy" },
-          { "label": "Condiciones de uso", "href": "/terms" }
+          {
+            "label": "Contacto",
+            "href": "/contacto"
+          },
+          {
+            "label": "Política de privacidad",
+            "href": "/privacy"
+          },
+          {
+            "label": "Condiciones de uso",
+            "href": "/terms"
+          }
         ]
       }
     ],
     "redes": [
-      { "label": "Instagram", "href": "#" },
-      { "label": "LinkedIn", "href": "#" },
-      { "label": "TikTok", "href": "#" }
+      {
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "#"
+      },
+      {
+        "label": "TikTok",
+        "href": "#"
+      }
     ],
-    "texto_copyright": "[NOMBRE PENDIENTE]. Todos los derechos reservados.",
+    "texto_copyright": "HomeTest. Todos los derechos reservados.",
     "nota_legal": "Este servicio no proporciona diagnósticos médicos ni sustituye la valoración de un profesional sanitario."
   },
   "pagina_como_funciona": {
@@ -186,14 +220,30 @@
   "pagina_contacto": {
     "titulo_hero": "Contacto",
     "subtitulo_hero": "¿Tienes dudas o quieres saber más? Escríbenos.",
-    "email_contacto": "hola@[dominio-pendiente].com"
+    "email_contacto": "astor.garcia.amor@gmail.com"
   },
-  "pagina_legal": {
-    "titulo_hero": "Aviso legal y privacidad",
-    "subtitulo_hero": "Información legal sobre [NOMBRE PENDIENTE].",
-    "aviso_legal_titulo": "Aviso legal",
-    "aviso_legal_texto": "PENDIENTE DE REDACTAR. Este apartado incluirá la identificación de la empresa, datos de inscripción registral, condiciones de uso del sitio web y régimen de responsabilidad, redactado por un profesional legal.",
-    "privacidad_titulo": "Política de privacidad",
-    "privacidad_texto": "PENDIENTE DE REDACTAR. Este apartado explicará qué datos personales y de salud recogemos, con qué finalidad, la base legal del tratamiento, cómo se protegen (incluyendo el cumplimiento del RGPD y la normativa española de protección de datos de salud) y los derechos del usuario sobre sus datos."
+  "ui": {
+    "idioma_cambiar": "English",
+    "idioma_cambiar_codigo": "en",
+    "abrir_menu": "Abrir menú",
+    "muestra": "Muestra",
+    "total_biomarcadores": "En total, {n} biomarcadores.",
+    "n_biomarcadores": "{n} biomarcadores",
+    "criterio": "Criterio",
+    "tus_resultados": "Tus resultados",
+    "demo_resultados": [
+      "Vitamina D",
+      "Hierro y ferritina",
+      "TSH"
+    ],
+    "burbuja_chat": "Aquí tienes 3 preguntas para tu próxima cita médica",
+    "contacto_directo_titulo": "Escríbenos directamente",
+    "contacto_directo_texto": "También puedes escribirnos a",
+    "placeholder_nombre": "Tu nombre",
+    "placeholder_email": "tu@email.com",
+    "contacto_mensaje": "Mensaje",
+    "contacto_placeholder_mensaje": "¿En qué podemos ayudarte?",
+    "contacto_enviar": "Enviar mensaje",
+    "contacto_exito": "Gracias por escribirnos. Te responderemos lo antes posible."
   }
 }

@@ -1,19 +1,20 @@
 import type { LegalDocument } from "@/content/legal";
 
-// Documento legal: inglés primero (revisores de tiendas de apps / Huawei) y la
-// versión en español debajo.
-export default function LegalDoc({ es, en }: { es: LegalDocument; en: LegalDocument }) {
+// Documento legal completo en los dos idiomas; primero el que ha elegido el visitante
+// (por defecto inglés para revisores de tiendas de apps / Huawei).
+export default function LegalDoc({ es, en, first = "en" }: { es: LegalDocument; en: LegalDocument; first?: "es" | "en" }) {
+  const docs = first === "es" ? ([["es", es], ["en", en]] as const) : ([["en", en], ["es", es]] as const);
   return (
     <div className="mx-auto max-w-3xl">
       <p className="mb-8 rounded-lg border border-amber-400/40 bg-amber-400/10 p-4 text-sm text-amber-200">
         Draft pending legal review. / Borrador pendiente de revisión legal.
       </p>
-      <div lang="en">
-        <Doc doc={en} />
+      <div lang={docs[0][0]}>
+        <Doc doc={docs[0][1]} />
       </div>
       <hr className="my-16 border-t border-black/10" />
-      <div lang="es">
-        <Doc doc={es} />
+      <div lang={docs[1][0]}>
+        <Doc doc={docs[1][1]} />
       </div>
     </div>
   );

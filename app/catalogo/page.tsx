@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
-import { bloquesBiomarcadores, getTotalBiomarcadores, siteCopy } from "@/lib/content";
+import { getContent, fill, isPending } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: siteCopy.seo.catalogo.title,
-  description: siteCopy.seo.catalogo.description,
-};
+export function generateMetadata(): Metadata {
+  const { seo } = getContent(getLang()).siteCopy;
+  return { title: seo.catalogo.title, description: seo.catalogo.description };
+}
 
 export default function CatalogoPage() {
-  const { pagina_catalogo } = siteCopy;
+  const { siteCopy, bloquesBiomarcadores, totalBiomarcadores } = getContent(getLang());
+  const { pagina_catalogo, ui } = siteCopy;
 
   return (
     <>
       <PageHero
         title={pagina_catalogo.titulo_hero}
-        subtitle={`${pagina_catalogo.subtitulo_hero} En total, ${getTotalBiomarcadores()} biomarcadores.`}
+        subtitle={`${pagina_catalogo.subtitulo_hero} ${fill(ui.total_biomarcadores, totalBiomarcadores)}`}
       />
 
       {bloquesBiomarcadores.map((bloque, index) => (
@@ -35,11 +37,13 @@ export default function CatalogoPage() {
               >
                 <h3 className="font-semibold text-text">{biomarcador.nombre}</h3>
                 <p className="mt-1 text-xs font-medium uppercase tracking-wide text-accent-light">
-                  Muestra: {biomarcador.muestra}
+                  {ui.muestra}: {biomarcador.muestra}
                 </p>
-                <p className="mt-3 text-sm text-text-muted">
-                  {biomarcador.explicacion}
-                </p>
+                {!isPending(biomarcador.explicacion) && (
+                  <p className="mt-3 text-sm text-text-muted">
+                    {biomarcador.explicacion}
+                  </p>
+                )}
               </div>
             ))}
           </div>

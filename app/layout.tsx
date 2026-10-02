@@ -3,7 +3,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -11,20 +12,21 @@ const fontSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: siteCopy.seo.home.title,
-  description: siteCopy.seo.home.description,
-};
+export function generateMetadata(): Metadata {
+  const { seo } = getContent(getLang()).siteCopy;
+  return { title: seo.home.title, description: seo.home.description };
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const lang = getLang();
   return (
-    <html lang="es" className={fontSans.variable}>
+    <html lang={lang} className={fontSans.variable}>
       <body className="min-h-screen bg-bg font-sans text-text antialiased">
-        <Header />
+        <Header copy={getContent(lang).siteCopy} />
         <main>{children}</main>
         <Footer />
       </body>

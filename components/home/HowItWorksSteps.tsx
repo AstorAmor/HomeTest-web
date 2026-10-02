@@ -1,4 +1,5 @@
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 interface HowItWorksStepsProps {
   detailed?: boolean;
@@ -6,7 +7,7 @@ interface HowItWorksStepsProps {
 
 // Lista de pasos reutilizada en la home (versión resumida) y en /como-funciona (detallada).
 export default function HowItWorksSteps({ detailed = false }: HowItWorksStepsProps) {
-  const { pasos } = siteCopy.como_funciona;
+  const { pasos } = getContent(getLang()).siteCopy.como_funciona;
 
   return (
     <div className="grid gap-6 sm:grid-cols-3">

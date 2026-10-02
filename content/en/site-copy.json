@@ -1,0 +1,170 @@
+{
+  "marca": {
+    "nombre": "HomeTest",
+    "descripcion_corta": "At-home diagnostic tests in Spain."
+  },
+  "nav": {
+    "enlaces": [
+      { "label": "How it works", "href": "/como-funciona" },
+      { "label": "Catalogue", "href": "/catalogo" },
+      { "label": "FAQ", "href": "/faq" },
+      { "label": "Contact", "href": "/contacto" }
+    ],
+    "cta": "Join the waitlist"
+  },
+  "seo": {
+    "home": {
+      "title": "HomeTest — At-home diagnostic tests in Spain",
+      "description": "Take care of your health from home: collect your own sample, send it with a prepaid label and get your results explained in the app. No appointment needed."
+    },
+    "como_funciona": {
+      "title": "How it works — HomeTest",
+      "description": "Find out in 3 steps how to order your kit, collect your sample at home and get your results explained, with no appointment and no needles."
+    },
+    "catalogo": {
+      "title": "Biomarker catalogue — HomeTest",
+      "description": "Explore all available biomarkers grouped by block: general check-up, performance, sexual health and reproductive health."
+    },
+    "faq": {
+      "title": "Frequently asked questions — HomeTest",
+      "description": "Answers to the most common questions about our at-home diagnostic tests, sample collection and the privacy of your data."
+    },
+    "contacto": {
+      "title": "Contact — HomeTest",
+      "description": "Questions? Get in touch or join the waitlist to be among the first to try HomeTest."
+    }
+  },
+  "hero": {
+    "titulo": "Take care of your health, from home",
+    "subtitulo": "HomeTest is an at-home diagnostic testing service: you collect your own sample with no needles and no appointment, send it to our lab and get your results explained in the app.",
+    "cta_principal": "Join the waitlist",
+    "cta_secundaria": "See how it works",
+    "nota_legal": "It does not replace your doctor. We help you understand signals to share with a healthcare professional."
+  },
+  "como_funciona": {
+    "titulo_seccion": "How it works",
+    "subtitulo_seccion": "Three steps, all from home",
+    "pasos": [
+      { "numero": 1, "titulo": "Order your kit", "descripcion": "Choose your test and receive the kit at home in a few days, ready to use." },
+      { "numero": 2, "titulo": "Collect your sample", "descripcion": "By yourself, with no needles and no appointment. Follow the instructions and send it with the prepaid label included." },
+      { "numero": 3, "titulo": "Get your results", "descripcion": "We explain your results in the app, with clear recommendations to discuss with your doctor. It does not replace a professional medical assessment." }
+    ]
+  },
+  "catalogo_preview": {
+    "titulo_seccion": "A catalogue for every stage of life",
+    "subtitulo_seccion": "Choose the block you are most interested in. All of them include results explained in plain language.",
+    "cta_ver_catalogo": "See the full catalogue"
+  },
+  "compartir_resultados": {
+    "titulo": "Share your results",
+    "descripcion": "Take your results to your doctor in a clear format, or connect them to an AI assistant to understand them better and prepare better questions before your appointment.",
+    "puntos": [
+      "Export a clear summary for your doctor",
+      "Connect your results to an AI assistant to answer your questions",
+      "Keep your history and compare results over time"
+    ]
+  },
+  "comparativa": {
+    "titulo_seccion": "Why HomeTest?",
+    "subtitulo_seccion": "Compared with a traditional check-up",
+    "columna_tradicional": "Traditional check-up",
+    "columna_nosotros": "HomeTest",
+    "filas": [
+      { "criterio": "Appointment", "tradicional": "Required, sometimes with weeks of waiting", "nosotros": "Not needed, you order your kit online" },
+      { "criterio": "Dependence on public/private healthcare", "tradicional": "Depends on availability and coverage", "nosotros": "Independent, you decide when" },
+      { "criterio": "Time to results", "tradicional": "Can take days or weeks", "nosotros": "Results explained in the app as soon as they are ready" },
+      { "criterio": "Repeatable every few months", "tradicional": "Hard, needs a new appointment each time", "nosotros": "Easy to repeat to track your progress" },
+      { "criterio": "Prescription needed", "tradicional": "Often required", "nosotros": "No prescription needed to order your kit" },
+      { "criterio": "Privacy of sensitive data", "tradicional": "Varies by centre", "nosotros": "Designed with privacy as a priority" }
+    ]
+  },
+  "faq_seccion": {
+    "titulo_seccion": "Frequently asked questions",
+    "subtitulo_seccion": "Can't find what you're looking for?",
+    "cta_contacto": "Write to us"
+  },
+  "prensa_y_avales": {
+    "titulo_seccion": "Recognition and medical team",
+    "texto_placeholder": "Coming soon"
+  },
+  "cta_final": {
+    "titulo": "Be among the first to try it",
+    "descripcion": "Join the waitlist and we'll let you know as soon as we're available in your area.",
+    "cta": "Join the waitlist"
+  },
+  "waitlist_form": {
+    "titulo": "Join the waitlist",
+    "descripcion": "Leave us your name and email and we'll let you know as soon as we can offer you the service.",
+    "campo_nombre": "Name",
+    "campo_email": "Email",
+    "boton_enviar": "Join the waitlist",
+    "texto_privacidad": "By submitting this form you accept our privacy policy. We will not share your email with third parties.",
+    "mensaje_exito": "Thank you! We'll let you know as soon as we're available."
+  },
+  "footer": {
+    "columnas": [
+      {
+        "titulo": "Product",
+        "enlaces": [
+          { "label": "How it works", "href": "/como-funciona" },
+          { "label": "Catalogue", "href": "/catalogo" },
+          { "label": "FAQ", "href": "/faq" }
+        ]
+      },
+      {
+        "titulo": "Company",
+        "enlaces": [
+          { "label": "Contact", "href": "/contacto" },
+          { "label": "Privacy policy", "href": "/privacy" },
+          { "label": "Terms of use", "href": "/terms" }
+        ]
+      }
+    ],
+    "redes": [
+      { "label": "Instagram", "href": "#" },
+      { "label": "LinkedIn", "href": "#" },
+      { "label": "TikTok", "href": "#" }
+    ],
+    "texto_copyright": "HomeTest. All rights reserved.",
+    "nota_legal": "This service does not provide medical diagnoses or replace the assessment of a healthcare professional."
+  },
+  "pagina_como_funciona": {
+    "titulo_hero": "How it works",
+    "subtitulo_hero": "From your front door to understanding your health, in three clear steps.",
+    "seccion_detalle_titulo": "Each step, in detail",
+    "nota_final": "Your results are always a starting point to talk to your doctor, not a diagnosis."
+  },
+  "pagina_catalogo": {
+    "titulo_hero": "Biomarker catalogue",
+    "subtitulo_hero": "Explore all available biomarkers, grouped by block."
+  },
+  "pagina_faq": {
+    "titulo_hero": "Frequently asked questions",
+    "subtitulo_hero": "Everything you need to know before joining the waitlist."
+  },
+  "pagina_contacto": {
+    "titulo_hero": "Contact",
+    "subtitulo_hero": "Questions, or want to know more? Write to us.",
+    "email_contacto": "astor.garcia.amor@gmail.com"
+  },
+  "ui": {
+    "idioma_cambiar": "Español",
+    "idioma_cambiar_codigo": "es",
+    "abrir_menu": "Open menu",
+    "muestra": "Sample",
+    "total_biomarcadores": "{n} biomarkers in total.",
+    "n_biomarcadores": "{n} biomarkers",
+    "criterio": "Criterion",
+    "tus_resultados": "Your results",
+    "demo_resultados": ["Vitamin D", "Iron and ferritin", "TSH"],
+    "burbuja_chat": "Here are 3 questions for your next doctor's appointment",
+    "contacto_directo_titulo": "Write to us directly",
+    "contacto_directo_texto": "You can also write to us at",
+    "placeholder_nombre": "Your name",
+    "placeholder_email": "you@email.com",
+    "contacto_mensaje": "Message",
+    "contacto_placeholder_mensaje": "How can we help you?",
+    "contacto_enviar": "Send message",
+    "contacto_exito": "Thanks for writing to us. We'll get back to you as soon as possible."
+  }
+}

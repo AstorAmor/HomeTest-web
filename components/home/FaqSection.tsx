@@ -2,9 +2,11 @@ import Link from "next/link";
 import Section from "../ui/Section";
 import SectionHeading from "../ui/SectionHeading";
 import FaqAccordion from "./FaqAccordion";
-import { faq, siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function FaqSection() {
+  const { siteCopy, faq } = getContent(getLang());
   const { faq_seccion } = siteCopy;
 
   return (

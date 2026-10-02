@@ -13,3 +13,11 @@ Todos los textos de la página están en esta carpeta, separados del código. Pu
 - **Importante**: en varios sitios verás el texto `PENDIENTE DE REDACTAR` o `[NOMBRE PENDIENTE]`. Son huecos a propósito para que no se publique contenido médico o de marca sin revisar. Sustitúyelos por el texto definitivo cuando lo tengas listo.
 
 - **No hace falta tocar ningún otro archivo** de la carpeta `app/` o `components/` para cambiar textos: esos archivos solo se encargan del diseño y de mostrar lo que hay aquí.
+
+## Inglés / español
+
+La web sale en los dos idiomas (botón "English"/"Español" arriba; por defecto, el idioma del navegador).
+- Textos en español: los archivos de arriba. Textos en inglés: `content/en/` (`site-copy.json`, `faq.json`
+  y `biomarcadores.json`, que traduce nombres y bloques por `id`). **Si cambias un texto, cámbialo en los dos.**
+- Lo que tenga `PENDIENTE DE REDACTAR` no se publica (explicaciones de biomarcadores y respuestas de FAQ).
+- Política de privacidad y condiciones: `content/legal.ts`, siempre en los dos idiomas en la misma página.

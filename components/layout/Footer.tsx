@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Container from "../ui/Container";
-import { siteCopy } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
 
 export default function Footer() {
-  const { marca, footer } = siteCopy;
+  const { marca, footer } = getContent(getLang()).siteCopy;
 
   return (
     <footer className="border-t border-border bg-bg-soft">
