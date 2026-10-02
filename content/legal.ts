@@ -18,9 +18,9 @@ export interface LegalDocument {
 }
 
 const CONTROLLER_ES =
-  "Astor García Amor (persona física; en proceso de constitución de la sociedad que operará HomeTest). Domicilio: [PENDIENTE]. Contacto para privacidad: [EMAIL DE CONTACTO PENDIENTE].";
+  "Astor García Amor (persona física; en proceso de constitución de la sociedad que operará HomeTest). Domicilio: Madrid, España. Contacto para privacidad: astor.garcia.amor@gmail.com.";
 const CONTROLLER_EN =
-  "Astor García Amor (individual; the company that will operate HomeTest is being incorporated). Address: [PENDING]. Privacy contact: [CONTACT EMAIL PENDING].";
+  "Astor García Amor (individual; the company that will operate HomeTest is being incorporated). Address: Madrid, Spain. Privacy contact: astor.garcia.amor@gmail.com.";
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
@@ -97,7 +97,7 @@ export const privacyEs: LegalDocument = {
     {
       title: "9. Tus derechos",
       paragraphs: [
-        "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar tu consentimiento, escribiendo a [EMAIL DE CONTACTO PENDIENTE].",
+        "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar tu consentimiento, escribiendo a astor.garcia.amor@gmail.com.",
         "Si consideras que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).",
       ],
     },
@@ -192,7 +192,7 @@ export const privacyEn: LegalDocument = {
     {
       title: "9. Your rights",
       paragraphs: [
-        "You can exercise your rights of access, rectification, erasure, objection, restriction and portability, and withdraw your consent, by writing to [CONTACT EMAIL PENDING].",
+        "You can exercise your rights of access, rectification, erasure, objection, restriction and portability, and withdraw your consent, by writing to astor.garcia.amor@gmail.com.",
         "You can also lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).",
       ],
     },
