@@ -1,20 +1,19 @@
 import Link from "next/link";
 import Container from "../ui/Container";
 import { getContent } from "@/lib/content";
-import { getLang } from "@/lib/i18n";
+import { getLang, localePath } from "@/lib/i18n";
 
 export default function Footer() {
-  const { marca, footer } = getContent(getLang()).siteCopy;
+  const lang = getLang();
+  const { marca, footer } = getContent(lang).siteCopy;
 
   return (
     <footer className="border-t border-border bg-bg-soft">
       <Container>
         <div className="grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
           <div className="md:col-span-2">
-            <p className="text-lg font-bold text-text">{marca.nombre}</p>
-            <p className="mt-3 max-w-xs text-sm text-text-muted">
-              {marca.descripcion_corta}
-            </p>
+            <p className="font-display text-2xl font-semibold text-text">{marca.nombre}</p>
+            <p className="mt-3 max-w-sm text-sm text-text-muted">{marca.descripcion_corta}</p>
             <div className="mt-5 flex gap-4">
               {footer.redes.map((red) => (
                 <a
@@ -35,7 +34,7 @@ export default function Footer() {
                 {columna.enlaces.map((enlace) => (
                   <li key={enlace.href}>
                     <Link
-                      href={enlace.href}
+                      href={localePath(lang, enlace.href)}
                       className="text-sm text-text-muted transition-colors hover:text-text"
                     >
                       {enlace.label}

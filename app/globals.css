@@ -2,33 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Colores en canales RGB ("R G B") para que Tailwind pueda aplicar transparencias (bg-bg/85).
+   Tema claro "Terracota", el mismo de la app (HomeTest/src/constants/colors.ts, LIGHT):
+   crema cálida de fondo, terracota de acento y verde oliva de apoyo. El terracota es un
+   punto más oscuro que en la app para que el texto blanco de los botones cumpla contraste AA. */
 :root {
-  /* Base oscura cálida: azul-carbón profundo, no negro puro */
-  --color-bg: #13161f;
-  --color-bg-soft: #191d29;
-  --color-surface: #1e2330;
-  --color-surface-hover: #262c3c;
-  --color-border: #2e3547;
+  --color-bg: 250 244 236;
+  --color-bg-soft: 243 233 220;
+  --color-surface: 255 255 255;
+  --color-surface-hover: 253 248 242;
+  --color-border: 234 219 200;
 
-  /* Texto en crema cálido para evitar la frialdad del blanco puro */
-  --color-text: #f2efe8;
-  --color-text-muted: #a8adbd;
+  --color-text: 47 36 32;
+  --color-text-muted: 122 101 88;
 
-  /* Azul principal/de acento con matiz cálido (índigo, no cian frío) */
-  --color-accent: #6c8fe0;
-  --color-accent-hover: #85a3ec;
-  --color-accent-soft: rgba(108, 143, 224, 0.14);
-  --color-accent-dark: #3c5688;
-  --color-accent-light: #a8c0f5;
+  --color-accent: 170 88 52;
+  --color-accent-hover: 146 74 43;
+  --color-accent-soft: rgba(170, 88, 52, 0.12);
+  --color-accent-dark: 126 63 34;
+  /* Texto de acento sobre crema: algo más oscuro que el terracota para que se lea bien */
+  --color-accent-light: 164 83 47;
+  --color-on-accent: 255 255 255;
 
-  /* Toque cálido secundario (terracota suave), uso muy moderado */
-  --color-warm: #e3a369;
-  --color-warm-soft: rgba(227, 164, 105, 0.14);
+  --color-warm: 79 122 52;
+  --color-warm-soft: rgba(79, 122, 52, 0.12);
+
+  /* Fondo oscuro para secciones sobre foto/vídeo */
+  --color-ink: 29 23 20;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--color-text);
-  background: var(--color-bg);
+  color: rgb(var(--color-text));
+  background: rgb(var(--color-bg));
 }
 
 @layer utilities {
@@ -40,5 +49,60 @@ body {
 @layer components {
   .container-page {
     @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+}
+
+/* Foto del hero mientras no haya vídeo: zoom muy lento para dar movimiento */
+@keyframes kenburns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+.kenburns {
+  animation: kenburns 24s ease-out infinite alternate;
+}
+
+/* Cinta de texto que se desplaza (biomarcadores, objetivos) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee var(--marquee-duration, 60s) linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Aparición suave al hacer scroll (components/landing/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .kenburns,
+  .marquee-track {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

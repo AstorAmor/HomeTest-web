@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
 import { getLang } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import LegalDoc from "@/components/legal/LegalDoc";
 import { termsEn, termsEs } from "@/content/legal";
 
-export const metadata: Metadata = {
-  title: "Terms of Use — HomeTest",
-  description: "Terms of use of the HomeTest app and website. Condiciones de uso en español incluidas.",
-};
+export function generateMetadata(): Metadata {
+  return pageMetadata("terms", "/terms");
+}
 
 export default function TermsPage() {
   return (

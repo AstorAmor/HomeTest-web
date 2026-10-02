@@ -1,15 +1,44 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// El botón de idioma enlaza a "?lang=en" / "?lang=es": se guarda la elección en una
-// cookie y se vuelve a la misma página sin el parámetro.
+// Idioma por URL (bueno para Google y los buscadores con IA: cada idioma tiene su dirección):
+//   /...     -> español
+//   /en/...  -> inglés (se sirve la misma página con la cabecera x-lang=en)
+// El botón de idioma enlaza a "?lang=es|en": se guarda la elección en una cookie y se va a la
+// URL de ese idioma. En la primera visita a la portada, si el navegador no está en español,
+// se lleva a /en (los buscadores no mandan idioma y ven la versión en español).
 export function middleware(req: NextRequest) {
-  const lang = req.nextUrl.searchParams.get("lang");
-  if (lang !== "es" && lang !== "en") return NextResponse.next();
-  const url = req.nextUrl.clone();
-  url.searchParams.delete("lang");
-  const res = NextResponse.redirect(url);
-  res.cookies.set("lang", lang, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
-  return res;
+  const { pathname, searchParams } = req.nextUrl;
+  const isEn = pathname === "/en" || pathname.startsWith("/en/");
+  const base = isEn ? pathname.slice(3) || "/" : pathname;
+
+  const chosen = searchParams.get("lang");
+  if (chosen === "es" || chosen === "en") {
+    const url = req.nextUrl.clone();
+    url.searchParams.delete("lang");
+    url.pathname = chosen === "en" ? (base === "/" ? "/en" : `/en${base}`) : base;
+    const res = NextResponse.redirect(url);
+    res.cookies.set("lang", chosen, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
+    return res;
+  }
+
+  if (!isEn && pathname === "/" && !req.cookies.has("lang")) {
+    const accept = req.headers.get("accept-language")?.toLowerCase() ?? "";
+    if (accept && !accept.startsWith("es")) {
+      const url = req.nextUrl.clone();
+      url.pathname = "/en";
+      return NextResponse.redirect(url);
+    }
+  }
+
+  const headers = new Headers(req.headers);
+  headers.set("x-lang", isEn ? "en" : "es");
+  if (isEn) {
+    const url = req.nextUrl.clone();
+    url.pathname = base;
+    return NextResponse.rewrite(url, { request: { headers } });
+  }
+  return NextResponse.next({ request: { headers } });
 }
 
-export const config = { matcher: ["/((?!_next|favicon.ico).*)"] };
+// Todo salvo los ficheros estáticos (imágenes, vídeos, llms.txt, robots, sitemap...).
+export const config = { matcher: ["/((?!_next|images|videos|favicon.ico|.*\\.[a-z0-9]+$).*)"] };

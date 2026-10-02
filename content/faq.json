@@ -3,7 +3,7 @@
     {
       "id": "que-es-esto",
       "pregunta": "¿Qué es HomeTest?",
-      "respuesta": "Somos un servicio de test diagnósticos a domicilio: te enviamos un kit para que recojas tu propia muestra en casa, sin cita previa ni agujas. La muestra se analiza en laboratorio y recibes tus resultados explicados de forma clara en la app, con recomendaciones sobre qué comentar con tu médico."
+      "respuesta": "HomeTest es una membresía de salud preventiva. Incluye analíticas de más de 110 biomarcadores dos veces al año, una app que te explica los resultados y los une a los datos de tus wearables, y profesionales verificados que te ayudan a pasar a la acción con un plan a tu medida."
     },
     {
       "id": "sustituye-a-mi-medico",
@@ -11,9 +11,39 @@
       "respuesta": "No. Nuestros resultados son información para ti y para compartir con un profesional sanitario, no un diagnóstico médico. Te damos señales claras y recomendaciones para que la conversación con tu médico sea más informada, pero la valoración clínica y cualquier decisión médica siempre corresponden a un profesional."
     },
     {
+      "id": "que-incluye",
+      "pregunta": "¿Qué incluye la analítica?",
+      "respuesta": "Un panel de más de 110 biomarcadores en sangre y orina, agrupados por sistemas: metabolismo, corazón y lípidos, hormonas, tiroides, nutrientes y vitaminas, hemograma, sistema inmune e inflamación, hígado, riñón y más. Puedes ver la lista completa en la página de biomarcadores."
+    },
+    {
+      "id": "cada-cuanto",
+      "pregunta": "¿Cada cuánto me hago la analítica?",
+      "respuesta": "Dos veces al año. La primera marca tu punto de partida; la segunda, a los seis meses, muestra cómo han cambiado tus marcadores y sirve para ajustar tu plan."
+    },
+    {
+      "id": "subir-analiticas",
+      "pregunta": "¿Puedo subir analíticas que ya tengo?",
+      "respuesta": "Sí. Sube el PDF o una foto de tu analítica y la app extrae los resultados por ti. Tú los revisas antes de guardarlos y pasan a formar parte de tu historial."
+    },
+    {
       "id": "como-se-recoge-la-muestra",
-      "pregunta": "¿Cómo se recoge la muestra?",
-      "respuesta": "Depende del test, pero siempre pensado para hacerlo tú mismo en casa: puede ser una punción capilar (una gota de sangre del dedo), una muestra de orina o un hisopo de autotoma, según el biomarcador. El kit incluye instrucciones paso a paso y todo el material necesario, sin necesidad de acudir a ningún centro."
+      "pregunta": "¿Dónde me hago la analítica?",
+      "respuesta": "Podrás hacerla en un laboratorio colaborador cerca de ti, con cita desde la app. Para algunas pruebas concretas también podrás tomar la muestra en casa con un kit."
+    },
+    {
+      "id": "dispositivos",
+      "pregunta": "¿Qué dispositivos puedo conectar?",
+      "respuesta": "Relojes y anillos que sincronizan con Health Connect en Android, por ejemplo de Garmin, Samsung, Xiaomi, Oura o Google. La conexión con Huawei Health y Apple Salud llegará próximamente. Solo leemos los datos que tú autorizas."
+    },
+    {
+      "id": "profesionales",
+      "pregunta": "¿Qué profesionales hay en HomeTest?",
+      "respuesta": "Médicos, fisioterapeutas, nutricionistas, entrenadores y matronas. HomeTest verifica su identidad y su colegiación antes de mostrarlos. Puedes hablar con ellos por vídeo o por mensaje y compartir con cada uno solo los datos que elijas."
+    },
+    {
+      "id": "datos-seguros",
+      "pregunta": "¿Mis datos están seguros?",
+      "respuesta": "Tus datos se guardan en la Unión Europea, con acceso restringido para que solo tú los veas. Nunca los vendemos ni los usamos para publicidad. Solo los ve un profesional si tú lo autorizas, y puedes retirar ese permiso cuando quieras."
     },
     {
       "id": "cuanto-tardan-los-resultados",
@@ -22,7 +52,7 @@
     },
     {
       "id": "que-laboratorio-procesa-mis-datos",
-      "pregunta": "¿Qué laboratorio procesa mis datos y cómo los protege?",
+      "pregunta": "¿Qué laboratorio procesa mis muestras?",
       "respuesta": "PENDIENTE DE REDACTAR"
     }
   ]

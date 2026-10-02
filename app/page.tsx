@@ -1,23 +1,43 @@
-import Hero from "@/components/home/Hero";
-import HowItWorksSection from "@/components/home/HowItWorksSection";
-import CatalogPreview from "@/components/home/CatalogPreview";
-import ShareResults from "@/components/home/ShareResults";
-import ComparisonTable from "@/components/home/ComparisonTable";
-import FaqSection from "@/components/home/FaqSection";
-import ComingSoon from "@/components/home/ComingSoon";
-import FinalCta from "@/components/home/FinalCta";
+import type { Metadata } from "next";
+import Hero from "@/components/landing/Hero";
+import StatStrip from "@/components/landing/StatStrip";
+import Biomarkers from "@/components/landing/Biomarkers";
+import AppShowcase from "@/components/landing/AppShowcase";
+import ActionPlan from "@/components/landing/ActionPlan";
+import HowItWorks from "@/components/landing/HowItWorks";
+import Professionals from "@/components/landing/Professionals";
+import KeyFacts from "@/components/landing/KeyFacts";
+import FaqBlock from "@/components/landing/FaqBlock";
+import FinalCta from "@/components/landing/FinalCta";
+import JsonLd from "@/components/seo/JsonLd";
+import { getContent } from "@/lib/content";
+import { getLang } from "@/lib/i18n";
+import { faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 
+export function generateMetadata(): Metadata {
+  return pageMetadata("home", "/");
+}
+
+// Portada: del mensaje principal a la lista de espera, con "cómo funciona" hacia abajo.
+// Textos en content/site-copy.json (y content/en/) → "home".
 export default function Home() {
+  const lang = getLang();
+  const { siteCopy, panel, panelTotal, faq } = getContent(lang);
+
   return (
     <>
-      <Hero />
-      <HowItWorksSection />
-      <CatalogPreview />
-      <ShareResults />
-      <ComparisonTable />
-      <FaqSection />
-      <ComingSoon />
-      <FinalCta />
+      <JsonLd data={serviceJsonLd(lang)} />
+      <JsonLd data={faqJsonLd(faq.preguntas)} />
+      <Hero copy={siteCopy} lang={lang} />
+      <StatStrip copy={siteCopy} />
+      <Biomarkers copy={siteCopy} lang={lang} panel={panel} />
+      <AppShowcase copy={siteCopy} />
+      <ActionPlan copy={siteCopy} />
+      <HowItWorks copy={siteCopy} />
+      <Professionals copy={siteCopy} />
+      <KeyFacts copy={siteCopy} total={panelTotal} systems={panel.length} />
+      <FaqBlock copy={siteCopy} lang={lang} preguntas={faq.preguntas} />
+      <FinalCta copy={siteCopy} />
     </>
   );
 }

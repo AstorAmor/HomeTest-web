@@ -70,7 +70,7 @@ export default function ContactForm({ ui, nameLabel }: { ui: SiteCopy["ui"]; nam
 
       <button
         type="submit"
-        className="w-full rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover sm:w-auto"
+        className="w-full rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover sm:w-auto"
       >
         {ui.contacto_enviar}
       </button>

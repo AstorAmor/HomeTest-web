@@ -4,10 +4,10 @@ import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ContactForm";
 import { getContent } from "@/lib/content";
 import { getLang } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
-  const { seo } = getContent(getLang()).siteCopy;
-  return { title: seo.contacto.title, description: seo.contacto.description };
+  return pageMetadata("contacto", "/contacto");
 }
 
 export default function ContactoPage() {

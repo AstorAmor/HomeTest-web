@@ -58,7 +58,7 @@ export default function WaitlistForm({ copy: waitlist_form, ui }: { copy: SiteCo
 
       <button
         type="submit"
-        className="w-full rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-bg transition-colors hover:bg-accent-hover"
+        className="w-full rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-hover"
       >
         {waitlist_form.boton_enviar}
       </button>

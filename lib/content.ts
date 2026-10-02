@@ -7,6 +7,7 @@ import faqEn from "@/content/en/faq.json";
 import siteCopyEs from "@/content/site-copy.json";
 import siteCopyEn from "@/content/en/site-copy.json";
 import biomarcadoresEn from "@/content/en/biomarcadores.json";
+import panelData from "@/content/panel.json";
 import type { Lang } from "@/lib/i18n";
 
 export interface Biomarcador {
@@ -30,11 +31,17 @@ export interface FaqItem {
   respuesta: string;
 }
 
+// Panel de laboratorio (generado desde la app con scripts/sync-panel.mjs), ya en un idioma.
+export interface PanelSystem {
+  id: string;
+  nombre: string;
+  marcadores: { id: string; nombre: string; muestra: string }[];
+}
+
 export type SiteCopy = typeof siteCopyEs;
 
-// Único punto de entrada a los bloques de biomarcadores (textos en español).
-// Añadir un bloque nuevo aquí es lo único que hace falta tocar en código
-// cuando se crea un archivo content/biomarcadores/bloque-X.json nuevo.
+// Packs por objetivo (textos en español). Añadir un bloque nuevo aquí es lo único que hace
+// falta tocar en código cuando se crea un archivo content/biomarcadores/bloque-X.json nuevo.
 // La versión inglesa sale de content/en/biomarcadores.json (por id).
 const bloquesEs: BloqueBiomarcadores[] = [bloque1, bloque2, bloque3, bloque5];
 
@@ -58,17 +65,28 @@ const bloquesEn: BloqueBiomarcadores[] = bloquesEs.map((b) => ({
   })),
 }));
 
+const panelFor = (lang: Lang): PanelSystem[] =>
+  panelData.systems.map((s) => ({
+    id: s.id,
+    nombre: s[lang],
+    marcadores: s.markers.map((m) => ({ id: m.id, nombre: m[lang], muestra: m.sample[lang] })),
+  }));
+
 export function getContent(lang: Lang) {
   const isEn = lang === "en";
   const faq = (isEn ? faqEn : faqEs) as { preguntas: FaqItem[] };
   const bloques = isEn ? bloquesEn : bloquesEs;
+  const panel = panelFor(lang);
   return {
+    lang,
     siteCopy: (isEn ? siteCopyEn : siteCopyEs) as SiteCopy,
     faq: { preguntas: faq.preguntas.filter((p) => !isPending(p.respuesta)) },
     bloquesBiomarcadores: bloques,
-    totalBiomarcadores: bloques.reduce((total, b) => total + b.biomarcadores.length, 0),
+    panel,
+    panelTotal: panelData.total,
   };
 }
 
-// Sustituye {n} en los textos de interfaz.
-export const fill = (text: string, n: number) => text.replace("{n}", String(n));
+// Sustituye {n} (y {s}) en los textos de interfaz.
+export const fill = (text: string, n: number, s?: number) =>
+  text.replace("{n}", String(n)).replace("{s}", String(s ?? ""));

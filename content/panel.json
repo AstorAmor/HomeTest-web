@@ -1,0 +1,1160 @@
+{
+  "_generated": "scripts/sync-panel.mjs — no editar a mano",
+  "total": 115,
+  "systems": [
+    {
+      "id": "metabolico",
+      "es": "Metabolismo",
+      "en": "Metabolic",
+      "markers": [
+        {
+          "id": "GLUCOSE",
+          "es": "Glucosa",
+          "en": "Glucose",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "HBA1C",
+          "es": "Hemoglobina glicosilada (HbA1c)",
+          "en": "HbA1c (glycated haemoglobin)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "INSULIN",
+          "es": "Insulina",
+          "en": "Insulin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "LEPTIN",
+          "es": "Leptina",
+          "en": "Leptin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lipidico",
+      "es": "Corazón y lípidos",
+      "en": "Lipids & heart",
+      "markers": [
+        {
+          "id": "TOTAL_CHOLESTEROL",
+          "es": "Colesterol total",
+          "en": "Total cholesterol",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "HDL_C",
+          "es": "Colesterol HDL",
+          "en": "HDL cholesterol",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "LDL_C",
+          "es": "Colesterol LDL",
+          "en": "LDL cholesterol",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "TRIGLYCERIDES",
+          "es": "Triglicéridos",
+          "en": "Triglycerides",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "APOB",
+          "es": "Apolipoproteína B (ApoB)",
+          "en": "Apolipoprotein B (ApoB)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "HS_CRP",
+          "es": "Proteína C reactiva de alta sensibilidad (hs-CRP)",
+          "en": "High-sensitivity CRP (hs-CRP)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "LIPOPROTEIN_A",
+          "es": "Lipoproteína (a)",
+          "en": "Lipoprotein(a)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "NON_HDL_CHOLESTEROL",
+          "es": "Colesterol no-HDL",
+          "en": "Non-HDL cholesterol",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "TC_HDL_RATIO",
+          "es": "Ratio Colesterol Total / HDL",
+          "en": "Total / HDL cholesterol ratio",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hormonas",
+      "es": "Hormonas",
+      "en": "Hormones",
+      "markers": [
+        {
+          "id": "ESTRADIOL",
+          "es": "Estradiol",
+          "en": "Oestradiol",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "FSH",
+          "es": "Hormona folículoestimulante (FSH)",
+          "en": "FSH (follicle-stimulating hormone)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "LH",
+          "es": "Hormona luteinizante (LH)",
+          "en": "LH (luteinising hormone)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "PROLACTIN",
+          "es": "Prolactina",
+          "en": "Prolactin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "SHBG",
+          "es": "Globulina transportadora de hormonas sexuales (SHBG)",
+          "en": "SHBG (sex hormone-binding globulin)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "TESTOSTERONE_TOTAL",
+          "es": "Testosterona total",
+          "en": "Total testosterone",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "TESTOSTERONE_FREE",
+          "es": "Testosterona libre",
+          "en": "Free testosterone",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tiroides",
+      "es": "Tiroides",
+      "en": "Thyroid",
+      "markers": [
+        {
+          "id": "TSH",
+          "es": "Hormona estimulante del tiroides (TSH)",
+          "en": "TSH (thyroid-stimulating hormone)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "T4_FREE",
+          "es": "Tiroxina libre (T4 libre)",
+          "en": "Free T4 (thyroxine)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "T3_FREE",
+          "es": "Triyodotironina libre (T3 libre)",
+          "en": "Free T3 (triiodothyronine)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "TPO_AB",
+          "es": "Anticuerpos antiperoxidasa tiroidea (TPO)",
+          "en": "Thyroid peroxidase antibodies (anti-TPO)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "TG_AB",
+          "es": "Anticuerpos antitiroglobulina (TgAb)",
+          "en": "Thyroglobulin antibodies",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "endocrino",
+      "es": "Estrés y suprarrenales",
+      "en": "Stress & adrenal",
+      "markers": [
+        {
+          "id": "CORTISOL",
+          "es": "Cortisol",
+          "en": "Cortisol",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "DHEA_S",
+          "es": "Sulfato de dehidroepiandrosterona (DHEA-S)",
+          "en": "DHEA-S",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nutrientes",
+      "es": "Nutrientes y vitaminas",
+      "en": "Nutrients",
+      "markers": [
+        {
+          "id": "FERRITIN",
+          "es": "Ferritina",
+          "en": "Ferritin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "IRON_BINDING_CAPACITY",
+          "es": "Capacidad de fijación del hierro (TIBC)",
+          "en": "Total iron-binding capacity (TIBC)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "IRON_SATURATION",
+          "es": "Porcentaje de saturación de hierro",
+          "en": "Transferrin saturation",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "HOMOCYSTEINE",
+          "es": "Homocisteína",
+          "en": "Homocysteine",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MMA_B12",
+          "es": "Ácido metilmalónico (MMA, proxy de B12)",
+          "en": "Methylmalonic acid (MMA)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "VITAMIN_D",
+          "es": "Vitamina D",
+          "en": "Vitamin D (25-OH)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ZINC",
+          "es": "Zinc",
+          "en": "Zinc",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA3_TOTAL",
+          "es": "Omega-3 total",
+          "en": "Omega-3 index",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA3_DHA",
+          "es": "Omega-3: DHA",
+          "en": "Omega-3: DHA",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA3_DPA",
+          "es": "Omega-3: DPA",
+          "en": "Omega-3: DPA",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA3_EPA",
+          "es": "Omega-3: EPA",
+          "en": "Omega-3: EPA",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA6_TOTAL",
+          "es": "Omega-6 total",
+          "en": "Omega-6 total",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA6_ARACHIDONIC",
+          "es": "Omega-6: ácido araquidónico",
+          "en": "Omega-6: arachidonic acid",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA6_LINOLEIC",
+          "es": "Omega-6: ácido linoleico",
+          "en": "Omega-6: linoleic acid",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "OMEGA6_OMEGA3_RATIO",
+          "es": "Ratio Omega-6 / Omega-3",
+          "en": "Omega-6 / omega-3 ratio",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ARACHIDONIC_EPA_RATIO",
+          "es": "Ratio ácido araquidónico / EPA",
+          "en": "Arachidonic acid / EPA ratio",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "electrolitos",
+      "es": "Electrolitos y minerales",
+      "en": "Electrolytes & minerals",
+      "markers": [
+        {
+          "id": "CALCIUM",
+          "es": "Calcio",
+          "en": "Calcium",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "IRON",
+          "es": "Hierro",
+          "en": "Serum iron",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MAGNESIUM",
+          "es": "Magnesio",
+          "en": "Magnesium",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "PHOSPHORUS",
+          "es": "Fósforo",
+          "en": "Phosphorus (phosphate)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "SODIUM",
+          "es": "Sodio",
+          "en": "Sodium",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "POTASSIUM",
+          "es": "Potasio",
+          "en": "Potassium",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "CHLORIDE",
+          "es": "Cloro",
+          "en": "Chloride",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "CARBON_DIOXIDE",
+          "es": "Dióxido de carbono (CO2 / bicarbonato)",
+          "en": "Carbon dioxide (bicarbonate)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hematologia",
+      "es": "Hemograma",
+      "en": "Blood count",
+      "markers": [
+        {
+          "id": "HEMOGLOBIN",
+          "es": "Hemoglobina",
+          "en": "Haemoglobin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "RBC",
+          "es": "Hematíes (glóbulos rojos)",
+          "en": "Red blood cell count",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "HEMATOCRIT",
+          "es": "Hematocrito",
+          "en": "Haematocrit",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MCH",
+          "es": "Hemoglobina corpuscular media (MCH)",
+          "en": "MCH (mean corpuscular haemoglobin)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MCHC",
+          "es": "Concentración de hemoglobina corpuscular media (MCHC)",
+          "en": "MCHC",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MCV",
+          "es": "Volumen corpuscular medio (MCV)",
+          "en": "MCV (mean corpuscular volume)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "RDW",
+          "es": "Amplitud de distribución eritrocitaria (RDW)",
+          "en": "RDW (red cell distribution width)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "PLATELET_COUNT",
+          "es": "Recuento de plaquetas",
+          "en": "Platelet count",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MPV",
+          "es": "Volumen plaquetario medio (MPV)",
+          "en": "MPV (mean platelet volume)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ABO_RH",
+          "es": "Grupo sanguíneo ABO y factor Rh",
+          "en": "Blood group (ABO and Rh)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "regulacion_inmune",
+      "es": "Sistema inmune e inflamación",
+      "en": "Immune system & inflammation",
+      "markers": [
+        {
+          "id": "WBC_COUNT",
+          "es": "Recuento de glóbulos blancos (leucocitos)",
+          "en": "White blood cell count",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "NEUTROPHILS",
+          "es": "Neutrófilos",
+          "en": "Neutrophils",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "LYMPHOCYTES",
+          "es": "Linfocitos",
+          "en": "Lymphocytes",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MONOCYTES",
+          "es": "Monocitos",
+          "en": "Monocytes",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "EOSINOPHILS",
+          "es": "Eosinófilos",
+          "en": "Eosinophils",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "BASOPHILS",
+          "es": "Basófilos",
+          "en": "Basophils",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hepatico",
+      "es": "Hígado",
+      "en": "Liver",
+      "markers": [
+        {
+          "id": "TOTAL_BILIRUBIN",
+          "es": "Bilirrubina total",
+          "en": "Total bilirubin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "DIRECT_BILIRUBIN",
+          "es": "Bilirrubina directa",
+          "en": "Direct bilirubin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ALBUMIN",
+          "es": "Albúmina",
+          "en": "Albumin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "TOTAL_PROTEIN",
+          "es": "Proteínas totales",
+          "en": "Total protein",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ALT",
+          "es": "Alanina aminotransferasa (ALT/GPT)",
+          "en": "ALT (alanine aminotransferase)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "AST",
+          "es": "Aspartato aminotransferasa (AST/GOT)",
+          "en": "AST (aspartate aminotransferase)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ALP",
+          "es": "Fosfatasa alcalina (ALP)",
+          "en": "Alkaline phosphatase (ALP)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "GGT",
+          "es": "Gamma-glutamil transferasa (GGT)",
+          "en": "GGT (gamma-glutamyl transferase)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "GLOBULIN",
+          "es": "Globulina",
+          "en": "Globulin",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ALBUMIN_GLOBULIN_RATIO",
+          "es": "Ratio Albúmina / Globulina",
+          "en": "Albumin / globulin ratio",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "renal",
+      "es": "Riñón",
+      "en": "Kidney",
+      "markers": [
+        {
+          "id": "CREATININE",
+          "es": "Creatinina",
+          "en": "Creatinine",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "UREA",
+          "es": "Urea",
+          "en": "Urea",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "BUN",
+          "es": "Nitrógeno ureico en sangre (BUN)",
+          "en": "Blood urea nitrogen (BUN)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "URIC_ACID",
+          "es": "Ácido úrico",
+          "en": "Uric acid",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "EGFR",
+          "es": "Tasa de filtración glomerular estimada (eGFR)",
+          "en": "eGFR (estimated glomerular filtration rate)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "BUN_CREATININE_RATIO",
+          "es": "Ratio BUN / Creatinina",
+          "en": "BUN / creatinine ratio",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "URINE_MICROALBUMIN",
+          "es": "Microalbúmina en orina",
+          "en": "Urine microalbumin",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pancreas",
+      "es": "Páncreas",
+      "en": "Pancreas",
+      "markers": [
+        {
+          "id": "AMYLASE",
+          "es": "Amilasa",
+          "en": "Amylase",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "LIPASE",
+          "es": "Lipasa",
+          "en": "Lipase",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "autoinmunidad",
+      "es": "Autoinmunidad",
+      "en": "Autoimmunity",
+      "markers": [
+        {
+          "id": "ANA_SCREEN",
+          "es": "Anticuerpos antinucleares (ANA), cribado",
+          "en": "Antinuclear antibodies (ANA) screen",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ANA_PATTERN",
+          "es": "Anticuerpos antinucleares (ANA), patrón",
+          "en": "ANA pattern",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "ANA_TITER",
+          "es": "Anticuerpos antinucleares (ANA), título",
+          "en": "ANA titre",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "RF",
+          "es": "Factor reumatoide (RF)",
+          "en": "Rheumatoid factor (RF)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "salud_femenina",
+      "es": "Salud femenina",
+      "en": "Women's health",
+      "markers": [
+        {
+          "id": "AMH",
+          "es": "Hormona antimülleriana (AMH)",
+          "en": "AMH (anti-Müllerian hormone)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "salud_masculina",
+      "es": "Salud masculina",
+      "en": "Men's health",
+      "markers": [
+        {
+          "id": "PSA_TOTAL",
+          "es": "Antígeno prostático específico total (PSA total)",
+          "en": "PSA (prostate-specific antigen)",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "PSA_FREE",
+          "es": "Antígeno prostático específico libre (PSA libre)",
+          "en": "Free PSA",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "PSA_FREE_PERCENT",
+          "es": "Porcentaje de PSA libre",
+          "en": "Free PSA percentage",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "toxinas_ambientales",
+      "es": "Tóxicos ambientales",
+      "en": "Environmental toxins",
+      "markers": [
+        {
+          "id": "LEAD",
+          "es": "Plomo",
+          "en": "Lead",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        },
+        {
+          "id": "MERCURY",
+          "es": "Mercurio",
+          "en": "Mercury",
+          "sample": {
+            "es": "Sangre",
+            "en": "Blood"
+          }
+        }
+      ]
+    },
+    {
+      "id": "orina",
+      "es": "Orina",
+      "en": "Urine",
+      "markers": [
+        {
+          "id": "URINE_COLOR",
+          "es": "Color de la orina",
+          "en": "Urine colour",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_APPEARANCE",
+          "es": "Aspecto de la orina",
+          "en": "Urine appearance",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_PH",
+          "es": "pH de la orina",
+          "en": "Urine pH",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_SPECIFIC_GRAVITY",
+          "es": "Densidad específica de la orina",
+          "en": "Urine specific gravity",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_PROTEIN",
+          "es": "Proteína en orina",
+          "en": "Protein in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_GLUCOSE",
+          "es": "Glucosa en orina",
+          "en": "Glucose in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_KETONES",
+          "es": "Cetonas en orina",
+          "en": "Ketones in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_BILIRUBIN",
+          "es": "Bilirrubina en orina",
+          "en": "Bilirubin in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_OCCULT_BLOOD",
+          "es": "Sangre oculta en orina",
+          "en": "Blood in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_NITRITE",
+          "es": "Nitritos en orina",
+          "en": "Nitrites in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_LEUKOCYTE_ESTERASE",
+          "es": "Esterasa leucocitaria en orina",
+          "en": "Leukocyte esterase",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_BACTERIA",
+          "es": "Bacterias en orina",
+          "en": "Bacteria in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_RBC",
+          "es": "Glóbulos rojos en orina",
+          "en": "Red blood cells in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_WBC",
+          "es": "Glóbulos blancos en orina",
+          "en": "White blood cells in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_HYALINE_CASTS",
+          "es": "Cilindros hialinos en orina",
+          "en": "Hyaline casts",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_CALCIUM_OXALATE_CRYSTALS",
+          "es": "Cristales de oxalato cálcico en orina",
+          "en": "Calcium oxalate crystals",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_AMORPHOUS_SEDIMENT",
+          "es": "Sedimento amorfo en orina",
+          "en": "Amorphous sediment",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_SQUAMOUS_EPITHELIAL_CELLS",
+          "es": "Células epiteliales escamosas en orina",
+          "en": "Squamous epithelial cells",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        },
+        {
+          "id": "URINE_YEAST",
+          "es": "Levaduras en orina",
+          "en": "Yeast in urine",
+          "sample": {
+            "es": "Orina",
+            "en": "Urine"
+          }
+        }
+      ]
+    }
+  ]
+}

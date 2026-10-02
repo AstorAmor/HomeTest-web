@@ -1,40 +1,29 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
-import HowItWorksSteps from "@/components/home/HowItWorksSteps";
+import HowItWorks from "@/components/landing/HowItWorks";
 import Button from "@/components/ui/Button";
 import { getContent } from "@/lib/content";
-import { getLang } from "@/lib/i18n";
+import { getLang, localePath } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
-  const { seo } = getContent(getLang()).siteCopy;
-  return { title: seo.como_funciona.title, description: seo.como_funciona.description };
+  return pageMetadata("como_funciona", "/como-funciona");
 }
 
 export default function ComoFuncionaPage() {
-  const { pagina_como_funciona, hero } = getContent(getLang()).siteCopy;
+  const lang = getLang();
+  const { siteCopy } = getContent(lang);
+  const { pagina_como_funciona, home } = siteCopy;
 
   return (
     <>
-      <PageHero
-        title={pagina_como_funciona.titulo_hero}
-        subtitle={pagina_como_funciona.subtitulo_hero}
-      />
-
+      <PageHero title={pagina_como_funciona.titulo_hero} subtitle={pagina_como_funciona.subtitulo_hero} />
+      <HowItWorks copy={siteCopy} showHeading={false} />
       <Section>
-        <h2 className="text-2xl font-semibold text-text">
-          {pagina_como_funciona.seccion_detalle_titulo}
-        </h2>
+        <p className="max-w-2xl text-text-muted">{pagina_como_funciona.nota_final}</p>
         <div className="mt-8">
-          <HowItWorksSteps detailed />
-        </div>
-
-        <p className="mt-10 max-w-2xl text-text-muted">
-          {pagina_como_funciona.nota_final}
-        </p>
-
-        <div className="mt-8">
-          <Button href="/#lista-de-espera">{hero.cta_principal}</Button>
+          <Button href={localePath(lang, "/#lista-de-espera")}>{home.hero.cta_principal}</Button>
         </div>
       </Section>
     </>

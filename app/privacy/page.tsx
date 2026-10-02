@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
 import { getLang } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import LegalDoc from "@/components/legal/LegalDoc";
 import { privacyEn, privacyEs } from "@/content/legal";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — HomeTest",
-  description: "How HomeTest processes your personal and health data. Política de privacidad en español incluida.",
-};
+export function generateMetadata(): Metadata {
+  return pageMetadata("privacy", "/privacy");
+}
 
 export default function PrivacyPage() {
   return (

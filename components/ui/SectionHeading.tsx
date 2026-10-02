@@ -14,11 +14,11 @@ export default function SectionHeading({
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-accent-light">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">
           {eyebrow}
         </p>
       )}
-      <h2 className="text-balance text-3xl font-semibold text-text sm:text-4xl">
+      <h2 className="text-balance font-display text-4xl font-medium tracking-tight text-text sm:text-5xl">
         {title}
       </h2>
       {subtitle && (

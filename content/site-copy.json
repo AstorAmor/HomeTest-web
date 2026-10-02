@@ -1,144 +1,187 @@
 {
   "marca": {
     "nombre": "HomeTest",
-    "descripcion_corta": "Test diagnósticos a domicilio, en España."
+    "descripcion_corta": "Salud preventiva: analíticas completas, tus wearables y profesionales que te acompañan. Madrid, España."
   },
   "nav": {
     "enlaces": [
-      {
-        "label": "Cómo funciona",
-        "href": "/como-funciona"
-      },
-      {
-        "label": "Catálogo",
-        "href": "/catalogo"
-      },
-      {
-        "label": "FAQ",
-        "href": "/faq"
-      },
-      {
-        "label": "Contacto",
-        "href": "/contacto"
-      }
+      { "label": "Cómo funciona", "href": "/como-funciona" },
+      { "label": "Biomarcadores", "href": "/catalogo" },
+      { "label": "FAQ", "href": "/faq" },
+      { "label": "Contacto", "href": "/contacto" }
     ],
-    "cta": "Únete a la lista de espera"
+    "cta": "Lista de espera"
   },
   "seo": {
     "home": {
-      "title": "HomeTest — Test diagnósticos a domicilio en España",
-      "description": "Controla tu salud desde casa: recoge tu propia muestra, envíala con etiqueta prepagada y recibe tus resultados explicados en la app. Sin cita previa."
+      "title": "HomeTest — Más de 110 biomarcadores y un plan para tu salud",
+      "description": "Salud preventiva en España: analíticas de más de 110 biomarcadores dos veces al año, tus wearables conectados y profesionales verificados. Entiende tu salud y pasa a la acción."
     },
     "como_funciona": {
       "title": "Cómo funciona — HomeTest",
-      "description": "Descubre en 3 pasos cómo pedir tu kit, recoger la muestra en casa y recibir tus resultados explicados, sin cita previa ni agujas."
+      "description": "Cuéntanos sobre ti, hazte la analítica dos veces al año, conecta tus dispositivos y recibe tu plan. Así funciona HomeTest, paso a paso."
     },
     "catalogo": {
-      "title": "Catálogo de biomarcadores — HomeTest",
-      "description": "Explora todos los biomarcadores disponibles agrupados por bloque: chequeo general, rendimiento, salud sexual y salud reproductiva."
+      "title": "Biomarcadores: el panel completo — HomeTest",
+      "description": "Los más de 110 biomarcadores en sangre y orina que analiza HomeTest, agrupados por sistemas: metabolismo, corazón, hormonas, tiroides, nutrientes, hígado, riñón y más."
     },
     "faq": {
       "title": "Preguntas frecuentes — HomeTest",
-      "description": "Resolvemos las dudas más habituales sobre nuestros test diagnósticos a domicilio, la recogida de muestras y la privacidad de tus datos."
+      "description": "Qué incluye la analítica, cada cuánto se hace, qué dispositivos puedes conectar, cómo se protegen tus datos y más."
     },
     "contacto": {
       "title": "Contacto — HomeTest",
-      "description": "¿Tienes dudas? Ponte en contacto con nosotros o únete a la lista de espera para ser de los primeros en probar HomeTest."
+      "description": "¿Tienes dudas? Escríbenos o únete a la lista de espera para ser de los primeros en probar HomeTest."
+    },
+    "privacy": {
+      "title": "Política de privacidad — HomeTest",
+      "description": "Cómo trata HomeTest tus datos personales y de salud. English version included."
+    },
+    "terms": {
+      "title": "Condiciones de uso — HomeTest",
+      "description": "Condiciones de uso de la app y la web de HomeTest. English version included."
     }
   },
-  "hero": {
-    "titulo": "Controla tu salud, desde casa",
-    "subtitulo": "HomeTest es un servicio de test diagnósticos a domicilio: recoges tu propia muestra sin agujas ni cita previa, la envías a nuestro laboratorio y recibes tus resultados explicados en la app.",
-    "cta_principal": "Únete a la lista de espera",
-    "cta_secundaria": "Ver cómo funciona",
-    "nota_legal": "No sustituye a tu médico. Te ayudamos a entender señales para compartir con un profesional sanitario."
-  },
-  "como_funciona": {
-    "titulo_seccion": "Cómo funciona",
-    "subtitulo_seccion": "Tres pasos, todo desde tu casa",
-    "pasos": [
-      {
-        "numero": 1,
-        "titulo": "Pide tu kit",
-        "descripcion": "Elige tu test y recibe el kit en casa en pocos días, listo para usar."
-      },
-      {
-        "numero": 2,
-        "titulo": "Recoge tu muestra",
-        "descripcion": "Tú mismo, sin agujas ni cita previa. Sigue las instrucciones y envíala con la etiqueta prepagada incluida."
-      },
-      {
-        "numero": 3,
-        "titulo": "Recibe tus resultados",
-        "descripcion": "Te explicamos tus resultados en la app, con recomendaciones claras para hablar con tu médico. No sustituye una valoración médica profesional."
-      }
-    ]
-  },
-  "catalogo_preview": {
-    "titulo_seccion": "Un catálogo pensado para cada etapa",
-    "subtitulo_seccion": "Elige el bloque que más te interesa. Todos incluyen resultados explicados en lenguaje claro.",
-    "cta_ver_catalogo": "Ver catálogo completo"
-  },
-  "compartir_resultados": {
-    "titulo": "Comparte tus resultados",
-    "descripcion": "Lleva tus resultados a la consulta de tu médico en un formato claro, o conéctalos a un asistente de IA para entenderlos mejor y preparar mejores preguntas antes de tu cita.",
-    "puntos": [
-      "Exporta un resumen claro para tu médico",
-      "Conecta tus resultados a un asistente de IA para resolver dudas",
-      "Guarda tu histórico y compara resultados en el tiempo"
-    ]
-  },
-  "comparativa": {
-    "titulo_seccion": "¿Por qué HomeTest?",
-    "subtitulo_seccion": "Comparado con el chequeo tradicional",
-    "columna_tradicional": "Chequeo tradicional",
-    "columna_nosotros": "HomeTest",
-    "filas": [
-      {
-        "criterio": "Cita previa",
-        "tradicional": "Necesaria, a veces con semanas de espera",
-        "nosotros": "No hace falta, pides tu kit online"
-      },
-      {
-        "criterio": "Dependencia de sanidad pública/privada",
-        "tradicional": "Depende de la disponibilidad y cobertura",
-        "nosotros": "Autónomo, tú decides cuándo"
-      },
-      {
-        "criterio": "Tiempo de resultados",
-        "tradicional": "Puede tardar días o semanas en llegar",
-        "nosotros": "Resultados explicados en la app en cuanto están listos"
-      },
-      {
-        "criterio": "Repetible cada pocos meses",
-        "tradicional": "Complicado, requiere nueva cita cada vez",
-        "nosotros": "Fácil de repetir para hacer seguimiento"
-      },
-      {
-        "criterio": "Necesidad de receta",
-        "tradicional": "A menudo necesaria",
-        "nosotros": "No hace falta receta para pedir tu kit"
-      },
-      {
-        "criterio": "Privacidad de datos sensibles",
-        "tradicional": "Variable según el centro",
-        "nosotros": "Diseñado con la privacidad como prioridad"
-      }
-    ]
-  },
-  "faq_seccion": {
-    "titulo_seccion": "Preguntas frecuentes",
-    "subtitulo_seccion": "¿No encuentras lo que buscas?",
-    "cta_contacto": "Escríbenos"
-  },
-  "prensa_y_avales": {
-    "titulo_seccion": "Reconocimientos y equipo médico",
-    "texto_placeholder": "Próximamente"
-  },
-  "cta_final": {
-    "titulo": "Sé de los primeros en probarlo",
-    "descripcion": "Únete a la lista de espera y te avisaremos en cuanto estemos disponibles en tu zona.",
-    "cta": "Únete a la lista de espera"
+  "home": {
+    "hero": {
+      "eyebrow": "Salud preventiva · Muy pronto en España",
+      "titulo": "Conócete mejor. Actúa antes.",
+      "subtitulo": "Más de 110 biomarcadores, tus wearables y profesionales que te acompañan. Entiende cómo está tu cuerpo hoy y sabe exactamente qué hacer.",
+      "cta_principal": "Únete a la lista de espera",
+      "cta_secundaria": "Cómo funciona",
+      "nota_legal": "No sustituye a tu médico.",
+      "imagen": "/images/photos/hero.jpg",
+      "video": null
+    },
+    "cifras": [
+      { "valor": "110+", "texto": "biomarcadores en sangre y orina" },
+      { "valor": "2", "texto": "analíticas al año para ver tu evolución" },
+      { "valor": "24/7", "texto": "tus wearables, conectados" },
+      { "valor": "1", "texto": "plan hecho con tus datos" }
+    ],
+    "aprende": {
+      "titulo": "Aprende sobre tu salud",
+      "subtitulo": "Tu cuerpo da señales mucho antes de que notes nada. Una analítica completa te ayuda a leerlas a tiempo."
+    },
+    "biomarcadores": {
+      "titulo": "110+ biomarcadores.",
+      "destacado": "Más que un número.",
+      "subtitulo": "Cada resultado viene explicado: qué mide, por qué importa y qué puedes hacer. Y en tu siguiente analítica ves cómo ha cambiado.",
+      "sistemas": ["metabolico", "lipidico", "hormonas", "tiroides", "nutrientes", "regulacion_inmune", "hepatico", "renal"],
+      "cta": "Ver todos los biomarcadores"
+    },
+    "app": {
+      "eyebrow": "La app",
+      "titulo": "Tu salud, al alcance de tu mano",
+      "subtitulo": "Tus analíticas, tus mediciones y tus wearables en un solo sitio, explicados en un lenguaje que se entiende.",
+      "puntos": [
+        { "titulo": "Tu informe, explicado", "texto": "Qué está en rango, qué merece atención y tu edad biológica estimada." },
+        { "titulo": "Tu día a día", "texto": "Sueño, pasos, energía y ánimo, junto a tus resultados." },
+        { "titulo": "Tu plan", "texto": "Acciones concretas, con una proyección de cómo pueden mejorar tus marcadores." }
+      ],
+      "capturas": [
+        { "src": "/images/app/today.jpg", "alt": "Pantalla Today de la app HomeTest con energía, ánimo y preparación del día" },
+        { "src": "/images/app/report.jpg", "alt": "Informe de la analítica en la app HomeTest: marcadores en rango y edad biológica" },
+        { "src": "/images/app/actionplan.jpg", "alt": "Plan de acción en la app HomeTest con proyección de un marcador" }
+      ]
+    },
+    "accion": {
+      "eyebrow": "Tu plan",
+      "titulo": "Conocerte mejor para pasar a la acción",
+      "texto": "Con tus resultados, tus hábitos y tus objetivos construimos un plan a tu medida: sueño, movimiento, nutrición y calma. Seis meses después, la siguiente analítica te dice qué ha funcionado.",
+      "imagen": "/images/photos/walking.jpg",
+      "imagen_alt": "Pareja caminando por un parque al atardecer",
+      "captura": { "src": "/images/app/habits.jpg", "alt": "Hábitos antes y ahora en la app HomeTest: sueño, pulso en reposo, pasos" },
+      "objetivos_titulo": "¿Cuál es el tuyo?",
+      "objetivos": [
+        "Despertarme con energía",
+        "Bajar mi colesterol LDL",
+        "Correr mi primera media maratón",
+        "Dormir del tirón",
+        "Entender mi ciclo",
+        "Llegar con energía a las 6 de la tarde",
+        "Prepararme para un embarazo",
+        "Ganar fuerza después de los 40",
+        "Controlar el estrés",
+        "Mejorar mi glucosa"
+      ]
+    },
+    "como_funciona": {
+      "eyebrow": "Cómo funciona",
+      "titulo": "Un sistema que te acompaña todo el año",
+      "subtitulo": "Empiezas en minutos y cada paso suma información sobre ti.",
+      "pasos": [
+        {
+          "titulo": "Cuéntanos sobre ti y sube tus datos",
+          "texto": "Tus objetivos, tus hábitos y tu historial. Si ya tienes analíticas, súbelas en PDF o foto: las leemos por ti.",
+          "imagen": "/images/photos/mindfulness.jpg",
+          "imagen_alt": "Persona meditando en un salón luminoso"
+        },
+        {
+          "titulo": "Hazte la analítica, dos veces al año",
+          "texto": "Más de 110 biomarcadores en un laboratorio colaborador cerca de ti. La segunda, a los seis meses, mide tu progreso.",
+          "imagen": "/images/photos/heart.jpg",
+          "imagen_alt": "Corazón dibujado con un hilo rojo que continúa como un latido"
+        },
+        {
+          "titulo": "Conecta tus dispositivos",
+          "texto": "Tu reloj o tu anillo aportan sueño, actividad y recuperación, sin que tengas que hacer nada más.",
+          "imagen": "/images/photos/sleep.jpg",
+          "imagen_alt": "Dormitorio tranquilo al anochecer"
+        },
+        {
+          "titulo": "Entiende y actúa",
+          "texto": "Recibe tu informe explicado y tu plan y, si quieres, habla con un profesional por vídeo o por mensaje.",
+          "imagen": "/images/photos/nutrition.jpg",
+          "imagen_alt": "Plato saludable con pescado y ensalada"
+        }
+      ]
+    },
+    "profesionales": {
+      "eyebrow": "Profesionales",
+      "titulo": "No estás solo con tus resultados",
+      "subtitulo": "Médicos, fisioterapeutas, nutricionistas, entrenadores y matronas verificados por HomeTest. Tú decides con quién compartes tus datos y puedes retirarlo cuando quieras.",
+      "roles": [
+        { "rol": "Medicina", "foto": "/images/photos/pro-doctor.jpg" },
+        { "rol": "Fisioterapia", "foto": "/images/photos/pro-physio.jpg" },
+        { "rol": "Nutrición", "foto": "/images/photos/pro-dietitian.jpg" },
+        { "rol": "Entrenamiento", "foto": "/images/photos/pro-trainer.jpg" },
+        { "rol": "Matrona", "foto": "/images/photos/pro-midwife.jpg" }
+      ],
+      "testimonios_titulo": "Lo que dicen los profesionales",
+      "testimonios": []
+    },
+    "datos": {
+      "titulo": "Tus datos son tuyos",
+      "puntos": [
+        "Guardados en la Unión Europea",
+        "Nunca los vendemos ni los usamos para publicidad",
+        "Solo los ve quien tú autorices, y puedes retirarlo cuando quieras"
+      ]
+    },
+    "en_breve": {
+      "titulo": "HomeTest en pocas palabras",
+      "parrafo": "HomeTest es una membresía de salud preventiva con sede en Madrid. Combina analíticas de más de 110 biomarcadores dos veces al año, una app que explica los resultados y los une a los datos de tus wearables, y profesionales sanitarios verificados que te ayudan a pasar a la acción. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar mejor preparado a la consulta.",
+      "datos": [
+        { "clave": "Qué es", "valor": "Una membresía de salud preventiva" },
+        { "clave": "Dónde", "valor": "España, con sede en Madrid" },
+        { "clave": "Qué mide", "valor": "{n} biomarcadores en sangre y orina, en {s} sistemas del cuerpo" },
+        { "clave": "Cada cuánto", "valor": "Dos analíticas al año" },
+        { "clave": "Wearables", "valor": "Relojes y anillos compatibles con Health Connect (Android); Huawei Health y Apple Salud, próximamente" },
+        { "clave": "Profesionales", "valor": "Medicina, fisioterapia, nutrición, entrenamiento y matronas" },
+        { "clave": "Privacidad", "valor": "Datos en la Unión Europea; nunca se venden" }
+      ]
+    },
+    "faq": {
+      "titulo": "Preguntas frecuentes",
+      "subtitulo": "¿No encuentras lo que buscas?",
+      "cta": "Escríbenos"
+    },
+    "cta_final": {
+      "titulo": "Sé de los primeros en conocerte de verdad",
+      "descripcion": "Únete a la lista de espera y te avisaremos en cuanto abramos en tu zona.",
+      "imagen": "/images/photos/strength.jpg"
+    }
   },
   "waitlist_form": {
     "titulo": "Únete a la lista de espera",
@@ -154,64 +197,39 @@
       {
         "titulo": "Producto",
         "enlaces": [
-          {
-            "label": "Cómo funciona",
-            "href": "/como-funciona"
-          },
-          {
-            "label": "Catálogo",
-            "href": "/catalogo"
-          },
-          {
-            "label": "FAQ",
-            "href": "/faq"
-          }
+          { "label": "Cómo funciona", "href": "/como-funciona" },
+          { "label": "Biomarcadores", "href": "/catalogo" },
+          { "label": "FAQ", "href": "/faq" }
         ]
       },
       {
         "titulo": "Empresa",
         "enlaces": [
-          {
-            "label": "Contacto",
-            "href": "/contacto"
-          },
-          {
-            "label": "Política de privacidad",
-            "href": "/privacy"
-          },
-          {
-            "label": "Condiciones de uso",
-            "href": "/terms"
-          }
+          { "label": "Contacto", "href": "/contacto" },
+          { "label": "Política de privacidad", "href": "/privacy" },
+          { "label": "Condiciones de uso", "href": "/terms" }
         ]
       }
     ],
     "redes": [
-      {
-        "label": "Instagram",
-        "href": "#"
-      },
-      {
-        "label": "LinkedIn",
-        "href": "#"
-      },
-      {
-        "label": "TikTok",
-        "href": "#"
-      }
+      { "label": "Instagram", "href": "#" },
+      { "label": "LinkedIn", "href": "#" },
+      { "label": "TikTok", "href": "#" }
     ],
     "texto_copyright": "HomeTest. Todos los derechos reservados.",
     "nota_legal": "Este servicio no proporciona diagnósticos médicos ni sustituye la valoración de un profesional sanitario."
   },
   "pagina_como_funciona": {
     "titulo_hero": "Cómo funciona",
-    "subtitulo_hero": "De la puerta de tu casa a entender tu salud, en tres pasos claros.",
-    "seccion_detalle_titulo": "Cada paso, en detalle",
+    "subtitulo_hero": "De conocerte a pasar a la acción, en cuatro pasos.",
     "nota_final": "En todo momento tus resultados son un punto de partida para hablar con tu médico, no un diagnóstico."
   },
   "pagina_catalogo": {
-    "titulo_hero": "Catálogo de biomarcadores",
-    "subtitulo_hero": "Explora todos los biomarcadores disponibles, agrupados por bloque."
+    "titulo_hero": "Biomarcadores",
+    "subtitulo_hero": "El panel completo que analizamos, agrupado por sistemas del cuerpo.",
+    "panel_nota": "Cada resultado se explica en la app. El panel exacto puede variar ligeramente según el laboratorio.",
+    "packs_titulo": "Packs por objetivo",
+    "packs_subtitulo": "Pruebas centradas en algo concreto."
   },
   "pagina_faq": {
     "titulo_hero": "Preguntas frecuentes",
@@ -229,14 +247,10 @@
     "muestra": "Muestra",
     "total_biomarcadores": "En total, {n} biomarcadores.",
     "n_biomarcadores": "{n} biomarcadores",
-    "criterio": "Criterio",
-    "tus_resultados": "Tus resultados",
-    "demo_resultados": [
-      "Vitamina D",
-      "Hierro y ferritina",
-      "TSH"
-    ],
-    "burbuja_chat": "Aquí tienes 3 preguntas para tu próxima cita médica",
+    "y_mas": "y {n} más",
+    "pausar": "Pausar animación",
+    "reproducir": "Reanudar animación",
+    "paso": "Paso",
     "contacto_directo_titulo": "Escríbenos directamente",
     "contacto_directo_texto": "También puedes escribirnos a",
     "placeholder_nombre": "Tu nombre",

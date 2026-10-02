@@ -10,8 +10,8 @@ export default function PageHero({
   return (
     <section className="border-b border-border bg-bg-soft">
       <Container>
-        <div className="max-w-2xl py-14 sm:py-20">
-          <h1 className="text-balance text-3xl font-bold text-text sm:text-5xl">
+        <div className="max-w-2xl pb-14 pt-32 sm:pb-20 sm:pt-40">
+          <h1 className="text-balance font-display text-4xl font-medium tracking-tight text-text sm:text-6xl">
             {title}
           </h1>
           {subtitle && (

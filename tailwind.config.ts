@@ -10,31 +10,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Base oscura cálida (no negro puro, ligero tono azulado profundo)
-        bg: "var(--color-bg)",
-        "bg-soft": "var(--color-bg-soft)",
-        surface: "var(--color-surface)",
-        "surface-hover": "var(--color-surface-hover)",
-        border: "var(--color-border)",
-        // Texto en crema cálido, no blanco puro, para suavizar el contraste
-        text: "var(--color-text)",
-        "text-muted": "var(--color-text-muted)",
-        // Azul principal/de acento, con un matiz cálido (más índigo que cian)
+        // Tema claro "Terracota" (mismos colores que la app); valores en app/globals.css
+        bg: "rgb(var(--color-bg) / <alpha-value>)",
+        "bg-soft": "rgb(var(--color-bg-soft) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        "surface-hover": "rgb(var(--color-surface-hover) / <alpha-value>)",
+        border: "rgb(var(--color-border) / <alpha-value>)",
+        text: "rgb(var(--color-text) / <alpha-value>)",
+        "text-muted": "rgb(var(--color-text-muted) / <alpha-value>)",
+        "on-accent": "rgb(var(--color-on-accent) / <alpha-value>)",
+        ink: "rgb(var(--color-ink) / <alpha-value>)",
         accent: {
-          DEFAULT: "var(--color-accent)",
-          hover: "var(--color-accent-hover)",
+          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          hover: "rgb(var(--color-accent-hover) / <alpha-value>)",
           soft: "var(--color-accent-soft)",
-          dark: "var(--color-accent-dark)",
-          light: "var(--color-accent-light)",
+          dark: "rgb(var(--color-accent-dark) / <alpha-value>)",
+          light: "rgb(var(--color-accent-light) / <alpha-value>)",
         },
-        // Toque cálido secundario, usado con moderación (iconos, detalles)
+        // Verde oliva de apoyo, usado con moderación
         warm: {
-          DEFAULT: "var(--color-warm)",
+          DEFAULT: "rgb(var(--color-warm) / <alpha-value>)",
           soft: "var(--color-warm-soft)",
         },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
       },
       borderRadius: {
         xl: "1rem",
