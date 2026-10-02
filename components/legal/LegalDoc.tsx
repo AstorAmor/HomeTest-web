@@ -6,9 +6,6 @@ export default function LegalDoc({ es, en, first = "en" }: { es: LegalDocument; 
   const docs = first === "es" ? ([["es", es], ["en", en]] as const) : ([["en", en], ["es", es]] as const);
   return (
     <div className="mx-auto max-w-3xl">
-      <p className="mb-8 rounded-lg border border-amber-400/40 bg-amber-400/10 p-4 text-sm text-amber-200">
-        Draft pending legal review. / Borrador pendiente de revisión legal.
-      </p>
       <div lang={docs[0][0]}>
         <Doc doc={docs[0][1]} />
       </div>
