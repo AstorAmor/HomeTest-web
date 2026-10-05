@@ -14,7 +14,7 @@ La web sale en los dos idiomas, cada uno con su dirección: `/` en español y `/
 - **Portada, botones, menús, pie, títulos para Google**: `site-copy.json` (y `en/site-copy.json`). La portada está en `home`, sección a sección y en el mismo orden en que aparece en la página:
   `hero` (frase principal) → `cifras` → `aprende` → `biomarcadores` → `app` → `accion` (plan y objetivos) → `como_funciona` → `profesionales` → `datos` → `en_breve` → `faq` → `cta_final` (lista de espera).
 - **Preguntas frecuentes**: `faq.json` (y `en/faq.json`). Salen en la portada, en `/faq` y en los datos para Google.
-- **Biomarcadores (panel completo, 110+)**: NO se edita aquí. Sale de la base de conocimiento de la app (`HomeTest/knowledge/biomarcadores/`). Para actualizarlo: `node scripts/sync-panel.mjs` (genera `panel.json`).
+- **Biomarcadores (panel completo, 110+)**: NO se edita aquí. Sale de la base de conocimiento de la app (`hometest-app/knowledge/biomarcadores/`). Para actualizarlo: `node scripts/sync-panel.mjs` (genera `panel.json`).
 - **Packs por objetivo** (chequeo general, rendimiento, salud sexual, salud reproductiva): `biomarcadores/bloque-*.json`; nombres en inglés en `en/biomarcadores.json` (por `id`).
 - **Política de privacidad y condiciones**: `legal.ts`, siempre en los dos idiomas en la misma página.
 

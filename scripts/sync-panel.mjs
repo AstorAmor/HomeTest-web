@@ -1,12 +1,12 @@
 // Genera content/panel.json (biomarcadores del panel de laboratorio, ES/EN, por sistema)
 // a partir de la base de conocimiento de la app, que es la fuente de verdad:
-//   node scripts/sync-panel.mjs [ruta a HomeTest/knowledge/biomarcadores]
+//   node scripts/sync-panel.mjs [ruta a hometest-app/knowledge/biomarcadores]
 // Solo nombres, categoría y tipo de muestra: las fichas médicas de la app están pendientes de
 // revisión clínica y NO se publican en la web.
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const SRC = process.argv[2] ?? join("..", "HomeTest", "knowledge", "biomarcadores");
+const SRC = process.argv[2] ?? join("..", "hometest-app", "knowledge", "biomarcadores");
 
 // Nombre de cada sistema en la web (ES y, si cambia, EN) y orden de aparición.
 const SYSTEMS = {

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Colores en canales RGB ("R G B") para que Tailwind pueda aplicar transparencias (bg-bg/85).
-   Tema claro "Terracota", el mismo de la app (HomeTest/src/constants/colors.ts, LIGHT):
+   Tema claro "Terracota", el mismo de la app (hometest-app/src/constants/colors.ts, LIGHT):
    crema cálida de fondo, terracota de acento y verde oliva de apoyo. El terracota es un
    punto más oscuro que en la app para que el texto blanco de los botones cumpla contraste AA. */
 :root {
