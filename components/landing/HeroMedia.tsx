@@ -38,7 +38,7 @@ export default function HeroMedia({
         <>
           <video
             ref={ref}
-            className="h-full w-full object-cover motion-reduce:hidden"
+            className="h-full w-full object-cover object-top motion-reduce:hidden"
             src={video}
             poster={image}
             autoPlay
@@ -46,7 +46,7 @@ export default function HeroMedia({
             loop
             playsInline
           />
-          <Image src={image} alt="" fill priority sizes="100vw" className="hidden object-cover motion-reduce:block" />
+          <Image src={image} alt="" fill priority sizes="100vw" className="hidden object-cover object-top motion-reduce:block" />
           <button
             type="button"
             onClick={toggle}
@@ -57,7 +57,7 @@ export default function HeroMedia({
           </button>
         </>
       ) : (
-        <Image src={image} alt="" fill priority sizes="100vw" className="kenburns object-cover" />
+        <Image src={image} alt="" fill priority sizes="100vw" className="kenburns object-cover object-top" />
       )}
     </div>
   );

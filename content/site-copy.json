@@ -1,6 +1,6 @@
 {
   "marca": {
-    "nombre": "HomeTest",
+    "nombre": "Kuova Health",
     "descripcion_corta": "Salud preventiva: analíticas completas, tus wearables y profesionales que te acompañan. Madrid, España."
   },
   "nav": {
@@ -14,43 +14,43 @@
   },
   "seo": {
     "home": {
-      "title": "HomeTest — Más de 110 biomarcadores y un plan para tu salud",
+      "title": "Kuova Health — Más de 110 biomarcadores y un plan para tu salud",
       "description": "Salud preventiva en España: analíticas de más de 110 biomarcadores dos veces al año, tus wearables conectados y profesionales verificados. Entiende tu salud y pasa a la acción."
     },
     "como_funciona": {
-      "title": "Cómo funciona — HomeTest",
-      "description": "Cuéntanos sobre ti, hazte la analítica dos veces al año, conecta tus dispositivos y recibe tu plan. Así funciona HomeTest, paso a paso."
+      "title": "Cómo funciona — Kuova Health",
+      "description": "Cuéntanos sobre ti, hazte la analítica dos veces al año, conecta tus dispositivos y recibe tu plan. Así funciona Kuova, paso a paso."
     },
     "catalogo": {
-      "title": "Biomarcadores: el panel completo — HomeTest",
-      "description": "Los más de 110 biomarcadores en sangre y orina que analiza HomeTest, agrupados por sistemas: metabolismo, corazón, hormonas, tiroides, nutrientes, hígado, riñón y más."
+      "title": "Biomarcadores: el panel completo — Kuova Health",
+      "description": "Los más de 110 biomarcadores en sangre y orina que analiza Kuova, agrupados por sistemas: metabolismo, corazón, hormonas, tiroides, nutrientes, hígado, riñón y más."
     },
     "faq": {
-      "title": "Preguntas frecuentes — HomeTest",
+      "title": "Preguntas frecuentes — Kuova Health",
       "description": "Qué incluye la analítica, cada cuánto se hace, qué dispositivos puedes conectar, cómo se protegen tus datos y más."
     },
     "contacto": {
-      "title": "Contacto — HomeTest",
-      "description": "¿Tienes dudas? Escríbenos o únete a la lista de espera para ser de los primeros en probar HomeTest."
+      "title": "Contacto — Kuova Health",
+      "description": "¿Tienes dudas? Escríbenos o únete a la lista de espera para ser de los primeros en probar Kuova."
     },
     "privacy": {
-      "title": "Política de privacidad — HomeTest",
-      "description": "Cómo trata HomeTest tus datos personales y de salud. English version included."
+      "title": "Política de privacidad — Kuova Health",
+      "description": "Cómo trata Kuova tus datos personales y de salud. English version included."
     },
     "terms": {
-      "title": "Condiciones de uso — HomeTest",
-      "description": "Condiciones de uso de la app y la web de HomeTest. English version included."
+      "title": "Condiciones de uso — Kuova Health",
+      "description": "Condiciones de uso de la app y la web de Kuova. English version included."
     }
   },
   "home": {
     "hero": {
       "eyebrow": "Salud preventiva · Muy pronto en España",
-      "titulo": "Conócete mejor. Actúa antes.",
+      "titulo": "Conoce más. Vive mejor.",
       "subtitulo": "Más de 110 biomarcadores, tus wearables y profesionales que te acompañan. Entiende cómo está tu cuerpo hoy y sabe exactamente qué hacer.",
       "cta_principal": "Únete a la lista de espera",
       "cta_secundaria": "Cómo funciona",
       "nota_legal": "No sustituye a tu médico.",
-      "imagen": "/images/photos/hero.jpg",
+      "imagen": "/images/photos/strength.jpg",
       "video": null
     },
     "cifras": [
@@ -80,9 +80,9 @@
         { "titulo": "Tu plan", "texto": "Acciones concretas, con una proyección de cómo pueden mejorar tus marcadores." }
       ],
       "capturas": [
-        { "src": "/images/app/today.jpg", "alt": "Pantalla Today de la app HomeTest con energía, ánimo y preparación del día" },
-        { "src": "/images/app/report.jpg", "alt": "Informe de la analítica en la app HomeTest: marcadores en rango y edad biológica" },
-        { "src": "/images/app/actionplan.jpg", "alt": "Plan de acción en la app HomeTest con proyección de un marcador" }
+        { "src": "/images/app/today.jpg", "alt": "Pantalla Today de la app Kuova con energía, ánimo y preparación del día" },
+        { "src": "/images/app/report.jpg", "alt": "Informe de la analítica en la app Kuova: marcadores en rango y edad biológica" },
+        { "src": "/images/app/actionplan.jpg", "alt": "Plan de acción en la app Kuova con proyección de un marcador" }
       ]
     },
     "accion": {
@@ -91,7 +91,7 @@
       "texto": "Con tus resultados, tus hábitos y tus objetivos construimos un plan a tu medida: sueño, movimiento, nutrición y calma. Seis meses después, la siguiente analítica te dice qué ha funcionado.",
       "imagen": "/images/photos/walking.jpg",
       "imagen_alt": "Pareja caminando por un parque al atardecer",
-      "captura": { "src": "/images/app/habits.jpg", "alt": "Hábitos antes y ahora en la app HomeTest: sueño, pulso en reposo, pasos" },
+      "captura": { "src": "/images/app/habits.jpg", "alt": "Hábitos antes y ahora en la app Kuova: sueño, pulso en reposo, pasos" },
       "objetivos_titulo": "¿Cuál es el tuyo?",
       "objetivos": [
         "Despertarme con energía",
@@ -140,7 +140,7 @@
     "profesionales": {
       "eyebrow": "Profesionales",
       "titulo": "No estás solo con tus resultados",
-      "subtitulo": "Médicos, fisioterapeutas, nutricionistas, entrenadores y matronas verificados por HomeTest. Tú decides con quién compartes tus datos y puedes retirarlo cuando quieras.",
+      "subtitulo": "Médicos, fisioterapeutas, nutricionistas, entrenadores y matronas verificados por Kuova. Tú decides con quién compartes tus datos y puedes retirarlo cuando quieras.",
       "roles": [
         { "rol": "Medicina", "foto": "/images/photos/pro-doctor.jpg" },
         { "rol": "Fisioterapia", "foto": "/images/photos/pro-physio.jpg" },
@@ -160,8 +160,8 @@
       ]
     },
     "en_breve": {
-      "titulo": "HomeTest en pocas palabras",
-      "parrafo": "HomeTest es una membresía de salud preventiva con sede en Madrid. Combina analíticas de más de 110 biomarcadores dos veces al año, una app que explica los resultados y los une a los datos de tus wearables, y profesionales sanitarios verificados que te ayudan a pasar a la acción. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar mejor preparado a la consulta.",
+      "titulo": "Kuova en pocas palabras",
+      "parrafo": "Kuova es una membresía de salud preventiva con sede en Madrid. Combina analíticas de más de 110 biomarcadores dos veces al año, una app que explica los resultados y los une a los datos de tus wearables, y profesionales sanitarios verificados que te ayudan a pasar a la acción. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar mejor preparado a la consulta.",
       "datos": [
         { "clave": "Qué es", "valor": "Una membresía de salud preventiva" },
         { "clave": "Dónde", "valor": "España, con sede en Madrid" },
@@ -180,7 +180,7 @@
     "cta_final": {
       "titulo": "Sé de los primeros en conocerte de verdad",
       "descripcion": "Únete a la lista de espera y te avisaremos en cuanto abramos en tu zona.",
-      "imagen": "/images/photos/strength.jpg"
+      "imagen": "/images/photos/walking.jpg"
     }
   },
   "waitlist_form": {
@@ -216,7 +216,7 @@
       { "label": "LinkedIn", "href": "#" },
       { "label": "TikTok", "href": "#" }
     ],
-    "texto_copyright": "HomeTest. Todos los derechos reservados.",
+    "texto_copyright": "Kuova Health. Todos los derechos reservados.",
     "nota_legal": "Este servicio no proporciona diagnósticos médicos ni sustituye la valoración de un profesional sanitario."
   },
   "pagina_como_funciona": {

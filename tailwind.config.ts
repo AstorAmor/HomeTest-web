@@ -27,7 +27,8 @@ const config: Config = {
           dark: "rgb(var(--color-accent-dark) / <alpha-value>)",
           light: "rgb(var(--color-accent-light) / <alpha-value>)",
         },
-        // Verde oliva de apoyo, usado con moderación
+        gold: "rgb(var(--color-gold) / <alpha-value>)",
+        // Sage de apoyo, usado con moderación
         warm: {
           DEFAULT: "rgb(var(--color-warm) / <alpha-value>)",
           soft: "var(--color-warm-soft)",
@@ -36,6 +37,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "Georgia", "serif"],
+        logo: ["var(--font-logo)", "var(--font-sans)", "sans-serif"],
       },
       borderRadius: {
         xl: "1rem",

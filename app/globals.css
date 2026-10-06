@@ -3,32 +3,35 @@
 @tailwind utilities;
 
 /* Colores en canales RGB ("R G B") para que Tailwind pueda aplicar transparencias (bg-bg/85).
-   Tema claro "Terracota", el mismo de la app (hometest-app/src/constants/colors.ts, LIGHT):
-   crema cálida de fondo, terracota de acento y verde oliva de apoyo. El terracota es un
-   punto más oscuro que en la app para que el texto blanco de los botones cumpla contraste AA. */
+   Identidad Kuova Health: Deep Green #0E2A24 (confianza, ciencia), Gold #C9A36B (premium,
+   calidez), Sand #EDE5D9, Cream #FAF8F3, Sage (bienestar) y Charcoal #2A2A2A (texto). */
 :root {
-  --color-bg: 250 244 236;
-  --color-bg-soft: 243 233 220;
+  --color-bg: 250 248 243; /* Cream */
+  --color-bg-soft: 237 229 217; /* Sand */
   --color-surface: 255 255 255;
-  --color-surface-hover: 253 248 242;
-  --color-border: 234 219 200;
+  --color-surface-hover: 246 242 235;
+  --color-border: 223 214 200;
 
-  --color-text: 47 36 32;
-  --color-text-muted: 122 101 88;
+  --color-text: 42 42 42; /* Charcoal */
+  --color-text-muted: 102 99 93;
 
-  --color-accent: 170 88 52;
-  --color-accent-hover: 146 74 43;
-  --color-accent-soft: rgba(170, 88, 52, 0.12);
-  --color-accent-dark: 126 63 34;
-  /* Texto de acento sobre crema: algo más oscuro que el terracota para que se lea bien */
-  --color-accent-light: 164 83 47;
-  --color-on-accent: 255 255 255;
+  --color-accent: 14 42 36; /* Deep Green */
+  --color-accent-hover: 28 64 55;
+  --color-accent-soft: rgba(14, 42, 36, 0.07);
+  --color-accent-dark: 9 29 25;
+  /* Texto de acento (eyebrows, enlaces): oro oscurecido para que se lea en crema y arena (AA) */
+  --color-accent-light: 122 92 48;
+  --color-on-accent: 250 248 243;
 
-  --color-warm: 79 122 52;
-  --color-warm-soft: rgba(79, 122, 52, 0.12);
+  /* Gold de la marca: solo decorativo (logo, iconos, detalles), nunca texto pequeño */
+  --color-gold: 201 163 107;
 
-  /* Fondo oscuro para secciones sobre foto/vídeo */
-  --color-ink: 29 23 20;
+  /* Sage de apoyo, usado con moderación */
+  --color-warm: 111 140 124;
+  --color-warm-soft: rgba(143, 168, 154, 0.18);
+
+  /* Fondo oscuro (hero, tarjetas, cierre): Deep Green */
+  --color-ink: 14 42 36;
 }
 
 html {

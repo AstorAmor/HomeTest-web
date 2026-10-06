@@ -1,8 +1,12 @@
 import Container from "../ui/Container";
+import Icon, { type IconName } from "../ui/Icon";
 import SectionHeading from "../ui/SectionHeading";
 import PhoneFrame from "./PhoneFrame";
 import Reveal from "./Reveal";
 import type { SiteCopy } from "@/lib/content";
+
+// Informe explicado → datos claros; día a día → wearables; plan → prevención
+const PUNTO_ICONOS: IconName[] = ["chart", "pulse", "leaf"];
 
 // "Tu salud, al alcance de tu mano": capturas reales de la app en tema claro.
 export default function AppShowcase({ copy }: { copy: SiteCopy }) {
@@ -16,8 +20,8 @@ export default function AppShowcase({ copy }: { copy: SiteCopy }) {
             <ul className="mt-10 space-y-6">
               {app.puntos.map((p, i) => (
                 <li key={p.titulo} className="flex gap-4">
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-soft font-display text-sm font-semibold text-accent-light">
-                    {i + 1}
+                  <span className="mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-accent">
+                    <Icon name={PUNTO_ICONOS[i % PUNTO_ICONOS.length]} className="h-5 w-5" />
                   </span>
                   <div>
                     <p className="font-semibold text-text">{p.titulo}</p>

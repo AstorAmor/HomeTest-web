@@ -2,8 +2,8 @@
   "preguntas": [
     {
       "id": "que-es-esto",
-      "pregunta": "¿Qué es HomeTest?",
-      "respuesta": "HomeTest es una membresía de salud preventiva. Incluye analíticas de más de 110 biomarcadores dos veces al año, una app que te explica los resultados y los une a los datos de tus wearables, y profesionales verificados que te ayudan a pasar a la acción con un plan a tu medida."
+      "pregunta": "¿Qué es Kuova?",
+      "respuesta": "Kuova es una membresía de salud preventiva. Incluye analíticas de más de 110 biomarcadores dos veces al año, una app que te explica los resultados y los une a los datos de tus wearables, y profesionales verificados que te ayudan a pasar a la acción con un plan a tu medida."
     },
     {
       "id": "sustituye-a-mi-medico",
@@ -37,8 +37,8 @@
     },
     {
       "id": "profesionales",
-      "pregunta": "¿Qué profesionales hay en HomeTest?",
-      "respuesta": "Médicos, fisioterapeutas, nutricionistas, entrenadores y matronas. HomeTest verifica su identidad y su colegiación antes de mostrarlos. Puedes hablar con ellos por vídeo o por mensaje y compartir con cada uno solo los datos que elijas."
+      "pregunta": "¿Qué profesionales hay en Kuova?",
+      "respuesta": "Médicos, fisioterapeutas, nutricionistas, entrenadores y matronas. Kuova verifica su identidad y su colegiación antes de mostrarlos. Puedes hablar con ellos por vídeo o por mensaje y compartir con cada uno solo los datos que elijas."
     },
     {
       "id": "datos-seguros",

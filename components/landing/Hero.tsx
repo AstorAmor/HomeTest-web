@@ -22,7 +22,9 @@ export default function Hero({ copy, lang }: { copy: SiteCopy; lang: Lang }) {
           </h1>
           <p className="mt-6 max-w-xl text-balance text-lg text-white/85 sm:text-xl">{hero.subtitulo}</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button href={localePath(lang, "/#lista-de-espera")}>{hero.cta_principal}</Button>
+            <Button href={localePath(lang, "/#lista-de-espera")} variant="cream">
+              {hero.cta_principal}
+            </Button>
             <Button href={localePath(lang, "/#como-funciona")} variant="light">
               {hero.cta_secundaria}
             </Button>

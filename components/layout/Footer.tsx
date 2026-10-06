@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "../ui/Container";
+import Logo from "../ui/Logo";
 import { getContent } from "@/lib/content";
 import { getLang, localePath } from "@/lib/i18n";
 
@@ -12,7 +13,9 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
           <div className="md:col-span-2">
-            <p className="font-display text-2xl font-semibold text-text">{marca.nombre}</p>
+            <p className="text-accent">
+              <Logo variant="full" align="start" />
+            </p>
             <p className="mt-3 max-w-sm text-sm text-text-muted">{marca.descripcion_corta}</p>
             <div className="mt-5 flex gap-4">
               {footer.redes.map((red) => (

@@ -1,8 +1,9 @@
 import Container from "../ui/Container";
+import Icon from "../ui/Icon";
 import Reveal from "./Reveal";
 import { fill, type SiteCopy } from "@/lib/content";
 
-// "Tus datos son tuyos" + "HomeTest en pocas palabras": un resumen claro y citable
+// "Tus datos son tuyos" + "Kuova en pocas palabras": un resumen claro y citable
 // (lo que mejor entienden Google y los asistentes de IA cuando alguien pregunta por nosotros).
 export default function KeyFacts({ copy, total, systems }: { copy: SiteCopy; total: number; systems: number }) {
   const { datos, en_breve } = copy.home;
@@ -15,9 +16,7 @@ export default function KeyFacts({ copy, total, systems }: { copy: SiteCopy; tot
             <ul className="mt-8 space-y-5">
               {datos.puntos.map((p) => (
                 <li key={p} className="flex gap-3 text-white/85">
-                  <span aria-hidden className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/15 text-xs">
-                    ✓
-                  </span>
+                  <Icon name="shield" className="mt-0.5 h-6 w-6 shrink-0 text-gold" />
                   {p}
                 </li>
               ))}

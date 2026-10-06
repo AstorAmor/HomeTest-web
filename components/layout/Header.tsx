@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Logo from "@/components/ui/Logo";
 import type { SiteCopy } from "@/lib/content";
 import { localePath, stripLang, type Lang } from "@/lib/locale";
 
@@ -19,8 +20,8 @@ export default function Header({ copy, lang }: { copy: SiteCopy; lang: Lang }) {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
       <div className="mx-auto max-w-content rounded-full border border-border/70 bg-bg/85 shadow-sm shadow-black/5 backdrop-blur-md">
         <div className="flex h-14 items-center justify-between pl-5 pr-2 sm:h-16 sm:pl-7 sm:pr-3">
-          <Link href={to("/")} className="font-display text-xl font-semibold tracking-tight text-text">
-            {marca.nombre}
+          <Link href={to("/")} className="text-accent" aria-label={marca.nombre}>
+            <Logo className="h-[17px] sm:h-[19px]" />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">

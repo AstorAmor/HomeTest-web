@@ -1,6 +1,6 @@
 {
   "marca": {
-    "nombre": "HomeTest",
+    "nombre": "Kuova Health",
     "descripcion_corta": "Preventive health: complete blood tests, your wearables and professionals by your side. Madrid, Spain."
   },
   "nav": {
@@ -14,43 +14,43 @@
   },
   "seo": {
     "home": {
-      "title": "HomeTest — 110+ biomarkers and a plan for your health",
+      "title": "Kuova Health — 110+ biomarkers and a plan for your health",
       "description": "Preventive health in Spain: blood tests covering 110+ biomarkers twice a year, your wearables connected and verified professionals. Understand your health and take action."
     },
     "como_funciona": {
-      "title": "How it works — HomeTest",
-      "description": "Tell us about yourself, get tested twice a year, connect your devices and get your plan. How HomeTest works, step by step."
+      "title": "How it works — Kuova Health",
+      "description": "Tell us about yourself, get tested twice a year, connect your devices and get your plan. How Kuova works, step by step."
     },
     "catalogo": {
-      "title": "Biomarkers: the full panel — HomeTest",
-      "description": "The 110+ blood and urine biomarkers HomeTest analyses, grouped by body system: metabolism, heart, hormones, thyroid, nutrients, liver, kidney and more."
+      "title": "Biomarkers: the full panel — Kuova Health",
+      "description": "The 110+ blood and urine biomarkers Kuova analyses, grouped by body system: metabolism, heart, hormones, thyroid, nutrients, liver, kidney and more."
     },
     "faq": {
-      "title": "Frequently asked questions — HomeTest",
+      "title": "Frequently asked questions — Kuova Health",
       "description": "What the blood test includes, how often you get tested, which devices you can connect, how your data is protected and more."
     },
     "contacto": {
-      "title": "Contact — HomeTest",
-      "description": "Questions? Write to us or join the waitlist to be among the first to try HomeTest."
+      "title": "Contact — Kuova Health",
+      "description": "Questions? Write to us or join the waitlist to be among the first to try Kuova."
     },
     "privacy": {
-      "title": "Privacy Policy — HomeTest",
-      "description": "How HomeTest processes your personal and health data. Versión en español incluida."
+      "title": "Privacy Policy — Kuova Health",
+      "description": "How Kuova processes your personal and health data. Versión en español incluida."
     },
     "terms": {
-      "title": "Terms of Use — HomeTest",
-      "description": "Terms of use of the HomeTest app and website. Versión en español incluida."
+      "title": "Terms of Use — Kuova Health",
+      "description": "Terms of use of the Kuova app and website. Versión en español incluida."
     }
   },
   "home": {
     "hero": {
       "eyebrow": "Preventive health · Coming soon to Spain",
-      "titulo": "Know yourself better. Act sooner.",
+      "titulo": "Know more. Live better.",
       "subtitulo": "110+ biomarkers, your wearables and professionals by your side. Understand how your body is doing today, and know exactly what to do next.",
       "cta_principal": "Join the waitlist",
       "cta_secundaria": "How it works",
       "nota_legal": "It does not replace your doctor.",
-      "imagen": "/images/photos/hero.jpg",
+      "imagen": "/images/photos/strength.jpg",
       "video": null
     },
     "cifras": [
@@ -80,9 +80,9 @@
         { "titulo": "Your plan", "texto": "Concrete actions, with a projection of how your markers could improve." }
       ],
       "capturas": [
-        { "src": "/images/app/today.jpg", "alt": "Today screen of the HomeTest app with energy, mood and daily readiness" },
-        { "src": "/images/app/report.jpg", "alt": "Blood test report in the HomeTest app: markers in range and biological age" },
-        { "src": "/images/app/actionplan.jpg", "alt": "Action plan in the HomeTest app with a marker projection" }
+        { "src": "/images/app/today.jpg", "alt": "Today screen of the Kuova app with energy, mood and daily readiness" },
+        { "src": "/images/app/report.jpg", "alt": "Blood test report in the Kuova app: markers in range and biological age" },
+        { "src": "/images/app/actionplan.jpg", "alt": "Action plan in the Kuova app with a marker projection" }
       ]
     },
     "accion": {
@@ -91,7 +91,7 @@
       "texto": "With your results, your habits and your goals we build a plan made for you: sleep, movement, nutrition and calm. Six months later, your next test tells you what worked.",
       "imagen": "/images/photos/walking.jpg",
       "imagen_alt": "Couple walking in a park at sunset",
-      "captura": { "src": "/images/app/habits.jpg", "alt": "Habits then vs. now in the HomeTest app: sleep, resting heart rate, steps" },
+      "captura": { "src": "/images/app/habits.jpg", "alt": "Habits then vs. now in the Kuova app: sleep, resting heart rate, steps" },
       "objetivos_titulo": "What's yours?",
       "objetivos": [
         "Wake up with energy",
@@ -140,7 +140,7 @@
     "profesionales": {
       "eyebrow": "Professionals",
       "titulo": "You're not alone with your results",
-      "subtitulo": "Doctors, physiotherapists, dietitians, trainers and midwives, verified by HomeTest. You decide who sees your data, and you can revoke access at any time.",
+      "subtitulo": "Doctors, physiotherapists, dietitians, trainers and midwives, verified by Kuova. You decide who sees your data, and you can revoke access at any time.",
       "roles": [
         { "rol": "Medicine", "foto": "/images/photos/pro-doctor.jpg" },
         { "rol": "Physiotherapy", "foto": "/images/photos/pro-physio.jpg" },
@@ -160,8 +160,8 @@
       ]
     },
     "en_breve": {
-      "titulo": "HomeTest in a nutshell",
-      "parrafo": "HomeTest is a preventive-health membership based in Madrid, Spain. It combines blood tests covering 110+ biomarkers twice a year, an app that explains the results and connects them with your wearable data, and verified healthcare professionals who help you take action. It does not diagnose or replace your doctor: it helps you understand your health and arrive better prepared at your appointment.",
+      "titulo": "Kuova in a nutshell",
+      "parrafo": "Kuova is a preventive-health membership based in Madrid, Spain. It combines blood tests covering 110+ biomarkers twice a year, an app that explains the results and connects them with your wearable data, and verified healthcare professionals who help you take action. It does not diagnose or replace your doctor: it helps you understand your health and arrive better prepared at your appointment.",
       "datos": [
         { "clave": "What it is", "valor": "A preventive-health membership" },
         { "clave": "Where", "valor": "Spain, based in Madrid" },
@@ -180,7 +180,7 @@
     "cta_final": {
       "titulo": "Be among the first to truly know yourself",
       "descripcion": "Join the waitlist and we'll let you know as soon as we open in your area.",
-      "imagen": "/images/photos/strength.jpg"
+      "imagen": "/images/photos/walking.jpg"
     }
   },
   "waitlist_form": {
@@ -216,7 +216,7 @@
       { "label": "LinkedIn", "href": "#" },
       { "label": "TikTok", "href": "#" }
     ],
-    "texto_copyright": "HomeTest. All rights reserved.",
+    "texto_copyright": "Kuova Health. All rights reserved.",
     "nota_legal": "This service does not provide medical diagnoses or replace the assessment of a healthcare professional."
   },
   "pagina_como_funciona": {

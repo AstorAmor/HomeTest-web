@@ -1,4 +1,4 @@
-// Textos legales de HomeTest (política de privacidad y condiciones de uso).
+// Textos legales de Kuova (política de privacidad y condiciones de uso).
 //
 // BORRADOR redactado a partir de lo que hace la app a 2026-09-28. Debe revisarlo
 // un profesional (asesoría / abogado especialista en protección de datos) antes
@@ -18,15 +18,15 @@ export interface LegalDocument {
 }
 
 const CONTROLLER_ES =
-  "Astor García Amor (persona física; en proceso de constitución de la sociedad que operará HomeTest). Domicilio: Madrid, España. Contacto para privacidad: astor.garcia.amor@gmail.com.";
+  "Astor García Amor (persona física; en proceso de constitución de la sociedad que operará Kuova). Domicilio: Madrid, España. Contacto para privacidad: astor.garcia.amor@gmail.com.";
 const CONTROLLER_EN =
-  "Astor García Amor (individual; the company that will operate HomeTest is being incorporated). Address: Madrid, Spain. Privacy contact: astor.garcia.amor@gmail.com.";
+  "Astor García Amor (individual; the company that will operate Kuova is being incorporated). Address: Madrid, Spain. Privacy contact: astor.garcia.amor@gmail.com.";
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
   updated: "Última actualización: 2 de octubre de 2026",
   intro:
-    "HomeTest es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
+    "Kuova es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
   sections: [
     {
       title: "1. Responsable del tratamiento",
@@ -59,7 +59,7 @@ export const privacyEs: LegalDocument = {
       paragraphs: [
         "Datos de salud: tu consentimiento explícito (art. 9.2.a RGPD), que das al registrarte y al usar cada función. Puedes retirarlo en cualquier momento, sin que ello afecte a la licitud del tratamiento anterior.",
         "Datos de cuenta y perfil: la ejecución del contrato de servicio que aceptas (art. 6.1.b RGPD).",
-        "Datos de profesionales: la relación contractual con HomeTest y nuestro interés legítimo en verificar su identidad y colegiación antes de mostrarlos a los pacientes (art. 6.1.b y 6.1.f RGPD).",
+        "Datos de profesionales: la relación contractual con Kuova y nuestro interés legítimo en verificar su identidad y colegiación antes de mostrarlos a los pacientes (art. 6.1.b y 6.1.f RGPD).",
       ],
     },
     {
@@ -70,7 +70,7 @@ export const privacyEs: LegalDocument = {
         "— Google (API de Gemini): procesa los documentos, fotos y audios que envías para extraer los datos. Solo recibe lo necesario para cada petición.",
         "— Expo (EAS): distribución de la app y de sus actualizaciones. No recibe tus datos de salud.",
         "Servicios que tú conectas (Health Connect, Huawei Health): solo leemos los datos que autorizas en su propia pantalla de permisos.",
-        "Profesionales sanitarios que tú elijas: solo pueden leer las categorías que les compartas, mientras el permiso esté activo, y nunca pueden modificar tus datos. Siempre verán tu nombre. HomeTest verifica su identidad y colegiación antes de que puedas compartir datos con ellos.",
+        "Profesionales sanitarios que tú elijas: solo pueden leer las categorías que les compartas, mientras el permiso esté activo, y nunca pueden modificar tus datos. Siempre verán tu nombre. Kuova verifica su identidad y colegiación antes de que puedas compartir datos con ellos.",
         "Autoridades, solo cuando una ley nos obligue.",
       ],
     },
@@ -109,7 +109,7 @@ export const privacyEs: LegalDocument = {
     },
     {
       title: "11. Menores",
-      paragraphs: ["HomeTest está dirigido a personas mayores de 18 años."],
+      paragraphs: ["Kuova está dirigido a personas mayores de 18 años."],
     },
     {
       title: "12. Cambios en esta política",
@@ -124,7 +124,7 @@ export const privacyEn: LegalDocument = {
   title: "Privacy Policy",
   updated: "Last updated: 2 October 2026",
   intro:
-    "HomeTest is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
+    "Kuova is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
   sections: [
     { title: "1. Data controller", paragraphs: [CONTROLLER_EN] },
     {
@@ -154,7 +154,7 @@ export const privacyEn: LegalDocument = {
       paragraphs: [
         "Health data: your explicit consent (Art. 9(2)(a) GDPR), which you can withdraw at any time without affecting prior processing.",
         "Account and profile data: performance of the service contract (Art. 6(1)(b) GDPR).",
-        "Professionals' data: the contractual relationship with HomeTest and our legitimate interest in verifying their identity and registration before showing them to patients (Art. 6(1)(b) and 6(1)(f) GDPR).",
+        "Professionals' data: the contractual relationship with Kuova and our legitimate interest in verifying their identity and registration before showing them to patients (Art. 6(1)(b) and 6(1)(f) GDPR).",
       ],
     },
     {
@@ -165,7 +165,7 @@ export const privacyEn: LegalDocument = {
         "— Google (Gemini API): processes the documents, photos and audio you submit in order to extract data; it receives only what each request needs.",
         "— Expo (EAS): app and update distribution. It does not receive your health data.",
         "Services you connect (Health Connect, Huawei Health): we only read the data you authorise on their own permission screens.",
-        "Healthcare professionals you choose: they can only read the categories you share, while the permission is active, and can never modify your data. They will always see your name. HomeTest verifies their identity and registration before you can share with them.",
+        "Healthcare professionals you choose: they can only read the categories you share, while the permission is active, and can never modify your data. They will always see your name. Kuova verifies their identity and registration before you can share with them.",
         "Authorities, only where required by law.",
       ],
     },
@@ -202,7 +202,7 @@ export const privacyEn: LegalDocument = {
         "Encryption in transit, database-level access control (each user can only access their own data and what others explicitly share with them), private file storage, AI functions that require a signed-in session, and service keys that are never shipped in the app.",
       ],
     },
-    { title: "11. Minors", paragraphs: ["HomeTest is intended for people aged 18 or over."] },
+    { title: "11. Minors", paragraphs: ["Kuova is intended for people aged 18 or over."] },
     {
       title: "12. Changes",
       paragraphs: [
@@ -216,14 +216,14 @@ export const termsEs: LegalDocument = {
   title: "Condiciones de uso",
   updated: "Última actualización: 2 de octubre de 2026",
   intro:
-    "Estas condiciones regulan el uso de la app y la web de HomeTest. Al crear una cuenta, las aceptas. Léelas con calma: explican qué es y qué no es HomeTest.",
+    "Estas condiciones regulan el uso de la app y la web de Kuova. Al crear una cuenta, las aceptas. Léelas con calma: explican qué es y qué no es Kuova.",
   sections: [
     { title: "1. Titular del servicio", paragraphs: [CONTROLLER_ES] },
     {
-      title: "2. Qué es HomeTest (y qué no es)",
+      title: "2. Qué es Kuova (y qué no es)",
       paragraphs: [
-        "HomeTest te ayuda a registrar, organizar y entender tus análisis, mediciones y hábitos, y a compartirlos con profesionales.",
-        "HomeTest NO presta asistencia sanitaria, NO realiza diagnósticos y NO sustituye la consulta con un médico. La información y las recomendaciones de la app son orientativas y de bienestar general.",
+        "Kuova te ayuda a registrar, organizar y entender tus análisis, mediciones y hábitos, y a compartirlos con profesionales.",
+        "Kuova NO presta asistencia sanitaria, NO realiza diagnósticos y NO sustituye la consulta con un médico. La información y las recomendaciones de la app son orientativas y de bienestar general.",
         "Si tienes una urgencia médica, llama al 112.",
         "Los valores extraídos automáticamente de documentos y fotos pueden contener errores: revísalos y, ante cualquier duda, consulta el informe original y a tu médico.",
       ],
@@ -238,7 +238,7 @@ export const termsEs: LegalDocument = {
     {
       title: "4. Profesionales",
       paragraphs: [
-        "Los profesionales que aparecen en HomeTest son independientes. HomeTest verifica su identidad y su colegiación antes de mostrarlos, y revisa sus tarifas, pero la relación asistencial se establece directamente entre tú y el profesional, que es el único responsable de sus actos profesionales.",
+        "Los profesionales que aparecen en Kuova son independientes. Kuova verifica su identidad y su colegiación antes de mostrarlos, y revisa sus tarifas, pero la relación asistencial se establece directamente entre tú y el profesional, que es el único responsable de sus actos profesionales.",
         "Los profesionales solo pueden ver los datos que tú les compartas, mientras el permiso esté activo, y nunca pueden modificarlos.",
         "Si eres profesional, te comprometes a que los datos de tu ficha sean veraces, a estar colegiado y habilitado para ejercer, y a tratar los datos de los pacientes conforme al RGPD y a tu código deontológico.",
       ],
@@ -246,25 +246,25 @@ export const termsEs: LegalDocument = {
     {
       title: "5. Uso aceptable",
       paragraphs: [
-        "No puedes usar HomeTest para fines ilícitos, subir datos de otras personas sin su consentimiento, intentar acceder a datos ajenos ni interferir en el funcionamiento o la seguridad del servicio.",
+        "No puedes usar Kuova para fines ilícitos, subir datos de otras personas sin su consentimiento, intentar acceder a datos ajenos ni interferir en el funcionamiento o la seguridad del servicio.",
       ],
     },
     {
       title: "6. Precio y fase actual",
       paragraphs: [
-        "HomeTest se encuentra en fase de pruebas y su uso es gratuito. Antes de que cualquier servicio pase a ser de pago, te informaremos del precio y las condiciones, y solo se te cobrará si lo contratas expresamente. Como consumidor, dispondrás del derecho de desistimiento previsto en la ley.",
+        "Kuova se encuentra en fase de pruebas y su uso es gratuito. Antes de que cualquier servicio pase a ser de pago, te informaremos del precio y las condiciones, y solo se te cobrará si lo contratas expresamente. Como consumidor, dispondrás del derecho de desistimiento previsto en la ley.",
       ],
     },
     {
       title: "7. Propiedad intelectual",
       paragraphs: [
-        "La app, la web y sus contenidos pertenecen a HomeTest o a sus licenciantes. Tus datos son tuyos: solo nos das permiso para tratarlos con el fin de prestarte el servicio.",
+        "La app, la web y sus contenidos pertenecen a Kuova o a sus licenciantes. Tus datos son tuyos: solo nos das permiso para tratarlos con el fin de prestarte el servicio.",
       ],
     },
     {
       title: "8. Responsabilidad",
       paragraphs: [
-        "Trabajamos para que HomeTest funcione de forma continua y segura, pero no podemos garantizar que esté libre de interrupciones o errores. HomeTest no responde de las decisiones de salud que se tomen únicamente a partir de la información de la app sin consultar a un profesional. Nada de lo anterior limita los derechos que la ley reconoce a los consumidores.",
+        "Trabajamos para que Kuova funcione de forma continua y segura, pero no podemos garantizar que esté libre de interrupciones o errores. Kuova no responde de las decisiones de salud que se tomen únicamente a partir de la información de la app sin consultar a un profesional. Nada de lo anterior limita los derechos que la ley reconoce a los consumidores.",
       ],
     },
     {
@@ -292,14 +292,14 @@ export const termsEn: LegalDocument = {
   title: "Terms of Use",
   updated: "Last updated: 2 October 2026",
   intro:
-    "These terms govern the use of the HomeTest app and website. By creating an account you accept them. They explain what HomeTest is and what it is not.",
+    "These terms govern the use of the Kuova app and website. By creating an account you accept them. They explain what Kuova is and what it is not.",
   sections: [
     { title: "1. Service provider", paragraphs: [CONTROLLER_EN] },
     {
-      title: "2. What HomeTest is (and is not)",
+      title: "2. What Kuova is (and is not)",
       paragraphs: [
-        "HomeTest helps you record, organise and understand your lab tests, measurements and habits, and share them with professionals.",
-        "HomeTest does NOT provide healthcare, does NOT make diagnoses and does NOT replace a doctor. Information and recommendations in the app are for general wellbeing guidance only.",
+        "Kuova helps you record, organise and understand your lab tests, measurements and habits, and share them with professionals.",
+        "Kuova does NOT provide healthcare, does NOT make diagnoses and does NOT replace a doctor. Information and recommendations in the app are for general wellbeing guidance only.",
         "In a medical emergency, call 112.",
         "Values automatically extracted from documents and photos may contain errors: check them and, if in doubt, refer to the original report and your doctor.",
       ],
@@ -314,7 +314,7 @@ export const termsEn: LegalDocument = {
     {
       title: "4. Professionals",
       paragraphs: [
-        "Professionals on HomeTest are independent. HomeTest verifies their identity and registration before listing them and reviews their rates, but the care relationship is directly between you and the professional, who is solely responsible for their professional acts.",
+        "Professionals on Kuova are independent. Kuova verifies their identity and registration before listing them and reviews their rates, but the care relationship is directly between you and the professional, who is solely responsible for their professional acts.",
         "Professionals can only see the data you share with them, while the permission is active, and can never modify it.",
         "If you are a professional, you agree that your profile is accurate, that you are registered and licensed to practise, and that you will handle patient data in line with the GDPR and your professional code of conduct.",
       ],
@@ -322,25 +322,25 @@ export const termsEn: LegalDocument = {
     {
       title: "5. Acceptable use",
       paragraphs: [
-        "You may not use HomeTest for unlawful purposes, upload other people's data without their consent, try to access data that is not yours, or interfere with the operation or security of the service.",
+        "You may not use Kuova for unlawful purposes, upload other people's data without their consent, try to access data that is not yours, or interfere with the operation or security of the service.",
       ],
     },
     {
       title: "6. Price and current stage",
       paragraphs: [
-        "HomeTest is in a testing phase and is free to use. Before any service becomes paid, we will inform you of the price and terms, and you will only be charged if you expressly subscribe. As a consumer, you will have the statutory right of withdrawal.",
+        "Kuova is in a testing phase and is free to use. Before any service becomes paid, we will inform you of the price and terms, and you will only be charged if you expressly subscribe. As a consumer, you will have the statutory right of withdrawal.",
       ],
     },
     {
       title: "7. Intellectual property",
       paragraphs: [
-        "The app, website and their content belong to HomeTest or its licensors. Your data is yours: you only allow us to process it to provide the service.",
+        "The app, website and their content belong to Kuova or its licensors. Your data is yours: you only allow us to process it to provide the service.",
       ],
     },
     {
       title: "8. Liability",
       paragraphs: [
-        "We work to keep HomeTest running continuously and securely, but cannot guarantee it will be free of interruptions or errors. HomeTest is not liable for health decisions made solely on the basis of in-app information without consulting a professional. Nothing here limits your statutory consumer rights.",
+        "We work to keep Kuova running continuously and securely, but cannot guarantee it will be free of interruptions or errors. Kuova is not liable for health decisions made solely on the basis of in-app information without consulting a professional. Nothing here limits your statutory consumer rights.",
       ],
     },
     {

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -8,25 +8,32 @@ import { getContent } from "@/lib/content";
 import { getLang } from "@/lib/i18n";
 import { SITE_URL, organizationJsonLd, pageMetadata } from "@/lib/seo";
 
-const fontSans = Plus_Jakarta_Sans({
+// Tipografías de la marca Kuova Health: Inter (texto), Playfair Display (titulares y claim)
+// y Montserrat ("HEALTH" bajo el logotipo y textos de marca en mayúsculas).
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-// Serif para los titulares grandes (estilo editorial, como Function Health o Lucis)
-const fontDisplay = Fraunces({
+const fontDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  axes: ["SOFT", "opsz"],
+});
+
+const fontLogo = Montserrat({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-logo",
+  display: "swap",
 });
 
 export function generateMetadata(): Metadata {
   return { metadataBase: new URL(SITE_URL), ...pageMetadata("home", "/") };
 }
 
-export const viewport: Viewport = { themeColor: "#faf4ec" };
+export const viewport: Viewport = { themeColor: "#faf8f3" };
 
 export default function RootLayout({
   children,
@@ -36,7 +43,7 @@ export default function RootLayout({
   const lang = getLang();
   const { siteCopy } = getContent(lang);
   return (
-    <html lang={lang} className={`${fontSans.variable} ${fontDisplay.variable}`}>
+    <html lang={lang} className={`${fontSans.variable} ${fontDisplay.variable} ${fontLogo.variable}`}>
       <body className="min-h-screen bg-bg font-sans text-text antialiased">
         <JsonLd data={organizationJsonLd(lang)} />
         <Header copy={siteCopy} lang={lang} />
