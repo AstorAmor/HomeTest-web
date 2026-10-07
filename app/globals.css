@@ -117,6 +117,18 @@ html:has(.prelaunch-home) body {
   background-color: rgb(var(--color-ink));
 }
 
+/* Fondo de seda de la portada: fijo a la pantalla, con margen arriba y abajo para cubrir el
+   rebote del móvil, y del alto de la pantalla con la barra del navegador escondida (lvh), para
+   no redimensionarse cada vez que la barra aparece o desaparece */
+.prelaunch-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -15vh;
+  height: 130vh;
+  height: calc(100lvh + 30vh);
+}
+
 /* Portada del pre-lanzamiento: logo, claim y formulario aparecen subiendo, uno tras otro */
 @keyframes prelaunch-in {
   from {

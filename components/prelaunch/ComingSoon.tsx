@@ -7,13 +7,14 @@ import SilkBackground from "./SilkBackground";
 // Textos en inglés a propósito (decisión del fundador, 2026-10-07), iguales para todos los visitantes.
 export default function ComingSoon() {
   return (
-    <section lang="en" className="prelaunch-home relative isolate flex min-h-[100dvh] flex-col overflow-hidden bg-ink text-on-accent">
-      <SilkBackground />
-      {/* Velo en el centro: da contraste al texto sin apagar las ondas de los bordes */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(9,29,25,0.6)_0%,rgba(9,29,25,0.2)_45%,transparent_72%)]"
-      />
+    <section lang="en" className="prelaunch-home relative isolate flex min-h-[100dvh] flex-col text-on-accent">
+      {/* Fondo fijo a la pantalla y más alto que ella (.prelaunch-bg): al rebotar la página o
+          esconderse la barra del navegador en el móvil sigue viéndose la seda, no un verde liso */}
+      <div aria-hidden className="prelaunch-bg pointer-events-none -z-10 bg-ink">
+        <SilkBackground />
+        {/* Velo en el centro: da contraste al texto sin apagar las ondas de los bordes */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(9,29,25,0.6)_0%,rgba(9,29,25,0.2)_45%,transparent_72%)]" />
+      </div>
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
         <h1 className="prelaunch-in flex flex-col items-center">
