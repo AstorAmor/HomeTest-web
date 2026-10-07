@@ -1,0 +1,19 @@
+{
+  "_como_editar": "Textos de la portada de kuovahealth.com. Cambia solo lo que va entre comillas a la derecha de los dos puntos. Mantén las comillas y las comas del final de cada línea.",
+
+  "lema": "Know more. Live better.",
+
+  "titulo_formulario": "Be among the first to know more",
+  "placeholder_email": "Your email",
+  "boton": "Join the list",
+  "boton_enviando": "Joining…",
+  "nota_privacidad": "Launch news only, no spam. Unsubscribe anytime.",
+  "enlace_privacidad": "Privacy",
+
+  "exito_titulo": "You’re on the list.",
+  "exito_texto": "We’ll let you know as soon as Kuova is ready.",
+  "error": "Something went wrong. Please try again.",
+
+  "pie_privacidad": "Privacy",
+  "pie_condiciones": "Terms"
+}

@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import copy from "@/content/prelaunch.json";
 
 type Status = "idle" | "sending" | "done" | "error";
 
 // Lista de espera de la portada: solo el email. Lo guarda /api/waitlist en Supabase.
+// Textos en content/prelaunch.json.
 export default function NotifyForm() {
   const [status, setStatus] = useState<Status>("idle");
 
@@ -33,8 +35,8 @@ export default function NotifyForm() {
   if (status === "done") {
     return (
       <div role="status" className="rounded-3xl border border-gold/30 bg-white/[0.06] px-6 py-7 backdrop-blur-md">
-        <p className="font-display text-2xl">You&rsquo;re on the list.</p>
-        <p className="mt-2 text-sm text-on-accent/70">We&rsquo;ll let you know as soon as Kuova is ready.</p>
+        <p className="font-display text-2xl">{copy.exito_titulo}</p>
+        <p className="mt-2 text-sm text-on-accent/70">{copy.exito_texto}</p>
       </div>
     );
   }
@@ -42,7 +44,7 @@ export default function NotifyForm() {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="notify-email" className="block font-display text-xl italic text-on-accent/90 sm:text-2xl">
-        Be among the first to know more
+        {copy.titulo_formulario}
       </label>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-0 sm:rounded-full sm:border sm:border-white/15 sm:bg-white/[0.06] sm:p-1.5 sm:backdrop-blur-md sm:transition-colors sm:focus-within:border-gold/60">
@@ -52,7 +54,7 @@ export default function NotifyForm() {
           type="email"
           required
           autoComplete="email"
-          placeholder="Your email"
+          placeholder={copy.placeholder_email}
           className="w-full min-w-0 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3.5 text-[15px] text-on-accent backdrop-blur-md placeholder:text-on-accent/45 focus:border-gold/60 focus:outline-none sm:border-0 sm:bg-transparent sm:py-2.5 sm:backdrop-blur-none"
         />
         <button
@@ -60,7 +62,7 @@ export default function NotifyForm() {
           disabled={status === "sending"}
           className="shrink-0 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-[#d6b47f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:opacity-70 sm:py-2.5"
         >
-          {status === "sending" ? "Joining…" : "Join the list"}
+          {status === "sending" ? copy.boton_enviando : copy.boton}
         </button>
       </div>
 
@@ -68,12 +70,12 @@ export default function NotifyForm() {
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-px w-px opacity-0" />
 
       <p aria-live="polite" className="mt-3 min-h-5 text-sm text-[#f2c1ae]">
-        {status === "error" && "Something went wrong. Please try again."}
+        {status === "error" && copy.error}
       </p>
       <p className="text-xs text-on-accent/50">
-        Launch news only, no spam. Unsubscribe anytime.{" "}
+        {copy.nota_privacidad}{" "}
         <Link href="/privacy" className="underline decoration-on-accent/30 underline-offset-2 transition-colors hover:text-on-accent/80">
-          Privacy
+          {copy.enlace_privacidad}
         </Link>
       </p>
     </form>

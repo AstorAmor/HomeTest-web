@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/ui/Logo";
+import copy from "@/content/prelaunch.json";
 import NotifyForm from "./NotifyForm";
 import SilkBackground from "./SilkBackground";
 
 // Portada del pre-lanzamiento (lib/launch.ts): seda en movimiento, logo, claim y lista de espera.
-// Textos en inglés a propósito (decisión del fundador, 2026-10-07), iguales para todos los visitantes.
+// Textos en content/prelaunch.json; en inglés a propósito (decisión del fundador, 2026-10-07).
 export default function ComingSoon() {
   return (
     <section lang="en" className="prelaunch-home relative isolate flex min-h-[100dvh] flex-col text-on-accent">
@@ -26,7 +27,13 @@ export default function ComingSoon() {
         </h1>
 
         <p className="prelaunch-in mt-12 font-display text-4xl leading-tight sm:mt-14 sm:text-6xl" style={{ animationDelay: "0.25s" }}>
-          Know more. <span className="whitespace-nowrap">Live better.</span>
+          {/* Cada frase del lema en una pieza: en el móvil parte entre frases, no a mitad */}
+          {copy.lema.split(/(?<=\.)\s+/).map((frase, i) => (
+            <span key={i} className="whitespace-nowrap">
+              {i > 0 && " "}
+              {frase}
+            </span>
+          ))}
         </p>
 
         <div className="prelaunch-in mt-14 w-full max-w-md sm:mt-16" style={{ animationDelay: "0.5s" }}>
@@ -38,11 +45,11 @@ export default function ComingSoon() {
         © {new Date().getFullYear()} Kuova Health
         <span className="mx-2">·</span>
         <Link href="/privacy" className="transition-colors hover:text-on-accent/80">
-          Privacy
+          {copy.pie_privacidad}
         </Link>
         <span className="mx-2">·</span>
         <Link href="/terms" className="transition-colors hover:text-on-accent/80">
-          Terms
+          {copy.pie_condiciones}
         </Link>
       </footer>
     </section>
