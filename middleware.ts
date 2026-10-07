@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { PRELAUNCH, PRELAUNCH_HIDDEN } from "@/lib/launch";
 
 // Idioma por URL (bueno para Google y los buscadores con IA: cada idioma tiene su dirección):
 //   /...     -> español
@@ -11,6 +12,14 @@ export function middleware(req: NextRequest) {
   const isEn = pathname === "/en" || pathname.startsWith("/en/");
   const base = isEn ? pathname.slice(3) || "/" : pathname;
 
+  // Pre-lanzamiento (lib/launch.ts): una sola portada para los dos idiomas y la web completa oculta.
+  if (PRELAUNCH && (pathname === "/en" || PRELAUNCH_HIDDEN.includes(base))) {
+    const url = req.nextUrl.clone();
+    url.pathname = "/";
+    url.search = "";
+    return NextResponse.redirect(url);
+  }
+
   const chosen = searchParams.get("lang");
   if (chosen === "es" || chosen === "en") {
     const url = req.nextUrl.clone();
@@ -21,7 +30,7 @@ export function middleware(req: NextRequest) {
     return res;
   }
 
-  if (!isEn && pathname === "/" && !req.cookies.has("lang")) {
+  if (!PRELAUNCH && !isEn && pathname === "/" && !req.cookies.has("lang")) {
     const accept = req.headers.get("accept-language")?.toLowerCase() ?? "";
     if (accept && !accept.startsWith("es")) {
       const url = req.nextUrl.clone();

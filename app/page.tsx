@@ -10,17 +10,23 @@ import KeyFacts from "@/components/landing/KeyFacts";
 import FaqBlock from "@/components/landing/FaqBlock";
 import FinalCta from "@/components/landing/FinalCta";
 import JsonLd from "@/components/seo/JsonLd";
+import ComingSoon from "@/components/prelaunch/ComingSoon";
 import { getContent } from "@/lib/content";
 import { getLang } from "@/lib/i18n";
+import { PRELAUNCH } from "@/lib/launch";
 import { faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
-  return pageMetadata("home", "/");
+  const meta = pageMetadata("home", "/");
+  // En pre-lanzamiento hay una sola portada (/en redirige a /): sin versiones por idioma
+  return PRELAUNCH ? { ...meta, alternates: { canonical: "/" } } : meta;
 }
 
 // Portada: del mensaje principal a la lista de espera, con "cómo funciona" hacia abajo.
 // Textos en content/site-copy.json (y content/en/) → "home".
 export default function Home() {
+  if (PRELAUNCH) return <ComingSoon />;
+
   const lang = getLang();
   const { siteCopy, panel, panelTotal, faq } = getContent(lang);
 

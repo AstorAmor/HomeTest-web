@@ -1,5 +1,6 @@
 import { getContent } from "@/lib/content";
 import { localePath } from "@/lib/i18n";
+import { PRELAUNCH, PRELAUNCH_HIDDEN } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
 // /llms.txt: resumen en texto plano para asistentes de IA (propuesta llmstxt.org).
@@ -16,7 +17,21 @@ export function GET() {
   const faq = en.faq.preguntas.map((p) => `### ${p.pregunta}\n${p.respuesta}`).join("\n\n");
   const systems = en.panel.map((s) => `- ${s.nombre}: ${s.marcadores.map((m) => m.nombre).join(", ")}`).join("\n");
   const page = (path: string, title: string) =>
-    `- [${title}](${SITE_URL}${localePath("en", path)}) · [ES](${SITE_URL}${path})`;
+    PRELAUNCH
+      ? PRELAUNCH_HIDDEN.includes(path)
+        ? null
+        : `- [${title}](${SITE_URL}${path})`
+      : `- [${title}](${SITE_URL}${localePath("en", path)}) · [ES](${SITE_URL}${path})`;
+  const pages = [
+    page("/", PRELAUNCH ? "Home (pre-launch waitlist)" : "Home"),
+    page("/como-funciona", "How it works"),
+    page("/catalogo", "Biomarker panel"),
+    page("/faq", "FAQ"),
+    page("/privacy", "Privacy policy"),
+    page("/terms", "Terms of use"),
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   const body = `# ${marca.nombre}
 
@@ -28,12 +43,7 @@ Spanish version: ${es.siteCopy.home.en_breve.parrafo}
 ${facts}
 
 ## Pages
-${page("/", "Home")}
-${page("/como-funciona", "How it works")}
-${page("/catalogo", "Biomarker panel")}
-${page("/faq", "FAQ")}
-${page("/privacy", "Privacy policy")}
-${page("/terms", "Terms of use")}
+${pages}
 
 ## Biomarker panel (${en.panelTotal} biomarkers, ${en.panel.length} body systems)
 ${systems}

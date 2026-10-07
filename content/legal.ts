@@ -24,7 +24,7 @@ const CONTROLLER_EN =
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
-  updated: "Última actualización: 2 de octubre de 2026",
+  updated: "Última actualización: 7 de octubre de 2026",
   intro:
     "Kuova es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
   sections: [
@@ -112,7 +112,14 @@ export const privacyEs: LegalDocument = {
       paragraphs: ["Kuova está dirigido a personas mayores de 18 años."],
     },
     {
-      title: "12. Cambios en esta política",
+      title: "12. Lista de espera de la web",
+      paragraphs: [
+        "Si te apuntas a la lista de espera en kuovahealth.com guardamos solo tu email, el idioma de tu navegador y la fecha. Lo usamos únicamente para avisarte del lanzamiento de Kuova y de novedades relacionadas, con tu consentimiento (art. 6.1.a RGPD), que das al apuntarte.",
+        "Se guarda en Supabase, en servidores de la Unión Europea, y no lo compartimos con nadie para su propio uso. Lo conservamos hasta que te des de baja o, como máximo, 24 meses desde que te apuntaste. Puedes darte de baja en cualquier momento desde cualquier email que te enviemos o escribiendo a astor.garcia.amor@gmail.com.",
+      ],
+    },
+    {
+      title: "13. Cambios en esta política",
       paragraphs: [
         "Si cambiamos esta política de forma relevante, te avisaremos en la app antes de que el cambio se aplique y, cuando haga falta, te pediremos de nuevo tu consentimiento.",
       ],
@@ -122,7 +129,7 @@ export const privacyEs: LegalDocument = {
 
 export const privacyEn: LegalDocument = {
   title: "Privacy Policy",
-  updated: "Last updated: 2 October 2026",
+  updated: "Last updated: 7 October 2026",
   intro:
     "Kuova is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
   sections: [
@@ -204,7 +211,14 @@ export const privacyEn: LegalDocument = {
     },
     { title: "11. Minors", paragraphs: ["Kuova is intended for people aged 18 or over."] },
     {
-      title: "12. Changes",
+      title: "12. Website waitlist",
+      paragraphs: [
+        "If you join the waitlist at kuovahealth.com we store only your email, your browser language and the date. We use it solely to tell you about Kuova's launch and related news, based on your consent (Art. 6(1)(a) GDPR), which you give by signing up.",
+        "It is stored with Supabase on servers in the European Union and is not shared with anyone for their own use. We keep it until you unsubscribe or for at most 24 months from when you signed up. You can unsubscribe at any time from any email we send you or by writing to astor.garcia.amor@gmail.com.",
+      ],
+    },
+    {
+      title: "13. Changes",
       paragraphs: [
         "If we materially change this policy, we will notify you in the app before the change applies and ask for your consent again where required.",
       ],
