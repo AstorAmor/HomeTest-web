@@ -110,6 +110,13 @@ body {
   }
 }
 
+/* Portada del pre-lanzamiento: el fondo de la página también es verde, para que al estirar la
+   pantalla en el móvil (rebote o barra del navegador que se esconde) no asome el crema */
+html:has(.prelaunch-home),
+html:has(.prelaunch-home) body {
+  background-color: rgb(var(--color-ink));
+}
+
 /* Portada del pre-lanzamiento: logo, claim y formulario aparecen subiendo, uno tras otro */
 @keyframes prelaunch-in {
   from {

@@ -14,7 +14,7 @@
   },
   "seo": {
     "home": {
-      "title": "Kuova Health — 110+ biomarkers and a plan for your health",
+      "title": "Kuova Health",
       "description": "Preventive health in Spain: blood tests covering 110+ biomarkers twice a year, your wearables connected and verified professionals. Understand your health and take action."
     },
     "como_funciona": {
@@ -238,7 +238,7 @@
   "pagina_contacto": {
     "titulo_hero": "Contact",
     "subtitulo_hero": "Questions, or want to know more? Write to us.",
-    "email_contacto": "astor.garcia.amor@gmail.com"
+    "email_contacto": "hello@kuovahealth.com"
   },
   "ui": {
     "idioma_cambiar": "Español",

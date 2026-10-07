@@ -7,7 +7,7 @@ import SilkBackground from "./SilkBackground";
 // Textos en inglés a propósito (decisión del fundador, 2026-10-07), iguales para todos los visitantes.
 export default function ComingSoon() {
   return (
-    <section lang="en" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink text-on-accent">
+    <section lang="en" className="prelaunch-home relative isolate flex min-h-[100dvh] flex-col overflow-hidden bg-ink text-on-accent">
       <SilkBackground />
       {/* Velo en el centro: da contraste al texto sin apagar las ondas de los bordes */}
       <div

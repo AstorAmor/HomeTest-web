@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getContent, type FaqItem, type SiteCopy } from "@/lib/content";
 import { getLang, localePath, type Lang } from "@/lib/i18n";
+import { PRELAUNCH } from "@/lib/launch";
 
 // Dirección pública de la web. Cuando haya dominio propio, se cambia en Vercel
 // (variable NEXT_PUBLIC_SITE_URL) y todo lo demás (canonical, sitemap, hreflang) la sigue.
@@ -14,14 +15,14 @@ export function pageMetadata(key: SeoKey, path: string): Metadata {
   const lang = getLang();
   const { seo, marca } = getContent(lang).siteCopy;
   const { title, description } = seo[key];
-  const url = localePath(lang, path);
+  // En pre-lanzamiento no hay direcciones /en: una sola URL por página
+  const url = PRELAUNCH ? path : localePath(lang, path);
   return {
     title,
     description,
-    alternates: {
-      canonical: url,
-      languages: { es: path, en: localePath("en", path), "x-default": path },
-    },
+    alternates: PRELAUNCH
+      ? { canonical: url }
+      : { canonical: url, languages: { es: path, en: localePath("en", path), "x-default": path } },
     openGraph: {
       type: "website",
       siteName: marca.nombre,

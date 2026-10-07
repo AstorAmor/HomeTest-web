@@ -12,10 +12,11 @@ export function middleware(req: NextRequest) {
   const isEn = pathname === "/en" || pathname.startsWith("/en/");
   const base = isEn ? pathname.slice(3) || "/" : pathname;
 
-  // Pre-lanzamiento (lib/launch.ts): una sola portada para los dos idiomas y la web completa oculta.
-  if (PRELAUNCH && (pathname === "/en" || PRELAUNCH_HIDDEN.includes(base))) {
+  // Pre-lanzamiento (lib/launch.ts): sin direcciones /en (todo va en inglés primero) y con la
+  // web completa oculta.
+  if (PRELAUNCH && (isEn || PRELAUNCH_HIDDEN.includes(base))) {
     const url = req.nextUrl.clone();
-    url.pathname = "/";
+    url.pathname = PRELAUNCH_HIDDEN.includes(base) ? "/" : base;
     url.search = "";
     return NextResponse.redirect(url);
   }

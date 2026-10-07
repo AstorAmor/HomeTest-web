@@ -14,7 +14,7 @@
   },
   "seo": {
     "home": {
-      "title": "Kuova Health — Más de 110 biomarcadores y un plan para tu salud",
+      "title": "Kuova Health",
       "description": "Salud preventiva en España: analíticas de más de 110 biomarcadores dos veces al año, tus wearables conectados y profesionales verificados. Entiende tu salud y pasa a la acción."
     },
     "como_funciona": {
@@ -238,7 +238,7 @@
   "pagina_contacto": {
     "titulo_hero": "Contacto",
     "subtitulo_hero": "¿Tienes dudas o quieres saber más? Escríbenos.",
-    "email_contacto": "astor.garcia.amor@gmail.com"
+    "email_contacto": "hello@kuovahealth.com"
   },
   "ui": {
     "idioma_cambiar": "English",

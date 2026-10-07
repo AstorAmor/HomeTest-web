@@ -17,9 +17,7 @@ import { PRELAUNCH } from "@/lib/launch";
 import { faqJsonLd, pageMetadata, serviceJsonLd } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
-  const meta = pageMetadata("home", "/");
-  // En pre-lanzamiento hay una sola portada (/en redirige a /): sin versiones por idioma
-  return PRELAUNCH ? { ...meta, alternates: { canonical: "/" } } : meta;
+  return pageMetadata("home", "/");
 }
 
 // Portada: del mensaje principal a la lista de espera, con "cómo funciona" hacia abajo.

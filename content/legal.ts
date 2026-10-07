@@ -18,9 +18,9 @@ export interface LegalDocument {
 }
 
 const CONTROLLER_ES =
-  "Astor García Amor (persona física; en proceso de constitución de la sociedad que operará Kuova). Domicilio: Madrid, España. Contacto para privacidad: astor.garcia.amor@gmail.com.";
+  "Astor García Amor (persona física; en proceso de constitución de la sociedad que operará Kuova). Domicilio: Madrid, España. Contacto para privacidad: hello@kuovahealth.com.";
 const CONTROLLER_EN =
-  "Astor García Amor (individual; the company that will operate Kuova is being incorporated). Address: Madrid, Spain. Privacy contact: astor.garcia.amor@gmail.com.";
+  "Astor García Amor (individual; the company that will operate Kuova is being incorporated). Address: Madrid, Spain. Privacy contact: hello@kuovahealth.com.";
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
@@ -97,7 +97,7 @@ export const privacyEs: LegalDocument = {
     {
       title: "9. Tus derechos",
       paragraphs: [
-        "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar tu consentimiento, escribiendo a astor.garcia.amor@gmail.com.",
+        "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar tu consentimiento, escribiendo a hello@kuovahealth.com.",
         "Si consideras que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).",
       ],
     },
@@ -115,7 +115,7 @@ export const privacyEs: LegalDocument = {
       title: "12. Lista de espera de la web",
       paragraphs: [
         "Si te apuntas a la lista de espera en kuovahealth.com guardamos solo tu email, el idioma de tu navegador y la fecha. Lo usamos únicamente para avisarte del lanzamiento de Kuova y de novedades relacionadas, con tu consentimiento (art. 6.1.a RGPD), que das al apuntarte.",
-        "Se guarda en Supabase, en servidores de la Unión Europea, y no lo compartimos con nadie para su propio uso. Lo conservamos hasta que te des de baja o, como máximo, 24 meses desde que te apuntaste. Puedes darte de baja en cualquier momento desde cualquier email que te enviemos o escribiendo a astor.garcia.amor@gmail.com.",
+        "Se guarda en Supabase, en servidores de la Unión Europea, y no lo compartimos con nadie para su propio uso. Lo conservamos hasta que te des de baja o, como máximo, 24 meses desde que te apuntaste. Puedes darte de baja en cualquier momento desde cualquier email que te enviemos o escribiendo a hello@kuovahealth.com.",
       ],
     },
     {
@@ -199,7 +199,7 @@ export const privacyEn: LegalDocument = {
     {
       title: "9. Your rights",
       paragraphs: [
-        "You can exercise your rights of access, rectification, erasure, objection, restriction and portability, and withdraw your consent, by writing to astor.garcia.amor@gmail.com.",
+        "You can exercise your rights of access, rectification, erasure, objection, restriction and portability, and withdraw your consent, by writing to hello@kuovahealth.com.",
         "You can also lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).",
       ],
     },
@@ -214,7 +214,7 @@ export const privacyEn: LegalDocument = {
       title: "12. Website waitlist",
       paragraphs: [
         "If you join the waitlist at kuovahealth.com we store only your email, your browser language and the date. We use it solely to tell you about Kuova's launch and related news, based on your consent (Art. 6(1)(a) GDPR), which you give by signing up.",
-        "It is stored with Supabase on servers in the European Union and is not shared with anyone for their own use. We keep it until you unsubscribe or for at most 24 months from when you signed up. You can unsubscribe at any time from any email we send you or by writing to astor.garcia.amor@gmail.com.",
+        "It is stored with Supabase on servers in the European Union and is not shared with anyone for their own use. We keep it until you unsubscribe or for at most 24 months from when you signed up. You can unsubscribe at any time from any email we send you or by writing to hello@kuovahealth.com.",
       ],
     },
     {
