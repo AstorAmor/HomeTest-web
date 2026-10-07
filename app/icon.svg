@@ -2,8 +2,6 @@
   <rect width="64" height="64" rx="14" fill="#0E2A24"/>
   <!-- Monograma K del logotipo (mismos trazos que components/ui/Logo.tsx, escalados) -->
   <g transform="translate(12.8 13) scale(0.1478)" fill="#C9A36B">
-    <path d="M0 0h38v202c-1 28-18 48-38 55Z"/>
-    <path d="M197 0h63L38 164v-37Z"/>
-    <path d="M67 133 98 110l152 147h-56Z"/>
+    <path d="M0 0H38V127L197 0H260L103.67 115.49L250 257H194L72.58 138.45L38 164V202C37 230 20 250 0 257Z"/>
   </g>
 </svg>

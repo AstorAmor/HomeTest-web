@@ -13,10 +13,9 @@ interface LogoProps {
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="226 189 1556 276" fill="currentColor" aria-hidden className={className}>
-      {/* K: asta con el pie en curva, brazo superior y brazo inferior */}
-      <path d="M230 200h38v202c-1 28-18 48-38 55Z" />
-      <path d="M427 200h63L268 364v-37Z" />
-      <path d="M297 333 328 310l152 147h-56Z" />
+      {/* K: asta con el pie en curva, brazo superior y brazo inferior, en un solo contorno
+          (con piezas sueltas el antialiasing deja una línea fina en la junta asta-brazo) */}
+      <path d="M230 200H268V327L427 200H490L333.67 315.49L480 457H424L302.58 338.45L268 364V402C267 430 250 450 230 457Z" />
       {/* U y O */}
       <path d="M561.5 198v141a103.5 103.5 0 0 0 207 0V198" fill="none" stroke="currentColor" strokeWidth="37" />
       <ellipse cx="990.5" cy="326.5" rx="126.5" ry="116.5" fill="none" stroke="currentColor" strokeWidth="38" />
