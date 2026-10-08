@@ -3,6 +3,13 @@
 
   "lema": "Know more. Live better.",
 
+  "grafica_rango": "Optimal range",
+  "grafica": [
+    { "marcador": "Vitamin D", "detalle": "16 → 34 ng/mL" },
+    { "marcador": "Ferritin", "detalle": "18 → 52 µg/L" },
+    { "marcador": "Omega-3 Index", "detalle": "4.2 → 8.1 %" }
+  ],
+
   "titulo_formulario": "Be among the first to know more",
   "placeholder_email": "Your email",
   "boton": "Join the list",

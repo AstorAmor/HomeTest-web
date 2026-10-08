@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { Wordmark } from "@/components/ui/Logo";
 import copy from "@/content/prelaunch.json";
 import NotifyForm from "./NotifyForm";
 import SilkBackground from "./SilkBackground";
+import TrendLine from "./TrendLine";
 
-// Portada del pre-lanzamiento (lib/launch.ts): seda en movimiento, logo, claim y lista de espera.
+// Portada del pre-lanzamiento (lib/launch.ts): seda en movimiento, logo, claim, la curva de un
+// biomarcador que se dibuja sola y lista de espera.
 // Textos en content/prelaunch.json; en inglés a propósito (decisión del fundador, 2026-10-07).
 export default function ComingSoon() {
   return (
@@ -17,7 +20,7 @@ export default function ComingSoon() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(9,29,25,0.6)_0%,rgba(9,29,25,0.2)_45%,transparent_72%)]" />
       </div>
 
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-16 text-center sm:py-20">
         <h1 className="prelaunch-in flex flex-col items-center">
           <span className="sr-only">Kuova Health</span>
           <Wordmark className="h-9 w-auto sm:h-14" />
@@ -26,17 +29,22 @@ export default function ComingSoon() {
           </span>
         </h1>
 
-        <p className="prelaunch-in mt-12 font-display text-4xl leading-tight sm:mt-14 sm:text-6xl" style={{ animationDelay: "0.25s" }}>
-          {/* Cada frase del lema en una pieza: en el móvil parte entre frases, no a mitad */}
+        <p className="prelaunch-in mt-10 font-display text-4xl leading-tight sm:mt-12 sm:text-6xl" style={{ animationDelay: "0.25s" }}>
+          {/* Cada frase del lema en una pieza: en el móvil parte entre frases, no a mitad. El espacio
+              va fuera de las piezas; dentro de una pieza sin cortes no deja partir la línea */}
           {copy.lema.split(/(?<=\.)\s+/).map((frase, i) => (
-            <span key={i} className="whitespace-nowrap">
+            <Fragment key={i}>
               {i > 0 && " "}
-              {frase}
-            </span>
+              <span className="whitespace-nowrap">{frase}</span>
+            </Fragment>
           ))}
         </p>
 
-        <div className="prelaunch-in mt-14 w-full max-w-md sm:mt-16" style={{ animationDelay: "0.5s" }}>
+        <div className="prelaunch-in mt-8 w-full max-w-[19rem] sm:mt-10 sm:max-w-sm" style={{ animationDelay: "0.4s" }}>
+          <TrendLine />
+        </div>
+
+        <div className="prelaunch-in mt-8 w-full max-w-md sm:mt-10" style={{ animationDelay: "0.55s" }}>
           <NotifyForm />
         </div>
       </div>

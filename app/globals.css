@@ -148,3 +148,37 @@ html:has(.prelaunch-home) body {
     animation: none;
   }
 }
+
+/* Curva de la portada (components/prelaunch/TrendLine.tsx): los puntos de cada análisis aparecen
+   al llegar la línea, el último late y el nombre del marcador entra suave */
+.trendline-dot {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.trendline-dot.is-on {
+  opacity: 1;
+}
+.trendline-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: trendline-pulse 2.4s ease-out infinite;
+}
+@keyframes trendline-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+.trendline-caption {
+  animation: prelaunch-in 0.8s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .trendline-pulse,
+  .trendline-caption {
+    animation: none;
+  }
+}
