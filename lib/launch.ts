@@ -9,3 +9,8 @@ export const PRELAUNCH = process.env.NEXT_PUBLIC_PRELAUNCH !== "false";
 
 // Páginas de la web completa que se ocultan durante el pre-lanzamiento.
 export const PRELAUNCH_HIDDEN = ["/como-funciona", "/catalogo", "/faq", "/contacto"];
+
+// Sección "Conocimiento" (/conocimiento, textos en content/conocimiento/). Mientras se escribe solo
+// se ve en el servidor local (npm run dev); en kuovahealth.com aparece cuando la variable
+// NEXT_PUBLIC_KNOWLEDGE vale "true" en Vercel (Production) y se vuelve a publicar.
+export const KNOWLEDGE = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_KNOWLEDGE === "true";

@@ -1,0 +1,48 @@
+{
+  "_como_editar": "Números de las gráficas de los artículos de /conocimiento. Cambia solo los valores; mantén comillas, comas y corchetes. Las gráficas se recalculan solas.",
+
+  "individualidad": {
+    "_nota": "Datos ilustrativos (no son de pacientes): dos personas sanas con su creatinina medida cada 3 meses. Banda propia = su valor central ± 1,96 × variación (CVi 6 % + CVa 3 %).",
+    "marcador": "Creatinina",
+    "unidad": "mg/dL",
+    "rango_poblacion": [0.7, 1.3],
+    "variacion_pct": 6.7,
+    "meses": [0, 3, 6, 9, 12, 15, 18, 21],
+    "personas": [
+      { "nombre": "Persona A", "centro": 0.78, "valores": [0.8, 0.75, 0.79, 0.83, 0.76, 0.78, 0.81, 0.74], "nuevo": { "mes": 24, "valor": 0.98 } },
+      { "nombre": "Persona B", "centro": 1.2, "valores": [1.17, 1.24, 1.19, 1.13, 1.22, 1.27, 1.18, 1.21] }
+    ]
+  },
+
+  "fuera_de_rango": {
+    "_nota": "Probabilidad de que una persona sana tenga al menos un resultado fuera de rango: 1 − 0,95^n (si las pruebas fueran independientes).",
+    "numero_de_pruebas": [1, 5, 10, 20, 30, 50]
+  },
+
+  "vrc": {
+    "_nota": "cvi = variación biológica de la persona (%), de la base Ricos/Westgard y EFLM (ALT: metaanálisis EFLM 2018). cva = imprecisión del laboratorio (%), SUPUESTA para un laboratorio típico: sustituir por la real del laboratorio.",
+    "marcadores": [
+      { "nombre": "HbA1c", "cvi": 1.9, "cva": 1.5 },
+      { "nombre": "Glucosa en ayunas", "cvi": 5.6, "cva": 2.5 },
+      { "nombre": "Creatinina", "cvi": 5.95, "cva": 3 },
+      { "nombre": "Colesterol HDL", "cvi": 7.3, "cva": 3 },
+      { "nombre": "Colesterol LDL", "cvi": 7.8, "cva": 3 },
+      { "nombre": "Vitamina D, 25(OH)D", "cvi": 11.3, "cva": 6 },
+      { "nombre": "Ferritina", "cvi": 14.2, "cva": 5 },
+      { "nombre": "ALT", "cvi": 15.4, "cva": 4 },
+      { "nombre": "Vitamina B12", "cvi": 15.0, "cva": 5 },
+      { "nombre": "TSH", "cvi": 19.3, "cva": 4 },
+      { "nombre": "Triglicéridos", "cvi": 19.9, "cva": 2.5 },
+      { "nombre": "PCR ultrasensible", "cvi": 42.2, "cva": 5 }
+    ]
+  },
+
+  "tiempos": {
+    "_nota": "Vida media de cada marcador tras un cambio sostenido (días). Vitamina D: Jones 2008. HbA1c: Tahara y Shima 1995 (34,6 días).",
+    "semanas": 24,
+    "marcadores": [
+      { "nombre": "Vitamina D, 25(OH)D", "vida_media_dias": 15 },
+      { "nombre": "HbA1c", "vida_media_dias": 34.6 }
+    ]
+  }
+}
