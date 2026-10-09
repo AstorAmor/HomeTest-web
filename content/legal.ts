@@ -17,14 +17,16 @@ export interface LegalDocument {
   sections: LegalSection[];
 }
 
+// Titular: la sociedad matriz, nunca el nombre del fundador. Falta añadir el NIF y los datos del
+// Registro Mercantil (LSSI art. 10) cuando estén disponibles.
 const CONTROLLER_ES =
-  "Astor García Amor (persona física; en proceso de constitución de la sociedad que operará Kuova). Domicilio: Madrid, España. Contacto para privacidad: hello@kuovahealth.com.";
+  "Pulse Health, S.L., sociedad matriz que opera Kuova Health. Domicilio: Madrid, España. Contacto para privacidad: hello@kuovahealth.com.";
 const CONTROLLER_EN =
-  "Astor García Amor (individual; the company that will operate Kuova is being incorporated). Address: Madrid, Spain. Privacy contact: hello@kuovahealth.com.";
+  "Pulse Health, S.L., the parent company that operates Kuova Health. Address: Madrid, Spain. Privacy contact: hello@kuovahealth.com.";
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
-  updated: "Última actualización: 7 de octubre de 2026",
+  updated: "Última actualización: 9 de octubre de 2026",
   intro:
     "Kuova es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
   sections: [
@@ -129,7 +131,7 @@ export const privacyEs: LegalDocument = {
 
 export const privacyEn: LegalDocument = {
   title: "Privacy Policy",
-  updated: "Last updated: 7 October 2026",
+  updated: "Last updated: 9 October 2026",
   intro:
     "Kuova is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
   sections: [
@@ -228,7 +230,7 @@ export const privacyEn: LegalDocument = {
 
 export const termsEs: LegalDocument = {
   title: "Condiciones de uso",
-  updated: "Última actualización: 2 de octubre de 2026",
+  updated: "Última actualización: 9 de octubre de 2026",
   intro:
     "Estas condiciones regulan el uso de la app y la web de Kuova. Al crear una cuenta, las aceptas. Léelas con calma: explican qué es y qué no es Kuova.",
   sections: [
@@ -304,7 +306,7 @@ export const termsEs: LegalDocument = {
 
 export const termsEn: LegalDocument = {
   title: "Terms of Use",
-  updated: "Last updated: 2 October 2026",
+  updated: "Last updated: 9 October 2026",
   intro:
     "These terms govern the use of the Kuova app and website. By creating an account you accept them. They explain what Kuova is and what it is not.",
   sections: [
