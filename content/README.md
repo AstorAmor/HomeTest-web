@@ -18,12 +18,24 @@ La web sale en los dos idiomas, cada uno con su dirección: `/` en español y `/
 - **Packs por objetivo** (chequeo general, rendimiento, salud sexual, salud reproductiva): `biomarcadores/bloque-*.json`; nombres en inglés en `en/biomarcadores.json` (por `id`).
 - **Política de privacidad y condiciones**: `legal.ts`, siempre en los dos idiomas en la misma página.
 
+## Conocimiento (artículos con gráficas y fuentes)
+
+Dirección: `/conocimiento` (índice) y `/conocimiento/<nombre-del-archivo>` (cada artículo). **Aún no sale en kuovahealth.com**: solo se ve en el servidor local (`npm run dev` → http://localhost:3000/conocimiento). Para publicarla, poner `NEXT_PUBLIC_KNOWLEDGE=true` en Vercel (Production) y volver a publicar.
+
+- **Textos**: `conocimiento/*.md`, un archivo por artículo. Se editan como texto normal:
+  - Arriba, entre las dos líneas `---`: título, subtítulo, descripción (la que sale en Google), categoría, fecha, minutos de lectura y `estado`. Con `estado: borrador` el artículo lleva un aviso y Google no lo indexa; cámbialo a `publicado` cuando esté revisado.
+  - `## Título` y `### Subtítulo`; líneas que empiezan por `- ` son una lista; `**negrita**`, `*cursiva*`, `[texto](https://enlace)`.
+  - `[^3]` cita la referencia 3; las referencias van al final, una por línea: `[^3]: Autor. Título. *Revista*. Año...`
+  - `[[grafica:vrc]]` en una línea sola pone una gráfica. Disponibles: `individualidad`, `fuera-de-rango`, `vrc`, `tiempos`.
+  - Un artículo nuevo = un archivo `.md` nuevo en esa carpeta (el nombre del archivo es la dirección, sin tildes ni espacios).
+- **Números de las gráficas**: `conocimiento/datos.json` (variación biológica de cada marcador, vidas medias, datos del ejemplo). Las gráficas se recalculan solas.
+
 ## Fotos, capturas y vídeos
 
 - Fotos: `public/images/photos/`. Ahora mismo son **provisionales** (las mismas de la app). Para cambiar una, sustituye el archivo con el mismo nombre, o cambia la ruta en `site-copy.json`.
 - Capturas de la app: `public/images/app/` (tema claro, 390×844 o el doble).
 - **Vídeo de fondo en la portada**: copia el vídeo a `public/videos/` (por ejemplo `hero.mp4`) y en `site-copy.json` → `home.hero.video` pon `"/videos/hero.mp4"` (en los dos idiomas). Mientras sea `null`, se ve la foto con un zoom lento. Recomendado: MP4 H.264, 1920×1080, 8–15 s en bucle, sin sonido, menos de 4 MB.
-- Imagen al compartir en redes (WhatsApp, LinkedIn...): `public/images/og.jpg` (1200×630).
+- Imagen al compartir en redes (WhatsApp, LinkedIn...): `public/images/kuova-og.jpg` (1200×630), generada con `python scripts/make-og.py` desde `scripts/og/og.html`. Si la cambias, ponle otro nombre (y cámbialo en `lib/seo.ts`): WhatsApp guarda la vista previa por dirección.
 
 ## Opiniones de profesionales
 

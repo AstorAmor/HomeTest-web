@@ -42,7 +42,12 @@ export default function Logo({ variant = "wordmark", align = "center", className
       aria-label="Kuova Health"
     >
       <Wordmark className="h-7 w-auto" />
-      <span aria-hidden className="mt-2.5 pl-[0.6em] font-logo text-[0.68rem] font-medium tracking-[0.6em] text-gold">
+      {/* El espaciado entre letras deja aire tras la última H: centrado se compensa con el mismo
+          relleno a la izquierda; alineado a la izquierda, HEALTH empieza justo bajo la K */}
+      <span
+        aria-hidden
+        className={`mt-2.5 ${align === "center" ? "pl-[0.6em]" : ""} font-logo text-[0.68rem] font-medium tracking-[0.6em] text-gold`}
+      >
         HEALTH
       </span>
     </span>

@@ -11,6 +11,10 @@ type SeoKey = keyof SiteCopy["seo"];
 
 // Metadatos de cada página: título, descripción, canonical, versiones por idioma (hreflang)
 // y tarjetas para compartir en redes (Open Graph / Twitter).
+// La imagen se genera con scripts/make-og.py; si cambia, cambia también su nombre (OG_IMAGE): WhatsApp
+// y compañía guardan la vista previa por dirección y seguirían enseñando la antigua.
+const OG_IMAGE = `${SITE_URL}/images/kuova-og.jpg`;
+
 export function pageMetadata(key: SeoKey, path: string): Metadata {
   const lang = getLang();
   const { seo, marca } = getContent(lang).siteCopy;
@@ -31,9 +35,9 @@ export function pageMetadata(key: SeoKey, path: string): Metadata {
       url,
       locale: lang === "en" ? "en_GB" : "es_ES",
       alternateLocale: lang === "en" ? "es_ES" : "en_GB",
-      images: [{ url: `${SITE_URL}/images/og.jpg`, width: 1200, height: 630, alt: title }],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Kuova Health — Know more. Live better.", type: "image/jpeg" }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [`${SITE_URL}/images/og.jpg`] },
+    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE] },
   };
 }
 
@@ -50,7 +54,7 @@ export function organizationJsonLd(lang: Lang) {
         name: marca.nombre,
         url: SITE_URL,
         description: marca.descripcion_corta,
-        logo: `${SITE_URL}/images/og.jpg`,
+        logo: `${SITE_URL}/icon.svg`,
         areaServed: { "@type": "Country", name: "Spain" },
         address: { "@type": "PostalAddress", addressLocality: "Madrid", addressCountry: "ES" },
         contactPoint: {
