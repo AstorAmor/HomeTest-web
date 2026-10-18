@@ -39,6 +39,7 @@ Reglas para no romper nada al editar a mano: cambia solo lo que va entre comilla
 - `intro`: la frase grande bajo la portada.
 - `pasos_intro`: el título de «Cómo funciona».
 - `pasos`: los siete pasos. Cada uno tiene `etiqueta` (Cuéntanos, Conecta…), `titulo`, `texto`, `puntos`, `cta` (botón; `null` = sin botón), la foto (`imagen`, `imagen_alt`, `encuadre`) y `escena`, los textos de la animación de cristal que va sobre la foto.
+- `edad`: Tu edad KUOVA, con el medallón de la app y cifras de ejemplo (`edad_real`, `edad_kuova` con punto decimal, y los textos que salen debajo). La imagen es la de la app (`hometest-app/assets/images/kuova-age/light_good.jpg`); si allí cambia, cópiala a `public/images/inicio/` con otro nombre y cambia `imagen`.
 - `datos`: privacidad. `preguntas`: preguntas frecuentes. `lista`: la lista de espera del final.
 
 ## 3. Publicar los cambios

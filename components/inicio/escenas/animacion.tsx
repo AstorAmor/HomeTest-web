@@ -54,19 +54,22 @@ const suave = (t: number) => 1 - Math.pow(1 - t, 3);
 export const REINICIO_MS = 650;
 
 // Número que sube de `desde` a `hasta` cuando `activo` pasa a true. Al apagarse vuelve a `desde`
-// cuando la tarjeta ya se ha desvanecido (REINICIO_MS), para que no se vea bajar.
+// cuando la tarjeta ya se ha desvanecido (REINICIO_MS), para que no se vea bajar. Con `idioma`, los
+// decimales llevan la coma o el punto que toque ("34,2" en español).
 export function Contador({
   hasta,
   desde = 0,
   activo,
   duracion = 1400,
   decimales = 0,
+  idioma,
 }: {
   hasta: number;
   desde?: number;
   activo: boolean;
   duracion?: number;
   decimales?: number;
+  idioma?: string;
 }) {
   const menos = useMenosMovimiento();
   const [n, setN] = useState(desde);
@@ -91,7 +94,7 @@ export function Contador({
     return () => cancelAnimationFrame(frame);
   }, [activo, desde, hasta, duracion, menos]);
 
-  return <>{n.toFixed(decimales)}</>;
+  return <>{idioma ? n.toLocaleString(idioma, { minimumFractionDigits: decimales, maximumFractionDigits: decimales }) : n.toFixed(decimales)}</>;
 }
 
 // Retraso escalonado para los elementos de una lista (solo al aparecer; al irse, todos a la vez).

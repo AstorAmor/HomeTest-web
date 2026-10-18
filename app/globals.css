@@ -393,3 +393,18 @@ html:has(.prelaunch-home) body {
     transition: none;
   }
 }
+
+/* Medallón de Tu edad KUOVA: las capas giran muy despacio, casi sin notarse */
+@keyframes giro-lento {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.giro-lento {
+  animation: giro-lento 140s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .giro-lento {
+    animation: none;
+  }
+}

@@ -296,6 +296,24 @@
       }
     }
   ],
+  "edad": {
+    "eyebrow": "Your KUOVA age",
+    "titulo": "How old is your body?",
+    "texto": "From several markers in your lab results we estimate your biological age: whether your body works like someone younger or older than you. One simple number to know if you're heading in the right direction.",
+    "puntos": [
+      "Calculated from markers in your lab results",
+      "See what pushes it up and what brings it down",
+      "It changes with you, test after test"
+    ],
+    "nota": "It is an estimate, not a diagnosis.",
+    "imagen": "/images/inicio/edad-kuova-claro.jpg",
+    "ejemplo": "Example",
+    "titulo_medallon": "Your KUOVA age",
+    "edad_real": 38,
+    "edad_kuova": 34.2,
+    "diferencia": "3.8 years younger",
+    "edad_real_texto": "Real age: 38"
+  },
   "datos": {
     "eyebrow": "Privacy",
     "titulo": "Your data is yours",

@@ -296,6 +296,24 @@
       }
     }
   ],
+  "edad": {
+    "eyebrow": "Tu edad KUOVA",
+    "titulo": "¿Cuántos años tiene tu cuerpo?",
+    "texto": "Con varios marcadores de tu analítica estimamos tu edad biológica: si tu cuerpo funciona como el de alguien más joven o mayor que tú. Una cifra sencilla para saber si vas en buena dirección.",
+    "puntos": [
+      "Calculada con marcadores de tu analítica",
+      "Ves qué la sube y qué la baja",
+      "Cambia contigo, análisis a análisis"
+    ],
+    "nota": "Es una estimación, no un diagnóstico.",
+    "imagen": "/images/inicio/edad-kuova-claro.jpg",
+    "ejemplo": "Ejemplo",
+    "titulo_medallon": "Tu edad KUOVA",
+    "edad_real": 38,
+    "edad_kuova": 34.2,
+    "diferencia": "3,8 años más joven",
+    "edad_real_texto": "Edad real: 38"
+  },
   "datos": {
     "eyebrow": "Privacidad",
     "titulo": "Tus datos son tuyos",
