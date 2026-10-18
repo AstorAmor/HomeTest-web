@@ -75,3 +75,31 @@ export const rutaDe = (v: unknown) => {
   const r = texto(v, 200);
   return r && r.startsWith("/") ? r : "/";
 };
+
+// ── Panel (app/panel): entrar con la cuenta de KUOVA y pedir datos con esa sesión ──────────────
+
+export async function entrarSupabase(email: string, password: string) {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
+  if (!url || !key) return null;
+  return fetch(`${url}/auth/v1/token?grant_type=password`, {
+    method: "POST",
+    headers: { apikey: key, "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+    cache: "no-store",
+  });
+}
+
+// Como rpc(), pero con la sesión de la persona: la función comprueba en la base de datos que es
+// administradora (public.is_admin)
+export async function rpcConSesion(token: string, funcion: string, cuerpo: Record<string, unknown>) {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
+  if (!url || !key) return null;
+  return fetch(`${url}/rest/v1/rpc/${funcion}`, {
+    method: "POST",
+    headers: { apikey: key, Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify(cuerpo),
+    cache: "no-store",
+  });
+}

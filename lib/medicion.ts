@@ -45,6 +45,8 @@ function enviar(cuerpo: Record<string, unknown>, alSalir = false) {
 // Se llama una vez por página cargada (components/inicio/Medicion.tsx)
 export function iniciarMedicion(idioma: string) {
   if (estado || typeof window === "undefined") return;
+  // El panel y el editor de textos no cuentan como visitas
+  if (/\/(panel|editar)(\/|$)/.test(location.pathname)) return;
   const params = new URLSearchParams(location.search);
   const atribucion = clasificar(params, hostDe(document.referrer, location.hostname));
   if (location.hostname === "localhost") atribucion.fuente = PRUEBA_LOCAL;

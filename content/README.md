@@ -61,7 +61,7 @@ Los textos viven en GitHub (repositorio `AstorAmor/HomeTest-web`). Cuando un cam
 
 ## Medición: cuánta gente entra, por dónde y quién se apunta
 
-Sin cookies (no hace falta banner). Dos fuentes:
+Sin cookies (no hace falta banner). Lo más cómodo: **kuovahealth.com/panel**, el panel privado (entras con tu cuenta de KUOVA de administración): visitantes, altas y conversión con la comparación con el periodo anterior, gráficas por día, canales, embudo, fuentes y campañas, hasta dónde baja la gente, qué pulsa, dispositivos, países, ciudades, las últimas altas y un generador de enlaces etiquetados. Los datos vienen de `web_panel` en Supabase. Debajo, las dos fuentes:
 
 - **Vercel Web Analytics** (vercel.com → hometest-web → Analytics): visitantes, páginas, países, dispositivos y webs de origen. Hay que activarlo una vez con «Enable».
 - **Nuestra medición en Supabase** (Table Editor), más detallada y unida a las altas:

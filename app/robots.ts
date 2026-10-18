@@ -7,10 +7,12 @@ import { SITE_URL } from "@/lib/seo";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
+      // El panel privado (/panel) y las APIs no se rastrean
+      { userAgent: "*", allow: "/", disallow: ["/panel", "/en/panel", "/api/"] },
       {
         userAgent: ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "PerplexityBot", "Google-Extended", "Applebot-Extended"],
         allow: "/",
+        disallow: ["/panel", "/en/panel", "/api/"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
