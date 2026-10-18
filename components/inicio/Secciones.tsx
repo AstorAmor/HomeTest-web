@@ -2,7 +2,7 @@ import Image from "next/image";
 import Container from "../ui/Container";
 import Reveal from "../landing/Reveal";
 import FaqAccordion from "../home/FaqAccordion";
-import SilkBackground from "../prelaunch/SilkBackground";
+import CapasVivas from "./CapasVivas";
 import FormularioEspera from "./FormularioEspera";
 import type { Inicio } from "@/lib/content";
 import type { Lang } from "@/lib/i18n";
@@ -98,12 +98,12 @@ export function Preguntas({ copy }: { copy: Inicio["preguntas"] }) {
   );
 }
 
-// Cierre con la lista de espera, sobre la misma seda verde de la página de pre-lanzamiento
+// Cierre con la lista de espera, sobre las capas verdes de la marca en movimiento
 export function ListaEspera({ copy, lang }: { copy: Inicio["lista"]; lang: Lang }) {
   return (
     <section id="lista-de-espera" className="relative isolate scroll-mt-20 overflow-hidden bg-ink py-24 text-on-accent sm:py-32">
       <div className="absolute inset-0 -z-10">
-        <SilkBackground />
+        <CapasVivas />
       </div>
       <Container>
         <div className="mx-auto max-w-xl text-center">

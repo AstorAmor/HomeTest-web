@@ -9,7 +9,8 @@
     "cta_2": "Cómo funciona",
     "imagen": "/images/inicio/portada.jpg",
     "imagen_alt": "Mujer en ropa de deporte contemplando el mar desde un acantilado al amanecer",
-    "video": "/videos/inicio/portada.mp4",
+    "video": "/videos/inicio/portada-giro.mp4",
+    "video_bucle": "/videos/inicio/portada-bucle.mp4",
     "senales_titulo": "Tus señales, juntas",
     "senales": [
       {
@@ -49,8 +50,7 @@
       "texto": "Cómo duermes, cómo llegas al final del día, qué te preocupa y qué te gustaría conseguir. Con tu contexto, cada dato deja de ser un número suelto.",
       "puntos": [
         "Tus objetivos, tus hábitos y tu historial",
-        "Cómo te sientes, con tus propias palabras",
-        "¿Ya tienes analíticas? Súbelas en PDF o foto"
+        "Cómo te sientes, con tus propias palabras"
       ],
       "cta": null,
       "imagen": "/images/inicio/contexto.jpg",
@@ -131,6 +131,7 @@
       "texto": "Energía, ánimo, digestión, ciclo menstrual… Un pequeño registro diario, de apenas unos segundos, que convierte sensaciones en información.",
       "puntos": [
         "Unos segundos al día, cuando te venga bien",
+        "Registra tu presión arterial o tu temperatura en un momento",
         "Con total discreción: solo lo ves tú",
         "Descubre qué te sienta bien y qué no"
       ],
@@ -152,6 +153,28 @@
           "Normal",
           "Pesada"
         ],
+        "presion": "Presión arterial",
+        "presion_unidad": "mmHg",
+        "sistolica": "Sistólica",
+        "diastolica": "Diastólica",
+        "presion_sistolica": [
+          128,
+          122,
+          126,
+          119,
+          121,
+          116,
+          118
+        ],
+        "presion_diastolica": [
+          84,
+          79,
+          82,
+          77,
+          79,
+          75,
+          76
+        ],
         "ciclo_fase": "Fase folicular",
         "ciclo_dia": 12,
         "ciclo_duracion": 28,
@@ -163,11 +186,11 @@
       "id": "mide",
       "etiqueta": "Mide",
       "titulo": "Mide lo que no se ve",
-      "texto": "Una analítica completa de sangre y orina, en una sola visita a un laboratorio cerca de ti. Los resultados llegan directamente a tu app.",
+      "texto": "Una analítica completa de sangre y orina nos dice cómo estás realmente. Empiezas con una primera visita a un laboratorio cerca de ti y los resultados llegan directamente a tu app.",
       "puntos": [
-        "Una sola visita, sin complicaciones",
+        "Más de 100 marcadores, seleccionados según tus objetivos",
         "Metabolismo, corazón, hormonas, nutrientes y mucho más",
-        "Tus resultados, ordenados y en un solo sitio"
+        "¿Ya tienes analíticas? Súbelas en PDF o foto y tenlo todo en un solo sitio"
       ],
       "proximamente": "Y, muy pronto, podrías tomar la muestra desde casa.",
       "cta": "Quiero saber más",

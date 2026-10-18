@@ -14,11 +14,18 @@ export interface DatosDiario {
   ciclo_duracion: number;
   ciclo_valor: string;
   ciclo_nota: string;
+  presion: string;
+  presion_unidad: string;
+  sistolica: string;
+  diastolica: string;
+  presion_sistolica: number[];
+  presion_diastolica: number[];
 }
 
-// Paso "Registra": el registro del día se rellena fila a fila (energía, ánimo, digestión) y al
-// final aparece el ciclo como en la app: la barra con sus cuatro fases y el día de hoy marcado.
-const FASES = [700, 900, 800, 800, 800, 1300, 3600] as const;
+// Paso "Registra": el registro del día se rellena fila a fila (energía, ánimo, digestión), luego se
+// dibuja la presión arterial de la semana (sistólica y diastólica) y al final aparece el ciclo como
+// en la app: la barra con sus cuatro fases y el día de hoy marcado.
+const FASES = [700, 900, 800, 800, 800, 1600, 1300, 3600] as const;
 
 const ENERGIA = 4;
 const ANIMO = 4;
@@ -66,6 +73,72 @@ function BarraCiclo({ dia, duracion, on }: { dia: number; duracion: number; on: 
   );
 }
 
+// Presión de los últimos días como en la app (TrendChart en BloodPressureDetailScreen): sistólica en
+// coral y diastólica en azul, con color suave debajo, que se dibujan a la vez; hoy, marcado al final.
+const SIS = "#D9663F";
+const DIA = "#3E7FA8";
+const PW = 300;
+const PH = 92;
+
+// Curva suave entre los puntos (tramos de Bézier con las tangentes en horizontal)
+function curva(pts: { x: number; y: number }[]) {
+  return pts
+    .map((p, i) => {
+      if (i === 0) return `M${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+      const a = pts[i - 1];
+      const m = (p.x - a.x) / 2;
+      return `C${(a.x + m).toFixed(1)} ${a.y.toFixed(1)} ${(p.x - m).toFixed(1)} ${p.y.toFixed(1)} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+    })
+    .join(" ");
+}
+
+function GraficaPresion({ sistolica, diastolica, on }: { sistolica: number[]; diastolica: number[]; on: boolean }) {
+  const todos = [...sistolica, ...diastolica];
+  const min = Math.min(...todos) - 4;
+  const max = Math.max(...todos) + 4;
+  const x = (i: number, n: number) => 6 + (i / Math.max(1, n - 1)) * (PW - 12);
+  const y = (v: number) => 4 + (1 - (v - min) / (max - min)) * (PH - 8);
+  const series = [
+    { vs: sistolica, color: SIS },
+    { vs: diastolica, color: DIA },
+  ];
+  return (
+    <svg viewBox={`0 0 ${PW} ${PH}`} className="mt-[0.45em] h-auto w-full overflow-visible" aria-hidden>
+      <defs>
+        {series.map(({ color }) => (
+          <linearGradient key={color} id={`presion-${color.slice(1)}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor={color} stopOpacity="0.18" />
+            <stop offset="1" stopColor={color} stopOpacity="0" />
+          </linearGradient>
+        ))}
+      </defs>
+      {[0.25, 0.5, 0.75].map((f) => (
+        <line key={f} x1="0" x2={PW} y1={PH * f} y2={PH * f} stroke="rgb(14 42 36 / 0.1)" strokeDasharray="3 5" />
+      ))}
+      {series.map(({ vs, color }) => {
+        const pts = vs.map((v, i) => ({ x: x(i, vs.length), y: y(v) }));
+        const linea = curva(pts);
+        const ultimo = pts[pts.length - 1];
+        return (
+          <g key={color}>
+            <path
+              d={`${linea} L${ultimo.x} ${PH} L${pts[0].x} ${PH} Z`}
+              fill={`url(#presion-${color.slice(1)})`}
+              className="transition-opacity duration-700"
+              style={{ opacity: on ? 1 : 0, transitionDelay: on ? "900ms" : "0ms" }}
+            />
+            <path d={linea} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" pathLength={1} className="trazo trazo-lento" data-on={on} />
+            <g className="transition-opacity duration-300" style={{ opacity: on ? 1 : 0, transitionDelay: on ? "1300ms" : "0ms" }}>
+              <circle cx={ultimo.x} cy={ultimo.y} r="7" fill={color} opacity="0.2" />
+              <circle cx={ultimo.x} cy={ultimo.y} r="3.8" fill={color} />
+            </g>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
 export default function EscenaDiario({ datos, activa }: { datos: DatosDiario; activa: boolean }) {
   const { fase } = useFases(activa, FASES);
   const fila = "flex items-center justify-between gap-[0.8em] py-[0.5em]";
@@ -98,12 +171,33 @@ export default function EscenaDiario({ datos, activa }: { datos: DatosDiario; ac
             ))}
           </span>
         </div>
-        <div className="entra pt-[0.55em]" data-on={fase >= 5}>
+        {/* Presión arterial: el valor de hoy y la semana en una gráfica pequeña */}
+        <div className="entra py-[0.5em]" data-on={fase >= 5}>
+          <div className="flex items-baseline justify-between gap-[0.6em]">
+            <span className={nombre}>{datos.presion}</span>
+            <span className="text-[0.9em] font-semibold tabular-nums">
+              {datos.presion_sistolica.at(-1)}/{datos.presion_diastolica.at(-1)}
+              <span className="ml-[0.3em] text-[0.78em] font-normal text-text-muted">{datos.presion_unidad}</span>
+            </span>
+          </div>
+          <GraficaPresion sistolica={datos.presion_sistolica} diastolica={datos.presion_diastolica} on={fase >= 5} />
+          <div className="mt-[0.3em] flex gap-[1em] text-[0.68em] text-text-muted">
+            <span className="flex items-center gap-[0.4em]">
+              <span className="h-[0.6em] w-[0.6em] rounded-full" style={{ backgroundColor: SIS }} />
+              {datos.sistolica}
+            </span>
+            <span className="flex items-center gap-[0.4em]">
+              <span className="h-[0.6em] w-[0.6em] rounded-full" style={{ backgroundColor: DIA }} />
+              {datos.diastolica}
+            </span>
+          </div>
+        </div>
+        <div className="entra pt-[0.55em]" data-on={fase >= 6}>
           <div className="flex items-baseline justify-between gap-[0.6em]">
             <span className="text-[0.85em] font-semibold text-[#6f5fd6]">{datos.ciclo_fase}</span>
             <span className="text-[0.72em] tabular-nums text-text-muted">{datos.ciclo_valor}</span>
           </div>
-          <BarraCiclo dia={datos.ciclo_dia} duracion={datos.ciclo_duracion} on={fase >= 5} />
+          <BarraCiclo dia={datos.ciclo_dia} duracion={datos.ciclo_duracion} on={fase >= 6} />
           <p className="mt-[0.55em] text-[0.74em] leading-snug text-text-muted">{datos.ciclo_nota}</p>
         </div>
       </div>

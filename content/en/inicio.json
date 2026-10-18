@@ -9,7 +9,8 @@
     "cta_2": "How it works",
     "imagen": "/images/inicio/portada.jpg",
     "imagen_alt": "Woman in sportswear looking out to sea from a cliff at sunrise",
-    "video": "/videos/inicio/portada.mp4",
+    "video": "/videos/inicio/portada-giro.mp4",
+    "video_bucle": "/videos/inicio/portada-bucle.mp4",
     "senales_titulo": "Your signals, together",
     "senales": [
       {
@@ -49,8 +50,7 @@
       "texto": "How you sleep, how you feel at the end of the day, what worries you and what you'd like to achieve. With your context, no number stands alone.",
       "puntos": [
         "Your goals, habits and history",
-        "How you feel, in your own words",
-        "Already have lab results? Upload a PDF or photo"
+        "How you feel, in your own words"
       ],
       "cta": null,
       "imagen": "/images/inicio/contexto.jpg",
@@ -131,6 +131,7 @@
       "texto": "Energy, mood, digestion, menstrual cycle… A short daily check-in, just a few seconds, that turns how you feel into information.",
       "puntos": [
         "A few seconds a day, whenever suits you",
+        "Log your blood pressure or temperature in a moment",
         "Completely private: only you see it",
         "Find out what agrees with you and what doesn't"
       ],
@@ -152,6 +153,28 @@
           "Normal",
           "Heavy"
         ],
+        "presion": "Blood pressure",
+        "presion_unidad": "mmHg",
+        "sistolica": "Systolic",
+        "diastolica": "Diastolic",
+        "presion_sistolica": [
+          128,
+          122,
+          126,
+          119,
+          121,
+          116,
+          118
+        ],
+        "presion_diastolica": [
+          84,
+          79,
+          82,
+          77,
+          79,
+          75,
+          76
+        ],
         "ciclo_fase": "Follicular phase",
         "ciclo_dia": 12,
         "ciclo_duracion": 28,
@@ -163,11 +186,11 @@
       "id": "mide",
       "etiqueta": "Measure",
       "titulo": "Measure what you can't see",
-      "texto": "A complete blood and urine test, in a single visit to a lab near you. Your results go straight to your app.",
+      "texto": "A complete blood and urine test tells us how you're really doing. You start with a first visit to a lab near you, and your results go straight to your app.",
       "puntos": [
-        "One visit, no fuss",
+        "Over 100 markers, chosen around your goals",
         "Metabolism, heart, hormones, nutrients and much more",
-        "Your results, organised and in one place"
+        "Already have lab results? Upload a PDF or photo and keep everything in one place"
       ],
       "proximamente": "And soon, you could collect your sample from home.",
       "cta": "Tell me more",
