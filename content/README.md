@@ -54,6 +54,7 @@ Los textos viven en GitHub (repositorio `AstorAmor/HomeTest-web`). Cuando un cam
 - `encuadre`: qué parte de la foto se ve, en horizontal y vertical («70% 40%»; 0% = izquierda/arriba).
 - `lado` (dentro de `escena`): a qué lado va la tarjeta animada en el ordenador (`izquierda`, `derecha` o `centro`), siempre al contrario de la persona. En el móvil va debajo de la foto.
 - Vídeo de fondo de la portada: `public/videos/inicio/portada.mp4` (`hero.video`; `null` = solo la foto con un zoom lento). Recomendado: MP4 H.264, sin sonido, que empiece y acabe en el mismo fotograma para que el bucle no se note.
+- Fondos de «capas» (las láminas de curvas suaves detrás de la frase grande y de «Tus datos son tuyos»): `public/images/inicio/capas-*.jpg`, hechos con código, sin IA. Para regenerarlos (por ejemplo si cambia la forma de las capas de Tu edad KUOVA): `node scripts/capas/render.mjs`; tamaños, tonos y dirección en `TRABAJOS`, dentro de ese archivo.
 - Originales y descartes: OneDrive → `05 Marca/Contenido IA/2026-10/` (los que empiezan por `WEB`).
 - Imagen al compartir en redes (WhatsApp, LinkedIn...): `public/images/kuova-og.jpg` (1200×630), generada con `python scripts/make-og.py` desde `scripts/og/og.html`. Si la cambias, ponle otro nombre (y cámbialo en `lib/seo.ts`).
 

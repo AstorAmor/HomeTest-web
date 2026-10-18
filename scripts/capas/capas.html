@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0}canvas{display:block}</style></head><body>
+<canvas id="c"></canvas>
+<script>
+// Capas sobrias (misma fórmula que la ronda 3 de la sesión "Tu edad KUOVA"): relieve de ruido en 5 niveles,
+// borde suavizado, sombra difusa y un hilo dorado en la lámina de arriba.
+const PAL = { dark: { bg: '#081814', top: '#1E4D41', gold: '#C9A36B' }, light: { bg: '#E9E1D2', top: '#FAF8F3', gold: '#B8904F' } };
+const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+const mix = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+const smooth = (e0, e1, x) => { const t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function makeNoise(seed) {
+  const r = rng(seed), perm = [...Array(256).keys()];
+  for (let i = 255; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [perm[i], perm[j]] = [perm[j], perm[i]]; }
+  const P = new Uint8Array(512); for (let i = 0; i < 512; i++) P[i] = perm[i & 255];
+  const G = [...Array(256)].map(() => { const a = r() * Math.PI * 2; return [Math.cos(a), Math.sin(a)]; });
+  const fade = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+  const n = (x, y) => { const X = Math.floor(x), Y = Math.floor(y), xf = x - X, yf = y - Y;
+    const g = (i, j) => { const v = G[P[(P[(X + i) & 255] + Y + j) & 255]]; return v[0] * (xf - i) + v[1] * (yf - j); };
+    const u = fade(xf), v = fade(yf), a = g(0, 0) + (g(1, 0) - g(0, 0)) * u, b = g(0, 1) + (g(1, 1) - g(0, 1)) * u; return a + (b - a) * v; };
+  return (x, y, oct) => { let s = 0, amp = 1, f = 1, norm = 0; for (let o = 0; o < oct; o++) { s += amp * n(x * f, y * f); norm += amp; amp *= 0.5; f *= 2; } return s / norm; };
+}
+// dir: hacia dónde suben las láminas ("derecha" como en la ronda 3, o "centro" para un fondo simétrico)
+window.pintar = function (W, H, theme, dir, seed, oro) {
+  const canvas = document.getElementById('c'); canvas.width = W; canvas.height = H; canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+  const ctx = canvas.getContext('2d'), P = PAL[theme], N = 5, dpr = W / 1600 * 1.4;
+  const noise = makeNoise(seed), s = 1.25 / Math.min(W, H), T = new Float32Array(W * H);
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    const f = 0.5 + noise(x * s + 4.3, y * s + 2.1, 2) * 1.1;
+    const base = dir === 'centro'
+      ? smooth(0.15, 1.05, 1 - Math.abs(x / W - 0.5) * 2 * 0.8 - 0.2 * Math.abs(y / H - 0.5))
+      : dir === 'radial'
+        ? smooth(0.1, 1.05, 1 - Math.hypot((x / W - 0.5) * 1.6, (y / H - 0.42) * 1.25))
+        : dir === 'diagonal'
+          ? smooth(0.2, 1.15, 0.55 * (x / W) + 0.45 * (1 - y / H))
+          : smooth(0.3, 1.15, 0.82 * (x / W) + 0.18 * (1 - y / H));
+    T[y * W + x] = Math.max(0, Math.min(N - 0.001, (0.24 * f + 0.9 * base) * N));
+  }
+  const dark = theme === 'dark', bg = hex(P.bg), top = hex(P.top), gold = hex(P.gold);
+  const tone = (l) => mix(bg, top, Math.pow(l / (N - 1), 0.9));
+  const img = ctx.createImageData(W, H), d = img.data, S = Math.round(7 * dpr), step = Math.max(1, Math.round(dpr));
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    const i = y * W + x, t = T[i], L = Math.floor(t), fr = t - L;
+    const gx = x + 1 < W ? T[i + 1] - t : t - T[i - 1], gy = y + 1 < H ? T[i + W] - t : t - T[i - W];
+    const g = Math.max(1e-4, Math.hypot(gx, gy)), blend = Math.min(1, fr / g);
+    let c = L > 0 ? mix(tone(L - 1), tone(L), blend) : tone(0);
+    let sh = 0;
+    for (let k = step; k <= S; k += step) { const sx = x - k, sy = y - k; if (sx < 0 || sy < 0) break; if (Math.floor(T[sy * W + sx]) > L) { sh = Math.max(sh, 1 - k / S); break; } }
+    c = c.map((v) => v * (1 - sh * (dark ? 0.32 : 0.09)));
+    if (L === N - 1 && oro > 0) { const dist = fr / g; c = mix(c, gold, (1 - smooth(0.4 * dpr, 1.4 * dpr, dist)) * oro); }
+    d[i * 4] = c[0]; d[i * 4 + 1] = c[1]; d[i * 4 + 2] = c[2]; d[i * 4 + 3] = 255;
+  }
+  ctx.putImageData(img, 0, 0);
+  return canvas.toDataURL('image/jpeg', 0.88);
+};
+</script></body></html>

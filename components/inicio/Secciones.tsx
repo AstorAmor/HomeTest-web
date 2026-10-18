@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "../ui/Container";
 import Reveal from "../landing/Reveal";
 import FaqAccordion from "../home/FaqAccordion";
@@ -8,12 +9,26 @@ import type { Lang } from "@/lib/i18n";
 
 // Secciones sencillas de la portada, después de "Cómo funciona". Textos en content/inicio.json.
 
-// Frase grande entre la portada y los pasos
+// Fondo de "capas": láminas de curvas suaves, la textura de la marca (la misma idea que el medallón de
+// Tu edad KUOVA en la app). Son imágenes hechas con código: scripts/capas/ (se regeneran sin coste).
+// Una versión ancha para pantallas grandes y otra vertical para el móvil.
+function FondoCapas({ tono }: { tono: "claro" | "verde" }) {
+  const clase = "deriva-lenta object-cover";
+  return (
+    <div aria-hidden className="absolute inset-0 -z-10 overflow-hidden">
+      <Image src={`/images/inicio/capas-${tono}-movil.jpg`} alt="" fill sizes="100vw" className={`${clase} sm:hidden`} />
+      <Image src={`/images/inicio/capas-${tono}.jpg`} alt="" fill sizes="100vw" className={`${clase} hidden sm:block`} />
+    </div>
+  );
+}
+
+// Frase grande entre la portada y los pasos, sobre las capas claras
 export function Intro({ copy }: { copy: Inicio["intro"] }) {
   return (
-    <section id="intro" className="scroll-mt-20 bg-bg">
+    <section id="intro" className="relative isolate scroll-mt-20 overflow-hidden bg-bg-soft">
+      <FondoCapas tono="claro" />
       <Container>
-        <Reveal className="mx-auto max-w-4xl pt-24 text-center sm:pt-32">
+        <Reveal className="mx-auto max-w-4xl py-28 text-center sm:py-36">
           <h2 className="text-balance font-display text-4xl font-normal leading-[1.1] tracking-tight text-text sm:text-6xl">
             {copy.titulo} <span className="italic text-accent-light">{copy.destacado}</span>
           </h2>
@@ -33,28 +48,30 @@ const ICONOS = [
   <path key="interruptor" d="M8 7h8a5 5 0 0 1 0 10H8A5 5 0 0 1 8 7Zm8 2.6a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8Z" />,
 ];
 
+// Privacidad sobre las capas verdes, con tarjetas de cristal oscuro
 export function Privacidad({ copy }: { copy: Inicio["datos"] }) {
   return (
-    <section id="privacidad" className="scroll-mt-20 bg-bg-soft py-20 sm:py-28">
+    <section id="privacidad" className="relative isolate scroll-mt-20 overflow-hidden bg-ink py-20 text-on-accent sm:py-28">
+      <FondoCapas tono="verde" />
       <Container>
         <Reveal className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">{copy.eyebrow}</p>
-          <h2 className="mt-4 font-display text-4xl font-normal tracking-tight text-text sm:text-5xl">{copy.titulo}</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">{copy.eyebrow}</p>
+          <h2 className="mt-4 font-display text-4xl font-normal tracking-tight sm:text-5xl">{copy.titulo}</h2>
         </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
           {copy.puntos.map((punto, i) => (
             <Reveal key={punto.titulo} delay={i * 90} className="h-full">
-              <div className="h-full rounded-3xl border border-border bg-bg p-7">
-                <svg viewBox="0 0 24 24" className="h-7 w-7 text-accent-light" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <div className="h-full rounded-3xl border border-white/10 bg-white/[0.06] p-7 backdrop-blur-md">
+                <svg viewBox="0 0 24 24" className="h-7 w-7 text-gold" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   {ICONOS[i % ICONOS.length]}
                 </svg>
-                <h3 className="mt-5 text-lg font-semibold text-text">{punto.titulo}</h3>
-                <p className="mt-2 text-text-muted">{punto.texto}</p>
+                <h3 className="mt-5 text-lg font-semibold">{punto.titulo}</h3>
+                <p className="mt-2 text-on-accent/70">{punto.texto}</p>
               </div>
             </Reveal>
           ))}
         </div>
-        <p className="mt-10 max-w-2xl text-sm text-text-muted">{copy.nota}</p>
+        <p className="mt-10 max-w-2xl text-sm text-on-accent/60">{copy.nota}</p>
       </Container>
     </section>
   );
