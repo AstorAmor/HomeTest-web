@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -62,6 +63,9 @@ export default function RootLayout({
             <Footer />
           </>
         )}
+        {/* Visitas de la web (Vercel Web Analytics): sin cookies ni datos personales, así que no hace
+            falta banner de consentimiento. Se ven en vercel.com → hometest-web → Analytics. */}
+        <Analytics />
       </body>
     </html>
   );

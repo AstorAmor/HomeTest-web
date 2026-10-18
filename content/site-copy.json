@@ -137,7 +137,7 @@
         "enlaces": [
           {
             "label": "Contacto",
-            "href": "/contacto"
+            "href": "mailto:hello@kuovahealth.com"
           },
           {
             "label": "Política de privacidad",

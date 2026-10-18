@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PRELAUNCH, PRELAUNCH_HIDDEN } from "@/lib/launch";
+import { PRELAUNCH, RETIRADAS } from "@/lib/launch";
 
 // Idioma por URL (bueno para Google y los buscadores con IA: cada idioma tiene su dirección):
 //   /...     -> español
@@ -11,11 +11,19 @@ export function middleware(req: NextRequest) {
   const isEn = pathname === "/en" || pathname.startsWith("/en/");
   const base = isEn ? pathname.slice(3) || "/" : pathname;
 
-  // Pre-lanzamiento (lib/launch.ts): sin direcciones /en (todo va en inglés primero) y con la
-  // web completa oculta.
-  if (PRELAUNCH && (isEn || PRELAUNCH_HIDDEN.includes(base))) {
+  // Páginas de la web antigua (lib/launch.ts): a su sección de la portada
+  if (base in RETIRADAS) {
     const url = req.nextUrl.clone();
-    url.pathname = PRELAUNCH_HIDDEN.includes(base) ? "/" : base;
+    url.pathname = isEn && !PRELAUNCH ? "/en" : "/";
+    url.search = "";
+    url.hash = PRELAUNCH ? "" : RETIRADAS[base];
+    return NextResponse.redirect(url);
+  }
+
+  // Pre-lanzamiento (lib/launch.ts): sin direcciones /en (todo va en inglés primero)
+  if (PRELAUNCH && isEn) {
+    const url = req.nextUrl.clone();
+    url.pathname = base;
     url.search = "";
     return NextResponse.redirect(url);
   }
