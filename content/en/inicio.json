@@ -9,8 +9,8 @@
     "cta_2": "How it works",
     "imagen": "/images/inicio/portada.jpg",
     "imagen_alt": "Woman in sportswear looking out to sea from a cliff at sunrise",
-    "video": "/videos/inicio/portada-giro.mp4",
-    "video_bucle": "/videos/inicio/portada-bucle.mp4",
+    "video": "/videos/inicio/portada-giro-2.mp4",
+    "video_bucle": "/videos/inicio/portada-bucle-2.mp4",
     "senales_titulo": "Your signals, together",
     "senales": [
       {
@@ -79,7 +79,7 @@
     {
       "id": "conecta",
       "etiqueta": "Connect",
-      "titulo": "Connect your watch or ring",
+      "titulo": "Connect your devices",
       "texto": "Sleep, resting heart rate, heart rate variability, steps… They arrive on their own, with nothing to write down, and add to everything else.",
       "puntos": [
         "Every morning, how ready your body is",
@@ -364,7 +364,7 @@
       {
         "id": "que-es",
         "pregunta": "What is Kuova?",
-        "respuesta": "A way to take control of your health. Kuova brings together how you feel, the data from your watch or ring and your lab results; it explains what they mean and suggests a plan to improve. Then you measure again to see what worked."
+        "respuesta": "A way to take control of your health. Kuova brings together how you feel, the data from your watch, ring or band and your lab results; it explains what they mean and suggests a plan to improve. Then you measure again to see what worked."
       },
       {
         "id": "medico",

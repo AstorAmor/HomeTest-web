@@ -84,7 +84,7 @@
     },
     "en_breve": {
       "titulo": "Kuova in a nutshell",
-      "parrafo": "Kuova is a preventive-health platform based in Madrid, Spain. It brings together how you feel every day, the data from your watch or ring and your lab blood and urine tests; it explains the results clearly and suggests a plan to improve, checked by measuring again. It does not diagnose or replace your doctor: it helps you understand your health and arrive at your appointment better informed.",
+      "parrafo": "Kuova is a preventive-health platform based in Madrid, Spain. It brings together how you feel every day, the data from your watch, ring or band and your lab blood and urine tests; it explains the results clearly and suggests a plan to improve, checked by measuring again. It does not diagnose or replace your doctor: it helps you understand your health and arrive at your appointment better informed.",
       "datos": [
         {
           "clave": "What it is",
@@ -100,7 +100,7 @@
         },
         {
           "clave": "Wearables",
-          "valor": "Watches and rings that sync with Health Connect (Android); Apple Health coming soon"
+          "valor": "Watches, rings and bands that sync with Health Connect (Android); Apple Health coming soon"
         },
         {
           "clave": "Professionals",

@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
+import Medicion from "@/components/inicio/Medicion";
 import PrelaunchBar from "@/components/prelaunch/PrelaunchBar";
 import { getContent } from "@/lib/content";
 import { getLang } from "@/lib/i18n";
@@ -66,6 +67,9 @@ export default function RootLayout({
         {/* Visitas de la web (Vercel Web Analytics): sin cookies ni datos personales, así que no hace
             falta banner de consentimiento. Se ven en vercel.com → hometest-web → Analytics. */}
         <Analytics />
+        {/* Nuestra propia medición, también sin cookies: canal de cada visita, secciones, clics y
+            altas (lib/medicion.ts). Se consulta en Supabase (vistas web_*). */}
+        <Medicion lang={lang} />
       </body>
     </html>
   );

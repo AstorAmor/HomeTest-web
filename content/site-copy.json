@@ -84,7 +84,7 @@
     },
     "en_breve": {
       "titulo": "Kuova en pocas palabras",
-      "parrafo": "Kuova es una plataforma de salud preventiva con sede en Madrid. Une en un solo sitio cómo te sientes cada día, los datos de tu reloj o tu anillo y tus analíticas de sangre y orina hechas en laboratorio; explica los resultados con claridad y propone un plan para mejorar, que se comprueba volviendo a medir. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar a la consulta con más información.",
+      "parrafo": "Kuova es una plataforma de salud preventiva con sede en Madrid. Une en un solo sitio cómo te sientes cada día, los datos de tu reloj, tu anillo o tu pulsera y tus analíticas de sangre y orina hechas en laboratorio; explica los resultados con claridad y propone un plan para mejorar, que se comprueba volviendo a medir. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar a la consulta con más información.",
       "datos": [
         {
           "clave": "Qué es",
@@ -100,7 +100,7 @@
         },
         {
           "clave": "Wearables",
-          "valor": "Relojes y anillos compatibles con Health Connect (Android); Apple Salud, próximamente"
+          "valor": "Relojes, anillos y pulseras compatibles con Health Connect (Android); Apple Salud, próximamente"
         },
         {
           "clave": "Profesionales",

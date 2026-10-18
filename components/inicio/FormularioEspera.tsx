@@ -4,11 +4,13 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 import type { Inicio } from "@/lib/content";
 import { localePath, type Lang } from "@/lib/locale";
+import { datosDeLlegada, medir } from "@/lib/medicion";
 
 type Estado = "idle" | "sending" | "done" | "error";
 
-// Lista de espera de la portada completa: solo el email, guardado por /api/waitlist en Supabase
-// (la misma lista que la página de pre-lanzamiento). Textos en content/inicio.json → "lista".
+// Lista de espera de la portada completa: el email, guardado por /api/waitlist en Supabase (la
+// misma lista que la página de pre-lanzamiento) junto con por dónde llegó la persona
+// (lib/medicion.ts). Textos en content/inicio.json → "lista".
 export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]; lang: Lang }) {
   const [estado, setEstado] = useState<Estado>("idle");
 
@@ -16,15 +18,18 @@ export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     setEstado("sending");
+    medir("registro_intento");
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: form.get("email"), website: form.get("website"), lang }),
+        body: JSON.stringify({ email: form.get("email"), website: form.get("website"), lang, ...datosDeLlegada() }),
       });
       setEstado(res.ok ? "done" : "error");
+      medir(res.ok ? "registro_ok" : "registro_error", res.ok ? undefined : String(res.status));
     } catch {
       setEstado("error");
+      medir("registro_error", "red");
     }
   }
 

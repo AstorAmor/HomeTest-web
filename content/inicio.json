@@ -9,8 +9,8 @@
     "cta_2": "Cómo funciona",
     "imagen": "/images/inicio/portada.jpg",
     "imagen_alt": "Mujer en ropa de deporte contemplando el mar desde un acantilado al amanecer",
-    "video": "/videos/inicio/portada-giro.mp4",
-    "video_bucle": "/videos/inicio/portada-bucle.mp4",
+    "video": "/videos/inicio/portada-giro-2.mp4",
+    "video_bucle": "/videos/inicio/portada-bucle-2.mp4",
     "senales_titulo": "Tus señales, juntas",
     "senales": [
       {
@@ -79,7 +79,7 @@
     {
       "id": "conecta",
       "etiqueta": "Conecta",
-      "titulo": "Conecta tu reloj o tu anillo",
+      "titulo": "Conecta tus dispositivos",
       "texto": "Sueño, pulso en reposo, variabilidad cardiaca, pasos… Llegan solos, sin que tengas que apuntar nada, y se suman a todo lo demás.",
       "puntos": [
         "Cada mañana, cómo de preparado está tu cuerpo",
@@ -364,7 +364,7 @@
       {
         "id": "que-es",
         "pregunta": "¿Qué es Kuova?",
-        "respuesta": "Una forma de tomar el control de tu salud. Kuova junta en un solo sitio cómo te sientes, los datos de tu reloj o tu anillo y tus análisis; te explica qué significan y te propone un plan para mejorar. Después vuelves a medir para ver qué ha funcionado."
+        "respuesta": "Una forma de tomar el control de tu salud. Kuova junta en un solo sitio cómo te sientes, los datos de tu reloj, tu anillo o tu pulsera y tus análisis; te explica qué significan y te propone un plan para mejorar. Después vuelves a medir para ver qué ha funcionado."
       },
       {
         "id": "medico",

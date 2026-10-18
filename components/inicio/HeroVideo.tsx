@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { medir } from "@/lib/medicion";
 import { useMenosMovimiento } from "./escenas/animacion";
 
 // Vídeo de fondo de la portada (content/inicio.json → hero.video y hero.video_bucle): primero el
@@ -29,6 +30,7 @@ export default function HeroVideo({ src, bucle }: { src: string; bucle?: string 
   const clase = `absolute inset-0 h-full w-full object-cover ${movil ? "object-center" : "object-[60%_60%]"}`;
 
   const alAcabar = () => {
+    medir("video", "giro de portada visto entero");
     const v = refBucle.current;
     // Si el bucle no ha cargado, se queda el último fotograma del giro (mejor que volver a la foto)
     if (!v || v.readyState < 2) return;

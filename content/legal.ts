@@ -26,7 +26,7 @@ const CONTROLLER_EN =
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
-  updated: "Última actualización: 9 de octubre de 2026",
+  updated: "Última actualización: 18 de octubre de 2026",
   intro:
     "Kuova es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
   sections: [
@@ -116,12 +116,19 @@ export const privacyEs: LegalDocument = {
     {
       title: "12. Lista de espera de la web",
       paragraphs: [
-        "Si te apuntas a la lista de espera en kuovahealth.com guardamos solo tu email, el idioma de tu navegador y la fecha. Lo usamos únicamente para avisarte del lanzamiento de Kuova y de novedades relacionadas, con tu consentimiento (art. 6.1.a RGPD), que das al apuntarte.",
+        "Si te apuntas a la lista de espera en kuovahealth.com guardamos tu email, el idioma de tu navegador, la fecha y por dónde llegaste a la web: el canal (por ejemplo, Instagram, un buscador o un email nuestro), la fuente y la campaña del enlace si las tenía, la web de la que venías, la página en la que te apuntaste, el tipo de dispositivo y el país, la región y la ciudad aproximados según tu conexión. El email lo usamos únicamente para avisarte del lanzamiento de Kuova y de novedades relacionadas, con tu consentimiento (art. 6.1.a RGPD), que das al apuntarte; los datos de llegada, para saber qué canales funcionan, por nuestro interés legítimo en medir nuestra comunicación (art. 6.1.f RGPD).",
         "Se guarda en Supabase, en servidores de la Unión Europea, y no lo compartimos con nadie para su propio uso. Lo conservamos hasta que te des de baja o, como máximo, 24 meses desde que te apuntaste. Puedes darte de baja en cualquier momento desde cualquier email que te enviemos o escribiendo a hello@kuovahealth.com.",
       ],
     },
     {
-      title: "13. Cambios en esta política",
+      title: "13. Medición de visitas de la web",
+      paragraphs: [
+        "Para saber cuánta gente visita kuovahealth.com, por dónde llega y qué partes de la página se ven, medimos las visitas sin cookies y sin guardar nada en tu dispositivo. De cada página que se carga registramos la dirección visitada, el idioma, el canal, la fuente y la campaña por los que llegaste, la web de la que venías, el tipo de dispositivo, el sistema, el navegador y el ancho de pantalla, el país, la región y la ciudad aproximados según tu conexión, las secciones que se ven, los botones y enlaces que se pulsan y el tiempo en la página.",
+        "No guardamos tu dirección IP: solo la usamos, junto con los datos de tu navegador, para calcular una huella anónima que cambia cada día, con la que contamos visitantes distintos sin poder seguir a nadie de un día a otro. Lo hacemos por nuestro interés legítimo en entender y mejorar la web (art. 6.1.f RGPD). Estos datos se guardan en Supabase, en servidores de la Unión Europea, durante un máximo de 24 meses. Usamos también Vercel Web Analytics, que tampoco usa cookies y solo nos muestra cifras de conjunto. Si te apuntas a la lista de espera, los datos de llegada se guardan también con tu email, como se explica en el punto 12.",
+      ],
+    },
+    {
+      title: "14. Cambios en esta política",
       paragraphs: [
         "Si cambiamos esta política de forma relevante, te avisaremos en la app antes de que el cambio se aplique y, cuando haga falta, te pediremos de nuevo tu consentimiento.",
       ],
@@ -131,7 +138,7 @@ export const privacyEs: LegalDocument = {
 
 export const privacyEn: LegalDocument = {
   title: "Privacy Policy",
-  updated: "Last updated: 9 October 2026",
+  updated: "Last updated: 18 October 2026",
   intro:
     "Kuova is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
   sections: [
@@ -215,12 +222,19 @@ export const privacyEn: LegalDocument = {
     {
       title: "12. Website waitlist",
       paragraphs: [
-        "If you join the waitlist at kuovahealth.com we store only your email, your browser language and the date. We use it solely to tell you about Kuova's launch and related news, based on your consent (Art. 6(1)(a) GDPR), which you give by signing up.",
+        "If you join the waitlist at kuovahealth.com we store your email, your browser language, the date and how you reached the website: the channel (for example Instagram, a search engine or one of our emails), the link's source and campaign if it had them, the website you came from, the page where you signed up, your type of device and your approximate country, region and city based on your connection. We use your email solely to tell you about Kuova's launch and related news, based on your consent (Art. 6(1)(a) GDPR), which you give by signing up; the arrival data, to learn which channels work, based on our legitimate interest in measuring our communication (Art. 6(1)(f) GDPR).",
         "It is stored with Supabase on servers in the European Union and is not shared with anyone for their own use. We keep it until you unsubscribe or for at most 24 months from when you signed up. You can unsubscribe at any time from any email we send you or by writing to hello@kuovahealth.com.",
       ],
     },
     {
-      title: "13. Changes",
+      title: "13. Website visit measurement",
+      paragraphs: [
+        "To know how many people visit kuovahealth.com, how they get there and which parts of the page are seen, we measure visits without cookies and without storing anything on your device. For each page loaded we record the address visited, the language, the channel, source and campaign you came through, the website you came from, your type of device, operating system, browser and screen width, your approximate country, region and city based on your connection, the sections that are seen, the buttons and links that are clicked and the time spent on the page.",
+        "We do not store your IP address: we only use it, together with your browser's details, to compute an anonymous fingerprint that changes every day, which lets us count distinct visitors without being able to follow anyone from one day to the next. We do this based on our legitimate interest in understanding and improving the website (Art. 6(1)(f) GDPR). This data is stored with Supabase on servers in the European Union for at most 24 months. We also use Vercel Web Analytics, which does not use cookies either and only shows us aggregate figures. If you join the waitlist, the arrival data is also stored with your email, as explained in section 12.",
+      ],
+    },
+    {
+      title: "14. Changes",
       paragraphs: [
         "If we materially change this policy, we will notify you in the app before the change applies and ask for your consent again where required.",
       ],

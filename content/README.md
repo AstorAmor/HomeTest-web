@@ -54,10 +54,41 @@ Los textos viven en GitHub (repositorio `AstorAmor/HomeTest-web`). Cuando un cam
 - Fotos: `public/images/inicio/`. Para cambiar una, copia la nueva con **otro nombre** (si reutilizas el nombre, el navegador puede seguir enseñando la antigua) y pon la nueva ruta en `imagen`.
 - `encuadre`: qué parte de la foto se ve, en horizontal y vertical («70% 40%»; 0% = izquierda/arriba).
 - `lado` (dentro de `escena`): a qué lado va la tarjeta animada en el ordenador (`izquierda`, `derecha` o `centro`), siempre al contrario de la persona. En el móvil va debajo de la foto.
-- Vídeos de fondo de la portada (`public/videos/inicio/`): `hero.video` = `portada-giro.mp4`, el giro de cámara alrededor de la chica que se ve una vez al entrar, y `hero.video_bucle` = `portada-bucle.mp4`, el bucle tranquilo que sigue (empieza en el último fotograma del giro). En el móvil se usan los recortes verticales con el mismo nombre acabado en `-movil.mp4`, así que cada vídeo va en dos archivos. `video` en `null` = solo la foto con un zoom lento; `video_bucle` vacío = el primer vídeo se repite. Formato: MP4 H.264 sin sonido (1920 de ancho; el móvil, 720×1280). Antes del vídeo y con «reducir movimiento» se ve `portada.jpg`, que es su primer fotograma.
+- Vídeos de fondo de la portada (`public/videos/inicio/`): `hero.video` = `portada-giro-2.mp4`, el giro de cámara alrededor de la chica que se ve una vez al entrar, y `hero.video_bucle` = `portada-bucle-2.mp4`, el bucle tranquilo que sigue. El giro está cortado justo antes de que el vídeo original se quedara quieto y funde en 0,4 s con el bucle, que a su vez está cerrado con un fundido de 1 s para que el pelo no se pare nunca; si los cambias, ponles otro nombre. En el móvil se usan los recortes verticales con el mismo nombre acabado en `-movil.mp4`, así que cada vídeo va en dos archivos. `video` en `null` = solo la foto con un zoom lento; `video_bucle` vacío = el primer vídeo se repite. Formato: MP4 H.264 sin sonido (1920 de ancho; el móvil, 720×1280). Antes del vídeo y con «reducir movimiento» se ve `portada.jpg`, que es su primer fotograma.
 - Fondos de «capas» (las láminas de curvas suaves detrás de la frase grande y de «Tus datos son tuyos»): `public/images/inicio/capas-*.jpg`, hechos con código, sin IA. Para regenerarlos (por ejemplo si cambia la forma de las capas de Tu edad KUOVA): `node scripts/capas/render.mjs`; tamaños, tonos y dirección en `TRABAJOS`, dentro de ese archivo. Las capas en movimiento de la lista de espera (en diagonal) no son una imagen: se dibujan en el navegador (`components/inicio/CapasVivas.tsx`).
 - Originales y descartes: OneDrive → `05 Marca/Contenido IA/2026-10/` (los que empiezan por `WEB`).
 - Imagen al compartir en redes (WhatsApp, LinkedIn...): `public/images/kuova-og.jpg` (1200×630), generada con `python scripts/make-og.py` desde `scripts/og/og.html`. Si la cambias, ponle otro nombre (y cámbialo en `lib/seo.ts`).
+
+## Medición: cuánta gente entra, por dónde y quién se apunta
+
+Sin cookies (no hace falta banner). Dos fuentes:
+
+- **Vercel Web Analytics** (vercel.com → hometest-web → Analytics): visitantes, páginas, países, dispositivos y webs de origen. Hay que activarlo una vez con «Enable».
+- **Nuestra medición en Supabase** (Table Editor), más detallada y unida a las altas:
+  - `web_por_canal`: visitantes, altas y conversión (%) por canal (Email, Redes sociales, Redes de pago, Búsqueda orgánica, Búsqueda de pago, Asistentes IA, Mensajería, Colaboraciones, QR y offline, Enlaces de otras webs, Directo).
+  - `web_por_campana`: lo mismo por fuente, medio, campaña y contenido del enlace.
+  - `web_diario`: visitas, visitantes, altas y conversión por día.
+  - `web_embudo`: por canal, cuántos ven «Cómo funciona», llegan a la lista, intentan apuntarse y se apuntan, y los segundos medios en la página.
+  - `web_secciones` (hasta dónde baja la gente), `web_clics` (qué se pulsa), `web_audiencia` (países y dispositivos).
+  - Los datos crudos: `web_visitas`, `web_eventos` y `waitlist` (cada alta con su canal, fuente, campaña, dispositivo y ciudad).
+- Cómo se decide el canal: `lib/canales.ts`. Tus propias visitas no cuentan si abres una vez `kuovahealth.com/?no-contar=1` en cada navegador que uses (`?no-contar=0` lo deshace). Las visitas de prueba desde el servidor local llevan la fuente `prueba-local`.
+
+**Enlaces con etiqueta (UTM)**: Instagram, TikTok, WhatsApp y el correo casi nunca dicen de dónde viene la visita, así que cada enlace que publiques debe llevar su etiqueta al final. Formato: `https://kuovahealth.com/?utm_source=FUENTE&utm_medium=MEDIO&utm_campaign=CAMPAÑA` (opcional `&utm_content=` para distinguir piezas). Ejemplos:
+
+| Dónde | Enlace |
+| --- | --- |
+| Bio de Instagram | `https://kuovahealth.com/?utm_source=instagram&utm_medium=bio` |
+| Post o reel de Instagram | `https://kuovahealth.com/?utm_source=instagram&utm_medium=reel&utm_campaign=lanzamiento&utm_content=edad-kuova` |
+| Bio de TikTok | `https://kuovahealth.com/?utm_source=tiktok&utm_medium=bio` |
+| LinkedIn (post) | `https://kuovahealth.com/?utm_source=linkedin&utm_medium=social&utm_campaign=lanzamiento` |
+| Newsletter o email | `https://kuovahealth.com/?utm_source=newsletter&utm_medium=email&utm_campaign=octubre` |
+| Firma de tu email | `https://kuovahealth.com/?utm_source=firma&utm_medium=email` |
+| WhatsApp | `https://kuovahealth.com/?utm_source=whatsapp&utm_medium=mensaje` |
+| QR en un folleto o evento | `https://kuovahealth.com/?utm_source=folleto&utm_medium=qr&utm_campaign=nombre-del-evento` |
+| Anuncios de Meta | `https://kuovahealth.com/?utm_source=meta&utm_medium=paid_social&utm_campaign=…` |
+| Colaboración con alguien | `https://kuovahealth.com/?utm_source=nombre&utm_medium=colaboracion` |
+
+Usa siempre minúsculas y guiones, y la misma palabra para lo mismo (si un día es `instagram` y otro `ig`, saldrán separados). Google y Bing (orgánico), ChatGPT, Perplexity y otras webs se detectan solos.
 
 ## Español e inglés
 
