@@ -1,0 +1,372 @@
+{
+  "_como_editar": "English version of content/inicio.json (same structure; the Spanish file is the main one). Numbers in the animations are illustrative examples.",
+  "hero": {
+    "eyebrow": "Coming soon to Spain",
+    "titulo": "Know more.",
+    "titulo_2": "Live better.",
+    "subtitulo": "How you feel, what your body does every day and what your tests say, finally in one place. So you know where you stand and what to do next.",
+    "cta": "Join the waitlist",
+    "cta_2": "How it works",
+    "imagen": "/images/inicio/portada.jpg",
+    "imagen_alt": "Woman in sportswear looking out to sea from a cliff at sunrise",
+    "video": "/videos/inicio/portada.mp4",
+    "senales_titulo": "Your signals, together",
+    "senales": [
+      {
+        "fuente": "Your watch",
+        "texto": "Deep sleep · 1 h 42 min"
+      },
+      {
+        "fuente": "Your log",
+        "texto": "Afternoon energy · better"
+      },
+      {
+        "fuente": "Your tests",
+        "texto": "Vitamin D · in range"
+      },
+      {
+        "fuente": "Your plan",
+        "texto": "Strength · 2 of 2 this week"
+      }
+    ]
+  },
+  "intro": {
+    "titulo": "Your body talks to you every day.",
+    "destacado": "Learn to listen.",
+    "texto": "How you feel, what you do and what you measure change together. Kuova brings them into one place so you can see what really works for you, and what doesn't."
+  },
+  "pasos_intro": {
+    "eyebrow": "How it works",
+    "titulo": "A cycle that stays with you",
+    "subtitulo": "Start with you, measure, understand and act. Then do it again, knowing more each time.",
+    "paso": "Step"
+  },
+  "pasos": [
+    {
+      "id": "cuentanos",
+      "etiqueta": "Tell us",
+      "titulo": "Start with you",
+      "texto": "How you sleep, how you feel at the end of the day, what worries you and what you'd like to achieve. With your context, no number stands alone.",
+      "puntos": [
+        "Your goals, habits and history",
+        "How you feel, in your own words",
+        "Already have lab results? Upload a PDF or photo"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/contexto.jpg",
+      "imagen_alt": "Woman at her desk in the afternoon, looking tired",
+      "video": null,
+      "encuadre": "70% 40%",
+      "escena": {
+        "tipo": "contexto",
+        "lado": "izquierda",
+        "pregunta": "How do you feel at 6 pm?",
+        "opciones": [
+          "Energised",
+          "Fine",
+          "Flagging",
+          "Drained"
+        ],
+        "elegida": 2,
+        "objetivos_titulo": "What you want to achieve",
+        "objetivos": [
+          "More energy",
+          "Better sleep",
+          "Get stronger"
+        ]
+      }
+    },
+    {
+      "id": "conecta",
+      "etiqueta": "Connect",
+      "titulo": "Connect your watch or ring",
+      "texto": "Sleep, resting heart rate, heart rate variability, steps… They arrive on their own, with nothing to write down, and add to everything else.",
+      "puntos": [
+        "Every morning, how ready your body is",
+        "Health Connect on Android; Apple Health coming soon",
+        "We only read what you allow"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/teclado-reloj.jpg",
+      "imagen_alt": "Hand typing on a laptop with a sports watch on the wrist",
+      "video": null,
+      "encuadre": "30% 50%",
+      "escena": {
+        "tipo": "wearables",
+        "lado": "derecha",
+        "estado": "Synced",
+        "anillo_titulo": "Readiness",
+        "lecturas": [
+          {
+            "valor": 82,
+            "nota": "Good recovery",
+            "sueno": "7 h 24 min",
+            "pulso": "54 bpm",
+            "vfc": "61 ms"
+          },
+          {
+            "valor": 71,
+            "nota": "Normal recovery",
+            "sueno": "6 h 38 min",
+            "pulso": "58 bpm",
+            "vfc": "52 ms"
+          },
+          {
+            "valor": 89,
+            "nota": "Great recovery",
+            "sueno": "7 h 51 min",
+            "pulso": "52 bpm",
+            "vfc": "66 ms"
+          }
+        ],
+        "sueno": "Sleep",
+        "pulso": "Resting heart rate",
+        "vfc": "Variability (HRV)"
+      }
+    },
+    {
+      "id": "registra",
+      "etiqueta": "Log",
+      "titulo": "Listen to your body",
+      "texto": "Energy, mood, digestion, menstrual cycle… A short daily check-in, just a few seconds, that turns how you feel into information.",
+      "puntos": [
+        "A few seconds a day, whenever suits you",
+        "Completely private: only you see it",
+        "Find out what agrees with you and what doesn't"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/registro.jpg",
+      "imagen_alt": "Sweaty athlete catching her breath on a running track at sunset",
+      "video": null,
+      "encuadre": "70% 30%",
+      "escena": {
+        "tipo": "diario",
+        "lado": "izquierda",
+        "titulo": "How are you today?",
+        "hora": "19:40",
+        "energia": "Energy",
+        "animo": "Mood",
+        "digestion": "Digestion",
+        "digestion_opciones": [
+          "Light",
+          "Normal",
+          "Heavy"
+        ],
+        "ciclo_fase": "Follicular phase",
+        "ciclo_dia": 12,
+        "ciclo_duracion": 28,
+        "ciclo_valor": "Day 12 of 28",
+        "ciclo_nota": "Energy is rising: a good moment to train hard."
+      }
+    },
+    {
+      "id": "mide",
+      "etiqueta": "Measure",
+      "titulo": "Measure what you can't see",
+      "texto": "A complete blood and urine test, in a single visit to a lab near you. Your results go straight to your app.",
+      "puntos": [
+        "One visit, no fuss",
+        "Metabolism, heart, hormones, nutrients and much more",
+        "Your results, organised and in one place"
+      ],
+      "proximamente": "And soon, you could collect your sample from home.",
+      "cta": "Tell me more",
+      "imagen": "/images/inicio/laboratorio.jpg",
+      "imagen_alt": "Gloved hand pipetting a sample into a plate in the lab",
+      "video": null,
+      "encuadre": "20% 50%",
+      "escena": {
+        "tipo": "analitica",
+        "lado": "derecha",
+        "titulo": "Your lab test",
+        "procesando": "Analysing…",
+        "sistemas": [
+          "Metabolism",
+          "Heart",
+          "Hormones",
+          "Thyroid",
+          "Nutrients",
+          "Inflammation"
+        ],
+        "listo": "Results ready"
+      }
+    },
+    {
+      "id": "entiende",
+      "etiqueta": "Understand",
+      "titulo": "Understand what it's telling you",
+      "texto": "Every result explained in plain words: what it measures, why it matters and how it fits with how you feel and what your watch records.",
+      "puntos": [
+        "What's fine and what needs attention",
+        "Your tests, matched with your day-to-day",
+        "More clarity when you talk to your doctor"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/microscopio.jpg",
+      "imagen_alt": "Microscope objectives against a dark green background",
+      "video": null,
+      "encuadre": "60% 50%",
+      "escena": {
+        "tipo": "entiende",
+        "lado": "izquierda",
+        "ejemplo": "Example",
+        "marcador": "Ferritin",
+        "valor": 18,
+        "unidad": "µg/L",
+        "zonas": [
+          "Low",
+          "Optimal",
+          "High"
+        ],
+        "estado": "Below your optimal range",
+        "relacion_titulo": "May be related to",
+        "relaciones": [
+          {
+            "texto": "Low energy in the afternoon",
+            "fuente": "Your log"
+          },
+          {
+            "texto": "Less restful sleep",
+            "fuente": "Your watch"
+          }
+        ]
+      }
+    },
+    {
+      "id": "actua",
+      "etiqueta": "Act",
+      "titulo": "Take action",
+      "texto": "A concrete plan built from your data: sleep, movement, food and rest. A few well-chosen changes that fit into your week.",
+      "puntos": [
+        "Concrete actions, not generic advice",
+        "Designed around your goals",
+        "See how your markers could improve"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/press-banca.jpg",
+      "imagen_alt": "Man doing a dumbbell bench press in a gym",
+      "video": null,
+      "encuadre": "25% 50%",
+      "escena": {
+        "tipo": "plan",
+        "lado": "derecha",
+        "titulo": "Your plan",
+        "subtitulo": "Next 12 weeks",
+        "acciones": [
+          "Strength training, twice a week",
+          "Daylight before 10 am",
+          "Pulses three times a week",
+          "Dinner two hours before bed"
+        ],
+        "proyeccion": "Projection · Ferritin"
+      }
+    },
+    {
+      "id": "repite",
+      "etiqueta": "Repeat",
+      "titulo": "Measure again. See how you change.",
+      "texto": "One test is a snapshot; several tell your story. Each new measurement shows what worked, adjusts your plan and adds to what you know about yourself.",
+      "puntos": [
+        "Your markers over time",
+        "What worked and what didn't",
+        "A plan that evolves with you"
+      ],
+      "cta": "Join the waitlist",
+      "imagen": "/images/inicio/carrera.jpg",
+      "imagen_alt": "Athlete sprinting along a running track at golden hour",
+      "video": null,
+      "encuadre": "75% 50%",
+      "escena": {
+        "tipo": "tendencia",
+        "lado": "izquierda",
+        "ejemplo": "Example",
+        "marcador": "Ferritin",
+        "valores": [
+          18,
+          31,
+          52
+        ],
+        "unidad": "µg/L",
+        "rango": "Optimal range",
+        "hitos": [
+          "1st test",
+          "2nd test",
+          "3rd test"
+        ]
+      }
+    }
+  ],
+  "datos": {
+    "eyebrow": "Privacy",
+    "titulo": "Your data is yours",
+    "puntos": [
+      {
+        "titulo": "In Europe",
+        "texto": "Stored in the European Union, with restricted access."
+      },
+      {
+        "titulo": "Never for sale",
+        "texto": "We never sell it or use it for advertising."
+      },
+      {
+        "titulo": "You decide",
+        "texto": "Only the people you authorise can see it, and you can withdraw that at any time."
+      }
+    ],
+    "nota": "Kuova does not diagnose or replace your doctor: it helps you understand your health and arrive better prepared."
+  },
+  "preguntas": {
+    "titulo": "Frequently asked questions",
+    "subtitulo": "Still have a question? Write to us at",
+    "email": "hello@kuovahealth.com",
+    "lista": [
+      {
+        "id": "que-es",
+        "pregunta": "What is Kuova?",
+        "respuesta": "A way to take control of your health. Kuova brings together how you feel, the data from your watch or ring and your lab results; it explains what they mean and suggests a plan to improve. Then you measure again to see what worked."
+      },
+      {
+        "id": "medico",
+        "pregunta": "Does it replace my doctor?",
+        "respuesta": "No. Kuova does not diagnose: it gives you clear information to understand your health and to share with a healthcare professional if you wish. Clinical assessment and any medical decision always belong to a professional."
+      },
+      {
+        "id": "donde",
+        "pregunta": "Where do I get tested?",
+        "respuesta": "At a lab near you, in a single visit. We're working on letting you collect your sample from home too: we'll let you know as soon as it's available."
+      },
+      {
+        "id": "subir",
+        "pregunta": "Can I use lab results I already have?",
+        "respuesta": "Yes. Upload the PDF or a photo and the app extracts the results for you. You review them before saving and they become part of your history."
+      },
+      {
+        "id": "dispositivos",
+        "pregunta": "Which devices can I connect?",
+        "respuesta": "Watches and rings that sync with Health Connect on Android, for example from Garmin, Samsung, Xiaomi, Oura or Google. Apple Health is coming soon. We only read the data you allow."
+      },
+      {
+        "id": "datos",
+        "pregunta": "Is my data safe?",
+        "respuesta": "It is stored in the European Union with restricted access. We never sell it or use it for advertising, and only the people you authorise can see it."
+      },
+      {
+        "id": "cuando",
+        "pregunta": "When can I start?",
+        "respuesta": "We're preparing the launch in Spain. Join the waitlist and you'll be among the first to know."
+      }
+    ]
+  },
+  "lista": {
+    "titulo": "Be among the first to know more",
+    "texto": "We're preparing the launch in Spain. Leave your email and we'll let you know as soon as you can start.",
+    "placeholder": "Your email",
+    "boton": "Join the list",
+    "enviando": "Joining…",
+    "exito_titulo": "You're on the list.",
+    "exito_texto": "We'll write to you as soon as Kuova is ready for you.",
+    "error": "Something went wrong. Please try again.",
+    "nota": "Launch news only, no spam. Unsubscribe anytime.",
+    "privacidad": "Privacy"
+  }
+}

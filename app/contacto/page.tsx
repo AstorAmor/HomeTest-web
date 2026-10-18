@@ -11,7 +11,7 @@ export function generateMetadata(): Metadata {
 }
 
 export default function ContactoPage() {
-  const { pagina_contacto, ui, waitlist_form } = getContent(getLang()).siteCopy;
+  const { pagina_contacto, ui } = getContent(getLang()).siteCopy;
 
   return (
     <>
@@ -35,7 +35,7 @@ export default function ContactoPage() {
               .
             </p>
           </div>
-          <ContactForm ui={ui} nameLabel={waitlist_form.campo_nombre} />
+          <ContactForm ui={ui} nameLabel={ui.contacto_nombre} />
         </div>
       </Section>
     </>

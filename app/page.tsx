@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
-import Hero from "@/components/landing/Hero";
-import StatStrip from "@/components/landing/StatStrip";
-import Biomarkers from "@/components/landing/Biomarkers";
-import AppShowcase from "@/components/landing/AppShowcase";
-import ActionPlan from "@/components/landing/ActionPlan";
-import HowItWorks from "@/components/landing/HowItWorks";
-import Professionals from "@/components/landing/Professionals";
-import KeyFacts from "@/components/landing/KeyFacts";
-import FaqBlock from "@/components/landing/FaqBlock";
-import FinalCta from "@/components/landing/FinalCta";
 import JsonLd from "@/components/seo/JsonLd";
 import ComingSoon from "@/components/prelaunch/ComingSoon";
+import Portada from "@/components/inicio/Portada";
+import Pasos from "@/components/inicio/Pasos";
+import { Intro, ListaEspera, Preguntas, Privacidad } from "@/components/inicio/Secciones";
 import { getContent } from "@/lib/content";
 import { getLang } from "@/lib/i18n";
 import { PRELAUNCH } from "@/lib/launch";
@@ -20,28 +13,24 @@ export function generateMetadata(): Metadata {
   return pageMetadata("home", "/");
 }
 
-// Portada: del mensaje principal a la lista de espera, con "cómo funciona" hacia abajo.
-// Textos en content/site-copy.json (y content/en/) → "home".
+// Portada: mensaje principal, los siete pasos de "Cómo funciona" con sus escenas animadas,
+// privacidad, preguntas y lista de espera. Textos en content/inicio.json (y content/en/inicio.json).
 export default function Home() {
   if (PRELAUNCH) return <ComingSoon />;
 
   const lang = getLang();
-  const { siteCopy, panel, panelTotal, faq } = getContent(lang);
+  const { inicio } = getContent(lang);
 
   return (
     <>
       <JsonLd data={serviceJsonLd(lang)} />
-      <JsonLd data={faqJsonLd(faq.preguntas)} />
-      <Hero copy={siteCopy} lang={lang} />
-      <StatStrip copy={siteCopy} />
-      <Biomarkers copy={siteCopy} lang={lang} panel={panel} />
-      <AppShowcase copy={siteCopy} />
-      <ActionPlan copy={siteCopy} />
-      <HowItWorks copy={siteCopy} />
-      <Professionals copy={siteCopy} />
-      <KeyFacts copy={siteCopy} total={panelTotal} systems={panel.length} />
-      <FaqBlock copy={siteCopy} lang={lang} preguntas={faq.preguntas} />
-      <FinalCta copy={siteCopy} />
+      <JsonLd data={faqJsonLd(inicio.preguntas.lista)} />
+      <Portada copy={inicio.hero} lang={lang} />
+      <Intro copy={inicio.intro} />
+      <Pasos copy={inicio} lang={lang} />
+      <Privacidad copy={inicio.datos} />
+      <Preguntas copy={inicio.preguntas} />
+      <ListaEspera copy={inicio.lista} lang={lang} />
     </>
   );
 }

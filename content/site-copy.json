@@ -5,17 +5,25 @@
   },
   "nav": {
     "enlaces": [
-      { "label": "Cómo funciona", "href": "/como-funciona" },
-      { "label": "Biomarcadores", "href": "/catalogo" },
-      { "label": "FAQ", "href": "/faq" },
-      { "label": "Contacto", "href": "/contacto" }
+      {
+        "label": "Cómo funciona",
+        "href": "/#como-funciona"
+      },
+      {
+        "label": "Privacidad",
+        "href": "/#privacidad"
+      },
+      {
+        "label": "Preguntas",
+        "href": "/#preguntas"
+      }
     ],
     "cta": "Lista de espera"
   },
   "seo": {
     "home": {
       "title": "Kuova Health",
-      "description": "Salud preventiva en España: analíticas de más de 110 biomarcadores dos veces al año, tus wearables conectados y profesionales verificados. Entiende tu salud y pasa a la acción."
+      "description": "Toma el control de tu salud: cómo te sientes, tus wearables y tus analíticas en un solo sitio, explicados con claridad y con un plan para mejorar. Muy pronto en España."
     },
     "como_funciona": {
       "title": "Cómo funciona — Kuova Health",
@@ -43,69 +51,6 @@
     }
   },
   "home": {
-    "hero": {
-      "eyebrow": "Salud preventiva · Muy pronto en España",
-      "titulo": "Conoce más. Vive mejor.",
-      "subtitulo": "Más de 110 biomarcadores, tus wearables y profesionales que te acompañan. Entiende cómo está tu cuerpo hoy y sabe exactamente qué hacer.",
-      "cta_principal": "Únete a la lista de espera",
-      "cta_secundaria": "Cómo funciona",
-      "nota_legal": "No sustituye a tu médico.",
-      "imagen": "/images/photos/strength.jpg",
-      "video": null
-    },
-    "cifras": [
-      { "valor": "110+", "texto": "biomarcadores en sangre y orina" },
-      { "valor": "2", "texto": "analíticas al año para ver tu evolución" },
-      { "valor": "24/7", "texto": "tus wearables, conectados" },
-      { "valor": "1", "texto": "plan hecho con tus datos" }
-    ],
-    "aprende": {
-      "titulo": "Aprende sobre tu salud",
-      "subtitulo": "Tu cuerpo da señales mucho antes de que notes nada. Una analítica completa te ayuda a leerlas a tiempo."
-    },
-    "biomarcadores": {
-      "titulo": "110+ biomarcadores.",
-      "destacado": "Más que un número.",
-      "subtitulo": "Cada resultado viene explicado: qué mide, por qué importa y qué puedes hacer. Y en tu siguiente analítica ves cómo ha cambiado.",
-      "sistemas": ["metabolico", "lipidico", "hormonas", "tiroides", "nutrientes", "regulacion_inmune", "hepatico", "renal"],
-      "cta": "Ver todos los biomarcadores"
-    },
-    "app": {
-      "eyebrow": "La app",
-      "titulo": "Tu salud, al alcance de tu mano",
-      "subtitulo": "Tus analíticas, tus mediciones y tus wearables en un solo sitio, explicados en un lenguaje que se entiende.",
-      "puntos": [
-        { "titulo": "Tu informe, explicado", "texto": "Qué está en rango, qué merece atención y tu edad biológica estimada." },
-        { "titulo": "Tu día a día", "texto": "Sueño, pasos, energía y ánimo, junto a tus resultados." },
-        { "titulo": "Tu plan", "texto": "Acciones concretas, con una proyección de cómo pueden mejorar tus marcadores." }
-      ],
-      "capturas": [
-        { "src": "/images/app/today.jpg", "alt": "Pantalla Today de la app Kuova con energía, ánimo y preparación del día" },
-        { "src": "/images/app/report.jpg", "alt": "Informe de la analítica en la app Kuova: marcadores en rango y edad biológica" },
-        { "src": "/images/app/actionplan.jpg", "alt": "Plan de acción en la app Kuova con proyección de un marcador" }
-      ]
-    },
-    "accion": {
-      "eyebrow": "Tu plan",
-      "titulo": "Conocerte mejor para pasar a la acción",
-      "texto": "Con tus resultados, tus hábitos y tus objetivos construimos un plan a tu medida: sueño, movimiento, nutrición y calma. Seis meses después, la siguiente analítica te dice qué ha funcionado.",
-      "imagen": "/images/photos/walking.jpg",
-      "imagen_alt": "Pareja caminando por un parque al atardecer",
-      "captura": { "src": "/images/app/habits.jpg", "alt": "Hábitos antes y ahora en la app Kuova: sueño, pulso en reposo, pasos" },
-      "objetivos_titulo": "¿Cuál es el tuyo?",
-      "objetivos": [
-        "Despertarme con energía",
-        "Bajar mi colesterol LDL",
-        "Correr mi primera media maratón",
-        "Dormir del tirón",
-        "Entender mi ciclo",
-        "Llegar con energía a las 6 de la tarde",
-        "Prepararme para un embarazo",
-        "Ganar fuerza después de los 40",
-        "Controlar el estrés",
-        "Mejorar mi glucosa"
-      ]
-    },
     "como_funciona": {
       "eyebrow": "Cómo funciona",
       "titulo": "Un sistema que te acompaña todo el año",
@@ -137,84 +82,87 @@
         }
       ]
     },
-    "profesionales": {
-      "eyebrow": "Profesionales",
-      "titulo": "No estás solo con tus resultados",
-      "subtitulo": "Médicos, fisioterapeutas, nutricionistas, entrenadores y matronas verificados por Kuova. Tú decides con quién compartes tus datos y puedes retirarlo cuando quieras.",
-      "roles": [
-        { "rol": "Medicina", "foto": "/images/photos/pro-doctor.jpg" },
-        { "rol": "Fisioterapia", "foto": "/images/photos/pro-physio.jpg" },
-        { "rol": "Nutrición", "foto": "/images/photos/pro-dietitian.jpg" },
-        { "rol": "Entrenamiento", "foto": "/images/photos/pro-trainer.jpg" },
-        { "rol": "Matrona", "foto": "/images/photos/pro-midwife.jpg" }
-      ],
-      "testimonios_titulo": "Lo que dicen los profesionales",
-      "testimonios": []
-    },
-    "datos": {
-      "titulo": "Tus datos son tuyos",
-      "puntos": [
-        "Guardados en la Unión Europea",
-        "Nunca los vendemos ni los usamos para publicidad",
-        "Solo los ve quien tú autorices, y puedes retirarlo cuando quieras"
-      ]
-    },
     "en_breve": {
       "titulo": "Kuova en pocas palabras",
-      "parrafo": "Kuova es una membresía de salud preventiva con sede en Madrid. Combina analíticas de más de 110 biomarcadores dos veces al año, una app que explica los resultados y los une a los datos de tus wearables, y profesionales sanitarios verificados que te ayudan a pasar a la acción. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar mejor preparado a la consulta.",
+      "parrafo": "Kuova es una plataforma de salud preventiva con sede en Madrid. Une en un solo sitio cómo te sientes cada día, los datos de tu reloj o tu anillo y tus analíticas de sangre y orina hechas en laboratorio; explica los resultados con claridad y propone un plan para mejorar, que se comprueba volviendo a medir. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar a la consulta con más información.",
       "datos": [
-        { "clave": "Qué es", "valor": "Una membresía de salud preventiva" },
-        { "clave": "Dónde", "valor": "España, con sede en Madrid" },
-        { "clave": "Qué mide", "valor": "{n} biomarcadores en sangre y orina, en {s} sistemas del cuerpo" },
-        { "clave": "Cada cuánto", "valor": "Dos analíticas al año" },
-        { "clave": "Wearables", "valor": "Relojes y anillos compatibles con Health Connect (Android); Huawei Health y Apple Salud, próximamente" },
-        { "clave": "Profesionales", "valor": "Medicina, fisioterapia, nutrición, entrenamiento y matronas" },
-        { "clave": "Privacidad", "valor": "Datos en la Unión Europea; nunca se venden" }
+        {
+          "clave": "Qué es",
+          "valor": "Una membresía de salud preventiva"
+        },
+        {
+          "clave": "Dónde",
+          "valor": "España, con sede en Madrid"
+        },
+        {
+          "clave": "Qué mide",
+          "valor": "Analíticas de sangre y orina en laboratorio, tus wearables y tu registro diario"
+        },
+        {
+          "clave": "Wearables",
+          "valor": "Relojes y anillos compatibles con Health Connect (Android); Apple Salud, próximamente"
+        },
+        {
+          "clave": "Profesionales",
+          "valor": "Medicina, fisioterapia, nutrición, entrenamiento y matronas"
+        },
+        {
+          "clave": "Privacidad",
+          "valor": "Datos en la Unión Europea; nunca se venden"
+        }
       ]
-    },
-    "faq": {
-      "titulo": "Preguntas frecuentes",
-      "subtitulo": "¿No encuentras lo que buscas?",
-      "cta": "Escríbenos"
-    },
-    "cta_final": {
-      "titulo": "Sé de los primeros en conocerte de verdad",
-      "descripcion": "Únete a la lista de espera y te avisaremos en cuanto abramos en tu zona.",
-      "imagen": "/images/photos/walking.jpg"
     }
-  },
-  "waitlist_form": {
-    "titulo": "Únete a la lista de espera",
-    "descripcion": "Déjanos tu nombre y email y te avisaremos en cuanto podamos ofrecerte el servicio.",
-    "campo_nombre": "Nombre",
-    "campo_email": "Email",
-    "boton_enviar": "Unirme a la lista de espera",
-    "texto_privacidad": "Al enviar este formulario aceptas nuestra política de privacidad. No compartiremos tu email con terceros.",
-    "mensaje_exito": "¡Gracias! Te avisaremos en cuanto estemos disponibles."
   },
   "footer": {
     "columnas": [
       {
         "titulo": "Producto",
         "enlaces": [
-          { "label": "Cómo funciona", "href": "/como-funciona" },
-          { "label": "Biomarcadores", "href": "/catalogo" },
-          { "label": "FAQ", "href": "/faq" }
+          {
+            "label": "Cómo funciona",
+            "href": "/#como-funciona"
+          },
+          {
+            "label": "Preguntas frecuentes",
+            "href": "/#preguntas"
+          },
+          {
+            "label": "Lista de espera",
+            "href": "/#lista-de-espera"
+          }
         ]
       },
       {
         "titulo": "Empresa",
         "enlaces": [
-          { "label": "Contacto", "href": "/contacto" },
-          { "label": "Política de privacidad", "href": "/privacy" },
-          { "label": "Condiciones de uso", "href": "/terms" }
+          {
+            "label": "Contacto",
+            "href": "/contacto"
+          },
+          {
+            "label": "Política de privacidad",
+            "href": "/privacy"
+          },
+          {
+            "label": "Condiciones de uso",
+            "href": "/terms"
+          }
         ]
       }
     ],
     "redes": [
-      { "label": "Instagram", "href": "#" },
-      { "label": "LinkedIn", "href": "#" },
-      { "label": "TikTok", "href": "#" }
+      {
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "#"
+      },
+      {
+        "label": "TikTok",
+        "href": "#"
+      }
     ],
     "texto_copyright": "Kuova Health. Todos los derechos reservados.",
     "nota_legal": "Este servicio no proporciona diagnósticos médicos ni sustituye la valoración de un profesional sanitario."
@@ -253,6 +201,7 @@
     "paso": "Paso",
     "contacto_directo_titulo": "Escríbenos directamente",
     "contacto_directo_texto": "También puedes escribirnos a",
+    "contacto_nombre": "Nombre",
     "placeholder_nombre": "Tu nombre",
     "placeholder_email": "tu@email.com",
     "contacto_mensaje": "Mensaje",

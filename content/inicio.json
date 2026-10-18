@@ -1,0 +1,372 @@
+{
+  "_como_editar": "Textos de la portada completa (la que se verá en kuovahealth.com cuando se quite el pre-lanzamiento). Cambia solo lo que va entre comillas a la derecha de los dos puntos. Fotos en public/images/inicio y vídeos en public/videos/inicio. Las cifras de las animaciones son ejemplos ilustrativos.",
+  "hero": {
+    "eyebrow": "Muy pronto en España",
+    "titulo": "Conócete mejor.",
+    "titulo_2": "Vive mejor.",
+    "subtitulo": "Cómo te sientes, lo que hace tu cuerpo cada día y lo que dicen tus análisis, por fin en un mismo sitio. Para que sepas cómo estás y qué hacer para estar mejor.",
+    "cta": "Únete a la lista de espera",
+    "cta_2": "Cómo funciona",
+    "imagen": "/images/inicio/portada.jpg",
+    "imagen_alt": "Mujer en ropa de deporte contemplando el mar desde un acantilado al amanecer",
+    "video": "/videos/inicio/portada.mp4",
+    "senales_titulo": "Tus señales, juntas",
+    "senales": [
+      {
+        "fuente": "Tu reloj",
+        "texto": "Sueño profundo · 1 h 42 min"
+      },
+      {
+        "fuente": "Tu registro",
+        "texto": "Energía por la tarde · mejor"
+      },
+      {
+        "fuente": "Tu analítica",
+        "texto": "Vitamina D · en rango"
+      },
+      {
+        "fuente": "Tu plan",
+        "texto": "Fuerza · 2 de 2 esta semana"
+      }
+    ]
+  },
+  "intro": {
+    "titulo": "Tu cuerpo te habla cada día.",
+    "destacado": "Aprende a escucharlo.",
+    "texto": "Lo que sientes, lo que haces y lo que mides cambian a la vez. Kuova los pone juntos para que veas qué te funciona de verdad y qué no."
+  },
+  "pasos_intro": {
+    "eyebrow": "Cómo funciona",
+    "titulo": "Un ciclo que te acompaña",
+    "subtitulo": "Empiezas por ti, mides, entiendes y actúas. Y vuelta a empezar, cada vez sabiendo más.",
+    "paso": "Paso"
+  },
+  "pasos": [
+    {
+      "id": "cuentanos",
+      "etiqueta": "Cuéntanos",
+      "titulo": "Empieza por ti",
+      "texto": "Cómo duermes, cómo llegas al final del día, qué te preocupa y qué te gustaría conseguir. Con tu contexto, cada dato deja de ser un número suelto.",
+      "puntos": [
+        "Tus objetivos, tus hábitos y tu historial",
+        "Cómo te sientes, con tus propias palabras",
+        "¿Ya tienes analíticas? Súbelas en PDF o foto"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/contexto.jpg",
+      "imagen_alt": "Mujer en su escritorio a media tarde, con gesto cansado",
+      "video": null,
+      "encuadre": "70% 40%",
+      "escena": {
+        "tipo": "contexto",
+        "lado": "izquierda",
+        "pregunta": "¿Cómo llegas a las seis de la tarde?",
+        "opciones": [
+          "Con energía",
+          "Normal",
+          "Me cuesta",
+          "Sin batería"
+        ],
+        "elegida": 2,
+        "objetivos_titulo": "Lo que quieres conseguir",
+        "objetivos": [
+          "Más energía",
+          "Dormir mejor",
+          "Ganar fuerza"
+        ]
+      }
+    },
+    {
+      "id": "conecta",
+      "etiqueta": "Conecta",
+      "titulo": "Conecta tu reloj o tu anillo",
+      "texto": "Sueño, pulso en reposo, variabilidad cardiaca, pasos… Llegan solos, sin que tengas que apuntar nada, y se suman a todo lo demás.",
+      "puntos": [
+        "Cada mañana, cómo de preparado está tu cuerpo",
+        "Health Connect en Android; Apple Salud, próximamente",
+        "Solo leemos lo que tú autorizas"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/teclado-reloj.jpg",
+      "imagen_alt": "Mano tecleando en un portátil con un reloj deportivo en la muñeca",
+      "video": null,
+      "encuadre": "30% 50%",
+      "escena": {
+        "tipo": "wearables",
+        "lado": "derecha",
+        "estado": "Sincronizado",
+        "anillo_titulo": "Preparación",
+        "lecturas": [
+          {
+            "valor": 82,
+            "nota": "Buena recuperación",
+            "sueno": "7 h 24 min",
+            "pulso": "54 lpm",
+            "vfc": "61 ms"
+          },
+          {
+            "valor": 71,
+            "nota": "Recuperación normal",
+            "sueno": "6 h 38 min",
+            "pulso": "58 lpm",
+            "vfc": "52 ms"
+          },
+          {
+            "valor": 89,
+            "nota": "Muy buena recuperación",
+            "sueno": "7 h 51 min",
+            "pulso": "52 lpm",
+            "vfc": "66 ms"
+          }
+        ],
+        "sueno": "Sueño",
+        "pulso": "Pulso en reposo",
+        "vfc": "Variabilidad (VFC)"
+      }
+    },
+    {
+      "id": "registra",
+      "etiqueta": "Registra",
+      "titulo": "Escucha a tu cuerpo",
+      "texto": "Energía, ánimo, digestión, ciclo menstrual… Un pequeño registro diario, de apenas unos segundos, que convierte sensaciones en información.",
+      "puntos": [
+        "Unos segundos al día, cuando te venga bien",
+        "Con total discreción: solo lo ves tú",
+        "Descubre qué te sienta bien y qué no"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/registro.jpg",
+      "imagen_alt": "Atleta sudada recuperando el aliento en una pista de atletismo al atardecer",
+      "video": null,
+      "encuadre": "70% 30%",
+      "escena": {
+        "tipo": "diario",
+        "lado": "izquierda",
+        "titulo": "¿Qué tal hoy?",
+        "hora": "19:40",
+        "energia": "Energía",
+        "animo": "Ánimo",
+        "digestion": "Digestión",
+        "digestion_opciones": [
+          "Ligera",
+          "Normal",
+          "Pesada"
+        ],
+        "ciclo_fase": "Fase folicular",
+        "ciclo_dia": 12,
+        "ciclo_duracion": 28,
+        "ciclo_valor": "Día 12 de 28",
+        "ciclo_nota": "Energía al alza: buen momento para entrenar fuerte."
+      }
+    },
+    {
+      "id": "mide",
+      "etiqueta": "Mide",
+      "titulo": "Mide lo que no se ve",
+      "texto": "Una analítica completa de sangre y orina, en una sola visita a un laboratorio cerca de ti. Los resultados llegan directamente a tu app.",
+      "puntos": [
+        "Una sola visita, sin complicaciones",
+        "Metabolismo, corazón, hormonas, nutrientes y mucho más",
+        "Tus resultados, ordenados y en un solo sitio"
+      ],
+      "proximamente": "Y, muy pronto, podrías tomar la muestra desde casa.",
+      "cta": "Quiero saber más",
+      "imagen": "/images/inicio/laboratorio.jpg",
+      "imagen_alt": "Mano con guante pipeteando una muestra en una placa en el laboratorio",
+      "video": null,
+      "encuadre": "20% 50%",
+      "escena": {
+        "tipo": "analitica",
+        "lado": "derecha",
+        "titulo": "Tu analítica",
+        "procesando": "Analizando…",
+        "sistemas": [
+          "Metabolismo",
+          "Corazón",
+          "Hormonas",
+          "Tiroides",
+          "Nutrientes",
+          "Inflamación"
+        ],
+        "listo": "Resultados listos"
+      }
+    },
+    {
+      "id": "entiende",
+      "etiqueta": "Entiende",
+      "titulo": "Entiende qué te está diciendo",
+      "texto": "Cada resultado, explicado con palabras claras: qué mide, por qué importa y cómo encaja con lo que sientes y con lo que registra tu reloj.",
+      "puntos": [
+        "Qué está bien y qué merece atención",
+        "Tus análisis, cruzados con tu día a día",
+        "Más claridad para hablar con tu médico"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/microscopio.jpg",
+      "imagen_alt": "Objetivos de un microscopio sobre fondo verde oscuro",
+      "video": null,
+      "encuadre": "60% 50%",
+      "escena": {
+        "tipo": "entiende",
+        "lado": "izquierda",
+        "ejemplo": "Ejemplo",
+        "marcador": "Ferritina",
+        "valor": 18,
+        "unidad": "µg/L",
+        "zonas": [
+          "Bajo",
+          "Óptimo",
+          "Alto"
+        ],
+        "estado": "Por debajo de tu rango óptimo",
+        "relacion_titulo": "Puede estar relacionado con",
+        "relaciones": [
+          {
+            "texto": "Energía baja por la tarde",
+            "fuente": "Tu registro"
+          },
+          {
+            "texto": "Sueño menos reparador",
+            "fuente": "Tu reloj"
+          }
+        ]
+      }
+    },
+    {
+      "id": "actua",
+      "etiqueta": "Actúa",
+      "titulo": "Pasa a la acción",
+      "texto": "Un plan concreto hecho con tus datos: sueño, movimiento, alimentación y descanso. Pocos cambios, bien elegidos, que encajan en tu semana.",
+      "puntos": [
+        "Acciones concretas, no consejos genéricos",
+        "Pensadas para tus objetivos",
+        "Ves cómo podrían mejorar tus marcadores"
+      ],
+      "cta": null,
+      "imagen": "/images/inicio/press-banca.jpg",
+      "imagen_alt": "Hombre haciendo press de banca con mancuernas en un gimnasio",
+      "video": null,
+      "encuadre": "25% 50%",
+      "escena": {
+        "tipo": "plan",
+        "lado": "derecha",
+        "titulo": "Tu plan",
+        "subtitulo": "Próximas 12 semanas",
+        "acciones": [
+          "Fuerza, dos días por semana",
+          "Luz natural antes de las 10",
+          "Legumbres tres veces por semana",
+          "Cenar dos horas antes de dormir"
+        ],
+        "proyeccion": "Proyección · Ferritina"
+      }
+    },
+    {
+      "id": "repite",
+      "etiqueta": "Repite",
+      "titulo": "Vuelve a medir. Mira cómo cambias.",
+      "texto": "Una analítica es una foto; varias cuentan tu historia. Cada nueva medición te dice qué ha funcionado, ajusta tu plan y suma información sobre ti.",
+      "puntos": [
+        "Tus marcadores, a lo largo del tiempo",
+        "Qué ha funcionado y qué no",
+        "Un plan que evoluciona contigo"
+      ],
+      "cta": "Únete a la lista de espera",
+      "imagen": "/images/inicio/carrera.jpg",
+      "imagen_alt": "Atleta esprintando por una pista de atletismo a la hora dorada",
+      "video": null,
+      "encuadre": "75% 50%",
+      "escena": {
+        "tipo": "tendencia",
+        "lado": "izquierda",
+        "ejemplo": "Ejemplo",
+        "marcador": "Ferritina",
+        "valores": [
+          18,
+          31,
+          52
+        ],
+        "unidad": "µg/L",
+        "rango": "Rango óptimo",
+        "hitos": [
+          "1.ª analítica",
+          "2.ª analítica",
+          "3.ª analítica"
+        ]
+      }
+    }
+  ],
+  "datos": {
+    "eyebrow": "Privacidad",
+    "titulo": "Tus datos son tuyos",
+    "puntos": [
+      {
+        "titulo": "En Europa",
+        "texto": "Guardados en la Unión Europea, con acceso restringido."
+      },
+      {
+        "titulo": "Nunca a la venta",
+        "texto": "No los vendemos ni los usamos para publicidad."
+      },
+      {
+        "titulo": "Tú decides",
+        "texto": "Solo los ve quien tú autorices, y puedes retirarlo cuando quieras."
+      }
+    ],
+    "nota": "Kuova no diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar mejor a la consulta."
+  },
+  "preguntas": {
+    "titulo": "Preguntas frecuentes",
+    "subtitulo": "¿Te queda alguna duda? Escríbenos a",
+    "email": "hello@kuovahealth.com",
+    "lista": [
+      {
+        "id": "que-es",
+        "pregunta": "¿Qué es Kuova?",
+        "respuesta": "Una forma de tomar el control de tu salud. Kuova junta en un solo sitio cómo te sientes, los datos de tu reloj o tu anillo y tus análisis; te explica qué significan y te propone un plan para mejorar. Después vuelves a medir para ver qué ha funcionado."
+      },
+      {
+        "id": "medico",
+        "pregunta": "¿Sustituye a mi médico?",
+        "respuesta": "No. Kuova no diagnostica: te da información clara para entender tu salud y para compartirla con un profesional sanitario si quieres. La valoración clínica y cualquier decisión médica corresponden siempre a un profesional."
+      },
+      {
+        "id": "donde",
+        "pregunta": "¿Dónde me hago la analítica?",
+        "respuesta": "En un laboratorio cerca de ti, en una sola visita. Estamos trabajando para que también puedas tomar la muestra desde casa: te avisaremos en cuanto esté disponible."
+      },
+      {
+        "id": "subir",
+        "pregunta": "¿Puedo usar analíticas que ya tengo?",
+        "respuesta": "Sí. Sube el PDF o una foto y la app extrae los resultados por ti. Tú los revisas antes de guardarlos y pasan a formar parte de tu historial."
+      },
+      {
+        "id": "dispositivos",
+        "pregunta": "¿Qué dispositivos puedo conectar?",
+        "respuesta": "Relojes y anillos que sincronizan con Health Connect en Android, por ejemplo de Garmin, Samsung, Xiaomi, Oura o Google. La conexión con Apple Salud llegará próximamente. Solo leemos los datos que tú autorizas."
+      },
+      {
+        "id": "datos",
+        "pregunta": "¿Mis datos están seguros?",
+        "respuesta": "Se guardan en la Unión Europea, con acceso restringido. Nunca los vendemos ni los usamos para publicidad, y solo los ve quien tú autorices."
+      },
+      {
+        "id": "cuando",
+        "pregunta": "¿Cuándo podré empezar?",
+        "respuesta": "Estamos preparando el lanzamiento en España. Apúntate a la lista de espera y serás de los primeros en saberlo."
+      }
+    ]
+  },
+  "lista": {
+    "titulo": "Sé de los primeros en conocerte mejor",
+    "texto": "Estamos preparando el lanzamiento en España. Déjanos tu email y te avisaremos en cuanto puedas empezar.",
+    "placeholder": "Tu email",
+    "boton": "Apuntarme",
+    "enviando": "Enviando…",
+    "exito_titulo": "¡Ya estás en la lista!",
+    "exito_texto": "Te escribiremos en cuanto Kuova esté lista para ti.",
+    "error": "Algo ha fallado. Inténtalo de nuevo.",
+    "nota": "Solo novedades del lanzamiento, sin spam. Puedes darte de baja cuando quieras.",
+    "privacidad": "Privacidad"
+  }
+}

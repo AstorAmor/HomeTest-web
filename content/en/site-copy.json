@@ -5,17 +5,25 @@
   },
   "nav": {
     "enlaces": [
-      { "label": "How it works", "href": "/como-funciona" },
-      { "label": "Biomarkers", "href": "/catalogo" },
-      { "label": "FAQ", "href": "/faq" },
-      { "label": "Contact", "href": "/contacto" }
+      {
+        "label": "How it works",
+        "href": "/#como-funciona"
+      },
+      {
+        "label": "Privacy",
+        "href": "/#privacidad"
+      },
+      {
+        "label": "FAQ",
+        "href": "/#preguntas"
+      }
     ],
     "cta": "Waitlist"
   },
   "seo": {
     "home": {
       "title": "Kuova Health",
-      "description": "Preventive health in Spain: blood tests covering 110+ biomarkers twice a year, your wearables connected and verified professionals. Understand your health and take action."
+      "description": "Take control of your health: how you feel, your wearables and your lab tests in one place, clearly explained and with a plan to improve. Coming soon to Spain."
     },
     "como_funciona": {
       "title": "How it works — Kuova Health",
@@ -43,69 +51,6 @@
     }
   },
   "home": {
-    "hero": {
-      "eyebrow": "Preventive health · Coming soon to Spain",
-      "titulo": "Know more. Live better.",
-      "subtitulo": "110+ biomarkers, your wearables and professionals by your side. Understand how your body is doing today, and know exactly what to do next.",
-      "cta_principal": "Join the waitlist",
-      "cta_secundaria": "How it works",
-      "nota_legal": "It does not replace your doctor.",
-      "imagen": "/images/photos/strength.jpg",
-      "video": null
-    },
-    "cifras": [
-      { "valor": "110+", "texto": "biomarkers in blood and urine" },
-      { "valor": "2", "texto": "tests a year to track your progress" },
-      { "valor": "24/7", "texto": "your wearables, connected" },
-      { "valor": "1", "texto": "plan built from your data" }
-    ],
-    "aprende": {
-      "titulo": "Learn about your health",
-      "subtitulo": "Your body sends signals long before you notice anything. A complete blood test helps you read them in time."
-    },
-    "biomarcadores": {
-      "titulo": "110+ biomarkers.",
-      "destacado": "More than a number.",
-      "subtitulo": "Every result comes explained: what it measures, why it matters and what you can do. And at your next test, you see how it has changed.",
-      "sistemas": ["metabolico", "lipidico", "hormonas", "tiroides", "nutrientes", "regulacion_inmune", "hepatico", "renal"],
-      "cta": "See all biomarkers"
-    },
-    "app": {
-      "eyebrow": "The app",
-      "titulo": "Your health, at your fingertips",
-      "subtitulo": "Your blood tests, home measurements and wearables in one place, explained in plain language.",
-      "puntos": [
-        { "titulo": "Your report, explained", "texto": "What's in range, what needs a look, and your estimated biological age." },
-        { "titulo": "Your everyday", "texto": "Sleep, steps, energy and mood, next to your results." },
-        { "titulo": "Your plan", "texto": "Concrete actions, with a projection of how your markers could improve." }
-      ],
-      "capturas": [
-        { "src": "/images/app/today.jpg", "alt": "Today screen of the Kuova app with energy, mood and daily readiness" },
-        { "src": "/images/app/report.jpg", "alt": "Blood test report in the Kuova app: markers in range and biological age" },
-        { "src": "/images/app/actionplan.jpg", "alt": "Action plan in the Kuova app with a marker projection" }
-      ]
-    },
-    "accion": {
-      "eyebrow": "Your plan",
-      "titulo": "Know yourself better to take action",
-      "texto": "With your results, your habits and your goals we build a plan made for you: sleep, movement, nutrition and calm. Six months later, your next test tells you what worked.",
-      "imagen": "/images/photos/walking.jpg",
-      "imagen_alt": "Couple walking in a park at sunset",
-      "captura": { "src": "/images/app/habits.jpg", "alt": "Habits then vs. now in the Kuova app: sleep, resting heart rate, steps" },
-      "objetivos_titulo": "What's yours?",
-      "objetivos": [
-        "Wake up with energy",
-        "Lower my LDL cholesterol",
-        "Run my first half marathon",
-        "Sleep through the night",
-        "Understand my cycle",
-        "Still have energy at 6 pm",
-        "Prepare for a pregnancy",
-        "Get stronger after 40",
-        "Manage stress",
-        "Improve my blood sugar"
-      ]
-    },
     "como_funciona": {
       "eyebrow": "How it works",
       "titulo": "A system that stays with you all year",
@@ -137,84 +82,87 @@
         }
       ]
     },
-    "profesionales": {
-      "eyebrow": "Professionals",
-      "titulo": "You're not alone with your results",
-      "subtitulo": "Doctors, physiotherapists, dietitians, trainers and midwives, verified by Kuova. You decide who sees your data, and you can revoke access at any time.",
-      "roles": [
-        { "rol": "Medicine", "foto": "/images/photos/pro-doctor.jpg" },
-        { "rol": "Physiotherapy", "foto": "/images/photos/pro-physio.jpg" },
-        { "rol": "Nutrition", "foto": "/images/photos/pro-dietitian.jpg" },
-        { "rol": "Training", "foto": "/images/photos/pro-trainer.jpg" },
-        { "rol": "Midwifery", "foto": "/images/photos/pro-midwife.jpg" }
-      ],
-      "testimonios_titulo": "What professionals say",
-      "testimonios": []
-    },
-    "datos": {
-      "titulo": "Your data is yours",
-      "puntos": [
-        "Stored in the European Union",
-        "Never sold or used for advertising",
-        "Only seen by the people you authorise, and you can revoke it at any time"
-      ]
-    },
     "en_breve": {
       "titulo": "Kuova in a nutshell",
-      "parrafo": "Kuova is a preventive-health membership based in Madrid, Spain. It combines blood tests covering 110+ biomarkers twice a year, an app that explains the results and connects them with your wearable data, and verified healthcare professionals who help you take action. It does not diagnose or replace your doctor: it helps you understand your health and arrive better prepared at your appointment.",
+      "parrafo": "Kuova is a preventive-health platform based in Madrid, Spain. It brings together how you feel every day, the data from your watch or ring and your lab blood and urine tests; it explains the results clearly and suggests a plan to improve, checked by measuring again. It does not diagnose or replace your doctor: it helps you understand your health and arrive at your appointment better informed.",
       "datos": [
-        { "clave": "What it is", "valor": "A preventive-health membership" },
-        { "clave": "Where", "valor": "Spain, based in Madrid" },
-        { "clave": "What it measures", "valor": "{n} biomarkers in blood and urine, across {s} body systems" },
-        { "clave": "How often", "valor": "Two blood tests a year" },
-        { "clave": "Wearables", "valor": "Watches and rings that sync with Health Connect (Android); Huawei Health and Apple Health coming soon" },
-        { "clave": "Professionals", "valor": "Medicine, physiotherapy, nutrition, training and midwifery" },
-        { "clave": "Privacy", "valor": "Data stored in the European Union; never sold" }
+        {
+          "clave": "What it is",
+          "valor": "A preventive-health membership"
+        },
+        {
+          "clave": "Where",
+          "valor": "Spain, based in Madrid"
+        },
+        {
+          "clave": "What it measures",
+          "valor": "Lab blood and urine tests, your wearables and your daily log"
+        },
+        {
+          "clave": "Wearables",
+          "valor": "Watches and rings that sync with Health Connect (Android); Apple Health coming soon"
+        },
+        {
+          "clave": "Professionals",
+          "valor": "Medicine, physiotherapy, nutrition, training and midwifery"
+        },
+        {
+          "clave": "Privacy",
+          "valor": "Data stored in the European Union; never sold"
+        }
       ]
-    },
-    "faq": {
-      "titulo": "Frequently asked questions",
-      "subtitulo": "Can't find what you're looking for?",
-      "cta": "Write to us"
-    },
-    "cta_final": {
-      "titulo": "Be among the first to truly know yourself",
-      "descripcion": "Join the waitlist and we'll let you know as soon as we open in your area.",
-      "imagen": "/images/photos/walking.jpg"
     }
-  },
-  "waitlist_form": {
-    "titulo": "Join the waitlist",
-    "descripcion": "Leave us your name and email and we'll let you know as soon as we can offer you the service.",
-    "campo_nombre": "Name",
-    "campo_email": "Email",
-    "boton_enviar": "Join the waitlist",
-    "texto_privacidad": "By submitting this form you accept our privacy policy. We will not share your email with third parties.",
-    "mensaje_exito": "Thank you! We'll let you know as soon as we're available."
   },
   "footer": {
     "columnas": [
       {
         "titulo": "Product",
         "enlaces": [
-          { "label": "How it works", "href": "/como-funciona" },
-          { "label": "Biomarkers", "href": "/catalogo" },
-          { "label": "FAQ", "href": "/faq" }
+          {
+            "label": "How it works",
+            "href": "/#como-funciona"
+          },
+          {
+            "label": "FAQ",
+            "href": "/#preguntas"
+          },
+          {
+            "label": "Waitlist",
+            "href": "/#lista-de-espera"
+          }
         ]
       },
       {
         "titulo": "Company",
         "enlaces": [
-          { "label": "Contact", "href": "/contacto" },
-          { "label": "Privacy policy", "href": "/privacy" },
-          { "label": "Terms of use", "href": "/terms" }
+          {
+            "label": "Contact",
+            "href": "/contacto"
+          },
+          {
+            "label": "Privacy policy",
+            "href": "/privacy"
+          },
+          {
+            "label": "Terms of use",
+            "href": "/terms"
+          }
         ]
       }
     ],
     "redes": [
-      { "label": "Instagram", "href": "#" },
-      { "label": "LinkedIn", "href": "#" },
-      { "label": "TikTok", "href": "#" }
+      {
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "#"
+      },
+      {
+        "label": "TikTok",
+        "href": "#"
+      }
     ],
     "texto_copyright": "Kuova Health. All rights reserved.",
     "nota_legal": "This service does not provide medical diagnoses or replace the assessment of a healthcare professional."
@@ -253,6 +201,7 @@
     "paso": "Step",
     "contacto_directo_titulo": "Write to us directly",
     "contacto_directo_texto": "You can also write to us at",
+    "contacto_nombre": "Name",
     "placeholder_nombre": "Your name",
     "placeholder_email": "you@email.com",
     "contacto_mensaje": "Message",

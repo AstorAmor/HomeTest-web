@@ -78,7 +78,7 @@ export function organizationJsonLd(lang: Lang) {
 
 // Servicio que se ofrece (portada).
 export function serviceJsonLd(lang: Lang) {
-  const { siteCopy, panelTotal } = getContent(lang);
+  const { siteCopy } = getContent(lang);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -88,7 +88,6 @@ export function serviceJsonLd(lang: Lang) {
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "Country", name: "Spain" },
     url: `${SITE_URL}${localePath(lang, "/")}`,
-    additionalProperty: [{ "@type": "PropertyValue", name: "biomarkers", value: panelTotal }],
   };
 }
 

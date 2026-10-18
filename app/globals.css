@@ -55,35 +55,6 @@ body {
   }
 }
 
-/* Foto del hero mientras no haya vídeo: zoom muy lento para dar movimiento */
-@keyframes kenburns {
-  from {
-    transform: scale(1.02);
-  }
-  to {
-    transform: scale(1.12);
-  }
-}
-.kenburns {
-  animation: kenburns 24s ease-out infinite alternate;
-}
-
-/* Cinta de texto que se desplaza (biomarcadores, objetivos) */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.marquee-track {
-  animation: marquee var(--marquee-duration, 60s) linear infinite;
-}
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
 /* Aparición suave al hacer scroll (components/landing/Reveal.tsx) */
 .reveal {
   opacity: 0;
@@ -98,10 +69,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  .kenburns,
-  .marquee-track {
-    animation: none;
   }
   .reveal {
     opacity: 1;
@@ -180,5 +147,249 @@ html:has(.prelaunch-home) body {
   .trendline-pulse,
   .trendline-caption {
     animation: none;
+  }
+}
+
+/* ---------- Portada completa (components/inicio/) ---------- */
+
+/* Zoom muy lento de las fotos sin vídeo, para que la imagen respire */
+@keyframes deriva {
+  from {
+    transform: scale(1.02) translate(0, 0);
+  }
+  to {
+    transform: scale(1.1) translate(-1.5%, -1%);
+  }
+}
+.deriva {
+  animation: deriva 22s ease-in-out infinite alternate;
+}
+.deriva-lenta {
+  animation: deriva 40s ease-in-out infinite alternate;
+}
+
+/* Portada: los textos entran subiendo, uno tras otro */
+.aparece-arriba {
+  animation: prelaunch-in 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Tarjeta "tus señales": la actual en su sitio, la anterior sale hacia arriba, el resto espera abajo */
+.senal {
+  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.senal[data-estado="actual"] {
+  opacity: 1;
+  transform: none;
+}
+.senal[data-estado="sale"] {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.senal[data-estado="espera"] {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: none;
+}
+
+/* Escenas de los pasos: el tamaño de letra sigue al ancho de la imagen (unidades cqw), así la
+   escena se ve igual de proporcionada en el móvil y en el ordenador */
+.escena {
+  container-type: inline-size;
+}
+.escena-ui {
+  font-size: clamp(11px, 2.45cqw, 15px);
+  line-height: 1.35;
+}
+
+/* Cristal esmerilado claro */
+.vidrio {
+  background: rgb(255 255 255 / 0.66);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+  border: 1px solid rgb(255 255 255 / 0.8);
+  border-radius: 1.15em;
+  box-shadow: 0 1.2em 3em -1.4em rgb(14 42 36 / 0.45);
+  color: rgb(var(--color-text));
+}
+
+.etiqueta-escena {
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--color-accent-light));
+}
+
+/* Elemento que aparece subiendo cuando su escena llega a esa fase (data-on="true") */
+.entra {
+  opacity: 0;
+  transform: translateY(0.7em);
+  transition: opacity 0.6s ease, transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.entra[data-on="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Opciones tipo "píldora" (cuestionario, digestión); la elegida se pinta en verde con un toque */
+.opcion {
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid rgb(14 42 36 / 0.14);
+  background: rgb(255 255 255 / 0.55);
+  padding: 0.35em 0.85em;
+  font-size: 0.84em;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+.opcion-mini {
+  padding: 0.22em 0.6em;
+  font-size: 0.74em;
+}
+.opcion[data-elegida="true"] {
+  background: rgb(var(--color-accent));
+  border-color: rgb(var(--color-accent));
+  color: rgb(var(--color-on-accent));
+  animation: toque 0.45s ease;
+}
+@keyframes toque {
+  40% {
+    transform: scale(1.08);
+  }
+}
+
+/* Casilla que se marca */
+.check {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 999px;
+  border: 1.5px solid rgb(14 42 36 / 0.25);
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.check::after {
+  content: "";
+  position: absolute;
+  left: 0.36em;
+  top: 0.17em;
+  width: 0.3em;
+  height: 0.55em;
+  border: solid white;
+  border-width: 0 0.12em 0.12em 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.3s ease 0.1s;
+}
+.check[data-on="true"] {
+  background: rgb(var(--color-accent));
+  border-color: rgb(var(--color-accent));
+  transform: scale(1.06);
+}
+.check[data-on="true"]::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Estado de cada sistema en la analítica: pendiente, analizando (gira) y hecho */
+.estado-sistema {
+  position: relative;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 999px;
+  border: 1.5px solid rgb(14 42 36 / 0.2);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.estado-sistema[data-estado="analizando"] {
+  border-color: rgb(201 163 107 / 0.35);
+  border-top-color: rgb(var(--color-gold));
+  animation: gira 0.8s linear infinite;
+}
+.estado-sistema[data-estado="hecho"] {
+  background: rgb(var(--color-accent));
+  border-color: rgb(var(--color-accent));
+}
+.estado-sistema[data-estado="hecho"]::after {
+  content: "";
+  position: absolute;
+  left: 0.3em;
+  top: 0.12em;
+  width: 0.26em;
+  height: 0.48em;
+  border: solid white;
+  border-width: 0 0.11em 0.11em 0;
+  transform: rotate(45deg);
+}
+@keyframes gira {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Líneas que se dibujan (SVG con pathLength="1") */
+.trazo {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.9s ease-out;
+}
+.trazo-lento {
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.45, 0, 0.2, 1);
+}
+.trazo[data-on="true"] {
+  stroke-dashoffset: 0;
+}
+
+/* Al volver a empezar una escena, lo que se "deshace" (líneas, casillas, opciones, estados) espera
+   a que la tarjeta se haya desvanecido, para que no se vea ir hacia atrás */
+.trazo[data-on="false"] {
+  transition: stroke-dashoffset 0s linear 0.65s;
+}
+.check[data-on="false"],
+.check[data-on="false"]::after,
+.opcion[data-elegida="false"],
+.estado-sistema[data-estado="pendiente"] {
+  transition-delay: 0.65s;
+}
+
+/* Punto que late (sincronizado, último análisis) */
+.latido {
+  animation: latido 2s ease-in-out infinite;
+}
+@keyframes latido {
+  50% {
+    opacity: 0.35;
+  }
+}
+.pulso-punto {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: trendline-pulse 2.2s ease-out infinite;
+}
+
+/* Regla de la tendencia: se desplaza de un análisis al siguiente */
+.regla {
+  transition: left 1.6s cubic-bezier(0.45, 0, 0.2, 1);
+}
+.aparece {
+  animation: prelaunch-in 0.7s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deriva,
+  .deriva-lenta,
+  .aparece-arriba,
+  .aparece,
+  .latido,
+  .pulso-punto,
+  .estado-sistema,
+  .opcion {
+    animation: none;
+  }
+  .entra,
+  .trazo,
+  .regla,
+  .senal {
+    transition: none;
   }
 }

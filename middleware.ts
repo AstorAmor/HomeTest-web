@@ -5,8 +5,7 @@ import { PRELAUNCH, PRELAUNCH_HIDDEN } from "@/lib/launch";
 //   /...     -> español
 //   /en/...  -> inglés (se sirve la misma página con la cabecera x-lang=en)
 // El botón de idioma enlaza a "?lang=es|en": se guarda la elección en una cookie y se va a la
-// URL de ese idioma. En la primera visita a la portada, si el navegador no está en español,
-// se lleva a /en (los buscadores no mandan idioma y ven la versión en español).
+// URL de ese idioma. El español es el idioma principal: nadie se redirige a /en automáticamente.
 export function middleware(req: NextRequest) {
   const { pathname, searchParams } = req.nextUrl;
   const isEn = pathname === "/en" || pathname.startsWith("/en/");
@@ -29,15 +28,6 @@ export function middleware(req: NextRequest) {
     const res = NextResponse.redirect(url);
     res.cookies.set("lang", chosen, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
     return res;
-  }
-
-  if (!PRELAUNCH && !isEn && pathname === "/" && !req.cookies.has("lang")) {
-    const accept = req.headers.get("accept-language")?.toLowerCase() ?? "";
-    if (accept && !accept.startsWith("es")) {
-      const url = req.nextUrl.clone();
-      url.pathname = "/en";
-      return NextResponse.redirect(url);
-    }
   }
 
   const headers = new Headers(req.headers);

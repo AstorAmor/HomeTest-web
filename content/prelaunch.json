@@ -1,26 +1,30 @@
 {
   "_como_editar": "Textos de la portada de kuovahealth.com. Cambia solo lo que va entre comillas a la derecha de los dos puntos. Mantén las comillas y las comas del final de cada línea.",
-
   "lema": "Know more. Live better.",
-
   "grafica_rango": "Optimal range",
   "grafica": [
-    { "marcador": "Vitamin D", "detalle": "16 → 34 ng/mL" },
-    { "marcador": "Ferritin", "detalle": "18 → 52 µg/L" },
-    { "marcador": "Omega-3 Index", "detalle": "4.2 → 8.1 %" }
+    {
+      "marcador": "Vitamin D",
+      "detalle": "16 → 34 ng/mL"
+    },
+    {
+      "marcador": "Ferritin",
+      "detalle": "18 → 52 µg/L"
+    },
+    {
+      "marcador": "Omega-3 Index",
+      "detalle": "4.2 → 8.1 %"
+    }
   ],
-
   "titulo_formulario": "Be among the first to know more",
   "placeholder_email": "Your email",
   "boton": "Join the list",
   "boton_enviando": "Joining…",
   "nota_privacidad": "Launch news only, no spam. Unsubscribe anytime.",
   "enlace_privacidad": "Privacy",
-
   "exito_titulo": "You’re on the list.",
   "exito_texto": "We’ll let you know as soon as Kuova is ready.",
   "error": "Something went wrong. Please try again.",
-
   "pie_privacidad": "Privacy",
   "pie_condiciones": "Terms"
 }

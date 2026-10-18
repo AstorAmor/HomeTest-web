@@ -1,22 +1,65 @@
-# Cómo editar el contenido de la web
+# Cómo editar los textos de la web
 
-Todos los textos de la página están en esta carpeta, separados del código. Puedes editarlos con cualquier editor de texto sin tocar nada de programación. Después hay que volver a publicar la web (`npx vercel deploy --prod`).
+Todos los textos de kuovahealth.com están en esta carpeta (`content/`), separados del código. Hay dos formas de cambiarlos, y ninguna gasta créditos de Claude.
+
+## 1. La forma fácil: el editor
+
+1. En la carpeta `HomeTest-web`, haz doble clic en **`Editar textos web.bat`**. Se abre una ventana negra (déjala abierta) y, a los pocos segundos, el navegador con el editor en http://localhost:3010/editar. La primera vez puede tardar medio minuto.
+2. Arriba eliges qué quieres cambiar: **Portada (español)**, **Portada (inglés)**, **Menú, pie de página y Google**, o la **página de pre-lanzamiento** (la que se ve hoy en kuovahealth.com).
+3. Abre una sección (por ejemplo «Los siete pasos» → «Paso 3 · Registra»): la web de la derecha salta a esa parte. Cambia el texto y pulsa **Guardar** (o Ctrl+S). La web de la derecha se actualiza sola.
+4. Cuando termines, cierra la ventana negra.
+
+Nada de esto se publica: los cambios se quedan en tu ordenador hasta que los subas (punto 3).
+
+Trucos:
+- **Listas** (los puntos con ✓, opciones, objetivos…): un elemento por línea.
+- **Vacío = no sale**: por ejemplo, si borras el «Botón» de un paso, ese paso se queda sin botón; si escribes algo, aparece.
+- **Añadir otro** copia el último elemento de la lista con los textos vacíos (útil para añadir una pregunta frecuente). **Quitar este** lo elimina. Nada se borra de verdad hasta que pulsas Guardar, y **Descartar cambios** vuelve a lo último guardado.
+- Lo que pone «no se cambia» (`id`, `tipo`) identifica cada paso y su animación: no hace falta tocarlo.
+- Si cambias un texto en español, cámbialo también en **Portada (inglés)**.
+- Las cifras de las animaciones (ferritina 18 → 52, preparación 82…) son **ejemplos ilustrativos**, no datos reales.
+
+## 2. Editar los archivos a mano
+
+También puedes abrir los archivos con el Bloc de notas o VS Code, o editarlos directamente en github.com (botón del lápiz → «Commit changes»; eso publica directamente).
+
+| Archivo | Qué contiene |
+|---|---|
+| `inicio.json` | Portada completa en español |
+| `en/inicio.json` | La misma portada en inglés |
+| `site-copy.json` (y `en/`) | Menú de arriba, pie de página, títulos para Google, otras páginas, textos pequeños |
+| `prelaunch.json` | Página de pre-lanzamiento (la que se ve hoy en kuovahealth.com) |
+| `faq.json` (y `en/`) | Preguntas de la página /faq (las de la portada están en `inicio.json` → `preguntas`) |
+| `legal.ts` | Política de privacidad y condiciones |
+
+Reglas para no romper nada al editar a mano: cambia solo lo que va entre comillas a la derecha de los dos puntos, deja las comillas y las comas, no pongas saltos de línea dentro de un texto y, si necesitas comillas dentro de un texto, usa « » o ’.
+
+`inicio.json`, en el mismo orden en que se ve la página:
+- `hero`: lo primero que se ve (texto pequeño, título en dos líneas, subtítulo, botones, foto, vídeo y la tarjeta de «señales» que van rotando).
+- `intro`: la frase grande bajo la portada.
+- `pasos_intro`: el título de «Cómo funciona».
+- `pasos`: los siete pasos. Cada uno tiene `etiqueta` (Cuéntanos, Conecta…), `titulo`, `texto`, `puntos`, `cta` (botón; `null` = sin botón), la foto (`imagen`, `imagen_alt`, `encuadre`) y `escena`, los textos de la animación de cristal que va sobre la foto.
+- `datos`: privacidad. `preguntas`: preguntas frecuentes. `lista`: la lista de espera del final.
+
+## 3. Publicar los cambios
+
+Los textos viven en GitHub (repositorio `AstorAmor/HomeTest-web`). Cuando un cambio llega a la rama `master`, Vercel publica kuovahealth.com sola en 1–2 minutos.
+
+- **Con GitHub Desktop**: abre el repositorio HomeTest-web, verás los archivos cambiados; escribe un resumen abajo a la izquierda → «Commit to master» → «Push origin».
+- **Ojo**: mientras esté activo el pre-lanzamiento (`lib/launch.ts`), kuovahealth.com solo enseña la página de pre-lanzamiento. Publicar textos de la portada completa **no la hace visible**: para eso hay que poner `NEXT_PUBLIC_PRELAUNCH=false` en Vercel y volver a publicar. Los cambios en `prelaunch.json`, en cambio, sí se ven en cuanto se publican.
+
+## Fotos y vídeos de la portada
+
+- Fotos: `public/images/inicio/`. Para cambiar una, copia la nueva con **otro nombre** (si reutilizas el nombre, el navegador puede seguir enseñando la antigua) y pon la nueva ruta en `imagen`.
+- `encuadre`: qué parte de la foto se ve, en horizontal y vertical («70% 40%»; 0% = izquierda/arriba).
+- `lado` (dentro de `escena`): a qué lado va la tarjeta animada en el ordenador (`izquierda`, `derecha` o `centro`), siempre al contrario de la persona. En el móvil va debajo de la foto.
+- Vídeo de fondo de la portada: `public/videos/inicio/portada.mp4` (`hero.video`; `null` = solo la foto con un zoom lento). Recomendado: MP4 H.264, sin sonido, que empiece y acabe en el mismo fotograma para que el bucle no se note.
+- Originales y descartes: OneDrive → `05 Marca/Contenido IA/2026-10/` (los que empiezan por `WEB`).
+- Imagen al compartir en redes (WhatsApp, LinkedIn...): `public/images/kuova-og.jpg` (1200×630), generada con `python scripts/make-og.py` desde `scripts/og/og.html`. Si la cambias, ponle otro nombre (y cámbialo en `lib/seo.ts`).
 
 ## Español e inglés
 
-La web sale en los dos idiomas, cada uno con su dirección: `/` en español y `/en` en inglés (botón "English"/"Español" arriba). La primera vez, quien tenga el navegador en otro idioma entra directamente a `/en`.
-
-- Español: los archivos de esta carpeta. Inglés: `content/en/`. **Si cambias un texto, cámbialo en los dos.**
-- Lo que tenga `PENDIENTE DE REDACTAR` no se publica (respuestas de FAQ, explicaciones de biomarcadores).
-
-## Qué archivo tocar
-
-- **Portada, botones, menús, pie, títulos para Google**: `site-copy.json` (y `en/site-copy.json`). La portada está en `home`, sección a sección y en el mismo orden en que aparece en la página:
-  `hero` (frase principal) → `cifras` → `aprende` → `biomarcadores` → `app` → `accion` (plan y objetivos) → `como_funciona` → `profesionales` → `datos` → `en_breve` → `faq` → `cta_final` (lista de espera).
-- **Preguntas frecuentes**: `faq.json` (y `en/faq.json`). Salen en la portada, en `/faq` y en los datos para Google.
-- **Biomarcadores (panel completo, 110+)**: NO se edita aquí. Sale de la base de conocimiento de la app (`hometest-app/knowledge/biomarcadores/`). Para actualizarlo: `node scripts/sync-panel.mjs` (genera `panel.json`).
-- **Packs por objetivo** (chequeo general, rendimiento, salud sexual, salud reproductiva): `biomarcadores/bloque-*.json`; nombres en inglés en `en/biomarcadores.json` (por `id`).
-- **Política de privacidad y condiciones**: `legal.ts`, siempre en los dos idiomas en la misma página.
+El español es el idioma principal: `/` en español y `/en` en inglés (botón «English» arriba). Nadie se redirige al inglés automáticamente. Los textos en inglés están en `content/en/`, con la misma estructura.
 
 ## Conocimiento (artículos con gráficas y fuentes)
 
@@ -29,21 +72,6 @@ Dirección: `/conocimiento` (índice) y `/conocimiento/<nombre-del-archivo>` (ca
   - `[[grafica:vrc]]` en una línea sola pone una gráfica. Disponibles: `individualidad`, `fuera-de-rango`, `vrc`, `tiempos`.
   - Un artículo nuevo = un archivo `.md` nuevo en esa carpeta (el nombre del archivo es la dirección, sin tildes ni espacios).
 - **Números de las gráficas**: `conocimiento/datos.json` (variación biológica de cada marcador, vidas medias, datos del ejemplo). Las gráficas se recalculan solas.
-
-## Fotos, capturas y vídeos
-
-- Fotos: `public/images/photos/`. Ahora mismo son **provisionales** (las mismas de la app). Para cambiar una, sustituye el archivo con el mismo nombre, o cambia la ruta en `site-copy.json`.
-- Capturas de la app: `public/images/app/` (tema claro, 390×844 o el doble).
-- **Vídeo de fondo en la portada**: copia el vídeo a `public/videos/` (por ejemplo `hero.mp4`) y en `site-copy.json` → `home.hero.video` pon `"/videos/hero.mp4"` (en los dos idiomas). Mientras sea `null`, se ve la foto con un zoom lento. Recomendado: MP4 H.264, 1920×1080, 8–15 s en bucle, sin sonido, menos de 4 MB.
-- Imagen al compartir en redes (WhatsApp, LinkedIn...): `public/images/kuova-og.jpg` (1200×630), generada con `python scripts/make-og.py` desde `scripts/og/og.html`. Si la cambias, ponle otro nombre (y cámbialo en `lib/seo.ts`): WhatsApp guarda la vista previa por dirección.
-
-## Opiniones de profesionales
-
-`home.profesionales.testimonios` está vacío a propósito y, mientras lo esté, esa parte no se muestra. Solo se rellena con **citas reales y con permiso por escrito** de cada profesional:
-
-```json
-{ "cita": "…", "nombre": "Dra. Nombre Apellido", "cargo": "Medicina de familia, Madrid", "foto": "/images/photos/…" }
-```
 
 ## SEO y buscadores con IA
 

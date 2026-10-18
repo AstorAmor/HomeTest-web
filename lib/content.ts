@@ -6,6 +6,8 @@ import faqEs from "@/content/faq.json";
 import faqEn from "@/content/en/faq.json";
 import siteCopyEs from "@/content/site-copy.json";
 import siteCopyEn from "@/content/en/site-copy.json";
+import inicioEs from "@/content/inicio.json";
+import inicioEn from "@/content/en/inicio.json";
 import biomarcadoresEn from "@/content/en/biomarcadores.json";
 import panelData from "@/content/panel.json";
 import type { Lang } from "@/lib/i18n";
@@ -39,6 +41,11 @@ export interface PanelSystem {
 }
 
 export type SiteCopy = typeof siteCopyEs;
+
+// Portada completa (content/inicio.json y content/en/inicio.json, misma estructura).
+export type Inicio = typeof inicioEs;
+export type Paso = Inicio["pasos"][number];
+export type Escena = Paso["escena"];
 
 // Packs por objetivo (textos en español). Añadir un bloque nuevo aquí es lo único que hace
 // falta tocar en código cuando se crea un archivo content/biomarcadores/bloque-X.json nuevo.
@@ -80,6 +87,7 @@ export function getContent(lang: Lang) {
   return {
     lang,
     siteCopy: (isEn ? siteCopyEn : siteCopyEs) as SiteCopy,
+    inicio: (isEn ? inicioEn : inicioEs) as Inicio,
     faq: { preguntas: faq.preguntas.filter((p) => !isPending(p.respuesta)) },
     bloquesBiomarcadores: bloques,
     panel,

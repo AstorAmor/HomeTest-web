@@ -14,7 +14,7 @@ export function generateMetadata(): Metadata {
 export default function ComoFuncionaPage() {
   const lang = getLang();
   const { siteCopy } = getContent(lang);
-  const { pagina_como_funciona, home } = siteCopy;
+  const { pagina_como_funciona, nav } = siteCopy;
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function ComoFuncionaPage() {
       <Section>
         <p className="max-w-2xl text-text-muted">{pagina_como_funciona.nota_final}</p>
         <div className="mt-8">
-          <Button href={localePath(lang, "/#lista-de-espera")}>{home.hero.cta_principal}</Button>
+          <Button href={localePath(lang, "/#lista-de-espera")}>{nav.cta}</Button>
         </div>
       </Section>
     </>
