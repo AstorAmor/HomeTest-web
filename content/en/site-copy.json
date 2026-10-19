@@ -1,7 +1,7 @@
 {
   "marca": {
     "nombre": "Kuova Health",
-    "descripcion_corta": "Preventive health: complete blood tests, your wearables and professionals by your side. Madrid, Spain."
+    "descripcion_corta": "Your lab tests, your wearables and how you feel, in one app that explains every result and suggests a plan. Spain."
   },
   "nav": {
     "enlaces": [
@@ -22,8 +22,8 @@
   },
   "seo": {
     "home": {
-      "title": "Kuova Health",
-      "description": "Take control of your health: how you feel, your wearables and your lab tests in one place, clearly explained and with a plan to improve. Coming soon to Spain."
+      "title": "Kuova Health · Blood tests, wearables and a plan for you",
+      "description": "Your blood tests, the data from your watch or ring and how you feel, in one app. Understand every result and follow a plan to improve. Coming soon to Spain."
     },
     "como_funciona": {
       "title": "How it works — Kuova Health",
@@ -84,7 +84,7 @@
     },
     "en_breve": {
       "titulo": "Kuova in a nutshell",
-      "parrafo": "Kuova is a preventive-health platform based in Madrid, Spain. It brings together how you feel every day, the data from your watch, ring or band and your lab blood and urine tests; it explains the results clearly and suggests a plan to improve, checked by measuring again. It does not diagnose or replace your doctor: it helps you understand your health and arrive at your appointment better informed.",
+      "parrafo": "Kuova Health is a health app based in Madrid, Spain. It brings together your lab blood and urine tests, the data from your watch, ring or band and how you feel every day; it explains every result with scientific sources and suggests a concrete plan to improve, checked by measuring again. It does not diagnose or replace your doctor: it helps you understand your health and arrive at your appointment better informed.",
       "datos": [
         {
           "clave": "What it is",
@@ -100,7 +100,7 @@
         },
         {
           "clave": "Wearables",
-          "valor": "Watches, rings and bands that sync with Health Connect (Android); Apple Health coming soon"
+          "valor": "Watches, rings and bands that sync with Health Connect (Android); iPhone app with Apple Health coming soon"
         },
         {
           "clave": "Professionals",
@@ -129,6 +129,19 @@
           {
             "label": "Waitlist",
             "href": "/#lista-de-espera"
+          }
+        ]
+      },
+      {
+        "titulo": "Learn",
+        "enlaces": [
+          {
+            "label": "Biomarkers (Spanish)",
+            "href": "/biomarcadores"
+          },
+          {
+            "label": "Kuova vs other apps (Spanish)",
+            "href": "/comparativas"
           }
         ]
       },

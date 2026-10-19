@@ -364,7 +364,12 @@
       {
         "id": "que-es",
         "pregunta": "¿Qué es Kuova?",
-        "respuesta": "Una forma de tomar el control de tu salud. Kuova junta en un solo sitio cómo te sientes, los datos de tu reloj, tu anillo o tu pulsera y tus análisis; te explica qué significan y te propone un plan para mejorar. Después vuelves a medir para ver qué ha funcionado."
+        "respuesta": "Una app para tomar el control de tu salud. Kuova junta en un solo sitio tus análisis de sangre y orina hechos en laboratorio, los datos de tu reloj, tu anillo o tu pulsera y cómo te sientes cada día; te explica qué significan y te propone un plan para mejorar. Después vuelves a medir para ver qué ha funcionado."
+      },
+      {
+        "id": "diferencia",
+        "pregunta": "¿En qué se diferencia Kuova de Apple Salud, Oura o Garmin?",
+        "respuesta": "Tu reloj o tu anillo miden cómo duermes, cuánto te mueves y cómo late tu corazón. Kuova no los sustituye: lee esos datos y les añade lo que ningún sensor ve, tus análisis de laboratorio, junto a cómo te sientes y un plan. Lo explicamos marca por marca en [nuestras comparativas](/comparativas)."
       },
       {
         "id": "medico",
@@ -374,7 +379,12 @@
       {
         "id": "donde",
         "pregunta": "¿Dónde me hago la analítica?",
-        "respuesta": "En un laboratorio cerca de ti, en una sola visita. Estamos trabajando para que también puedas tomar la muestra desde casa: te avisaremos en cuanto esté disponible."
+        "respuesta": "En un laboratorio cerca de ti. Estamos trabajando para que también puedas tomar la muestra desde casa: te avisaremos en cuanto esté disponible."
+      },
+      {
+        "id": "marcadores",
+        "pregunta": "¿Qué se mide en la analítica?",
+        "respuesta": "Marcadores de metabolismo y azúcar, corazón y colesterol, hígado y riñón, tiroides, hormonas, hierro y vitaminas, e inflamación, elegidos según tus objetivos. En [nuestras fichas de biomarcadores](/biomarcadores) tienes qué mide cada uno y cómo se interpreta, con sus fuentes."
       },
       {
         "id": "subir",
@@ -384,7 +394,17 @@
       {
         "id": "dispositivos",
         "pregunta": "¿Qué dispositivos puedo conectar?",
-        "respuesta": "Relojes y anillos que sincronizan con Health Connect en Android, por ejemplo de Garmin, Samsung, Xiaomi, Oura o Google. La conexión con Apple Salud llegará próximamente. Solo leemos los datos que tú autorizas."
+        "respuesta": "Relojes, anillos y pulseras que sincronizan con Health Connect en Android, por ejemplo de Google (Fitbit y Pixel Watch), Samsung, Garmin, Oura, Xiaomi o WHOOP. La app para iPhone, conectada con Apple Salud, llegará próximamente. Solo leemos los datos que tú autorizas."
+      },
+      {
+        "id": "sin-reloj",
+        "pregunta": "¿Necesito un reloj o un anillo para usar Kuova?",
+        "respuesta": "No. Puedes empezar con tus análisis y tu registro diario. Si llevas un wearable, Kuova usa sus datos para darte más contexto."
+      },
+      {
+        "id": "edad",
+        "pregunta": "¿Qué es la edad KUOVA?",
+        "respuesta": "Una estimación de tu edad biológica hecha con marcadores de tu analítica: si tu cuerpo funciona como el de alguien más joven o mayor que tú, y qué la está moviendo. Cambia contigo, análisis a análisis. Es una estimación, no un diagnóstico."
       },
       {
         "id": "datos",

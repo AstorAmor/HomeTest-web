@@ -364,7 +364,12 @@
       {
         "id": "que-es",
         "pregunta": "What is Kuova?",
-        "respuesta": "A way to take control of your health. Kuova brings together how you feel, the data from your watch, ring or band and your lab results; it explains what they mean and suggests a plan to improve. Then you measure again to see what worked."
+        "respuesta": "An app to take control of your health. Kuova brings together your lab blood and urine tests, the data from your watch, ring or band and how you feel every day; it explains what they mean and suggests a plan to improve. Then you measure again to see what worked."
+      },
+      {
+        "id": "diferencia",
+        "pregunta": "How is Kuova different from Apple Health, Oura or Garmin?",
+        "respuesta": "Your watch or ring measures how you sleep, how much you move and how your heart beats. Kuova doesn't replace it: it reads that data and adds what no sensor can see, your lab tests, together with how you feel and a plan. We explain it brand by brand in [our comparisons](/comparativas) (in Spanish)."
       },
       {
         "id": "medico",
@@ -374,7 +379,12 @@
       {
         "id": "donde",
         "pregunta": "Where do I get tested?",
-        "respuesta": "At a lab near you, in a single visit. We're working on letting you collect your sample from home too: we'll let you know as soon as it's available."
+        "respuesta": "At a lab near you. We're working on letting you collect your sample from home too: we'll let you know as soon as it's available."
+      },
+      {
+        "id": "marcadores",
+        "pregunta": "What does the blood test measure?",
+        "respuesta": "Markers of metabolism and blood sugar, heart and cholesterol, liver and kidney, thyroid, hormones, iron and vitamins, and inflammation, chosen for your goals. Our [biomarker guides](/biomarcadores) (in Spanish) explain what each one measures and how to read it, with sources."
       },
       {
         "id": "subir",
@@ -384,7 +394,17 @@
       {
         "id": "dispositivos",
         "pregunta": "Which devices can I connect?",
-        "respuesta": "Watches and rings that sync with Health Connect on Android, for example from Garmin, Samsung, Xiaomi, Oura or Google. Apple Health is coming soon. We only read the data you allow."
+        "respuesta": "Watches, rings and bands that sync with Health Connect on Android, for example from Google (Fitbit and Pixel Watch), Samsung, Garmin, Oura, Xiaomi or WHOOP. The iPhone app, connected to Apple Health, is coming soon. We only read the data you allow."
+      },
+      {
+        "id": "sin-reloj",
+        "pregunta": "Do I need a watch or a ring to use Kuova?",
+        "respuesta": "No. You can start with your lab tests and your daily log. If you wear a device, Kuova uses its data to give you more context."
+      },
+      {
+        "id": "edad",
+        "pregunta": "What is your KUOVA age?",
+        "respuesta": "An estimate of your biological age based on markers from your blood test: whether your body works like someone younger or older than you, and what is moving it. It changes with you, test after test. It is an estimate, not a diagnosis."
       },
       {
         "id": "datos",

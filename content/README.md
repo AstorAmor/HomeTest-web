@@ -106,6 +106,23 @@ Dirección: `/conocimiento` (índice) y `/conocimiento/<nombre-del-archivo>` (ca
   - Un artículo nuevo = un archivo `.md` nuevo en esa carpeta (el nombre del archivo es la dirección, sin tildes ni espacios).
 - **Números de las gráficas**: `conocimiento/datos.json` (variación biológica de cada marcador, vidas medias, datos del ejemplo). Las gráficas se recalculan solas.
 
+## Biomarcadores y comparativas (fichas con fuentes)
+
+Dos secciones que **sí salen en kuovahealth.com** (no dependen de `NEXT_PUBLIC_KNOWLEDGE`), solo en español y enlazadas desde el pie de página («Aprende»), no desde el menú:
+
+- **`/biomarcadores`**: una ficha por biomarcador en `biomarcadores/*.md` (ferritina, vitamina D, B12, LDL, HDL, triglicéridos, ApoB, Lp(a), glucosa, HbA1c, TSH, PCR ultrasensible). El índice las agrupa por `categoria` y las ordena por `orden`.
+- **`/comparativas`**: Kuova frente a Apple Salud, Google Health, Oura, Garmin, Huawei Health y WHOOP, en `comparativas/*.md`.
+
+Se escriben igual que los artículos de Conocimiento (ver arriba), con dos añadidos:
+- **Tablas**: líneas que empiezan por `|`; la primera fila es la cabecera y la de guiones (`|---|---|`) se salta.
+- **Preguntas frecuentes**: cada `### ¿Pregunta?` (acabada en «?») con su respuesta debajo pasa sola a los datos estructurados para Google (FAQPage) y a `/llms.txt`.
+- Campos de la cabecera: `revisado` (fecha en que se comprobaron las cifras con sus fuentes; sale bajo el título), `orden`, `titulo_seo` (título para Google, opcional) y `otros_nombres` (sinónimos, separados por comas).
+
+Reglas para estas páginas:
+- **Cada cifra con su fuente** (`[^n]`): guías clínicas (ESC/EAS, ADA, NICE, OMS…), organismos oficiales (NIH, NHS, MedlinePlus) o artículos de PubMed. Nada de cifras sin cita.
+- **No decir** que las ha revisado un médico mientras no sea verdad (brief de marca), ni prometer diagnosticar, curar o prevenir.
+- **Comparativas**: solo hechos públicos y comprobables de cada marca, con la fecha en que se consultaron, sin desprestigiar a nadie. Revisarlas cada pocos meses: las marcas cambian rápido (en 2026, Apple, Oura y WHOOP lanzaron análisis de sangre en EE. UU.).
+
 ## SEO y buscadores con IA
 
 - Cada página tiene título, descripción, versión en el otro idioma (hreflang) y tarjeta para redes; salen de `seo` en `site-copy.json`.

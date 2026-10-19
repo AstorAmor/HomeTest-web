@@ -91,6 +91,9 @@ export function serviceJsonLd(lang: Lang) {
   };
 }
 
+// Texto sin Markdown ([enlace](/ruta) → enlace, **negrita** → negrita) para los datos estructurados
+const sinMarkdown = (s: string) => s.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1");
+
 export function faqJsonLd(preguntas: FaqItem[]) {
   return {
     "@context": "https://schema.org",
@@ -98,7 +101,7 @@ export function faqJsonLd(preguntas: FaqItem[]) {
     mainEntity: preguntas.map((p) => ({
       "@type": "Question",
       name: p.pregunta,
-      acceptedAnswer: { "@type": "Answer", text: p.respuesta },
+      acceptedAnswer: { "@type": "Answer", text: sinMarkdown(p.respuesta) },
     })),
   };
 }

@@ -1,7 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Inline from "@/components/knowledge/Inline";
 import { FaqItem } from "@/lib/content";
+
+// Todas las respuestas van en el HTML (las cerradas, ocultas con `hidden`) para que Google y los
+// asistentes de IA las lean; antes solo existía la abierta. Admiten [enlaces](/ruta) y **negrita**.
 
 export default function FaqAccordion({ preguntas }: { preguntas: FaqItem[] }) {
   const [openId, setOpenId] = useState<string | null>(preguntas[0]?.id ?? null);
@@ -26,9 +30,9 @@ export default function FaqAccordion({ preguntas }: { preguntas: FaqItem[] }) {
                 +
               </span>
             </button>
-            {isOpen && (
-              <div className="px-5 pb-5 text-text-muted sm:px-6">{item.respuesta}</div>
-            )}
+            <div hidden={!isOpen} className="px-5 pb-5 text-text-muted sm:px-6">
+              <Inline text={item.respuesta} />
+            </div>
           </div>
         );
       })}

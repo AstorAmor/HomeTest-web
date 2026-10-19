@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-bg-soft">
       <Container>
-        <div className="grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-5">
           <div className="md:col-span-2">
             <p className="text-accent">
               <Logo variant="full" align="start" />
