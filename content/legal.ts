@@ -26,7 +26,7 @@ const CONTROLLER_EN =
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
-  updated: "Última actualización: 18 de octubre de 2026",
+  updated: "Última actualización: 19 de octubre de 2026",
   intro:
     "Kuova es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
   sections: [
@@ -107,6 +107,7 @@ export const privacyEs: LegalDocument = {
       title: "10. Seguridad",
       paragraphs: [
         "Cifrado en tránsito, control de acceso a nivel de base de datos (cada usuario solo puede acceder a sus propios datos y a lo que otros le compartan expresamente), almacenamiento privado de archivos, funciones de IA que exigen sesión iniciada y claves de servicio que nunca se incluyen en la app.",
+        "Acceso de nuestro equipo: solo un número mínimo de personas autorizadas de Pulse Health, S.L., sujetas a un deber de confidencialidad, tiene acceso técnico a la base de datos. No consultan tus datos de salud salvo cuando es necesario para resolver una incidencia que nos comuniques o un fallo del servicio que te afecte, mantener la seguridad del servicio o cumplir una obligación legal, y solo en lo imprescindible para ello. Registramos cada uno de esos accesos (quién, cuándo, a qué datos y por qué).",
       ],
     },
     {
@@ -138,7 +139,7 @@ export const privacyEs: LegalDocument = {
 
 export const privacyEn: LegalDocument = {
   title: "Privacy Policy",
-  updated: "Last updated: 18 October 2026",
+  updated: "Last updated: 19 October 2026",
   intro:
     "Kuova is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
   sections: [
@@ -216,6 +217,7 @@ export const privacyEn: LegalDocument = {
       title: "10. Security",
       paragraphs: [
         "Encryption in transit, database-level access control (each user can only access their own data and what others explicitly share with them), private file storage, AI functions that require a signed-in session, and service keys that are never shipped in the app.",
+        "Access by our team: only a minimal number of authorised people at Pulse Health, S.L., bound by a duty of confidentiality, have technical access to the database. They do not look at your health data except where necessary to resolve an issue you report or a service fault that affects you, to keep the service secure or to meet a legal obligation, and only as far as strictly needed. We record each such access (who, when, which data and why).",
       ],
     },
     { title: "11. Minors", paragraphs: ["Kuova is intended for people aged 18 or over."] },
