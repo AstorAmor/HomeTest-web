@@ -5,16 +5,18 @@ import { medir } from "@/lib/medicion";
 import { useMenosMovimiento } from "./escenas/animacion";
 
 // Vídeo de fondo de la portada (content/inicio.json → hero.video y hero.video_bucle): primero el
-// giro de cámara alrededor de la chica, una sola vez, y al acabar un bucle tranquilo (olas, pelo,
-// hierba) que empieza en el último fotograma del giro, así que no se nota el cambio. Sin bucle, el
-// vídeo principal se repite. En el móvil se usan los recortes verticales, con el mismo nombre
-// acabado en "-movil.mp4". Con "reducir movimiento" no hay vídeo y se queda la foto.
+// giro de cámara alrededor de la chica, que al acabar se va andando y deja el mar, una sola vez, y
+// luego un bucle de mar con cámara fija que empieza en el último fotograma del giro, así que no se
+// nota el cambio. Sin bucle, el vídeo principal se repite. El vídeo aparece con un fundido sobre la
+// foto. En el móvil se usan los recortes verticales, con el mismo nombre acabado en "-movil.mp4".
+// Con "reducir movimiento" no hay vídeo y se queda la foto.
 const recorteMovil = (src: string) => src.replace(/\.mp4$/, "-movil.mp4");
 
 export default function HeroVideo({ src, bucle }: { src: string; bucle?: string }) {
   const menos = useMenosMovimiento();
   const [movil, setMovil] = useState<boolean | null>(null);
   const [enBucle, setEnBucle] = useState(false);
+  const [listo, setListo] = useState(false);
   const refGiro = useRef<HTMLVideoElement>(null);
   const refBucle = useRef<HTMLVideoElement>(null);
 
@@ -57,13 +59,14 @@ export default function HeroVideo({ src, bucle }: { src: string; bucle?: string 
         ref={refGiro}
         // El bucle aparece debajo de golpe y el giro se desvanece encima: un fundido corto por si el
         // primer fotograma del bucle no es idéntico al último del giro (sin que asome la foto de fondo)
-        className={`${clase} transition-opacity duration-700 ${enBucle ? "opacity-0" : ""}`}
+        className={`${clase} transition-opacity duration-700 ${enBucle || !listo ? "opacity-0" : ""}`}
         src={elegir(src)}
         muted
         autoPlay
         loop={!bucle}
         playsInline
         preload="auto"
+        onPlaying={() => setListo(true)}
         onEnded={bucle ? alAcabar : undefined}
         aria-hidden
       />
