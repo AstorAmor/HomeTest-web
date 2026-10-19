@@ -5,11 +5,11 @@ import { medir } from "@/lib/medicion";
 import { useMenosMovimiento } from "./escenas/animacion";
 
 // Vídeo de fondo de la portada (content/inicio.json → hero.video y hero.video_bucle): primero el
-// giro de cámara alrededor de la chica, que al acabar se va andando y deja el mar, una sola vez, y
-// luego un bucle de mar con cámara fija que empieza en el último fotograma del giro, así que no se
-// nota el cambio. Sin bucle, el vídeo principal se repite. El vídeo aparece con un fundido sobre la
-// foto. En el móvil se usan los recortes verticales, con el mismo nombre acabado en "-movil.mp4".
-// Con "reducir movimiento" no hay vídeo y se queda la foto.
+// giro de cámara, una sola vez (la chica lejos y quieta en el acantilado; la cámara gira hacia el mar
+// hasta dejarla fuera y se para en el horizonte), y luego un bucle de mar con cámara fija desde ese
+// mismo encuadre, con un fundido entre los dos. Sin bucle, el vídeo principal se repite. El vídeo
+// aparece con un fundido sobre la foto. En el móvil se usan los recortes verticales, con el mismo
+// nombre acabado en "-movil.mp4". Con "reducir movimiento" no hay vídeo y se queda la foto.
 const recorteMovil = (src: string) => src.replace(/\.mp4$/, "-movil.mp4");
 
 export default function HeroVideo({ src, bucle }: { src: string; bucle?: string }) {
@@ -19,6 +19,7 @@ export default function HeroVideo({ src, bucle }: { src: string; bucle?: string 
   const [listo, setListo] = useState(false);
   const refGiro = useRef<HTMLVideoElement>(null);
   const refBucle = useRef<HTMLVideoElement>(null);
+  const medido = useRef(false);
 
   useEffect(() => setMovil(window.matchMedia("(max-width: 639px)").matches), []);
   // La portada siempre está a la vista al cargar: el giro arranca en cuanto hay vídeo
@@ -32,7 +33,11 @@ export default function HeroVideo({ src, bucle }: { src: string; bucle?: string 
   const clase = `absolute inset-0 h-full w-full object-cover ${movil ? "object-center" : "object-[60%_60%]"}`;
 
   const alAcabar = () => {
-    medir("video", "giro de portada visto entero");
+    if (enBucle) return;
+    if (!medido.current) {
+      medido.current = true;
+      medir("video", "giro de portada visto entero");
+    }
     const v = refBucle.current;
     // Si el bucle no ha cargado, se queda el último fotograma del giro (mejor que volver a la foto)
     if (!v || v.readyState < 2) return;
@@ -57,8 +62,8 @@ export default function HeroVideo({ src, bucle }: { src: string; bucle?: string 
       )}
       <video
         ref={refGiro}
-        // El bucle aparece debajo de golpe y el giro se desvanece encima: un fundido corto por si el
-        // primer fotograma del bucle no es idéntico al último del giro (sin que asome la foto de fondo)
+        // El bucle arranca debajo 0,8 s antes de que acabe el giro y el giro se desvanece encima: así el
+        // fundido es entre dos vídeos en movimiento, sin que el mar se congele ni asome la foto de fondo
         className={`${clase} transition-opacity duration-700 ${enBucle || !listo ? "opacity-0" : ""}`}
         src={elegir(src)}
         muted
@@ -67,6 +72,10 @@ export default function HeroVideo({ src, bucle }: { src: string; bucle?: string 
         playsInline
         preload="auto"
         onPlaying={() => setListo(true)}
+        onTimeUpdate={(e) => {
+          const v = e.currentTarget;
+          if (bucle && v.duration - v.currentTime < 0.8) alAcabar();
+        }}
         onEnded={bucle ? alAcabar : undefined}
         aria-hidden
       />

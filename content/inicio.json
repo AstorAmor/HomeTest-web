@@ -7,10 +7,10 @@
     "subtitulo": "Cómo te sientes, lo que hace tu cuerpo cada día y lo que dicen tus análisis, por fin en un mismo sitio. Para que sepas cómo estás y qué hacer para estar mejor.",
     "cta": "Únete a la lista de espera",
     "cta_2": "Cómo funciona",
-    "imagen": "/images/inicio/portada.jpg",
+    "imagen": "/images/inicio/portada-horizonte.jpg",
     "imagen_alt": "Mujer en ropa de deporte contemplando el mar desde un acantilado al amanecer",
-    "video": "/videos/inicio/portada-giro-3.mp4",
-    "video_bucle": "/videos/inicio/portada-mar-2.mp4",
+    "video": "/videos/inicio/portada-horizonte.mp4",
+    "video_bucle": "/videos/inicio/portada-horizonte-bucle.mp4",
     "senales_titulo": "Tus señales, juntas",
     "senales": [
       {
