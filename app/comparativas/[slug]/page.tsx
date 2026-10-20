@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ArticleLayout from "@/components/knowledge/ArticleLayout";
 import Relacionados from "@/components/knowledge/Relacionados";
-import { faqsOf, getArticle, getArticles, plain } from "@/lib/knowledge";
+import { faqsOf, getArticle, getArticles, hrefOf, plain } from "@/lib/knowledge";
 import { SITE_URL } from "@/lib/seo";
 
 // Una comparativa: Kuova frente a otra app o marca (texto en content/comparativas/<slug>.md).
@@ -26,6 +26,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     twitter: { card: "summary_large_image", title: a.titulo, description: a.descripcion, images: [image] },
   };
 }
+
+// Guías que tienen que ver con lo que mide un wearable (pasos, VO2 máx, sueño, ciclo)
+const GUIAS_WEARABLES = ["longevidad", "ejercicio", "ciclo-menstrual", "edad-biologica"];
 
 export default function ComparativaPage({ params }: { params: { slug: string } }) {
   const a = getArticle(params.slug, "comparativas");
@@ -73,6 +76,13 @@ export default function ComparativaPage({ params }: { params: { slug: string } }
       <Relacionados
         titulo="Otras comparativas"
         items={otras.map((o) => ({ href: `/comparativas/${o.slug}`, label: o.titulo }))}
+        secundario={{
+          titulo: "Para sacar más partido a tu reloj o tu anillo",
+          items: GUIAS_WEARABLES.flatMap((slug) => {
+            const g = getArticle(slug, "guias");
+            return g && g.estado === "publicado" ? [{ href: hrefOf("guias", g.slug), label: g.titulo }] : [];
+          }),
+        }}
         cierre={{
           titulo: "Tus datos de siempre, con tus análisis al lado",
           texto: "Kuova se lanza en España. Apúntate y te avisamos en cuanto puedas empezar.",

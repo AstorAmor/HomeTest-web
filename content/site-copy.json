@@ -1,7 +1,7 @@
 {
   "marca": {
     "nombre": "Kuova Health",
-    "descripcion_corta": "Tus análisis de laboratorio, tus wearables y cómo te sientes, en una sola app que te explica cada resultado y te propone un plan. España."
+    "descripcion_corta": "Salud preventiva y longevidad: tus análisis de laboratorio, tus wearables y tu día a día, en una sola app que te explica cada resultado y te propone un plan. España."
   },
   "nav": {
     "enlaces": [
@@ -16,14 +16,18 @@
       {
         "label": "Preguntas",
         "href": "/#preguntas"
+      },
+      {
+        "label": "Aprende",
+        "href": "/aprende"
       }
     ],
     "cta": "Lista de espera"
   },
   "seo": {
     "home": {
-      "title": "Kuova Health · Análisis de sangre, wearables y un plan para ti",
-      "description": "Tus análisis de sangre, los datos de tu reloj o tu anillo y cómo te sientes, en una sola app. Entiende cada resultado y sigue un plan para mejorar. Muy pronto en España."
+      "title": "Kuova Health · Salud preventiva y longevidad, con tus datos",
+      "description": "Salud preventiva y longevidad: tus análisis, tu reloj o tu anillo y tu día a día en una app que te explica cada resultado y te propone un plan. Pronto en España."
     },
     "como_funciona": {
       "title": "Cómo funciona — Kuova Health",
@@ -84,11 +88,15 @@
     },
     "en_breve": {
       "titulo": "Kuova en pocas palabras",
-      "parrafo": "Kuova Health es una app de salud con sede en Madrid. Une en un solo sitio tus análisis de sangre y orina hechos en laboratorio, los datos de tu reloj, tu anillo o tu pulsera y cómo te sientes cada día; explica cada resultado con fuentes científicas y propone un plan concreto para mejorar, que se comprueba volviendo a medir. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar a la consulta con más información.",
+      "parrafo": "Kuova Health es una app de salud preventiva y longevidad con sede en Madrid. Une en un solo sitio tus análisis de sangre y orina hechos en laboratorio, los datos de tu reloj, tu anillo o tu pulsera y tu día a día (alimentación, ejercicio, sueño, ciclo menstrual y cómo te sientes); explica cada resultado con fuentes científicas y propone un plan concreto para mejorar, que se comprueba volviendo a medir. No diagnostica ni sustituye a tu médico: te ayuda a entender tu salud y a llegar a la consulta con más información.",
       "datos": [
         {
           "clave": "Qué es",
           "valor": "Una membresía de salud preventiva"
+        },
+        {
+          "clave": "Enfoque",
+          "valor": "Salud preventiva y longevidad: vivir más años con salud, midiendo y siguiendo tu evolución"
         },
         {
           "clave": "Dónde",
@@ -97,6 +105,10 @@
         {
           "clave": "Qué mide",
           "valor": "Analíticas de sangre y orina en laboratorio, tus wearables y tu registro diario"
+        },
+        {
+          "clave": "Seguimiento diario",
+          "valor": "Alimentación, ejercicio, sueño, ciclo menstrual, digestión, tensión arterial y glucosa"
         },
         {
           "clave": "Wearables",
@@ -135,6 +147,22 @@
       {
         "titulo": "Aprende",
         "enlaces": [
+          {
+            "label": "Todas las guías",
+            "href": "/aprende"
+          },
+          {
+            "label": "Longevidad",
+            "href": "/longevidad"
+          },
+          {
+            "label": "Salud preventiva",
+            "href": "/salud-preventiva"
+          },
+          {
+            "label": "Edad biológica",
+            "href": "/edad-biologica"
+          },
           {
             "label": "Biomarcadores",
             "href": "/biomarcadores"

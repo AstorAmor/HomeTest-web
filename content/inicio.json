@@ -1,7 +1,7 @@
 {
   "_como_editar": "Textos de la portada completa (la que se verá en kuovahealth.com cuando se quite el pre-lanzamiento). Cambia solo lo que va entre comillas a la derecha de los dos puntos. Fotos en public/images/inicio y vídeos en public/videos/inicio. Las cifras de las animaciones son ejemplos ilustrativos.",
   "hero": {
-    "eyebrow": "Muy pronto en España",
+    "eyebrow": "Salud preventiva · Muy pronto en España",
     "titulo": "Conócete mejor.",
     "titulo_2": "Vive mejor.",
     "subtitulo": "Cómo te sientes, lo que hace tu cuerpo cada día y lo que dicen tus análisis, por fin en un mismo sitio. Para que sepas cómo estás y qué hacer para estar mejor.",
@@ -367,6 +367,11 @@
         "respuesta": "Una app para tomar el control de tu salud. Kuova junta en un solo sitio tus análisis de sangre y orina hechos en laboratorio, los datos de tu reloj, tu anillo o tu pulsera y cómo te sientes cada día; te explica qué significan y te propone un plan para mejorar. Después vuelves a medir para ver qué ha funcionado."
       },
       {
+        "id": "longevidad",
+        "pregunta": "¿Kuova sirve para la salud preventiva y la longevidad?",
+        "respuesta": "Sí, para eso está pensada: para conocer tu salud cuando todavía estás bien y seguir las señales que más se relacionan con vivir más años con salud, como tu forma física, tu sueño, tu tensión, tu colesterol o tu azúcar. No promete alargar la vida: te ayuda a ver si lo que haces funciona. Lo explicamos en nuestras guías de [salud preventiva](/salud-preventiva) y [longevidad](/longevidad)."
+      },
+      {
         "id": "diferencia",
         "pregunta": "¿En qué se diferencia Kuova de Apple Salud, Oura o Garmin?",
         "respuesta": "Tu reloj o tu anillo miden cómo duermes, cuánto te mueves y cómo late tu corazón. Kuova no los sustituye: lee esos datos y les añade lo que ningún sensor ve, tus análisis de laboratorio, junto a cómo te sientes y un plan. Lo explicamos marca por marca en [nuestras comparativas](/comparativas)."
@@ -384,7 +389,7 @@
       {
         "id": "marcadores",
         "pregunta": "¿Qué se mide en la analítica?",
-        "respuesta": "Marcadores de metabolismo y azúcar, corazón y colesterol, hígado y riñón, tiroides, hormonas, hierro y vitaminas, e inflamación, elegidos según tus objetivos. En [nuestras fichas de biomarcadores](/biomarcadores) tienes qué mide cada uno y cómo se interpreta, con sus fuentes."
+        "respuesta": "Marcadores de metabolismo y azúcar, corazón y colesterol, hígado y riñón, tiroides, hormonas, hierro y vitaminas, e inflamación, elegidos según tus objetivos. En [nuestras fichas de biomarcadores](/biomarcadores) tienes qué mide cada uno y cómo se interpreta, con sus fuentes, y en [esta guía](/analisis-de-sangre), cómo leer una analítica completa."
       },
       {
         "id": "subir",
@@ -402,9 +407,19 @@
         "respuesta": "No. Puedes empezar con tus análisis y tu registro diario. Si llevas un wearable, Kuova usa sus datos para darte más contexto."
       },
       {
+        "id": "seguimiento",
+        "pregunta": "¿Por qué registrar la dieta, el ejercicio o el ciclo?",
+        "respuesta": "Porque lo que haces cada día cambia tus análisis y cómo te sientes. Si lo apuntas, Kuova puede relacionarlo con tus resultados y decirte qué te funciona y qué no. Te lo contamos en las guías de [alimentación](/alimentacion), [ejercicio](/ejercicio) y [ciclo menstrual](/ciclo-menstrual)."
+      },
+      {
         "id": "edad",
         "pregunta": "¿Qué es la edad KUOVA?",
-        "respuesta": "Una estimación de tu edad biológica hecha con marcadores de tu analítica: si tu cuerpo funciona como el de alguien más joven o mayor que tú, y qué la está moviendo. Cambia contigo, análisis a análisis. Es una estimación, no un diagnóstico."
+        "respuesta": "Una estimación de tu edad biológica con PhenoAge, un método publicado (Levine y su equipo, 2018) que combina tu edad con 9 valores de una analítica normal: si tu cuerpo funciona como el de alguien más joven o mayor que tú, y qué la está moviendo. Cambia contigo, análisis a análisis. Es una estimación, no un diagnóstico. Te explicamos [cómo se calcula y cuánto fiarse](/edad-biologica)."
+      },
+      {
+        "id": "aprender",
+        "pregunta": "¿La app también enseña sobre salud?",
+        "respuesta": "Sí. Tiene lecciones cortas sobre ciclo y fertilidad, suelo pélvico, entrenamiento y fuerza, nutrición, sueño, estrés o tu corazón, conectadas con tus datos. Puedes empezar ya por [nuestras guías](/aprende)."
       },
       {
         "id": "datos",

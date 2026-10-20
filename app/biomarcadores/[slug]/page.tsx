@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ArticleLayout from "@/components/knowledge/ArticleLayout";
 import Relacionados from "@/components/knowledge/Relacionados";
-import { faqsOf, getArticle, getArticles, plain } from "@/lib/knowledge";
+import { faqsOf, getArticle, getArticles, guiasQueEnlazan, hrefOf, plain } from "@/lib/knowledge";
 import { SITE_URL } from "@/lib/seo";
 
 // Ficha de un biomarcador (texto en content/biomarcadores/<slug>.md): qué es, cómo se interpreta,
@@ -83,6 +83,10 @@ export default function BiomarcadorPage({ params }: { params: { slug: string } }
       <Relacionados
         titulo="Otros biomarcadores"
         items={otros.map((o) => ({ href: `/biomarcadores/${o.slug}`, label: o.titulo, texto: o.categoria }))}
+        secundario={{
+          titulo: "Guías que hablan de este marcador",
+          items: guiasQueEnlazan(`/biomarcadores/${a.slug}`).map((g) => ({ href: hrefOf("guias", g.slug), label: g.titulo })),
+        }}
         cierre={{
           titulo: "Mide, entiende y vuelve a medir",
           texto: "Con Kuova tus análisis quedan junto a tu historial, explicados con claridad. Apúntate y te avisamos del lanzamiento en España.",

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { localePath } from "@/lib/i18n";
-import { getArticles, type Coleccion } from "@/lib/knowledge";
+import { getArticles, hrefOf, type Coleccion } from "@/lib/knowledge";
 import { KNOWLEDGE, PRELAUNCH } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
@@ -13,16 +13,18 @@ const PAGES: { path: string; priority: number }[] = [
 ];
 
 // Textos largos ya publicados (los borradores no), solo en español: artículos de /conocimiento
-// (cuando la sección está visible), comparativas y fichas de biomarcadores
+// (cuando la sección está visible), guías (en la raíz, con /aprende como índice), comparativas y
+// fichas de biomarcadores
 function section(coleccion: Coleccion, priority: number): MetadataRoute.Sitemap {
   const published = getArticles(coleccion).filter((a) => a.estado === "publicado");
   if (!published.length) return [];
   return [
-    { url: `${SITE_URL}/${coleccion}`, lastModified: new Date(), priority },
-    ...published.map((a) => ({ url: `${SITE_URL}/${coleccion}/${a.slug}`, lastModified: new Date(a.revisado ?? a.fecha), priority })),
+    { url: `${SITE_URL}/${coleccion === "guias" ? "aprende" : coleccion}`, lastModified: new Date(), priority },
+    ...published.map((a) => ({ url: `${SITE_URL}${hrefOf(coleccion, a.slug)}`, lastModified: new Date(a.revisado ?? a.fecha), priority })),
   ];
 }
 const knowledge = (): MetadataRoute.Sitemap => [
+  ...section("guias", 0.8),
   ...(KNOWLEDGE ? section("conocimiento", 0.6) : []),
   ...section("biomarcadores", 0.7),
   ...section("comparativas", 0.5),

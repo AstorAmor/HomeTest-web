@@ -5,6 +5,7 @@ export const ARCHIVOS = [
   { id: "inicio-en", nombre: "Portada (inglés)", ruta: "content/en/inicio.json", vista: "/en" },
   { id: "general", nombre: "Menú, pie de página y Google (español)", ruta: "content/site-copy.json", vista: "/" },
   { id: "general-en", nombre: "Menú, pie de página y Google (inglés)", ruta: "content/en/site-copy.json", vista: "/en" },
+  { id: "aprende", nombre: "Página Aprende (índice de guías)", ruta: "content/aprende.json", vista: "/aprende" },
   { id: "prelanzamiento", nombre: "Página de pre-lanzamiento (la que se ve hoy en kuovahealth.com)", ruta: "content/prelaunch.json", vista: null },
 ] as const;
 

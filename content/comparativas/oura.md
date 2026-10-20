@@ -5,7 +5,7 @@ descripcion: ¿Kuova sustituye a Oura? No: se complementan. Diferencias, qué da
 marca: Oura
 orden: 3
 fecha: 2026-10-19
-revisado: 2026-10-19
+revisado: 2026-10-20
 estado: publicado
 ---
 
@@ -18,6 +18,7 @@ Oura es un anillo inteligente que mide cada día tu sueño, tu pulso, tu variabi
 | Qué es | Anillo con app y membresía | App que une tu wearable, tus análisis y tu registro diario |
 | Qué mide | Sueño, pulso, VFC, temperatura, actividad | Lo que mide tu wearable, más análisis de laboratorio y tu registro (energía, ánimo, digestión, ciclo, tensión) |
 | Análisis de sangre | Health Panels, solo en EE. UU.; en otros países, subir un PDF con resultados (función en inglés)[^1] | Analíticas en laboratorios en España; también puedes subir las que ya tienes, en PDF o foto |
+| Edad biológica | Edad cardiovascular, estimada con el sensor óptico del anillo[^3] | Tu edad KUOVA, estimada con marcadores de tu analítica ([qué mide cada una](/edad-biologica)) |
 | Qué hace con los datos | Puntuaciones diarias de sueño, preparación y actividad | Explica cada resultado, lo cruza con tu día a día y propone un plan que se comprueba volviendo a medir |
 
 ## Preguntas frecuentes
@@ -38,11 +39,16 @@ A octubre de 2026, no. Pedir cita para un análisis desde Oura (Health Panels) s
 
 Contexto. Una noche de sueño corto o una VFC más baja tienen muchas explicaciones; un análisis te dice si, además, te falta hierro o tienes la glucosa alta. Kuova junta las dos cosas con lo que tú registras, te explica cada resultado con fuentes y te propone pocos cambios, bien elegidos. En el siguiente análisis ves qué ha funcionado.
 
+### ¿En qué se diferencia la edad cardiovascular de Oura de la edad KUOVA?
+
+La edad cardiovascular de Oura estima la rigidez de tus arterias a partir de la onda de pulso que mide el anillo por la noche[^3]. La edad KUOVA se calcula con marcadores de tu analítica (el método PhenoAge), que miran por dentro: azúcar, inflamación y funcionamiento de varios órganos. Una habla de tu corazón y tus vasos; la otra, de todo tu cuerpo. Te lo explicamos en [edad biológica](/edad-biologica).
+
 ### ¿Necesito un anillo o un reloj para usar Kuova?
 
 No. Puedes empezar con tus análisis y tu registro diario. Si tienes un wearable, suma información.
 
-*Información pública de Oura consultada el 19 de octubre de 2026. Oura es una marca de su titular; Kuova no está afiliada a ella.*
+*Información pública de Oura consultada el 19 y el 20 de octubre de 2026. Oura es una marca de su titular; Kuova no está afiliada a ella.*
 
 [^1]: Oura. Health Panels (artículo de ayuda), actualizado el 14 de octubre de 2026. [support.ouraring.com](https://support.ouraring.com/hc/en-us/articles/43627485603987-Health-Panels)
 [^2]: Oura. Health Connect by Android Integration (artículo de ayuda). [support.ouraring.com](https://support.ouraring.com/hc/en-us/articles/10786105824531-Health-Connect-by-Android-Integration)
+[^3]: Oura. Cardiovascular Age (artículo de ayuda). Consultado el 20 de octubre de 2026. [support.ouraring.com](https://support.ouraring.com/hc/en-us/articles/28451491040019)

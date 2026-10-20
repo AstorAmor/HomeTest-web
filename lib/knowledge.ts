@@ -5,18 +5,24 @@ import path from "node:path";
 // - content/conocimiento/   → /conocimiento/<archivo>  (artículos)
 // - content/comparativas/   → /comparativas/<archivo>  (Kuova frente a Apple Salud, Oura, Garmin...)
 // - content/biomarcadores/  → /biomarcadores/<archivo> (una ficha por biomarcador)
+// - content/guias/          → /<archivo>               (guías largas: longevidad, salud preventiva...,
+//                                                       en la raíz para que la dirección sea corta)
 // Markdown sencillo, sin librerías: ## y ### para títulos, - o 1. para listas, > para una frase
 // destacada, | para tablas (la primera fila es la cabecera), **negrita**, *cursiva*,
 // [texto](enlace), [^n] para citar la referencia n (definida al final con "[^n]: ...") y
 // [[grafica:nombre]] en una línea para una gráfica.
 
-export type Coleccion = "conocimiento" | "comparativas" | "biomarcadores";
+export type Coleccion = "conocimiento" | "comparativas" | "biomarcadores" | "guias";
 
 const DIRS: Record<Coleccion, string> = {
   conocimiento: path.join(process.cwd(), "content", "conocimiento"),
   comparativas: path.join(process.cwd(), "content", "comparativas"),
   biomarcadores: path.join(process.cwd(), "content", "biomarcadores"),
+  guias: path.join(process.cwd(), "content", "guias"),
 };
+
+// Dirección de una página: las guías van en la raíz (/longevidad); el resto, dentro de su sección
+export const hrefOf = (coleccion: Coleccion, slug: string) => (coleccion === "guias" ? `/${slug}` : `/${coleccion}/${slug}`);
 
 export interface ArticleMeta {
   slug: string;
@@ -163,3 +169,17 @@ export function faqsOf(article: Article): { pregunta: string; respuesta: string 
 
 // El primer párrafo: la respuesta corta que va arriba de cada página (y en llms.txt)
 export const leadOf = (article: Article) => plain((article.blocks.find((b) => b.type === "p") as { text: string } | undefined)?.text ?? article.descripcion);
+
+// Guías publicadas que enlazan a una dirección (p. ej. /biomarcadores/ferritina), para enlazar de vuelta
+export const guiasQueEnlazan = (href: string) =>
+  getArticles("guias").filter((g) => g.estado === "publicado" && JSON.stringify(g.blocks).includes(`](${href})`));
+
+// El Markdown de una página tal cual (sin la cabecera) y con los enlaces internos como direcciones
+// completas: para /llms-full.txt, donde los asistentes de IA leen el texto entero de cada página
+export function markdownOf(coleccion: Coleccion, slug: string, base: string) {
+  const raw = fs.readFileSync(path.join(DIRS[coleccion], `${slug}.md`), "utf8").replace(/\r\n/g, "\n");
+  return raw
+    .replace(/^---\n[\s\S]*?\n---\n/, "")
+    .replace(/\]\(\//g, `](${base}/`)
+    .trim();
+}

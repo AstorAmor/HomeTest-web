@@ -6,7 +6,7 @@ import { PRELAUNCH, RETIRADAS } from "@/lib/launch";
 //   /en/...  -> inglés (se sirve la misma página con la cabecera x-lang=en)
 // El botón de idioma enlaza a "?lang=es|en": se guarda la elección en una cookie y se va a la
 // URL de ese idioma. El español es el idioma principal: nadie se redirige a /en automáticamente.
-const SOLO_ES = ["/conocimiento", "/comparativas", "/biomarcadores"];
+const SOLO_ES = ["/conocimiento", "/comparativas", "/biomarcadores", "/aprende"];
 
 export function middleware(req: NextRequest) {
   const { pathname, searchParams } = req.nextUrl;
@@ -22,7 +22,8 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // Secciones que solo existen en español (artículos, comparativas y fichas de biomarcadores): sin /en
+  // Secciones que solo existen en español (artículos, comparativas, fichas de biomarcadores y el índice
+  // /aprende): sin /en. Las guías de la raíz (/longevidad...) redirigen desde su propia página.
   if (isEn && SOLO_ES.some((p) => base === p || base.startsWith(`${p}/`))) {
     const url = req.nextUrl.clone();
     url.pathname = base;

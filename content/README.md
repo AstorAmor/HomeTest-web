@@ -106,27 +106,30 @@ Dirección: `/conocimiento` (índice) y `/conocimiento/<nombre-del-archivo>` (ca
   - Un artículo nuevo = un archivo `.md` nuevo en esa carpeta (el nombre del archivo es la dirección, sin tildes ni espacios).
 - **Números de las gráficas**: `conocimiento/datos.json` (variación biológica de cada marcador, vidas medias, datos del ejemplo). Las gráficas se recalculan solas.
 
-## Biomarcadores y comparativas (fichas con fuentes)
+## Guías, biomarcadores y comparativas (páginas con fuentes)
 
-Dos secciones que **sí salen en kuovahealth.com** (no dependen de `NEXT_PUBLIC_KNOWLEDGE`), solo en español y enlazadas desde el pie de página («Aprende»), no desde el menú:
+Tres secciones que **sí salen en kuovahealth.com** (no dependen de `NEXT_PUBLIC_KNOWLEDGE`), solo en español. Su índice común es **`/aprende`** (enlazado desde el menú y el pie de página; textos en `aprende.json`, también en el editor):
 
+- **Guías**, en la raíz de la web para que la dirección sea corta: `/longevidad`, `/salud-preventiva`, `/edad-biologica`, `/analisis-de-sangre`, `/ciclo-menstrual`, `/alimentacion` y `/ejercicio`, en `guias/*.md`. Una guía nueva = un archivo nuevo (el nombre es la dirección: que no coincida con una página que ya exista, como `privacy` o `biomarcadores`). Campo extra de la cabecera: `sameas`, la página de Wikipedia del tema (ayuda a Google y a los asistentes de IA a saber de qué trata). Las fichas de biomarcadores que enlaza una guía muestran solas un enlace de vuelta a ella.
 - **`/biomarcadores`**: una ficha por biomarcador en `biomarcadores/*.md` (ferritina, vitamina D, B12, LDL, HDL, triglicéridos, ApoB, Lp(a), glucosa, HbA1c, TSH, PCR ultrasensible). El índice las agrupa por `categoria` y las ordena por `orden`.
 - **`/comparativas`**: Kuova frente a Apple Salud, Google Health, Oura, Garmin, Huawei Health y WHOOP, en `comparativas/*.md`.
 
 Se escriben igual que los artículos de Conocimiento (ver arriba), con dos añadidos:
 - **Tablas**: líneas que empiezan por `|`; la primera fila es la cabecera y la de guiones (`|---|---|`) se salta.
 - **Preguntas frecuentes**: cada `### ¿Pregunta?` (acabada en «?») con su respuesta debajo pasa sola a los datos estructurados para Google (FAQPage) y a `/llms.txt`.
+- **El primer párrafo es la respuesta corta**: es lo que leen Google y los asistentes de IA en primer lugar, lo que sale en las tarjetas de `/aprende` y en `/llms.txt`. Que responda a la pregunta del título en dos o tres frases.
 - Campos de la cabecera: `revisado` (fecha en que se comprobaron las cifras con sus fuentes; sale bajo el título), `orden`, `titulo_seo` (título para Google, opcional) y `otros_nombres` (sinónimos, separados por comas).
 
 Reglas para estas páginas:
 - **Cada cifra con su fuente** (`[^n]`): guías clínicas (ESC/EAS, ADA, NICE, OMS…), organismos oficiales (NIH, NHS, MedlinePlus) o artículos de PubMed. Nada de cifras sin cita.
-- **No decir** que las ha revisado un médico mientras no sea verdad (brief de marca), ni prometer diagnosticar, curar o prevenir.
+- **No decir** que las ha revisado un médico mientras no sea verdad (brief de marca), ni prometer diagnosticar, curar o prevenir. «Salud preventiva» y «longevidad» sí (son el enfoque de Kuova); «antienvejecimiento» no. Kuova ayuda a medir, entender y seguir; nunca «alarga la vida».
+- **Estudios observacionales**: decir que algo «se asoció con», no que «causa» o «reduce».
 - **Comparativas**: solo hechos públicos y comprobables de cada marca, con la fecha en que se consultaron, sin desprestigiar a nadie. Revisarlas cada pocos meses: las marcas cambian rápido (en 2026, Apple, Oura y WHOOP lanzaron análisis de sangre en EE. UU.).
 
 ## SEO y buscadores con IA
 
 - Cada página tiene título, descripción, versión en el otro idioma (hreflang) y tarjeta para redes; salen de `seo` en `site-copy.json`.
-- `/sitemap.xml`, `/robots.txt` (abierto también a ChatGPT, Claude, Perplexity y Gemini) y `/llms.txt` (resumen para asistentes de IA) se generan solos con estos mismos textos.
+- `/sitemap.xml`, `/robots.txt` (abierto también a ChatGPT, Claude, Perplexity y Gemini), `/llms.txt` (resumen para asistentes de IA) y `/llms-full.txt` (el texto completo de guías, fichas y comparativas) se generan solos con estos mismos textos.
 - La sección `en_breve` ("Kuova en pocas palabras") es la que más ayuda a que los asistentes de IA describan bien la empresa: mantenla corta, concreta y verdadera.
 - Cuando haya dominio propio, se cambia la variable `NEXT_PUBLIC_SITE_URL` en Vercel y todo lo demás lo sigue.
 - El nombre de la marca está en `marca.nombre` (y en los títulos de `seo`): es lo único que hay que cambiar cuando haya nombre definitivo.

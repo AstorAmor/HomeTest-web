@@ -1,7 +1,7 @@
 {
   "marca": {
     "nombre": "Kuova Health",
-    "descripcion_corta": "Your lab tests, your wearables and how you feel, in one app that explains every result and suggests a plan. Spain."
+    "descripcion_corta": "Preventive health and longevity: your lab tests, your wearables and your daily life, in one app that explains every result and suggests a plan. Spain."
   },
   "nav": {
     "enlaces": [
@@ -16,14 +16,18 @@
       {
         "label": "FAQ",
         "href": "/#preguntas"
+      },
+      {
+        "label": "Learn",
+        "href": "/aprende"
       }
     ],
     "cta": "Waitlist"
   },
   "seo": {
     "home": {
-      "title": "Kuova Health · Blood tests, wearables and a plan for you",
-      "description": "Your blood tests, the data from your watch or ring and how you feel, in one app. Understand every result and follow a plan to improve. Coming soon to Spain."
+      "title": "Kuova Health · Preventive health and longevity, with your data",
+      "description": "Preventive health and longevity: your blood tests, your watch or ring and your daily life in one app that explains every result and suggests a plan. Coming soon to Spain."
     },
     "como_funciona": {
       "title": "How it works — Kuova Health",
@@ -84,11 +88,15 @@
     },
     "en_breve": {
       "titulo": "Kuova in a nutshell",
-      "parrafo": "Kuova Health is a health app based in Madrid, Spain. It brings together your lab blood and urine tests, the data from your watch, ring or band and how you feel every day; it explains every result with scientific sources and suggests a concrete plan to improve, checked by measuring again. It does not diagnose or replace your doctor: it helps you understand your health and arrive at your appointment better informed.",
+      "parrafo": "Kuova Health is a preventive-health and longevity app based in Madrid, Spain. It brings together your lab blood and urine tests, the data from your watch, ring or band and your daily life (diet, exercise, sleep, menstrual cycle and how you feel); it explains every result with scientific sources and suggests a concrete plan to improve, checked by measuring again. It does not diagnose or replace your doctor: it helps you understand your health and arrive at your appointment better informed.",
       "datos": [
         {
           "clave": "What it is",
           "valor": "A preventive-health membership"
+        },
+        {
+          "clave": "Focus",
+          "valor": "Preventive health and longevity: more years in good health, by measuring and tracking how you change"
         },
         {
           "clave": "Where",
@@ -97,6 +105,10 @@
         {
           "clave": "What it measures",
           "valor": "Lab blood and urine tests, your wearables and your daily log"
+        },
+        {
+          "clave": "Daily tracking",
+          "valor": "Diet, exercise, sleep, menstrual cycle, digestion, blood pressure and glucose"
         },
         {
           "clave": "Wearables",
@@ -135,6 +147,22 @@
       {
         "titulo": "Learn",
         "enlaces": [
+          {
+            "label": "All guides (Spanish)",
+            "href": "/aprende"
+          },
+          {
+            "label": "Longevity (Spanish)",
+            "href": "/longevidad"
+          },
+          {
+            "label": "Preventive health (Spanish)",
+            "href": "/salud-preventiva"
+          },
+          {
+            "label": "Biological age (Spanish)",
+            "href": "/edad-biologica"
+          },
           {
             "label": "Biomarkers (Spanish)",
             "href": "/biomarcadores"

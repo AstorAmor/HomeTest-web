@@ -43,8 +43,16 @@ export function pageMetadata(key: SeoKey, path: string): Metadata {
 
 // --- Datos estructurados (schema.org, JSON-LD) para Google y buscadores con IA ---
 
+// Temas de los que sabe la empresa (para que buscadores y asistentes de IA la asocien con ellos)
+const KNOWS_ABOUT = {
+  es: ["Salud preventiva", "Longevidad", "Edad biológica", "Biomarcadores", "Análisis de sangre", "Wearables", "Ciclo menstrual", "Alimentación", "Ejercicio físico", "Sueño"],
+  en: ["Preventive health", "Longevity", "Biological age", "Biomarkers", "Blood tests", "Wearables", "Menstrual cycle", "Nutrition", "Exercise", "Sleep"],
+};
+
 export function organizationJsonLd(lang: Lang) {
-  const { marca, pagina_contacto } = getContent(lang).siteCopy;
+  const { marca, pagina_contacto, footer } = getContent(lang).siteCopy;
+  // Solo los perfiles en redes que ya existen (los de "#" aún no están creados)
+  const sameAs = footer.redes.map((r) => r.href).filter((h) => h.startsWith("http"));
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -54,7 +62,10 @@ export function organizationJsonLd(lang: Lang) {
         name: marca.nombre,
         url: SITE_URL,
         description: marca.descripcion_corta,
+        slogan: lang === "en" ? "Know more. Live better." : "Conócete mejor. Vive mejor.",
         logo: `${SITE_URL}/icon.svg`,
+        knowsAbout: KNOWS_ABOUT[lang],
+        ...(sameAs.length ? { sameAs } : {}),
         areaServed: { "@type": "Country", name: "Spain" },
         address: { "@type": "PostalAddress", addressLocality: "Madrid", addressCountry: "ES" },
         contactPoint: {

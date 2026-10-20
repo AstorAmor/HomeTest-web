@@ -1,0 +1,72 @@
+{
+  "_como_editar": "Textos de la página /aprende (índice de guías, fichas de biomarcadores, comparativas y temas que se aprenden en la app). Las guías salen solas de content/guias. En «temas_app», «href» es la guía de la web que amplía ese tema (vacío = sin enlace).",
+  "eyebrow": "Aprende",
+  "titulo": "Entiende tu salud, con fuentes",
+  "texto": "Guías claras sobre longevidad, salud preventiva, tu ciclo, tu alimentación y tu entrenamiento, y una ficha para cada biomarcador. Todo con las fuentes citadas, para que sepas de dónde sale cada dato.",
+  "guias_titulo": "Guías",
+  "biomarcadores_titulo": "Fichas de biomarcadores",
+  "biomarcadores_texto": "Qué mide cada marcador, cómo se interpreta según las guías oficiales, qué lo cambia y cómo prepararte.",
+  "biomarcadores_cta": "Ver todas las fichas",
+  "comparativas_titulo": "Kuova y las apps que ya usas",
+  "comparativas_texto": "En qué se diferencia Kuova de la app de tu reloj o tu anillo, y cómo se complementan.",
+  "app_titulo": "En la app, a tu ritmo",
+  "app_texto": "Dentro de Kuova tienes lecciones cortas sobre cada área de tu salud, conectadas con tus datos: cuando algo tiene que ver con tus análisis, tu ciclo o tus hábitos, te lo enseñamos ahí mismo.",
+  "app_enlace": "Leer la guía",
+  "temas_app": [
+    {
+      "titulo": "Ciclo, fertilidad y suelo pélvico",
+      "texto": "Las fases de tu ciclo, tus días fértiles, cuándo pedir ayuda si buscas un embarazo y ejercicios para el suelo pélvico.",
+      "href": "/ciclo-menstrual"
+    },
+    {
+      "titulo": "Perimenopausia",
+      "texto": "Qué cambia en tu ciclo a partir de los 40 y cómo seguirlo con datos.",
+      "href": "/ciclo-menstrual"
+    },
+    {
+      "titulo": "Entrenamiento y fuerza",
+      "texto": "Fuerza y cardio, cómo progresar y por qué el músculo importa tanto.",
+      "href": "/ejercicio"
+    },
+    {
+      "titulo": "Nutrición e hidratación",
+      "texto": "Cómo construir tu plato según tus marcadores y cuánta agua necesitas.",
+      "href": "/alimentacion"
+    },
+    {
+      "titulo": "Corazón",
+      "texto": "Tensión arterial y colesterol: cómo tomarte la tensión en casa y qué números conocer.",
+      "href": "/salud-preventiva"
+    },
+    {
+      "titulo": "Tus biomarcadores",
+      "texto": "Qué te cuenta tu sangre y por qué la tendencia importa más que un valor suelto.",
+      "href": "/analisis-de-sangre"
+    },
+    {
+      "titulo": "Sueño",
+      "texto": "Horarios, rutinas para desconectar y cómo recuperarte mejor.",
+      "href": ""
+    },
+    {
+      "titulo": "Estrés y energía",
+      "texto": "Cómo notarlo a tiempo y qué hacer para bajar revoluciones.",
+      "href": ""
+    },
+    {
+      "titulo": "Meditación y yoga",
+      "texto": "Respiración, movilidad y prácticas cortas para empezar.",
+      "href": ""
+    },
+    {
+      "titulo": "Genética familiar",
+      "texto": "Qué antecedentes de tu familia cuentan y cuándo conviene hablarlo con tu médico.",
+      "href": ""
+    },
+    {
+      "titulo": "Con la evidencia en la mano",
+      "texto": "Sauna, baños de agua fría, creatina, café o cúrcuma: lo que se sabe y lo que no.",
+      "href": ""
+    }
+  ]
+}

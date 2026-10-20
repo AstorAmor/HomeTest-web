@@ -18,7 +18,7 @@ Apple Salud es la app del iPhone que reúne lo que miden tu iPhone, tu Apple Wat
 | Qué es | La app de salud del iPhone, gratuita | App que une tu wearable, tus análisis y tu registro diario |
 | Qué mide | Lo que registran el iPhone, el Apple Watch y las apps conectadas | Lo que mide tu wearable, más análisis de laboratorio y tu registro (energía, ánimo, digestión, ciclo, tensión) |
 | Análisis de sangre | Apple anunció en septiembre de 2026 la compra de análisis desde la app, primero en EE. UU.[^1] | Analíticas en laboratorios en España; también puedes subir las que ya tienes, en PDF o foto |
-| Edad biológica | «Edad de salud» con datos del Apple Watch (anunciada, primero en EE. UU.)[^1] | Tu edad KUOVA, estimada con marcadores de tu analítica |
+| Edad biológica | «Edad de salud» con datos del Apple Watch (anunciada, primero en EE. UU.)[^1] | Tu edad KUOVA, estimada con marcadores de tu analítica ([qué mide cada una](/edad-biologica)) |
 | Historias clínicas | Importación desde hospitales de EE. UU., Reino Unido y Canadá[^2] | Subes tus informes y la app extrae los resultados |
 
 ## Preguntas frecuentes

@@ -1,7 +1,7 @@
 {
   "_como_editar": "English version of content/inicio.json (same structure; the Spanish file is the main one). Numbers in the animations are illustrative examples.",
   "hero": {
-    "eyebrow": "Coming soon to Spain",
+    "eyebrow": "Preventive health · Coming soon to Spain",
     "titulo": "Know more.",
     "titulo_2": "Live better.",
     "subtitulo": "How you feel, what your body does every day and what your tests say, finally in one place. So you know where you stand and what to do next.",
@@ -367,6 +367,11 @@
         "respuesta": "An app to take control of your health. Kuova brings together your lab blood and urine tests, the data from your watch, ring or band and how you feel every day; it explains what they mean and suggests a plan to improve. Then you measure again to see what worked."
       },
       {
+        "id": "longevidad",
+        "pregunta": "Is Kuova for preventive health and longevity?",
+        "respuesta": "Yes, that is what it is built for: knowing your health while you are still well and tracking the signals most linked to more years in good health, such as your fitness, sleep, blood pressure, cholesterol and blood sugar. It does not promise a longer life: it helps you see whether what you do is working. Our guides on [preventive health](/salud-preventiva) and [longevity](/longevidad) explain it (in Spanish)."
+      },
+      {
         "id": "diferencia",
         "pregunta": "How is Kuova different from Apple Health, Oura or Garmin?",
         "respuesta": "Your watch or ring measures how you sleep, how much you move and how your heart beats. Kuova doesn't replace it: it reads that data and adds what no sensor can see, your lab tests, together with how you feel and a plan. We explain it brand by brand in [our comparisons](/comparativas) (in Spanish)."
@@ -402,9 +407,19 @@
         "respuesta": "No. You can start with your lab tests and your daily log. If you wear a device, Kuova uses its data to give you more context."
       },
       {
+        "id": "seguimiento",
+        "pregunta": "Why log my diet, exercise or cycle?",
+        "respuesta": "Because what you do every day changes your blood tests and how you feel. If you log it, Kuova can link it to your results and tell you what works for you and what does not. Our guides on [diet](/alimentacion), [exercise](/ejercicio) and the [menstrual cycle](/ciclo-menstrual) explain why (in Spanish)."
+      },
+      {
         "id": "edad",
         "pregunta": "What is your KUOVA age?",
-        "respuesta": "An estimate of your biological age based on markers from your blood test: whether your body works like someone younger or older than you, and what is moving it. It changes with you, test after test. It is an estimate, not a diagnosis."
+        "respuesta": "An estimate of your biological age using PhenoAge, a published method (Levine and colleagues, 2018) that combines your age with 9 values from an ordinary blood test: whether your body works like that of someone younger or older than you, and what is moving it. It changes with you, test after test. It is an estimate, not a diagnosis. We explain [how it is calculated and how far to trust it](/edad-biologica) (in Spanish)."
+      },
+      {
+        "id": "aprender",
+        "pregunta": "Does the app also teach you about health?",
+        "respuesta": "Yes. It has short lessons on cycle and fertility, pelvic floor, training and strength, nutrition, sleep, stress and heart health, connected to your data. You can start with [our guides](/aprende) (in Spanish)."
       },
       {
         "id": "datos",

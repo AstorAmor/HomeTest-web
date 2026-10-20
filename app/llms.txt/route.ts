@@ -1,5 +1,5 @@
 import { getContent } from "@/lib/content";
-import { getArticles, leadOf, type Coleccion } from "@/lib/knowledge";
+import { getArticles, hrefOf, leadOf, type Coleccion } from "@/lib/knowledge";
 import { localePath } from "@/lib/i18n";
 import { PRELAUNCH } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
@@ -19,16 +19,17 @@ export function GET() {
   // Los enlaces relativos de las respuestas ([texto](/ruta)) se escriben con la dirección completa
   const abs = (t: string) => t.replace(/\]\(\//g, `](${SITE_URL}/`);
   const faq = en.inicio.preguntas.lista.map((p) => `### ${p.pregunta}\n${abs(p.respuesta)}`).join("\n\n");
-  // Fichas de biomarcadores y comparativas (en español), con su respuesta corta
+  // Guías, fichas de biomarcadores y comparativas (en español), con su respuesta corta
   const section = (coleccion: Coleccion) =>
     getArticles(coleccion)
       .filter((a) => a.estado === "publicado")
-      .map((a) => `- [${a.titulo}](${SITE_URL}/${coleccion}/${a.slug}): ${leadOf(a)}`)
+      .map((a) => `- [${a.titulo}](${SITE_URL}${hrefOf(coleccion, a.slug)}): ${leadOf(a)}`)
       .join("\n");
   const page = (path: string, title: string) =>
     PRELAUNCH ? `- [${title}](${SITE_URL}${path})` : `- [${title}](${SITE_URL}${localePath("en", path)}) · [ES](${SITE_URL}${path})`;
   const pages = [
     page("/", PRELAUNCH ? "Home (pre-launch waitlist)" : "Home"),
+    `- [Learn: index of all guides, biomarker sheets and comparisons (Spanish)](${SITE_URL}/aprende)`,
     page("/privacy", "Privacy policy"),
     page("/terms", "Terms of use"),
   ].join("\n");
@@ -42,11 +43,19 @@ Spanish version: ${es.siteCopy.home.en_breve.parrafo}
 ## Key facts
 ${facts}
 
+## Focus
+Preventive health and longevity (living more years in good health), based on lab tests, wearables and daily habits: diet, exercise, sleep and the menstrual cycle.
+
 ## Pages
 ${pages}
 
+The full text of every guide, biomarker sheet and comparison is at ${SITE_URL}/llms-full.txt
+
 ## FAQ
 ${faq}
+
+## Guides (Spanish, with cited sources): longevity, preventive health, biological age, blood tests, menstrual cycle, diet and exercise
+${section("guias")}
 
 ## Biomarker guides (Spanish, with cited sources)
 ${section("biomarcadores")}
