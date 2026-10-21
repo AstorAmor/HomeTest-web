@@ -34,7 +34,12 @@ const fontLogo = Montserrat({
 });
 
 export function generateMetadata(): Metadata {
-  return { metadataBase: new URL(SITE_URL), ...pageMetadata("home", "/") };
+  return {
+    metadataBase: new URL(SITE_URL),
+    ...pageMetadata("home", "/"),
+    // Verificación de Bing Webmaster Tools (Google se verificó por DNS, registro TXT en Microsoft 365).
+    verification: { other: { "msvalidate.01": "02B68E80B1B05612CD7F8B0B061C1074" } },
+  };
 }
 
 export const viewport: Viewport = { themeColor: PRELAUNCH ? "#0e2a24" : "#faf8f3" };
