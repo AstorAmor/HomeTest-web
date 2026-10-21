@@ -56,6 +56,10 @@ export default function ArticleLayout({
       </header>
       <Container>
         <div className="mx-auto max-w-[44rem] pb-16 pt-6 sm:pb-20">
+          {a.meta.imagen && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={a.meta.imagen} alt={a.meta.imagen_alt ?? ""} className="mb-4 mt-4 aspect-[16/9] w-full rounded-2xl object-cover sm:mt-8" />
+          )}
           <ArticleBody article={a} />
         </div>
         {children && <div className="mx-auto max-w-[44rem] pb-24 sm:pb-32">{children}</div>}

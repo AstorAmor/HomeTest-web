@@ -6,6 +6,9 @@ import { KNOWLEDGE } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
 // Un artículo de /conocimiento. El texto está en content/conocimiento/<slug>.md.
+// Solo existen los artículos generados al compilar: cualquier otra dirección da 404. Sin esto, con la
+// sección oculta (lista vacía) kuovahealth.com respondía 500 en vez de 404.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return KNOWLEDGE ? getArticles().map((a) => ({ slug: a.slug })) : [];
@@ -15,9 +18,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const a = getArticle(params.slug);
   if (!KNOWLEDGE || !a) return {};
   const url = `/conocimiento/${a.slug}`;
-  const image = `${SITE_URL}/images/kuova-og.jpg`;
+  const image = `${SITE_URL}${a.meta.imagen ?? "/images/kuova-og.jpg"}`;
   return {
-    title: `${a.titulo} · Kuova Health`,
+    title: a.meta.titulo_seo ?? `${a.titulo} · Kuova Health`,
     description: a.descripcion,
     alternates: { canonical: url },
     robots: a.estado === "borrador" ? { index: false, follow: false } : undefined,
@@ -52,7 +55,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           inLanguage: "es",
           datePublished: a.fecha,
           url: `${SITE_URL}/conocimiento/${a.slug}`,
-          image: `${SITE_URL}/images/kuova-og.jpg`,
+          image: `${SITE_URL}${a.meta.imagen ?? "/images/kuova-og.jpg"}`,
           author: { "@id": `${SITE_URL}/#organization` },
           publisher: { "@id": `${SITE_URL}/#organization` },
           citation: a.refs.map((r) => plain(r.text)),

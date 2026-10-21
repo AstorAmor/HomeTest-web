@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: { guia: string } }): Meta
   const a = getArticle(params.guia, "guias");
   if (!a) return {};
   const url = hrefOf("guias", a.slug);
-  const image = `${SITE_URL}/images/kuova-og.jpg`;
+  const image = `${SITE_URL}${a.meta.imagen ?? "/images/kuova-og.jpg"}`;
   return {
     title: a.meta.titulo_seo ?? `${a.titulo} · Kuova Health`,
     description: a.descripcion,
@@ -68,6 +68,7 @@ export default function GuiaPage({ params }: { params: { guia: string } }) {
           description: a.descripcion,
           inLanguage: "es",
           url,
+          ...(a.meta.imagen ? { image: `${SITE_URL}${a.meta.imagen}` } : {}),
           datePublished: a.fecha,
           dateModified: a.revisado ?? a.fecha,
           lastReviewed: a.revisado ?? a.fecha,

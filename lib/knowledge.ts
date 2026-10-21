@@ -9,8 +9,10 @@ import path from "node:path";
 //                                                       en la raíz para que la dirección sea corta)
 // Markdown sencillo, sin librerías: ## y ### para títulos, - o 1. para listas, > para una frase
 // destacada, | para tablas (la primera fila es la cabecera), **negrita**, *cursiva*,
-// [texto](enlace), [^n] para citar la referencia n (definida al final con "[^n]: ...") y
-// [[grafica:nombre]] en una línea para una gráfica.
+// [texto](enlace), [^n] para citar la referencia n (definida al final con "[^n]: ..."),
+// [[grafica:nombre]] en una línea para una gráfica y ![texto alternativo](/images/...) en una línea
+// para una imagen (las líneas que la siguen en el mismo párrafo son su pie). En la cabecera,
+// "imagen" e "imagen_alt" ponen una imagen grande arriba del texto, que también sale al compartir.
 
 export type Coleccion = "conocimiento" | "comparativas" | "biomarcadores" | "guias";
 
@@ -47,7 +49,8 @@ export type Block =
   | { type: "p" | "quote"; text: string }
   | { type: "ul" | "ol"; items: string[] }
   | { type: "table"; head: string[]; rows: string[][] }
-  | { type: "chart"; id: string };
+  | { type: "chart"; id: string }
+  | { type: "image"; src: string; alt: string; caption: string };
 
 export interface Article extends ArticleMeta {
   blocks: Block[];
@@ -86,7 +89,9 @@ function parse(slug: string, raw: string): Article {
     if (!lines.length) continue;
     const first = lines[0];
     const chart = first.match(/^\[\[grafica:([\w-]+)\]\]$/);
+    const image = first.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
     if (chart) blocks.push({ type: "chart", id: chart[1] });
+    else if (image) blocks.push({ type: "image", alt: image[1], src: image[2], caption: lines.slice(1).join(" ") });
     else if (first.startsWith("### ")) blocks.push({ type: "h3", text: first.slice(4), id: slugify(first.slice(4)) });
     else if (first.startsWith("## ")) blocks.push({ type: "h2", text: first.slice(3), id: slugify(first.slice(3)) });
     else if (lines.every((l) => /^\[\^\w+\]:/.test(l)))

@@ -99,6 +99,19 @@ export default function ArticleBody({ article }: { article: Article }) {
                 </table>
               </div>
             );
+          case "image":
+            return (
+              <figure key={i} className="my-9">
+                {/* <img> y no next/image: las imágenes de los artículos tienen tamaños distintos y muchas son SVG */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={b.src} alt={b.alt} loading="lazy" className="h-auto w-full rounded-xl border border-border bg-bg-soft" />
+                {b.caption && (
+                  <figcaption className="mt-3 text-sm leading-relaxed text-text-muted">
+                    <Inline text={b.caption} />
+                  </figcaption>
+                )}
+              </figure>
+            );
           case "chart": {
             const Chart = CHARTS[b.id];
             return Chart ? (
