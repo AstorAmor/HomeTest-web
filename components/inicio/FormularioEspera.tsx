@@ -1,22 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import textosNewsletter from "@/content/newsletter.json";
 import type { Inicio } from "@/lib/content";
 import { NEWSLETTER } from "@/lib/launch";
 import { localePath, type Lang } from "@/lib/locale";
 import { datosDeLlegada, medir } from "@/lib/medicion";
+import { recordarNewsletter, yaApuntado } from "@/lib/newsletter-navegador";
 
 type Estado = "idle" | "sending" | "done" | "error";
 
 // Lista de espera de la portada completa: el email, guardado por /api/waitlist en Supabase (la
 // misma lista que la página de pre-lanzamiento) junto con por dónde llegó la persona
 // (lib/medicion.ts). Textos en content/inicio.json → "lista". Con la newsletter activa (lib/launch.ts),
-// una casilla aparte y sin marcar apunta también a Kuova Letter (doble confirmación por email).
+// una casilla aparte y sin marcar apunta también a Kuova Letter (doble confirmación por email); no
+// sale si este navegador ya se apuntó (lib/newsletter-navegador.ts).
 export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]; lang: Lang }) {
   const [estado, setEstado] = useState<Estado>("idle");
   const [newsletter, setNewsletter] = useState(false);
+  const [apuntado, setApuntado] = useState(false);
+  useEffect(() => setApuntado(yaApuntado()), []);
   const tn = textosNewsletter[lang];
 
   async function enviar(e: FormEvent<HTMLFormElement>) {
@@ -39,7 +43,9 @@ export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: form.get("email"), consentimiento: true, origen: "lista-de-espera", lang, ...datosDeLlegada() }),
-        }).catch(() => {});
+        })
+          .then((r) => r.ok && recordarNewsletter("pendiente"))
+          .catch(() => {});
       }
     } catch {
       setEstado("error");
@@ -84,7 +90,7 @@ export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]
       {/* Trampa para bots: invisible para las personas; si llega rellena, no se guarda nada */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-px w-px opacity-0" />
 
-      {NEWSLETTER && (
+      {NEWSLETTER && !apuntado && (
         <label className="mx-auto mt-4 flex max-w-md items-start gap-3 text-left text-xs leading-relaxed text-on-accent/75">
           <input type="checkbox" name="newsletter" value="si" className="mt-0.5 h-4 w-4 shrink-0 accent-[#C9A366]" />
           <span>{tn.lista_casilla}</span>

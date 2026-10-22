@@ -20,13 +20,13 @@ export interface LegalDocument {
 // Titular: la sociedad matriz, nunca el nombre del fundador. Falta añadir el NIF y los datos del
 // Registro Mercantil (LSSI art. 10) cuando estén disponibles.
 const CONTROLLER_ES =
-  "Pulse Health, S.L., sociedad matriz que opera Kuova Health. Domicilio: Madrid, España. Contacto para privacidad: hello@kuovahealth.com.";
+  "Pulse Health, S.L., sociedad matriz que opera Kuova Health. Domicilio: Madrid, España. Contacto para privacidad: privacy@kuovahealth.com.";
 const CONTROLLER_EN =
-  "Pulse Health, S.L., the parent company that operates Kuova Health. Address: Madrid, Spain. Privacy contact: hello@kuovahealth.com.";
+  "Pulse Health, S.L., the parent company that operates Kuova Health. Address: Madrid, Spain. Privacy contact: privacy@kuovahealth.com.";
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
-  updated: "Última actualización: 19 de octubre de 2026",
+  updated: "Última actualización: 22 de octubre de 2026",
   intro:
     "Kuova es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
   sections: [
@@ -99,7 +99,7 @@ export const privacyEs: LegalDocument = {
     {
       title: "9. Tus derechos",
       paragraphs: [
-        "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar tu consentimiento, escribiendo a hello@kuovahealth.com.",
+        "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, y retirar tu consentimiento, escribiendo a privacy@kuovahealth.com.",
         "Si consideras que no hemos atendido bien tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).",
       ],
     },
@@ -118,7 +118,7 @@ export const privacyEs: LegalDocument = {
       title: "12. Lista de espera de la web",
       paragraphs: [
         "Si te apuntas a la lista de espera en kuovahealth.com guardamos tu email, el idioma de tu navegador, la fecha y por dónde llegaste a la web: el canal (por ejemplo, Instagram, un buscador o un email nuestro), la fuente y la campaña del enlace si las tenía, la web de la que venías, la página en la que te apuntaste, el tipo de dispositivo y el país, la región y la ciudad aproximados según tu conexión. El email lo usamos únicamente para avisarte del lanzamiento de Kuova y de novedades relacionadas, con tu consentimiento (art. 6.1.a RGPD), que das al apuntarte; los datos de llegada, para saber qué canales funcionan, por nuestro interés legítimo en medir nuestra comunicación (art. 6.1.f RGPD).",
-        "Se guarda en Supabase, en servidores de la Unión Europea, y no lo compartimos con nadie para su propio uso. Lo conservamos hasta que te des de baja o, como máximo, 24 meses desde que te apuntaste. Puedes darte de baja en cualquier momento desde cualquier email que te enviemos o escribiendo a hello@kuovahealth.com.",
+        "Se guarda en Supabase, en servidores de la Unión Europea, y no lo compartimos con nadie para su propio uso. Lo conservamos hasta que te des de baja o, como máximo, 24 meses desde que te apuntaste. Puedes darte de baja en cualquier momento desde cualquier email que te enviemos o escribiendo a privacy@kuovahealth.com.",
       ],
     },
     {
@@ -139,7 +139,7 @@ export const privacyEs: LegalDocument = {
 
 export const privacyEn: LegalDocument = {
   title: "Privacy Policy",
-  updated: "Last updated: 19 October 2026",
+  updated: "Last updated: 22 October 2026",
   intro:
     "Kuova is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
   sections: [
@@ -209,7 +209,7 @@ export const privacyEn: LegalDocument = {
     {
       title: "9. Your rights",
       paragraphs: [
-        "You can exercise your rights of access, rectification, erasure, objection, restriction and portability, and withdraw your consent, by writing to hello@kuovahealth.com.",
+        "You can exercise your rights of access, rectification, erasure, objection, restriction and portability, and withdraw your consent, by writing to privacy@kuovahealth.com.",
         "You can also lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).",
       ],
     },
@@ -225,7 +225,7 @@ export const privacyEn: LegalDocument = {
       title: "12. Website waitlist",
       paragraphs: [
         "If you join the waitlist at kuovahealth.com we store your email, your browser language, the date and how you reached the website: the channel (for example Instagram, a search engine or one of our emails), the link's source and campaign if it had them, the website you came from, the page where you signed up, your type of device and your approximate country, region and city based on your connection. We use your email solely to tell you about Kuova's launch and related news, based on your consent (Art. 6(1)(a) GDPR), which you give by signing up; the arrival data, to learn which channels work, based on our legitimate interest in measuring our communication (Art. 6(1)(f) GDPR).",
-        "It is stored with Supabase on servers in the European Union and is not shared with anyone for their own use. We keep it until you unsubscribe or for at most 24 months from when you signed up. You can unsubscribe at any time from any email we send you or by writing to hello@kuovahealth.com.",
+        "It is stored with Supabase on servers in the European Union and is not shared with anyone for their own use. We keep it until you unsubscribe or for at most 24 months from when you signed up. You can unsubscribe at any time from any email we send you or by writing to privacy@kuovahealth.com.",
       ],
     },
     {

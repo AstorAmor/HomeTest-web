@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import RecordarSuscripcion from "@/components/newsletter/RecordarSuscripcion";
 import Container from "@/components/ui/Container";
 import { NEWSLETTER } from "@/lib/launch";
 import { textosNewsletter } from "@/lib/newsletter";
@@ -17,6 +18,7 @@ export default function NewsletterConfirmada() {
   const t = textosNewsletter("es");
   return (
     <div lang="es" className="bg-bg">
+      <RecordarSuscripcion />
       <Container>
         <div className="mx-auto max-w-xl pb-28 pt-36 text-center sm:pt-44">
           <p className="font-logo text-sm font-semibold uppercase tracking-[0.14em] text-accent-light">{t.eyebrow}</p>

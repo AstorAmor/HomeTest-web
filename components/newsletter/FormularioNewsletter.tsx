@@ -1,19 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import textos from "@/content/newsletter.json";
 import { localePath } from "@/lib/locale";
 import { datosDeLlegada, medir } from "@/lib/medicion";
+import { recordarNewsletter, yaApuntado } from "@/lib/newsletter-navegador";
 
 type Estado = "idle" | "sending" | "done" | "error" | "consent";
 
 // Alta en la newsletter Kuova Letter (debajo de los artículos de /conocimiento): email, casilla de
 // consentimiento obligatoria y sin marcar, y otra opcional para medir los clics por persona. Lo guarda
-// /api/newsletter y Brevo manda el email de doble confirmación. Textos en content/newsletter.json.
+// /api/newsletter y Brevo manda el email de doble confirmación. Si este navegador ya se apuntó
+// (lib/newsletter-navegador.ts), no se muestra. Textos en content/newsletter.json.
 export default function FormularioNewsletter({ lang = "es" }: { lang?: "es" | "en" }) {
   const t = textos[lang];
   const [estado, setEstado] = useState<Estado>("idle");
+  const [apuntado, setApuntado] = useState(false);
+  useEffect(() => setApuntado(yaApuntado()), []);
 
   async function enviar(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -36,13 +40,16 @@ export default function FormularioNewsletter({ lang = "es" }: { lang?: "es" | "e
         }),
       });
       setEstado(res.ok ? "done" : "error");
+      if (res.ok) recordarNewsletter("pendiente");
     } catch {
       setEstado("error");
     }
   }
 
+  if (apuntado) return null;
+
   return (
-    <section aria-labelledby="newsletter-titulo" className="mt-14 rounded-2xl border border-border bg-bg-soft px-6 py-7 sm:px-8">
+    <section aria-labelledby="newsletter-titulo" className="mb-14 mt-14 rounded-2xl border border-border bg-bg-soft px-6 py-7 sm:px-8">
       <p className="font-logo text-xs font-semibold uppercase tracking-[0.14em] text-accent-light">{t.eyebrow}</p>
       <h2 id="newsletter-titulo" className="mt-2 font-display text-2xl font-medium text-text sm:text-[1.75rem]">
         {t.titulo}
