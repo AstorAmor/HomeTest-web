@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ArticleLayout from "@/components/knowledge/ArticleLayout";
+import FormularioNewsletter from "@/components/newsletter/FormularioNewsletter";
 import { getArticle, getArticles, plain } from "@/lib/knowledge";
-import { KNOWLEDGE } from "@/lib/launch";
+import { KNOWLEDGE, NEWSLETTER } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
 // Un artículo de /conocimiento. El texto está en content/conocimiento/<slug>.md.
@@ -61,6 +62,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           citation: a.refs.map((r) => plain(r.text)),
         },
       ]}
-    />
+    >
+      {NEWSLETTER && <FormularioNewsletter />}
+    </ArticleLayout>
   );
 }

@@ -20,3 +20,9 @@ export const RETIRADAS: Record<string, string> = {
 // se ve en el servidor local (npm run dev); en kuovahealth.com aparece cuando la variable
 // NEXT_PUBLIC_KNOWLEDGE vale "true" en Vercel (Production) y se vuelve a publicar.
 export const KNOWLEDGE = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_KNOWLEDGE === "true";
+
+// Newsletter (Kuova Letter): formulario de alta en los artículos, casilla en la lista de espera,
+// página de confirmación y su sección del panel. Mientras se prepara solo se ve en el servidor local;
+// en kuovahealth.com aparece cuando NEXT_PUBLIC_NEWSLETTER vale "true" en Vercel (Production), con la
+// migración …_newsletter.sql aplicada, Brevo configurado y los textos revisados por el abogado.
+export const NEWSLETTER = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_NEWSLETTER === "true";

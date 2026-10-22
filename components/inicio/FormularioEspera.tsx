@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import textosNewsletter from "@/content/newsletter.json";
 import type { Inicio } from "@/lib/content";
+import { NEWSLETTER } from "@/lib/launch";
 import { localePath, type Lang } from "@/lib/locale";
 import { datosDeLlegada, medir } from "@/lib/medicion";
 
@@ -10,9 +12,12 @@ type Estado = "idle" | "sending" | "done" | "error";
 
 // Lista de espera de la portada completa: el email, guardado por /api/waitlist en Supabase (la
 // misma lista que la página de pre-lanzamiento) junto con por dónde llegó la persona
-// (lib/medicion.ts). Textos en content/inicio.json → "lista".
+// (lib/medicion.ts). Textos en content/inicio.json → "lista". Con la newsletter activa (lib/launch.ts),
+// una casilla aparte y sin marcar apunta también a Kuova Letter (doble confirmación por email).
 export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]; lang: Lang }) {
   const [estado, setEstado] = useState<Estado>("idle");
+  const [newsletter, setNewsletter] = useState(false);
+  const tn = textosNewsletter[lang];
 
   async function enviar(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,6 +32,15 @@ export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]
       });
       setEstado(res.ok ? "done" : "error");
       medir(res.ok ? "registro_ok" : "registro_error", res.ok ? undefined : String(res.status));
+      const quiere = NEWSLETTER && form.get("newsletter") === "si";
+      setNewsletter(res.ok && quiere);
+      if (res.ok && quiere) {
+        void fetch("/api/newsletter", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: form.get("email"), consentimiento: true, origen: "lista-de-espera", lang, ...datosDeLlegada() }),
+        }).catch(() => {});
+      }
     } catch {
       setEstado("error");
       medir("registro_error", "red");
@@ -38,6 +52,7 @@ export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]
       <div role="status" className="rounded-3xl border border-gold/30 bg-white/[0.06] px-6 py-7 text-center backdrop-blur-md">
         <p className="font-display text-2xl">{copy.exito_titulo}</p>
         <p className="mt-2 text-sm text-on-accent/70">{copy.exito_texto}</p>
+        {newsletter && <p className="mt-2 text-sm text-on-accent/70">{tn.ok_texto}</p>}
       </div>
     );
   }
@@ -68,6 +83,13 @@ export default function FormularioEspera({ copy, lang }: { copy: Inicio["lista"]
 
       {/* Trampa para bots: invisible para las personas; si llega rellena, no se guarda nada */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-px w-px opacity-0" />
+
+      {NEWSLETTER && (
+        <label className="mx-auto mt-4 flex max-w-md items-start gap-3 text-left text-xs leading-relaxed text-on-accent/75">
+          <input type="checkbox" name="newsletter" value="si" className="mt-0.5 h-4 w-4 shrink-0 accent-[#C9A366]" />
+          <span>{tn.lista_casilla}</span>
+        </label>
+      )}
 
       <p aria-live="polite" className="mt-3 min-h-5 text-center text-sm text-[#f2c1ae]">
         {estado === "error" && copy.error}

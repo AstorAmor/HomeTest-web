@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
 import ArticleLayout from "@/components/knowledge/ArticleLayout";
 import Relacionados from "@/components/knowledge/Relacionados";
+import FormularioNewsletter from "@/components/newsletter/FormularioNewsletter";
 import { faqsOf, getArticle, getArticles, hrefOf, plain } from "@/lib/knowledge";
 import { getLang } from "@/lib/i18n";
+import { NEWSLETTER } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
 // Guía larga en la raíz de la web (/longevidad, /salud-preventiva...), con el texto en
@@ -107,6 +109,8 @@ export default function GuiaPage({ params }: { params: { guia: string } }) {
         },
       ]}
     >
+      {/* Alta en Kuova Letter: aquí llegan los enlaces de la newsletter («Leer en la web») */}
+      {NEWSLETTER && <FormularioNewsletter />}
       <Relacionados
         titulo="Otras guías"
         items={otras.map((o) => ({ href: hrefOf("guias", o.slug), label: o.titulo }))}
