@@ -40,6 +40,44 @@ export async function pedirConfirmacion(email: string): Promise<boolean | null> 
   return res.ok;
 }
 
+// Estado de la puesta en marcha para el panel (solo administradores): qué está puesto en Vercel, sin
+// enseñar ninguna clave, y lo que dice Brevo de la lista, la plantilla y el webhook. Nunca devuelve la
+// dirección del webhook, que lleva el secreto.
+export async function estadoBrevo() {
+  const key = process.env.BREVO_API_KEY;
+  const lista = Number(process.env.BREVO_LISTA_NEWSLETTER) || null;
+  const plantilla = Number(process.env.BREVO_PLANTILLA_CONFIRMACION) || null;
+  const vercel = { encendida: process.env.NEXT_PUBLIC_NEWSLETTER === "true", clave: Boolean(key), lista, plantilla };
+  if (!key) return { vercel, brevo: null };
+
+  const pedir = async (ruta: string) => {
+    try {
+      const res = await fetch(`https://api.brevo.com/v3${ruta}`, {
+        headers: { "api-key": key, accept: "application/json", "User-Agent": "KuovaWeb/1.0 (+https://kuovahealth.com)" },
+        cache: "no-store",
+      });
+      return res.ok ? await res.json() : null;
+    } catch {
+      return null;
+    }
+  };
+  const [l, p, w] = await Promise.all([
+    lista ? pedir(`/contacts/lists/${lista}`) : null,
+    plantilla ? pedir(`/smtp/templates/${plantilla}`) : null,
+    // Sin ningún webhook, Brevo responde 400 en vez de una lista vacía: queda en null
+    pedir("/webhooks?type=marketing"),
+  ]);
+  const webhook = (w?.webhooks ?? []).find((x: { url?: string }) => String(x.url ?? "").includes("/api/newsletter/brevo"));
+  return {
+    vercel,
+    brevo: {
+      lista: l ? { nombre: String(l.name ?? ""), contactos: Number(l.uniqueSubscribers ?? l.totalSubscribers ?? 0) } : null,
+      plantilla: p ? { nombre: String(p.name ?? ""), asunto: String(p.subject ?? ""), activa: Boolean(p.isActive) } : null,
+      webhook: webhook ? { id: Number(webhook.id), avisos: (webhook.events ?? []) as string[] } : null,
+    },
+  };
+}
+
 // Un aviso de Brevo (webhook de marketing) con los nombres de newsletter_evento_brevo(). La clave es
 // una huella del aviso, para no guardarlo dos veces si Brevo lo repite.
 export function avisoDeBrevo(a: Record<string, unknown>) {

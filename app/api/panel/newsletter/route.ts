@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { rpcConSesion } from "@/lib/medicion-servidor";
+import { estadoBrevo } from "@/lib/newsletter";
 
 // Datos de la newsletter para el panel: llama a newsletter_panel (hometest-app/supabase/migrations/
 // …_newsletter.sql) con la sesión de quien ha entrado; si no es administradora, la base de datos lo
@@ -19,5 +20,7 @@ export async function POST(req: Request) {
     console.error("panel newsletter: Supabase respondió", res.status, texto);
     return NextResponse.json({ error: "error" }, { status: 502 });
   }
-  return NextResponse.json(await res.json(), { headers: { "Cache-Control": "no-store" } });
+  // Ya sabemos que es administradora: se añade el estado de Vercel y Brevo (lib/newsletter.ts)
+  const [datos, config] = await Promise.all([res.json(), estadoBrevo()]);
+  return NextResponse.json({ ...datos, config }, { headers: { "Cache-Control": "no-store" } });
 }

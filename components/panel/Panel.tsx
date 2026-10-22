@@ -4,7 +4,6 @@ import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import Container from "../ui/Container";
 import { Barras, Cifra, Columnas, DORADO, Tarjeta, Vacio, VERDE, numero, porcentaje } from "./Graficas";
 import Newsletter from "./Newsletter";
-import { NEWSLETTER } from "@/lib/launch";
 
 // Panel de la web (kuovahealth.com/panel): la medición sin cookies (lib/medicion.ts) resumida por
 // periodo. Se entra con la cuenta de KUOVA; los datos los da web_panel en Supabase, que solo
@@ -221,7 +220,8 @@ export default function Panel() {
 
         {error && <p className="mt-6 rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text">{error}</p>}
         {datos ? <Contenido datos={datos} /> : !error && <p className="mt-10 text-sm text-text-muted">Cargando…</p>}
-        {NEWSLETTER && <Newsletter token={sesion.token} onSalir={salir} />}
+        {/* Siempre, aunque la newsletter esté apagada en la web: así se ve qué falta para encenderla */}
+        <Newsletter token={sesion.token} onSalir={salir} />
         <GeneradorEnlaces />
         <p className="mt-10 max-w-3xl text-xs leading-relaxed text-text-muted">
           Cómo se cuenta: cada página cargada es una visita; los visitantes se cuentan por día con una huella anónima que cambia cada
