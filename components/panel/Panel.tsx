@@ -77,6 +77,7 @@ const SECCIONES: [string, string][] = [
   ["entiende", "Paso 5 · Entiende"],
   ["actua", "Paso 6 · Actúa"],
   ["repite", "Paso 7 · Repite"],
+  ["la-app", "La app, por dentro"],
   ["edad-kuova", "Tu edad KUOVA"],
   ["privacidad", "Privacidad"],
   ["preguntas", "Preguntas"],

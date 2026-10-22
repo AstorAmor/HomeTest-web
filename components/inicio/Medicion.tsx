@@ -17,6 +17,7 @@ const SECCIONES = [
   "entiende",
   "actua",
   "repite",
+  "la-app",
   "edad-kuova",
   "privacidad",
   "preguntas",

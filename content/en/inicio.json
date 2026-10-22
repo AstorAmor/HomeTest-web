@@ -319,6 +319,187 @@
       }
     }
   ],
+  "app": {
+    "eyebrow": "Inside the app",
+    "titulo": "What you log,",
+    "titulo_2": "makes sense at a glance",
+    "texto": "A few taps a day and Kuova puts it in order for you. This is how it looks in the app.",
+    "nota": "App screens with example data.",
+    "funciones": [
+      {
+        "titulo": "Your week at a glance",
+        "texto": "The app brings your days together and tells you how your hydration is going, with a concrete idea if one day is darker."
+      },
+      {
+        "titulo": "A check-in, and a breather",
+        "texto": "How your energy and stress are, in two taps. And, if you like, a two-minute guided pause."
+      },
+      {
+        "titulo": "Medication and supplements",
+        "texto": "What you take, with its time and its reminder. Mark each dose with one tap."
+      },
+      {
+        "titulo": "Your menu, made for you",
+        "texto": "A week of breakfasts, lunches and dinners based on your blood tests, what you like and your time. With recipes and a shopping list."
+      },
+      {
+        "titulo": "Your workout, your way",
+        "texto": "Sessions built around your goal, the days you have and what you have to hand. Tick off each exercise and the app keeps count of your week."
+      },
+      {
+        "titulo": "Water, glass by glass",
+        "texto": "One tap per glass, or your bottle if you save it as your measure. See how much you have had against your goal, and the week in bars."
+      },
+      {
+        "titulo": "Colour, as a drop",
+        "texto": "Eight shades, from lightest to darkest. Tap the one that looks closest and it is logged."
+      },
+      {
+        "titulo": "Digestion, discreetly",
+        "texto": "Abstract shapes instead of photos. Over time, the app links it with what you eat."
+      }
+    ],
+    "pantallas": {
+      "ahora_mismo": "Just now",
+      "llevas_hoy": "{n} so far today",
+      "que_color": "What colour?",
+      "colores": [
+        "Clear",
+        "Pale straw",
+        "Yellow",
+        "Dark yellow",
+        "Amber / honey",
+        "Brown",
+        "Pink or red",
+        "Cloudy"
+      ],
+      "apuntado_hora": "Logged at 11:45",
+      "escozor": "Any burning or pain?",
+      "no": "No",
+      "hidratacion": "Hydration",
+      "esta_semana": "This week",
+      "dias": [
+        "M",
+        "T",
+        "W",
+        "T",
+        "F",
+        "S",
+        "S"
+      ],
+      "hidratado": "Hydrated",
+      "bebe_mas": "Drink more",
+      "bien_hidratado": "Well hydrated this week",
+      "idea": "One day was darker: try drinking a little more.",
+      "agua_hoy": "Water · today",
+      "litros": "litres",
+      "objetivo": "Of 1.8 L",
+      "bebidas": "Water, tea, coffee, milk…",
+      "un_vaso": "+ A glass",
+      "un_toque": "250 ml in one tap",
+      "suma": "+250 ml",
+      "digestion": "Digestion",
+      "consistencia": "Consistency",
+      "elegida": "Smooth and soft",
+      "apuntado_digestion": "Logged at 08:30",
+      "menu_plan": "Your food plan",
+      "menu_titulo": "Today on your menu",
+      "menu_hechas": "2 of 3 meals today",
+      "comidas": [
+        {
+          "momento": "Breakfast",
+          "plato": "Greek yoghurt with berries and walnuts"
+        },
+        {
+          "momento": "Lunch",
+          "plato": "Baked salmon with quinoa and vegetables"
+        },
+        {
+          "momento": "Dinner",
+          "plato": "Pumpkin soup and a plain omelette"
+        }
+      ],
+      "macros_titulo": "Your day, in macros",
+      "macros": [
+        "Protein",
+        "Carbs",
+        "Fat"
+      ],
+      "medicacion": "Medication & supplements",
+      "recordatorios": "Reminders on",
+      "hoy": "Today",
+      "tomas": [
+        {
+          "hora": "09:00",
+          "nombre": "Vitamin D3",
+          "dosis": "1 capsule"
+        },
+        {
+          "hora": "14:00",
+          "nombre": "Omega 3",
+          "dosis": "1 softgel"
+        },
+        {
+          "hora": "22:00",
+          "nombre": "Magnesium",
+          "dosis": "1 sachet"
+        }
+      ],
+      "tomada": "Taken",
+      "omitir": "Skip",
+      "recordatorio": "Reminder",
+      "checkin": "Check-in · Midday",
+      "energia_pregunta": "How's your energy level?",
+      "energia": [
+        "Drained",
+        "Low",
+        "OK",
+        "Good",
+        "Full"
+      ],
+      "estres_pregunta": "How stressed do you feel?",
+      "estres": [
+        "Not at all",
+        "A little",
+        "Some",
+        "Quite",
+        "Very"
+      ],
+      "inspira": "Breathe in",
+      "espira": "Breathe out",
+      "ejercicio": "Mindful pause",
+      "ejercicio_detalle": "2 min · follow the circle",
+      "entreno_plan": "Your training plan",
+      "entreno_semana": "This week: {done} of {total} sessions",
+      "entreno_titulo": "Strength at home · 30 min",
+      "entreno_extra": "Plus warm-up and stretches",
+      "ejercicios": [
+        {
+          "nombre": "Goblet squat",
+          "dosis": "3 × 12"
+        },
+        {
+          "nombre": "Dumbbell row",
+          "dosis": "3 × 10 per side"
+        },
+        {
+          "nombre": "Glute bridge",
+          "dosis": "3 × 15"
+        },
+        {
+          "nombre": "Plank",
+          "dosis": "3 × 40 s"
+        }
+      ],
+      "sesion_hecha": "Session complete!",
+      "que_tal": "How did it feel?",
+      "intensidad": [
+        "Easy",
+        "Moderate",
+        "Hard"
+      ]
+    }
+  },
   "edad": {
     "eyebrow": "Your KUOVA age",
     "titulo": "How old is your body?",

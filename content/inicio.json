@@ -319,6 +319,187 @@
       }
     }
   ],
+  "app": {
+    "eyebrow": "La app, por dentro",
+    "titulo": "Lo que apuntas,",
+    "titulo_2": "se entiende de un vistazo",
+    "texto": "Unos toques al día y Kuova lo ordena por ti. Así se ve en la app.",
+    "nota": "Pantallas de la app con datos de ejemplo.",
+    "funciones": [
+      {
+        "titulo": "Tu semana, de un vistazo",
+        "texto": "La app junta tus días y te dice cómo vas de hidratación, con una idea concreta si un día sale más oscura."
+      },
+      {
+        "titulo": "Un check-in, y un respiro",
+        "texto": "Cómo tienes la energía y el estrés, en dos toques. Y, si te apetece, una pausa guiada de dos minutos."
+      },
+      {
+        "titulo": "Medicación y suplementos",
+        "texto": "Lo que tomas, con su hora y su recordatorio. Marcas cada toma con un toque."
+      },
+      {
+        "titulo": "Tu menú, hecho para ti",
+        "texto": "Una semana de desayunos, comidas y cenas según tus análisis, lo que te gusta y tu tiempo. Con recetas y lista de la compra."
+      },
+      {
+        "titulo": "Tu entreno, a tu medida",
+        "texto": "Sesiones según tu objetivo, los días que puedes y lo que tienes a mano. Marcas cada ejercicio y la app lleva la cuenta de tu semana."
+      },
+      {
+        "titulo": "El agua, vaso a vaso",
+        "texto": "Un toque por vaso, o tu botella si la guardas como medida. Ves lo que llevas frente a tu objetivo y la semana en barras."
+      },
+      {
+        "titulo": "El color, en gota",
+        "texto": "Ocho tonos, del más claro al más oscuro. Tocas el que se parece y queda apuntado."
+      },
+      {
+        "titulo": "La digestión, con discreción",
+        "texto": "Formas abstractas en vez de fotos. Con el tiempo, la app lo cruza con lo que comes."
+      }
+    ],
+    "pantallas": {
+      "ahora_mismo": "Ahora mismo",
+      "llevas_hoy": "Llevas {n} hoy",
+      "que_color": "¿De qué color?",
+      "colores": [
+        "Transparente",
+        "Amarillo pajizo claro",
+        "Amarilla",
+        "Amarillo oscuro",
+        "Ámbar / miel",
+        "Marrón",
+        "Rosada o roja",
+        "Turbia"
+      ],
+      "apuntado_hora": "Apuntado a las 11:45",
+      "escozor": "¿Escozor o dolor?",
+      "no": "No",
+      "hidratacion": "Hidratación",
+      "esta_semana": "Esta semana",
+      "dias": [
+        "L",
+        "M",
+        "X",
+        "J",
+        "V",
+        "S",
+        "D"
+      ],
+      "hidratado": "Hidratado",
+      "bebe_mas": "Bebe más",
+      "bien_hidratado": "Bien hidratado esta semana",
+      "idea": "Un día más oscura: te sugerimos beber un poco más.",
+      "agua_hoy": "Agua · hoy",
+      "litros": "litros",
+      "objetivo": "De 1,8 L",
+      "bebidas": "Agua, té, café, leche…",
+      "un_vaso": "+ Un vaso",
+      "un_toque": "250 ml con un toque",
+      "suma": "+250 ml",
+      "digestion": "Digestión",
+      "consistencia": "Consistencia",
+      "elegida": "Lisa y blanda",
+      "apuntado_digestion": "Apuntado a las 08:30",
+      "menu_plan": "Tu plan de alimentación",
+      "menu_titulo": "Hoy en tu menú",
+      "menu_hechas": "2 de 3 comidas hoy",
+      "comidas": [
+        {
+          "momento": "Desayuno",
+          "plato": "Yogur griego con frutos rojos y nueces"
+        },
+        {
+          "momento": "Comida",
+          "plato": "Salmón al horno con quinoa y verduras"
+        },
+        {
+          "momento": "Cena",
+          "plato": "Crema de calabaza y tortilla francesa"
+        }
+      ],
+      "macros_titulo": "Tu día, en macros",
+      "macros": [
+        "Proteína",
+        "Hidratos",
+        "Grasa"
+      ],
+      "medicacion": "Medicación y suplementos",
+      "recordatorios": "Recordatorios activados",
+      "hoy": "Hoy",
+      "tomas": [
+        {
+          "hora": "09:00",
+          "nombre": "Vitamina D3",
+          "dosis": "1 cápsula"
+        },
+        {
+          "hora": "14:00",
+          "nombre": "Omega 3",
+          "dosis": "1 perla"
+        },
+        {
+          "hora": "22:00",
+          "nombre": "Magnesio",
+          "dosis": "1 sobre"
+        }
+      ],
+      "tomada": "Tomada",
+      "omitir": "Omitir",
+      "recordatorio": "Recordatorio",
+      "checkin": "Check-in · Mediodía",
+      "energia_pregunta": "¿Cómo tienes la energía?",
+      "energia": [
+        "Agotado",
+        "Baja",
+        "Normal",
+        "Bien",
+        "A tope"
+      ],
+      "estres_pregunta": "¿Cuánto estrés sientes?",
+      "estres": [
+        "Nada",
+        "Un poco",
+        "Algo",
+        "Bastante",
+        "Mucho"
+      ],
+      "inspira": "Inspira",
+      "espira": "Espira",
+      "ejercicio": "Pausa consciente",
+      "ejercicio_detalle": "2 min · sigue el círculo",
+      "entreno_plan": "Tu plan de entrenamiento",
+      "entreno_semana": "Esta semana: {done} de {total} sesiones",
+      "entreno_titulo": "Fuerza en casa · 30 min",
+      "entreno_extra": "Más calentamiento y estiramientos",
+      "ejercicios": [
+        {
+          "nombre": "Sentadilla con mancuerna",
+          "dosis": "3 × 12"
+        },
+        {
+          "nombre": "Remo con mancuerna",
+          "dosis": "3 × 10 por lado"
+        },
+        {
+          "nombre": "Puente de glúteo",
+          "dosis": "3 × 15"
+        },
+        {
+          "nombre": "Plancha",
+          "dosis": "3 × 40 s"
+        }
+      ],
+      "sesion_hecha": "¡Sesión hecha!",
+      "que_tal": "¿Qué tal te ha ido?",
+      "intensidad": [
+        "Suave",
+        "Moderada",
+        "Intensa"
+      ]
+    }
+  },
   "edad": {
     "eyebrow": "Tu edad KUOVA",
     "titulo": "¿Cuántos años tiene tu cuerpo?",

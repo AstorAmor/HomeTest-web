@@ -3,6 +3,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import ComingSoon from "@/components/prelaunch/ComingSoon";
 import Portada from "@/components/inicio/Portada";
 import Pasos from "@/components/inicio/Pasos";
+import LaApp from "@/components/inicio/LaApp";
 import EdadKuova from "@/components/inicio/EdadKuova";
 import { Intro, ListaEspera, Preguntas, Privacidad } from "@/components/inicio/Secciones";
 import { getContent } from "@/lib/content";
@@ -15,7 +16,7 @@ export function generateMetadata(): Metadata {
 }
 
 // Portada: mensaje principal, los siete pasos de "Cómo funciona" con sus escenas animadas,
-// Tu edad KUOVA, privacidad, preguntas y lista de espera.
+// «La app, por dentro», Tu edad KUOVA, privacidad, preguntas y lista de espera.
 // Textos en content/inicio.json (y content/en/inicio.json).
 export default function Home() {
   if (PRELAUNCH) return <ComingSoon />;
@@ -30,6 +31,7 @@ export default function Home() {
       <Portada copy={inicio.hero} lang={lang} />
       <Intro copy={inicio.intro} />
       <Pasos copy={inicio} lang={lang} />
+      <LaApp copy={inicio.app} lang={lang} />
       <EdadKuova copy={inicio.edad} lang={lang} />
       <Privacidad copy={inicio.datos} />
       <Preguntas copy={inicio.preguntas} />
