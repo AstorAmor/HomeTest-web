@@ -22,3 +22,14 @@ export function yaApuntado(): boolean {
     return false;
   }
 }
+
+// En qué punto está este navegador: «suscrito», «pendiente» (pidió el alta hace menos de 3 días y
+// falta confirmar el email) o null (nada recordado o caducado)
+export function estadoNewsletter(): "suscrito" | "pendiente" | null {
+  try {
+    const v = JSON.parse(localStorage.getItem(CLAVE) ?? "null");
+    if (v?.estado === "suscrito") return "suscrito";
+    if (v?.estado === "pendiente" && Date.now() - v.fecha < DIAS_PENDIENTE * 86_400_000) return "pendiente";
+  } catch {}
+  return null;
+}

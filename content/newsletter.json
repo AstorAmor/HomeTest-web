@@ -19,7 +19,11 @@
     "lista_casilla": "Quiero recibir también Kuova Letter, la newsletter de Kuova: temas de salud de vez en cuando, con baja en un clic.",
     "confirmada_titulo": "¡Ya estás dentro!",
     "confirmada_texto": "Tu suscripción a Kuova Letter está confirmada. Te llegará el próximo número; mientras, puedes leer nuestras guías.",
-    "confirmada_enlace": "Ver las guías"
+    "confirmada_enlace": "Ver las guías",
+    "suscrito_titulo": "Ya estás suscrito a Kuova Letter ✓",
+    "suscrito_texto": "Te llegará el próximo número a tu email. Mientras, tienes todas las guías en Aprende.",
+    "pendiente_titulo": "Falta confirmar tu email",
+    "pendiente_texto": "Te enviamos un enlace para confirmar tu suscripción a Kuova Letter. Si no lo ves, mira en la carpeta de spam o promociones."
   },
   "en": {
     "version": "nl-en-2026-10-21b-borrador",
@@ -40,6 +44,46 @@
     "lista_casilla": "I also want to receive Kuova Letter, Kuova's newsletter: health topics every now and then, one-click unsubscribe.",
     "confirmada_titulo": "You're in!",
     "confirmada_texto": "Your subscription to Kuova Letter is confirmed. You'll get the next issue; meanwhile, you can read our guides.",
-    "confirmada_enlace": "See the guides"
+    "confirmada_enlace": "See the guides",
+    "suscrito_titulo": "You're subscribed to Kuova Letter ✓",
+    "suscrito_texto": "You'll get the next issue by email. Meanwhile, all our guides are in Learn.",
+    "pendiente_titulo": "Please confirm your email",
+    "pendiente_texto": "We sent you a link to confirm your Kuova Letter subscription. If you can't see it, check your spam or promotions folder."
+  },
+  "pagina": {
+    "_como_editar": "Página kuovahealth.com/newsletter (solo en español).",
+    "titulo_seo": "Kuova Letter: la newsletter de salud de Kuova Health",
+    "descripcion": "Kuova Letter, la newsletter de Kuova Health: de vez en cuando, un tema de salud explicado con calma y con fuentes (heces y orina, el ciclo, la tensión, la medicación…). Sin spam y con baja en un clic.",
+    "eyebrow": "Newsletter",
+    "titulo": "Kuova Letter",
+    "texto": "Un tema de salud explicado con calma y con fuentes: de esos que importan y casi nadie cuenta. Llega de vez en cuando, sin spam, y te das de baja con un clic.",
+    "que_titulo": "Qué te llega",
+    "que": [
+      {
+        "titulo": "Un tema, bien contado",
+        "texto": "Cada número explica una cosa de tu salud sin alarmas, con datos y con las fuentes a mano."
+      },
+      {
+        "titulo": "Para guardar",
+        "texto": "Infografías y escalas que caben en una captura del móvil."
+      },
+      {
+        "titulo": "Sin agobios",
+        "texto": "No hay calendario fijo: solo escribimos cuando hay algo que merece la pena."
+      }
+    ],
+    "temas_titulo": "Algunos temas que preparamos",
+    "temas": [
+      "Tu ciclo no tiene por qué durar 28 días",
+      "Se me olvidó la pastilla: por qué pasa y qué ayuda",
+      "Salud masculina y fertilidad, sin tabúes",
+      "Suelo pélvico: lo que nadie cuenta",
+      "La tensión, mejor en casa",
+      "Tu analítica después de las fiestas"
+    ],
+    "ejemplo_titulo": "Para que te hagas una idea",
+    "ejemplo_texto": "El primer tema va de algo que todos hacemos y casi nadie comenta: lo que tu baño dice de ti.",
+    "ejemplo_enlace": "Leer «Heces y orina: qué es normal»",
+    "ejemplo_href": "/heces-y-orina"
   }
 }

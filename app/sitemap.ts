@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { localePath } from "@/lib/i18n";
 import { getArticles, hrefOf, type Coleccion } from "@/lib/knowledge";
-import { KNOWLEDGE, PRELAUNCH } from "@/lib/launch";
+import { KNOWLEDGE, NEWSLETTER, PRELAUNCH } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
 // Todas las páginas en los dos idiomas, cada una con su alternativa (hreflang). Las de la web
@@ -25,6 +25,8 @@ function section(coleccion: Coleccion, priority: number): MetadataRoute.Sitemap 
 }
 const knowledge = (): MetadataRoute.Sitemap => [
   ...section("guias", 0.8),
+  // La página de Kuova Letter, solo en español y con la newsletter activa
+  ...(NEWSLETTER ? [{ url: `${SITE_URL}/newsletter`, lastModified: new Date(), priority: 0.5 }] : []),
   ...(KNOWLEDGE ? section("conocimiento", 0.6) : []),
   ...section("biomarcadores", 0.7),
   ...section("comparativas", 0.5),

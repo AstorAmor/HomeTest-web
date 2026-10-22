@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import JsonLd from "@/components/seo/JsonLd";
+import FormularioNewsletter from "@/components/newsletter/FormularioNewsletter";
 import copy from "@/content/aprende.json";
 import { getArticles, hrefOf, leadOf } from "@/lib/knowledge";
+import { NEWSLETTER } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
 // /aprende: el índice de todo lo que se puede leer en la web (guías, fichas de biomarcadores y
-// comparativas) y de los temas que se aprenden dentro de la app. Textos en content/aprende.json.
+// comparativas), el alta en la newsletter Kuova Letter y los temas que se aprenden dentro de la app.
+// Textos en content/aprende.json.
 
 export function generateMetadata(): Metadata {
   return {
@@ -82,6 +85,15 @@ export default function Aprende() {
               ))}
             </ul>
           </section>
+
+          {NEWSLETTER && (
+            <div className="max-w-3xl">
+              <FormularioNewsletter className="" />
+              <Link href="/newsletter" className="mt-3 inline-block text-sm font-medium text-accent-light underline underline-offset-2 hover:text-accent">
+                Qué es Kuova Letter y qué temas trae
+              </Link>
+            </div>
+          )}
 
           <section aria-labelledby="fichas">
             <h2 id="fichas" className="font-display text-3xl font-medium text-text">

@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import Logo from "../ui/Logo";
 import { getContent } from "@/lib/content";
 import { getLang, localePath } from "@/lib/i18n";
+import { NEWSLETTER } from "@/lib/launch";
 
 export default function Footer() {
   const lang = getLang();
@@ -34,7 +35,8 @@ export default function Footer() {
             <div key={columna.titulo}>
               <p className="text-sm font-semibold text-text">{columna.titulo}</p>
               <ul className="mt-4 space-y-3">
-                {columna.enlaces.map((enlace) => (
+                {/* La página de la newsletter solo existe con la newsletter activa (lib/launch.ts) */}
+                {columna.enlaces.filter((e) => NEWSLETTER || e.href !== "/newsletter").map((enlace) => (
                   <li key={enlace.href}>
                     <Link
                       href={localePath(lang, enlace.href)}
