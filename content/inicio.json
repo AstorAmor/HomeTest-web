@@ -328,11 +328,7 @@
     "funciones": [
       {
         "titulo": "Tu semana, de un vistazo",
-        "texto": "La app junta tus días y te dice cómo vas de hidratación, con una idea concreta si un día sale más oscura."
-      },
-      {
-        "titulo": "Un check-in, y un respiro",
-        "texto": "Cómo tienes la energía y el estrés, en dos toques. Y, si te apetece, una pausa guiada de dos minutos."
+        "texto": "Cómo va tu energía día a día con un check-in de dos toques. Y, si te apetece, una pausa guiada de dos minutos."
       },
       {
         "titulo": "Medicación y suplementos",
@@ -347,16 +343,20 @@
         "texto": "Sesiones según tu objetivo, los días que puedes y lo que tienes a mano. Marcas cada ejercicio y la app lleva la cuenta de tu semana."
       },
       {
+        "titulo": "Tu ciclo, fase a fase",
+        "texto": "En qué día y fase estás, y qué suele pasar en cada una. La app lo tiene en cuenta al leer tu pulso en reposo y tu variabilidad cardiaca."
+      },
+      {
         "titulo": "El agua, vaso a vaso",
         "texto": "Un toque por vaso, o tu botella si la guardas como medida. Ves lo que llevas frente a tu objetivo y la semana en barras."
       },
       {
-        "titulo": "El color, en gota",
-        "texto": "Ocho tonos, del más claro al más oscuro. Tocas el que se parece y queda apuntado."
+        "titulo": "Tu hidratación, más allá del agua",
+        "texto": "El color de la orina en ocho gotas y tu semana de un vistazo, con una idea concreta si un día sale más oscura."
       },
       {
         "titulo": "La digestión, con discreción",
-        "texto": "Formas abstractas en vez de fotos. Con el tiempo, la app lo cruza con lo que comes."
+        "texto": "Formas abstractas en vez de fotos, y lo que notas: ardor, hinchazón, gases… Con el tiempo, la app lo cruza con lo que comes."
       }
     ],
     "pantallas": {
@@ -373,9 +373,6 @@
         "Rosada o roja",
         "Turbia"
       ],
-      "apuntado_hora": "Apuntado a las 11:45",
-      "escozor": "¿Escozor o dolor?",
-      "no": "No",
       "hidratacion": "Hidratación",
       "esta_semana": "Esta semana",
       "dias": [
@@ -387,8 +384,6 @@
         "S",
         "D"
       ],
-      "hidratado": "Hidratado",
-      "bebe_mas": "Bebe más",
       "bien_hidratado": "Bien hidratado esta semana",
       "idea": "Un día más oscura: te sugerimos beber un poco más.",
       "agua_hoy": "Agua · hoy",
@@ -401,22 +396,24 @@
       "digestion": "Digestión",
       "consistencia": "Consistencia",
       "elegida": "Lisa y blanda",
-      "apuntado_digestion": "Apuntado a las 08:30",
       "menu_plan": "Tu plan de alimentación",
       "menu_titulo": "Hoy en tu menú",
       "menu_hechas": "2 de 3 comidas hoy",
       "comidas": [
         {
           "momento": "Desayuno",
-          "plato": "Yogur griego con frutos rojos y nueces"
+          "plato": "Yogur griego con kiwi y pipas",
+          "foto": "/images/inicio/app/greek_yogurt_kiwi.webp"
         },
         {
           "momento": "Comida",
-          "plato": "Salmón al horno con quinoa y verduras"
+          "plato": "Bol de salmón, quinoa y aguacate",
+          "foto": "/images/inicio/app/salmon_quinoa_bowl.webp"
         },
         {
           "momento": "Cena",
-          "plato": "Crema de calabaza y tortilla francesa"
+          "plato": "Crema de calabaza con garbanzos",
+          "foto": "/images/inicio/app/pumpkin_cream.webp"
         }
       ],
       "macros_titulo": "Tu día, en macros",
@@ -457,14 +454,6 @@
         "Bien",
         "A tope"
       ],
-      "estres_pregunta": "¿Cuánto estrés sientes?",
-      "estres": [
-        "Nada",
-        "Un poco",
-        "Algo",
-        "Bastante",
-        "Mucho"
-      ],
       "inspira": "Inspira",
       "espira": "Espira",
       "ejercicio": "Pausa consciente",
@@ -497,7 +486,36 @@
         "Suave",
         "Moderada",
         "Intensa"
-      ]
+      ],
+      "semana_titulo": "Tu semana",
+      "semana_sub": "Energía, día a día",
+      "ciclo": "Tu ciclo",
+      "ciclo_dia": "Día {d}",
+      "ciclo_de": "de {n}",
+      "fase_actual": "Fase folicular",
+      "fase_texto": "La energía suele subir. Buen momento para entrenar más fuerte.",
+      "fases": [
+        "Menstrual",
+        "Folicular",
+        "Ovulación",
+        "Lútea"
+      ],
+      "noto_algo": "Noto algo",
+      "molestias": [
+        "Ardor o reflujo",
+        "Hinchazón",
+        "Gases o eructos",
+        "Pesadez"
+      ],
+      "molestia_intensidad": "Intensidad",
+      "molestia_niveles": [
+        "Leve",
+        "Moderada",
+        "Fuerte"
+      ],
+      "proxima_titulo": "Próxima regla prevista",
+      "proxima_dias": "días",
+      "proxima_texto": "Según tus últimos ciclos, tu próxima regla llegaría en unos {n} días."
     }
   },
   "edad": {

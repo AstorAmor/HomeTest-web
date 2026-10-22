@@ -328,11 +328,7 @@
     "funciones": [
       {
         "titulo": "Your week at a glance",
-        "texto": "The app brings your days together and tells you how your hydration is going, with a concrete idea if one day is darker."
-      },
-      {
-        "titulo": "A check-in, and a breather",
-        "texto": "How your energy and stress are, in two taps. And, if you like, a two-minute guided pause."
+        "texto": "How your energy goes day by day, with a two-tap check-in. And, if you like, a two-minute guided pause."
       },
       {
         "titulo": "Medication and supplements",
@@ -347,16 +343,20 @@
         "texto": "Sessions built around your goal, the days you have and what you have to hand. Tick off each exercise and the app keeps count of your week."
       },
       {
+        "titulo": "Your cycle, phase by phase",
+        "texto": "Which day and phase you are in, and what usually happens in each. The app takes it into account when reading your resting heart rate and heart rate variability."
+      },
+      {
         "titulo": "Water, glass by glass",
         "texto": "One tap per glass, or your bottle if you save it as your measure. See how much you have had against your goal, and the week in bars."
       },
       {
-        "titulo": "Colour, as a drop",
-        "texto": "Eight shades, from lightest to darkest. Tap the one that looks closest and it is logged."
+        "titulo": "Your hydration, beyond water",
+        "texto": "Urine colour in eight drops and your week at a glance, with a concrete idea if one day is darker."
       },
       {
         "titulo": "Digestion, discreetly",
-        "texto": "Abstract shapes instead of photos. Over time, the app links it with what you eat."
+        "texto": "Abstract shapes instead of photos, and what you feel: heartburn, bloating, gas… Over time, the app links it with what you eat."
       }
     ],
     "pantallas": {
@@ -373,9 +373,6 @@
         "Pink or red",
         "Cloudy"
       ],
-      "apuntado_hora": "Logged at 11:45",
-      "escozor": "Any burning or pain?",
-      "no": "No",
       "hidratacion": "Hydration",
       "esta_semana": "This week",
       "dias": [
@@ -387,8 +384,6 @@
         "S",
         "S"
       ],
-      "hidratado": "Hydrated",
-      "bebe_mas": "Drink more",
       "bien_hidratado": "Well hydrated this week",
       "idea": "One day was darker: try drinking a little more.",
       "agua_hoy": "Water · today",
@@ -401,22 +396,24 @@
       "digestion": "Digestion",
       "consistencia": "Consistency",
       "elegida": "Smooth and soft",
-      "apuntado_digestion": "Logged at 08:30",
       "menu_plan": "Your food plan",
       "menu_titulo": "Today on your menu",
       "menu_hechas": "2 of 3 meals today",
       "comidas": [
         {
           "momento": "Breakfast",
-          "plato": "Greek yoghurt with berries and walnuts"
+          "plato": "Greek yoghurt with kiwi and seeds",
+          "foto": "/images/inicio/app/greek_yogurt_kiwi.webp"
         },
         {
           "momento": "Lunch",
-          "plato": "Baked salmon with quinoa and vegetables"
+          "plato": "Salmon, quinoa and avocado bowl",
+          "foto": "/images/inicio/app/salmon_quinoa_bowl.webp"
         },
         {
           "momento": "Dinner",
-          "plato": "Pumpkin soup and a plain omelette"
+          "plato": "Pumpkin soup with chickpeas",
+          "foto": "/images/inicio/app/pumpkin_cream.webp"
         }
       ],
       "macros_titulo": "Your day, in macros",
@@ -457,14 +454,6 @@
         "Good",
         "Full"
       ],
-      "estres_pregunta": "How stressed do you feel?",
-      "estres": [
-        "Not at all",
-        "A little",
-        "Some",
-        "Quite",
-        "Very"
-      ],
       "inspira": "Breathe in",
       "espira": "Breathe out",
       "ejercicio": "Mindful pause",
@@ -497,7 +486,36 @@
         "Easy",
         "Moderate",
         "Hard"
-      ]
+      ],
+      "semana_titulo": "Your week",
+      "semana_sub": "Energy, day by day",
+      "ciclo": "Your cycle",
+      "ciclo_dia": "Day {d}",
+      "ciclo_de": "of {n}",
+      "fase_actual": "Follicular phase",
+      "fase_texto": "Energy usually rises. Good moment for harder training.",
+      "fases": [
+        "Menstrual",
+        "Follicular",
+        "Ovulation",
+        "Luteal"
+      ],
+      "noto_algo": "I feel something",
+      "molestias": [
+        "Heartburn or reflux",
+        "Bloating",
+        "Gas or burping",
+        "Heaviness"
+      ],
+      "molestia_intensidad": "Intensity",
+      "molestia_niveles": [
+        "Mild",
+        "Moderate",
+        "Strong"
+      ],
+      "proxima_titulo": "Next period predicted",
+      "proxima_dias": "days",
+      "proxima_texto": "Based on your last cycles, your next period would come in about {n} days."
     }
   },
   "edad": {

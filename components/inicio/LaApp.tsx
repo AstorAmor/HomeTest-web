@@ -9,9 +9,9 @@ import type { Lang } from "@/lib/i18n";
 
 // «La app, por dentro», después de «Cómo funciona»: lo que se apunta en la app, en tarjetas de cristal
 // como las de los pasos (.vidrio), que flotan en 3D a distintas profundidades. Entran desde el fondo,
-// se inclinan un poco con el ratón (las de delante más) y, ya fuera, se animan por fases: la semana de
-// hidratación, el check-in con su pausa guiada, la medicación, el menú, el entreno, el agua, el color y
-// la digestión (el orden, en PANTALLAS, al final). Detrás, unos brillos suaves de la paleta de la marca
+// se inclinan un poco con el ratón (las de delante más) y, ya fuera, se animan por fases: tu semana (energía,
+// check-in con carita y pausa guiada), la medicación, el menú con fotos, el entreno, el ciclo, el agua, la
+// hidratación (color y semana) y la digestión con sus molestias (el orden, en PANTALLAS, al final). Detrás, unos brillos suaves de la paleta de la marca
 // que se ven a través del cristal. Cambia sola cada pocos segundos mientras se ve; la lista la cambia al
 // momento. Textos en content/inicio.json → "app".
 // No son capturas: copian las pantallas de la app (hometest-app: BathroomVisuals.tsx, WaterCard.tsx,
@@ -55,12 +55,30 @@ function useFasesPantalla(activa: boolean, duraciones: readonly number[]) {
 }
 
 // Una tarjeta de cristal en el espacio: `z` es lo cerca que flota (px) y `giro` cuánto se vuelve hacia
-// quien mira. Entra desde el fondo cuando `on` pasa a true y se va hacia el fondo al apagarse.
-function Cristal({ on, z, giro = 0, flota = 0, className, children }: { on: boolean; z: number; giro?: number; flota?: number; className: string; children: ReactNode }) {
+// quien mira. Entra desde el fondo cuando `on` pasa a true y se va hacia el fondo al apagarse. `fuera` va
+// encima del cristal sin recortarse (la carita que salta por encima del borde).
+function Cristal({
+  on,
+  z,
+  giro = 0,
+  flota = 0,
+  className,
+  fuera,
+  children,
+}: {
+  on: boolean;
+  z: number;
+  giro?: number;
+  flota?: number;
+  className: string;
+  fuera?: ReactNode;
+  children: ReactNode;
+}) {
   return (
     <div className={`la-cristal absolute ${className}`} data-on={on} style={{ "--z": `${z}px`, "--g": `${giro}deg` } as CSSProperties}>
-      <div className="la-flota" style={{ animationDelay: `${-flota}s` }}>
+      <div className="la-flota relative" style={{ animationDelay: `${-flota}s` }}>
         <div className="vidrio la-vidrio p-[1.15em]">{children}</div>
+        {fuera}
       </div>
     </div>
   );
@@ -72,8 +90,6 @@ const Pastilla = ({ color, children, late }: { color: string; children: ReactNod
     {children}
   </span>
 );
-
-const No = ({ children }: { children: ReactNode }) => <span className="rounded-full bg-accent px-[0.75em] py-[0.15em] font-semibold text-white">{children}</span>;
 
 // La gota de la app (viewBox 0 0 54 70: x 5–49, y 3–67, parte redonda de radio 22 en 27,45) y la
 // misma agrandada `d` unidades para el anillo de selección (la punta sube más porque es un pico).
@@ -179,14 +195,23 @@ function Bristol({ tipo, size, color = "#B8904F" }: { tipo: number; size: string
 
 type PropsPantalla = { activa: boolean; t: Textos; idioma: string };
 
-// El color de esta vez: entra la tarjeta, caen las ocho gotas, se elige la amarilla y delante
-// aparece lo apuntado
-const FASES_COLOR = [450, 800, 1300, 1100, 6000] as const;
-function PantallaColor({ activa, t }: PropsPantalla) {
-  const fase = useFasesPantalla(activa, FASES_COLOR);
+// Tu hidratación, más allá del agua: entra la tarjeta del color, caen las ocho gotas, se elige la
+// amarilla y delante llega la semana, con las veces de cada día y la idea
+const SEMANA_ORINA = [
+  { color: 2, veces: 6 },
+  { color: 2, veces: 7 },
+  { color: 2, veces: 6 },
+  { color: 3, veces: 4 },
+  { color: 2, veces: 6 },
+  { color: 2, veces: 7 },
+  { color: 2, veces: 6 },
+];
+const FASES_HIDRATACION = [450, 800, 1300, 1100, 900, 6000] as const;
+function PantallaHidratacion({ activa, t }: PropsPantalla) {
+  const fase = useFasesPantalla(activa, FASES_HIDRATACION);
   return (
     <>
-      <Cristal on={fase >= 1} z={0} giro={-6} className="left-[2%] top-[10%] w-[74%]">
+      <Cristal on={fase >= 1} z={0} giro={-6} className="left-[2%] top-[6%] w-[74%]">
         <div className="flex items-center justify-between gap-[0.6em]">
           <Pastilla color="#C9A36B">{t.ahora_mismo}</Pastilla>
           <span className="text-[0.72em] text-text-muted">{t.llevas_hoy.replace("{n}", "5")}</span>
@@ -213,78 +238,231 @@ function PantallaColor({ activa, t }: PropsPantalla) {
           })}
         </div>
       </Cristal>
-      <Cristal on={fase >= 4} z={120} giro={-12} flota={2} className="right-[3%] top-[54%] w-[52%]">
-        <div className="flex items-center gap-[0.8em]">
-          <Gota color={ORINA[ELEGIDA]} alto={2.9} />
-          <div>
-            <p className="text-[0.95em] font-semibold leading-tight">{t.colores[ELEGIDA]}</p>
-            <p className="mt-[0.2em] text-[0.78em] text-text-muted">{t.apuntado_hora}</p>
-          </div>
-        </div>
-        <div className="mt-[0.75em] flex items-center justify-between border-t border-accent/10 pt-[0.6em] text-[0.78em]">
-          <span className="text-text-muted">{t.escozor}</span>
-          <No>{t.no}</No>
-        </div>
-      </Cristal>
-    </>
-  );
-}
-
-// La semana: las gotas de cada día suben con sus veces, el indicador se coloca y delante llega la idea
-const SEMANA = [
-  { color: 2, veces: 6 },
-  { color: 2, veces: 7 },
-  { color: 2, veces: 6 },
-  { color: 3, veces: 4 },
-  { color: 2, veces: 6 },
-  { color: 2, veces: 7 },
-  { color: 2, veces: 6 },
-];
-const FASES_SEMANA = [450, 800, 1300, 1200, 6000] as const;
-function PantallaSemana({ activa, t }: PropsPantalla) {
-  const fase = useFasesPantalla(activa, FASES_SEMANA);
-  return (
-    <>
-      <Cristal on={fase >= 1} z={0} giro={-6} className="left-[2%] top-[12%] w-[74%]">
+      <Cristal on={fase >= 4} z={130} giro={-12} flota={3} className="right-[2%] top-[56%] w-[58%]">
         <div className="flex items-center justify-between gap-[0.6em]">
           <Pastilla color="#5f9a7c" late>
             {t.hidratacion}
           </Pastilla>
           <span className="text-[0.72em] text-text-muted">{t.esta_semana}</span>
         </div>
-        <div className="mt-[1em] flex items-end justify-between px-[0.2em]">
-          {SEMANA.map((d, i) => (
-            <div key={i} className="la-sube flex flex-col items-center gap-[0.35em]" data-on={fase >= 2} style={escalon(fase >= 2, i, 90)}>
-              <Gota color={ORINA[d.color]} alto={1.5 + d.veces * 0.16} brillo={false}>
-                <span className="text-[0.62em] font-bold" style={{ color: "#3A3320" }}>
+        <div className="mt-[0.8em] flex items-end justify-between px-[0.1em]">
+          {SEMANA_ORINA.map((d, i) => (
+            <div key={i} className="la-sube flex flex-col items-center gap-[0.3em]" data-on={fase >= 5} style={escalon(fase >= 5, i, 90)}>
+              <Gota color={ORINA[d.color]} alto={1.35 + d.veces * 0.13} brillo={false}>
+                <span className="text-[0.56em] font-bold" style={{ color: "#3A3320" }}>
                   {d.veces}
                 </span>
               </Gota>
-              <span className="text-[0.66em] font-semibold text-text-muted">{t.dias[i]}</span>
+              <span className="text-[0.62em] font-semibold text-text-muted">{t.dias[i]}</span>
             </div>
           ))}
         </div>
-        <div className="relative mt-[1.1em] h-[0.45em] rounded-full" style={{ background: `linear-gradient(90deg, ${ORINA.slice(0, 5).join(", ")})` }}>
-          <span
-            className="absolute top-1/2 h-[1em] w-[1em] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-accent bg-white transition-[left] duration-1000 ease-out"
-            style={{ left: fase >= 3 ? "25%" : "0%", transition: fase === 0 ? `left 0s ${REINICIO_MS}ms` : undefined }}
-          />
-        </div>
-        <div className="mt-[0.45em] flex justify-between text-[0.68em] text-text-muted">
-          <span>{t.hidratado}</span>
-          <span>{t.bebe_mas}</span>
+        <div className="entra mt-[0.7em] flex items-start gap-[0.55em] border-t border-accent/10 pt-[0.6em]" data-on={fase >= 5} style={escalon(fase >= 5, 1, 0, 800)}>
+          <svg viewBox="0 0 54 70" width="0.7em" height="0.95em" aria-hidden className="mt-[0.15em] shrink-0">
+            <path d={GOTA} fill="#5f9a7c" />
+          </svg>
+          <p className="text-[0.76em] leading-snug">
+            <span className="font-semibold">{t.bien_hidratado}.</span> <span className="text-text-muted">{t.idea}</span>
+          </p>
         </div>
       </Cristal>
-      <Cristal on={fase >= 4} z={130} giro={-12} flota={3} className="right-[3%] top-[56%] w-[54%]">
-        <div className="flex items-start gap-[0.75em]">
-          <span className="flex h-[2.2em] w-[2.2em] shrink-0 items-center justify-center rounded-full bg-[#5f9a7c]/[0.14]">
-            <svg viewBox="0 0 54 70" width="0.85em" height="1.1em" aria-hidden>
-              <path d={GOTA} fill="#5f9a7c" />
+    </>
+  );
+}
+
+// La carita del ánimo, como el 😃 de la app (ojos grandes y boca abierta con los dientes), dibujada para que
+// se vea igual en todos los ordenadores. Al marcar «Bien» sale de la tarjeta hacia quien mira (en 3D), cae
+// con un rebote y se queda moviéndose.
+function Carita({ on }: { on: boolean }) {
+  return (
+    <span className="la-carita absolute -top-[1.4em] right-[0.9em] block h-[2.9em] w-[2.9em]" data-on={on} aria-hidden>
+      <svg viewBox="0 0 40 40" className="h-full w-full" style={{ filter: "drop-shadow(0 0.35em 0.45em rgb(0 0 0 / 0.28))" }}>
+        <defs>
+          <radialGradient id="la-carita-cara" cx="40%" cy="32%" r="70%">
+            <stop offset="0%" stopColor="#FBE29A" />
+            <stop offset="100%" stopColor="#E8B95A" />
+          </radialGradient>
+          <clipPath id="la-carita-boca">
+            <path d="M9.5 21.2 Q20 23.2 30.5 21.2 Q29.6 33.6 20 33.6 Q10.4 33.6 9.5 21.2 Z" />
+          </clipPath>
+        </defs>
+        <circle cx="20" cy="20" r="18.6" fill="url(#la-carita-cara)" stroke="#C9A36B" strokeWidth="1.2" />
+        <ellipse cx="14" cy="14.6" rx="2.5" ry="3.6" fill="#3A2A1A" />
+        <ellipse cx="26" cy="14.6" rx="2.5" ry="3.6" fill="#3A2A1A" />
+        <path d="M9.5 21.2 Q20 23.2 30.5 21.2 Q29.6 33.6 20 33.6 Q10.4 33.6 9.5 21.2 Z" fill="#5B2A22" />
+        <g clipPath="url(#la-carita-boca)">
+          <rect x="8" y="19" width="24" height="6.2" fill="#fff" />
+          <ellipse cx="20" cy="33.2" rx="6.5" ry="3.4" fill="#E27D74" />
+        </g>
+      </svg>
+    </span>
+  );
+}
+
+// Una curva suave que pasa por los puntos (Catmull-Rom convertida a Bézier), como las de la app
+function curva(p: number[][]) {
+  return p
+    .map(([x, y], i) => {
+      if (i === 0) return `M${x} ${y}`;
+      const a = p[i - 2] ?? p[i - 1];
+      const b = p[i - 1];
+      const c = p[i + 1] ?? p[i];
+      const c1 = [b[0] + (x - a[0]) / 6, b[1] + (y - a[1]) / 6];
+      const c2 = [x - (c[0] - b[0]) / 6, y - (c[1] - b[1]) / 6];
+      return `C${c1[0]} ${c1[1]} ${c2[0]} ${c2[1]} ${x} ${y}`;
+    })
+    .join(" ");
+}
+
+// Tu semana: se dibuja la curva de la energía de cada día (de los check-ins), llega el check-in de hoy,
+// se marca «Bien» y la carita sale de la tarjeta hacia quien mira; al final, la pausa guiada
+const ENERGIA_SEMANA = [3, 2, 3, 4, 3, 5, 4]; // 1 agotado … 5 a tope, de lunes a domingo
+const FASES_SEMANA = [450, 1300, 1100, 1300, 1700, 8000] as const;
+function PantallaSemana({ activa, t }: PropsPantalla) {
+  const fase = useFasesPantalla(activa, FASES_SEMANA);
+  const x = (i: number) => 14 + i * 42;
+  const y = (v: number) => 74 - ((v - 1) / 4) * 58;
+  const linea = curva(ENERGIA_SEMANA.map((v, i) => [x(i), y(v)]));
+  return (
+    <>
+      <Cristal on={fase >= 1} z={0} giro={-6} className="left-[2%] top-[5%] w-[70%]">
+        <div className="flex items-center justify-between gap-[0.6em]">
+          <Pastilla color="#5f9a7c" late>
+            {t.semana_titulo}
+          </Pastilla>
+          <span className="text-[0.72em] text-text-muted">{t.semana_sub}</span>
+        </div>
+        <svg viewBox="0 0 280 84" className="mt-[0.7em] h-auto w-full overflow-visible" aria-hidden>
+          {[1, 3, 5].map((v) => (
+            <line key={v} x1="0" x2="280" y1={y(v)} y2={y(v)} stroke="rgb(14 42 36 / 0.08)" strokeWidth="1" />
+          ))}
+          <path d={`${linea} L${x(6)} 80 L${x(0)} 80 Z`} fill="url(#la-energia)" className="transition-opacity duration-700" style={{ opacity: fase >= 2 ? 1 : 0, transitionDelay: fase >= 2 ? "700ms" : "0ms" }} />
+          <path d={linea} fill="none" stroke="#5f9a7c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" pathLength={1} className="trazo trazo-lento" data-on={fase >= 2} />
+          <defs>
+            <linearGradient id="la-energia" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#5f9a7c" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#5f9a7c" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div className="mt-[0.2em] flex justify-between px-[0.1em] text-[0.66em] font-semibold text-text-muted">
+          {t.dias.map((d, i) => (
+            <span key={i} className="w-[1.4em] text-center" style={i === 6 ? { color: "#0E2A24" } : undefined}>
+              {d}
+            </span>
+          ))}
+        </div>
+      </Cristal>
+      <Cristal on={fase >= 3} z={130} giro={-12} flota={2} className="right-[2%] top-[45%] w-[56%]" fuera={<Carita on={fase >= 4} />}>
+        <Pastilla color="#5f9a7c">{t.checkin}</Pastilla>
+        <p className="mt-[0.7em] text-[0.9em] font-semibold">{t.energia_pregunta}</p>
+        <Escala opciones={t.energia} elegida={3} on={fase >= 4} />
+      </Cristal>
+      <Cristal on={fase >= 5} z={70} giro={-8} flota={4} className="left-[5%] top-[71%] w-[40%]">
+        <div className="flex items-center gap-[0.8em]">
+          <div className="relative flex h-[4.4em] w-[4.4em] shrink-0 items-center justify-center">
+            <span className="la-respira absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgb(111 140 124 / 0.85) 0%, rgb(111 140 124 / 0.55) 45%, rgb(111 140 124 / 0.15) 75%, transparent 100%)" }} />
+            <span className="relative grid text-[0.68em] font-semibold text-white">
+              <span className="la-inspira col-start-1 row-start-1 text-center">{t.inspira}</span>
+              <span className="la-espira col-start-1 row-start-1 text-center">{t.espira}</span>
+            </span>
+          </div>
+          <div>
+            <p className="text-[0.86em] font-semibold leading-tight">{t.ejercicio}</p>
+            <p className="mt-[0.2em] text-[0.7em] text-text-muted">{t.ejercicio_detalle}</p>
+          </div>
+        </div>
+      </Cristal>
+    </>
+  );
+}
+
+// Tu ciclo: el anillo de las cuatro fases (los colores de la app, utils/cyclePhase.ts) se dibuja, la
+// marca va al día 9 y delante llega la próxima regla prevista, contando los días que faltan, con la misma
+// frase que la app («Según tus últimos ciclos…», hometest-app 6dd588a)
+const CICLO = 28;
+const FASES_CICLO_APP = [
+  { color: "#E06B9E", desde: 1, hasta: 5 },
+  { color: "#9B8CFF", desde: 6, hasta: 12 },
+  { color: "#3ECDB8", desde: 13, hasta: 15 },
+  { color: "#F0B84D", desde: 16, hasta: 28 },
+];
+const DIA_CICLO = 9;
+const RC = 40;
+const CC = 2 * Math.PI * RC;
+const FALTAN = CICLO - DIA_CICLO + 1;
+const FASES_CICLO = [450, 1500, 1200, 6000] as const;
+function PantallaCiclo({ activa, t }: PropsPantalla) {
+  const fase = useFasesPantalla(activa, FASES_CICLO);
+  const actual = FASES_CICLO_APP.findIndex((f) => DIA_CICLO >= f.desde && DIA_CICLO <= f.hasta);
+  const angulo = ((DIA_CICLO - 0.5) / CICLO) * 360;
+  return (
+    <>
+      <Cristal on={fase >= 1} z={0} giro={-6} className="left-[2%] top-[9%] w-[72%]">
+        <Pastilla color="#9B8CFF" late>
+          {t.ciclo}
+        </Pastilla>
+        <div className="mt-[0.9em] flex items-center gap-[1.1em]">
+          <div className="relative h-[6.8em] w-[6.8em] shrink-0">
+            <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90 overflow-visible">
+              {FASES_CICLO_APP.map((f, i) => {
+                const largo = ((f.hasta - f.desde + 1) / CICLO) * CC - 2.5;
+                const inicio = ((f.desde - 1) / CICLO) * CC;
+                const on = fase >= 1;
+                return (
+                  <circle
+                    key={i}
+                    cx="50"
+                    cy="50"
+                    r={RC}
+                    fill="none"
+                    stroke={f.color}
+                    strokeWidth="9"
+                    strokeLinecap="round"
+                    strokeDasharray={`${on ? largo : 0} ${CC}`}
+                    strokeDashoffset={-inicio}
+                    className="transition-[stroke-dasharray] duration-700 ease-out"
+                    style={{ transitionDelay: on ? `${300 + i * 250}ms` : "0ms", opacity: i === actual ? 1 : 0.55 }}
+                  />
+                );
+              })}
+              <g className="transition-transform duration-[1200ms] ease-out" style={{ transform: `rotate(${fase >= 2 ? angulo : 0}deg)`, transformOrigin: "50px 50px" }}>
+                <circle cx={50 + RC} cy="50" r="6.5" fill="#fff" stroke="#0E2A24" strokeWidth="2.5" className="transition-opacity duration-300" style={{ opacity: fase >= 2 ? 1 : 0 }} />
+              </g>
             </svg>
+            <span className="absolute inset-0 flex flex-col items-center justify-center leading-none">
+              <span className="font-display text-[1.3em] tabular-nums">{t.ciclo_dia.replace("{d}", String(DIA_CICLO))}</span>
+              <span className="mt-[0.25em] text-[0.62em] font-semibold text-text-muted">{t.ciclo_de.replace("{n}", String(CICLO))}</span>
+            </span>
+          </div>
+          <div className="entra" data-on={fase >= 2} style={escalon(fase >= 2, 1, 0, 900)}>
+            <p className="flex items-center gap-[0.45em] text-[1em] font-semibold">
+              <span className="h-[0.6em] w-[0.6em] rounded-full" style={{ background: FASES_CICLO_APP[actual].color }} />
+              {t.fase_actual}
+            </p>
+            <p className="mt-[0.3em] text-[0.82em] leading-snug text-text-muted">{t.fase_texto}</p>
+          </div>
+        </div>
+        <div className="entra mt-[0.9em] flex flex-wrap gap-x-[0.9em] gap-y-[0.3em] border-t border-accent/10 pt-[0.6em] text-[0.7em]" data-on={fase >= 2} style={escalon(fase >= 2, 1, 0, 1200)}>
+          {FASES_CICLO_APP.map((f, i) => (
+            <span key={i} className={`flex items-center gap-[0.4em] ${i === actual ? "font-semibold text-text" : "text-text-muted"}`}>
+              <span className="h-[0.55em] w-[0.55em] rounded-full" style={{ background: f.color }} />
+              {t.fases[i]}
+            </span>
+          ))}
+        </div>
+      </Cristal>
+      <Cristal on={fase >= 3} z={130} giro={-12} flota={2} className="right-[3%] top-[60%] w-[50%]">
+        <div className="flex items-center gap-[0.9em]">
+          <span className="flex h-[3.2em] w-[3.2em] shrink-0 flex-col items-center justify-center rounded-full leading-none" style={{ background: "rgb(224 107 158 / 0.14)" }}>
+            <span className="font-display text-[1.35em] tabular-nums" style={{ color: "#B24A7C" }}>
+              <Contador hasta={FALTAN} activo={fase >= 3} duracion={1200} />
+            </span>
+            <span className="mt-[0.15em] text-[0.55em] font-semibold text-text-muted">{t.proxima_dias}</span>
           </span>
           <div>
-            <p className="text-[0.95em] font-semibold leading-tight">{t.bien_hidratado}</p>
-            <p className="mt-[0.25em] text-[0.78em] leading-snug text-text-muted">{t.idea}</p>
+            <p className="text-[0.9em] font-semibold leading-tight">{t.proxima_titulo}</p>
+            <p className="mt-[0.25em] text-[0.74em] leading-snug text-text-muted">{t.proxima_texto.replace("{n}", String(FALTAN))}</p>
           </div>
         </div>
       </Cristal>
@@ -378,8 +556,9 @@ function PantallaAgua({ activa, t, idioma }: PropsPantalla) {
   );
 }
 
-// La digestión: entran las siete formas en oro, se elige la 4 y delante queda lo apuntado
-const FASES_DIGESTION = [450, 800, 1200, 1100, 6000] as const;
+// La digestión: entran las siete formas en oro, se elige la 4 y delante llega «Noto algo» (las molestias
+// de la app, types/digestion.ts), donde se marca ardor o reflujo, leve
+const FASES_DIGESTION = [450, 800, 1200, 1100, 1000, 6000] as const;
 function PantallaDigestion({ activa, t }: PropsPantalla) {
   const fase = useFasesPantalla(activa, FASES_DIGESTION);
   const forma = fase >= 3;
@@ -417,20 +596,44 @@ function PantallaDigestion({ activa, t }: PropsPantalla) {
           {t.elegida}
         </p>
       </Cristal>
-      <Cristal on={fase >= 4} z={120} giro={-12} flota={2.5} className="right-[3%] top-[56%] w-[46%]">
-        <div className="flex items-center gap-[0.75em]">
-          <span className="flex h-[2.4em] w-[2.4em] shrink-0 items-center justify-center rounded-[0.6em] border border-[#C9A36B] bg-[#C9A36B]/[0.18]">
-            <Bristol tipo={4} size="1.5em" />
+      <Cristal on={fase >= 4} z={120} giro={-12} flota={2.5} className="right-[3%] top-[52%] w-[54%]">
+        <p className="text-[0.92em] font-semibold">{t.noto_algo}</p>
+        <div className="mt-[0.55em] flex flex-wrap gap-[0.35em]">
+          {t.molestias.map((m, i) => (
+            <Opcion key={m} on={fase >= 5 && i === 0}>
+              {m}
+            </Opcion>
+          ))}
+        </div>
+        <div className="mt-[0.7em] flex items-center gap-[0.6em] border-t border-accent/10 pt-[0.6em]">
+          <span className="text-[0.74em] text-text-muted">{t.molestia_intensidad}</span>
+          <span className="flex gap-[0.3em]">
+            {t.molestia_niveles.map((n, i) => (
+              <Opcion key={n} on={fase >= 5 && i === 0} retraso={500}>
+                {n}
+              </Opcion>
+            ))}
           </span>
-          <div>
-            <p className="text-[0.95em] font-semibold leading-tight">{t.elegida}</p>
-            <p className="mt-[0.2em] text-[0.78em] text-text-muted">{t.apuntado_digestion}</p>
-          </div>
         </div>
       </Cristal>
     </>
   );
 }
+
+// Una opción en píldora que se marca en verde oscuro (molestias, intensidad)
+const Opcion = ({ on, retraso = 0, children }: { on: boolean; retraso?: number; children: ReactNode }) => (
+  <span
+    className="rounded-full border px-[0.7em] py-[0.25em] text-[0.7em] font-semibold transition-colors duration-500"
+    style={{
+      borderColor: on ? "#0E2A24" : "rgb(14 42 36 / 0.12)",
+      background: on ? "#0E2A24" : "rgb(255 255 255 / 0.5)",
+      color: on ? "#fff" : "rgb(var(--color-text-muted))",
+      transitionDelay: on ? `${retraso}ms` : "0ms",
+    }}
+  >
+    {children}
+  </span>
+);
 
 // Un círculo vacío que se rellena de oro con su check al marcarse (comidas)
 const Marca = ({ on, retraso = 0 }: { on: boolean; retraso?: number }) => (
@@ -444,8 +647,9 @@ const Marca = ({ on, retraso = 0 }: { on: boolean; retraso?: number }) => (
   </span>
 );
 
-// El menú de hoy (va con suscripción en la app): entran las tres comidas, se marcan dos y delante
-// llega el reparto del día en un donut que se dibuja
+// El menú de hoy (va con suscripción en la app): entran las tres comidas con su foto (las de las recetas
+// de la app, hometest-app/assets/images/recipes, copiadas en public/images/inicio/app), se marcan dos
+// y delante llega el reparto del día en un donut que se dibuja
 const FASES_MENU = [450, 900, 1300, 1100, 6000] as const;
 const MACROS = [28, 45, 27]; // % de la energía: proteína, hidratos, grasa
 const MACRO_COLORES = ["#C9A36B", "#6F8C7C", "#0E2A24"];
@@ -466,15 +670,20 @@ function PantallaMenu({ activa, t, idioma }: PropsPantalla) {
         <p className="mt-[0.75em] text-[1.05em] font-semibold">{t.menu_titulo}</p>
         <ul className="mt-[0.4em] divide-y divide-accent/10">
           {t.comidas.map((c, i) => (
-            <li key={c.momento} className="entra flex items-center gap-[0.8em] py-[0.6em]" data-on={fase >= 2} style={escalon(fase >= 2, i, 140)}>
-              <span className="w-[5.6em] shrink-0 text-[0.66em] font-semibold uppercase tracking-[0.1em] text-text-muted">{c.momento}</span>
-              <span className="flex-1 text-[0.86em] font-medium leading-snug">{c.plato}</span>
+            <li key={c.momento} className="entra flex items-center gap-[0.8em] py-[0.5em]" data-on={fase >= 2} style={escalon(fase >= 2, i, 140)}>
+              <span className="relative h-[2.9em] w-[2.9em] shrink-0 overflow-hidden rounded-[0.6em] bg-bg-soft">
+                <Image src={c.foto} alt="" fill sizes="64px" className="object-cover" />
+              </span>
+              <span className="flex-1 leading-snug">
+                <span className="block text-[0.62em] font-semibold uppercase tracking-[0.1em] text-text-muted">{c.momento}</span>
+                <span className="block text-[0.84em] font-medium">{c.plato}</span>
+              </span>
               <Marca on={fase >= 3 && i < 2} retraso={i * 300} />
             </li>
           ))}
         </ul>
       </Cristal>
-      <Cristal on={fase >= 4} z={130} giro={-12} flota={2} className="right-[3%] top-[56%] w-[50%]">
+      <Cristal on={fase >= 4} z={130} giro={-12} flota={2} className="right-[3%] top-[63%] w-[50%]">
         <p className="text-[0.82em] font-semibold">{t.macros_titulo}</p>
         <div className="mt-[0.6em] flex items-center gap-[1em]">
           <div className="relative h-[4.6em] w-[4.6em] shrink-0">
@@ -584,9 +793,7 @@ function PantallaMedicacion({ activa, t }: PropsPantalla) {
   );
 }
 
-// Check-in de mediodía: energía y estrés en dos toques y, delante, una pausa guiada con el círculo de
-// la app, que crece al inspirar (4 s) y se encoge al espirar (6 s)
-const FASES_CHECKIN = [450, 900, 1100, 1100, 9000] as const;
+// Una escala de cinco opciones en píldoras (check-in, intensidad del entreno); la elegida, en verde oscuro
 function Escala({ opciones, elegida, on }: { opciones: string[]; elegida: number; on: boolean }) {
   return (
     <div className="mt-[0.45em] flex gap-[0.3em]">
@@ -605,36 +812,6 @@ function Escala({ opciones, elegida, on }: { opciones: string[]; elegida: number
     </div>
   );
 }
-function PantallaCheckin({ activa, t }: PropsPantalla) {
-  const fase = useFasesPantalla(activa, FASES_CHECKIN);
-  return (
-    <>
-      <Cristal on={fase >= 1} z={0} giro={-6} className="left-[2%] top-[10%] w-[74%]">
-        <Pastilla color="#5f9a7c">{t.checkin}</Pastilla>
-        <p className="mt-[0.8em] text-[0.92em] font-semibold">{t.energia_pregunta}</p>
-        <Escala opciones={t.energia} elegida={3} on={fase >= 2} />
-        <p className="mt-[0.9em] text-[0.92em] font-semibold">{t.estres_pregunta}</p>
-        <Escala opciones={t.estres} elegida={2} on={fase >= 3} />
-      </Cristal>
-      <Cristal on={fase >= 4} z={130} giro={-12} flota={2} className="right-[3%] top-[46%] w-[48%]">
-        <div className="flex items-center gap-[0.9em]">
-          <div className="relative flex h-[6.2em] w-[6.2em] shrink-0 items-center justify-center">
-            <span className="la-respira absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgb(111 140 124 / 0.85) 0%, rgb(111 140 124 / 0.55) 45%, rgb(111 140 124 / 0.15) 75%, transparent 100%)" }} />
-            <span className="relative grid text-[0.8em] font-semibold text-white">
-              <span className="la-inspira col-start-1 row-start-1 text-center">{t.inspira}</span>
-              <span className="la-espira col-start-1 row-start-1 text-center">{t.espira}</span>
-            </span>
-          </div>
-          <div>
-            <p className="text-[0.92em] font-semibold leading-tight">{t.ejercicio}</p>
-            <p className="mt-[0.2em] text-[0.74em] text-text-muted">{t.ejercicio_detalle}</p>
-          </div>
-        </div>
-      </Cristal>
-    </>
-  );
-}
-
 // El entreno: entran los ejercicios de la sesión, se van marcando, delante sale «¡Sesión hecha!» con
 // cómo ha ido y la semana pasa a 3 de 3
 const FASES_ENTRENO = [450, 900, 2100, 1200, 6000] as const;
@@ -673,14 +850,14 @@ function PantallaEntreno({ activa, t }: PropsPantalla) {
 // antes de pasar a la siguiente (la del check-in, más: así se ve una respiración entera) y los brillos de
 // detrás del cristal, siempre de la paleta de la marca (oro, salvia, crema; el agua, azul gris)
 const PANTALLAS: { Pantalla: (p: PropsPantalla) => ReactNode; ms: number; brillos: string[] }[] = [
-  { Pantalla: PantallaSemana, ms: 7500, brillos: ["#D8C08A", "#6F8C7C", "#C9A36B"] },
-  { Pantalla: PantallaCheckin, ms: 12000, brillos: ["#8FB3A0", "#6F8C7C", "#E6D3A3"] },
+  { Pantalla: PantallaSemana, ms: 13000, brillos: ["#8FB3A0", "#E9C77E", "#6F8C7C"] },
   { Pantalla: PantallaMedicacion, ms: 8500, brillos: ["#6F8C7C", "#C9A36B", "#E6D3A3"] },
   { Pantalla: PantallaMenu, ms: 8000, brillos: ["#C9A36B", "#8FB3A0", "#E6D3A3"] },
   { Pantalla: PantallaEntreno, ms: 9500, brillos: ["#C9A36B", "#6F8C7C", "#8FB3A0"] },
+  { Pantalla: PantallaCiclo, ms: 8000, brillos: ["#B9AEF0", "#E9A0BF", "#6F8C7C"] },
   { Pantalla: PantallaAgua, ms: 8500, brillos: ["#8FAAC2", "#6F8C7C", "#C9A36B"] },
-  { Pantalla: PantallaColor, ms: 7500, brillos: ["#C9A36B", "#E6D3A3", "#6F8C7C"] },
-  { Pantalla: PantallaDigestion, ms: 7000, brillos: ["#C9A36B", "#6F8C7C", "#E6D3A3"] },
+  { Pantalla: PantallaHidratacion, ms: 9000, brillos: ["#D8C08A", "#6F8C7C", "#C9A36B"] },
+  { Pantalla: PantallaDigestion, ms: 8000, brillos: ["#C9A36B", "#6F8C7C", "#E6D3A3"] },
 ];
 
 export default function LaApp({ copy, lang }: { copy: Copy; lang: Lang }) {
@@ -802,7 +979,8 @@ const CSS = `
   transition: opacity 500ms ease, transform 1100ms cubic-bezier(.16,.84,.24,1);
 }
 .la-cristal[data-on="true"] { opacity: 1; transform: translate3d(0, 0, var(--z)) rotateY(var(--g)); }
-.la-flota { animation: la-flota 6s ease-in-out infinite; }
+/* Conserva el 3D: así la carita puede salir del plano de su tarjeta */
+.la-flota { transform-style: preserve-3d; animation: la-flota 6s ease-in-out infinite; }
 .la-vidrio { position: relative; overflow: hidden; background: linear-gradient(140deg, rgb(255 255 255 / 0.9), rgb(250 245 236 / 0.8)); box-shadow: 0 1.6em 3.2em -1.4em rgb(0 0 0 / 0.5), inset 0 1px 0 rgb(255 255 255 / 0.9); }
 /* Un reflejo suave que cruza el cristal cuando entra */
 .la-vidrio::after {
@@ -828,6 +1006,27 @@ const CSS = `
 @keyframes la-deriva-a { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(12%, 8%); } }
 @keyframes la-deriva-b { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-10%, -12%); } }
 @keyframes la-pulsa { 40% { transform: scale(0.94); } 100% { transform: scale(1); } }
+/* La carita del ánimo: aparece y da tres saltos cuando el check-in marca «Bien» */
+.la-carita { opacity: 0; transform: translate3d(0, 0.6em, 0) scale(0.3); transform-origin: 50% 80%; transition: opacity 200ms ease; }
+.la-carita[data-on="true"] {
+  opacity: 1; transform: translate3d(-0.7em, -0.9em, 150px) scale(1.3);
+  animation: la-carita-sale 1900ms cubic-bezier(.2,.8,.25,1) both, la-carita-baila 1800ms ease-in-out 1900ms infinite;
+}
+/* Sale de la tarjeta hacia quien mira, se pasa un poco, cae aplastándose y rebota */
+@keyframes la-carita-sale {
+  0% { transform: translate3d(0, 0.6em, 0) scale(0.3) rotate(-14deg); }
+  38% { transform: translate3d(-0.7em, -1.9em, 190px) scale(1.42) rotate(9deg); }
+  56% { transform: translate3d(-0.7em, -0.6em, 150px) scale(1.42, 1.12) rotate(0deg); }
+  72% { transform: translate3d(-0.7em, -1.35em, 150px) scale(1.26, 1.36) rotate(-5deg); }
+  86% { transform: translate3d(-0.7em, -0.75em, 150px) scale(1.34, 1.24) rotate(2deg); }
+  100% { transform: translate3d(-0.7em, -0.9em, 150px) scale(1.3) rotate(0deg); }
+}
+/* Ya fuera, se mueve un poco: sube, se ladea y vuelve */
+@keyframes la-carita-baila {
+  0%, 100% { transform: translate3d(-0.7em, -0.9em, 150px) scale(1.3) rotate(0deg); }
+  30% { transform: translate3d(-0.7em, -1.35em, 165px) scale(1.33) rotate(-6deg); }
+  60% { transform: translate3d(-0.7em, -0.85em, 150px) scale(1.3) rotate(4deg); }
+}
 /* La pausa guiada: inspira 4 s, espira 6 s (empieza al aparecer la tarjeta) */
 .la-respira { transform: scale(0.55); }
 .la-espira { opacity: 0; }
@@ -839,7 +1038,7 @@ const CSS = `
 @keyframes la-espira { 0%, 37% { opacity: 0; } 42%, 95% { opacity: 1; } 100% { opacity: 0; } }
 @keyframes la-suma { 0% { opacity: 0; transform: translateY(0.4em); } 20% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; transform: translateY(-1.2em); } }
 @media (prefers-reduced-motion: reduce) {
-  .la-vaiven, .la-flota, .la-brillo, [data-pulsa="true"], .la-suma[data-on="true"], .la-cristal[data-on="true"] .la-respira, .la-cristal[data-on="true"] .la-inspira, .la-cristal[data-on="true"] .la-espira { animation: none; }
+  .la-vaiven, .la-flota, .la-brillo, .la-carita, [data-pulsa="true"], .la-suma[data-on="true"], .la-cristal[data-on="true"] .la-respira, .la-cristal[data-on="true"] .la-inspira, .la-cristal[data-on="true"] .la-espira { animation: none; }
   .la-respira { transform: scale(0.8); }
   .la-cristal, .la-giro, .la-sube, .la-barra, .la-vidrio::after { transition: none !important; }
 }
