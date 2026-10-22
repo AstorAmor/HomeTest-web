@@ -71,6 +71,7 @@ export const privacyEs: LegalDocument = {
         "— Supabase: alojamiento de la base de datos, los archivos y la autenticación, en servidores de la Unión Europea (Frankfurt, Alemania).",
         "— Google (API de Gemini): procesa los documentos, fotos y audios que envías para extraer los datos. Solo recibe lo necesario para cada petición.",
         "— Expo (EAS): distribución de la app y de sus actualizaciones. No recibe tus datos de salud.",
+        "— Brevo (Sendinblue SAS, Francia): envío de la newsletter Kuova Letter y de su email de confirmación, con los datos en la Unión Europea. No recibe tus datos de salud.",
         "Servicios que tú conectas (Health Connect, Huawei Health): solo leemos los datos que autorizas en su propia pantalla de permisos.",
         "Profesionales sanitarios que tú elijas: solo pueden leer las categorías que les compartas, mientras el permiso esté activo, y nunca pueden modificar tus datos. Siempre verán tu nombre. Kuova verifica su identidad y colegiación antes de que puedas compartir datos con ellos.",
         "Autoridades, solo cuando una ley nos obligue.",
@@ -129,7 +130,16 @@ export const privacyEs: LegalDocument = {
       ],
     },
     {
-      title: "14. Cambios en esta política",
+      title: "14. Newsletter Kuova Letter",
+      paragraphs: [
+        "Si te suscribes a Kuova Letter, nuestra newsletter, guardamos tu email, tu idioma, la fecha y la versión del texto de consentimiento que aceptaste, desde dónde te suscribiste (el formulario de una guía o la casilla de la lista de espera), cuándo confirmaste la suscripción desde el email que te enviamos y por dónde llegaste a la web, como en el punto 12. La usamos únicamente para enviarte la newsletter, con temas de salud y novedades de Kuova, con tu consentimiento (art. 6.1.a RGPD y art. 21 de la Ley 34/2002, LSSI). Hasta que no confirmas la suscripción desde ese email no te enviamos nada.",
+        "Para saber cómo funciona cada número contamos, en conjunto, cuántos emails se entregan, cuántos rebotan, cuántos clics hay en sus enlaces y cuántas visitas y altas llegan a la web desde ellos. No medimos si abres los emails. Solo si lo aceptas con la casilla opcional guardamos en qué enlaces pinchas tú; puedes retirar ese consentimiento cuando quieras sin darte de baja de la newsletter.",
+        "Puedes darte de baja cuando quieras con el enlace de cada email, con el botón de baja de tu programa de correo o escribiendo a news@kuovahealth.com. Al darte de baja dejamos de enviarte la newsletter; guardamos tu email bloqueado en una lista de exclusión, solo para no volver a escribirte, y el registro de tu consentimiento y de tu baja durante 3 años, el plazo en el que nos pueden pedir cuentas de ello.",
+        "Para enviarla usamos Brevo (Sendinblue SAS, Francia), que trata los datos por nuestra cuenta y los guarda en la Unión Europea. Los datos de la suscripción se guardan también en Supabase, en servidores de la Unión Europea. Para no volver a ofrecértela, tu navegador recuerda que ya te has suscrito (solo eso y la fecha, nunca tu email).",
+      ],
+    },
+    {
+      title: "15. Cambios en esta política",
       paragraphs: [
         "Si cambiamos esta política de forma relevante, te avisaremos en la app antes de que el cambio se aplique y, cuando haga falta, te pediremos de nuevo tu consentimiento.",
       ],
@@ -181,6 +191,7 @@ export const privacyEn: LegalDocument = {
         "— Supabase: database, file storage and authentication hosting in the European Union (Frankfurt, Germany).",
         "— Google (Gemini API): processes the documents, photos and audio you submit in order to extract data; it receives only what each request needs.",
         "— Expo (EAS): app and update distribution. It does not receive your health data.",
+        "— Brevo (Sendinblue SAS, France): sending the Kuova Letter newsletter and its confirmation email, with data stored in the European Union. It does not receive your health data.",
         "Services you connect (Health Connect, Huawei Health): we only read the data you authorise on their own permission screens.",
         "Healthcare professionals you choose: they can only read the categories you share, while the permission is active, and can never modify your data. They will always see your name. Kuova verifies their identity and registration before you can share with them.",
         "Authorities, only where required by law.",
@@ -236,7 +247,16 @@ export const privacyEn: LegalDocument = {
       ],
     },
     {
-      title: "14. Changes",
+      title: "14. Kuova Letter newsletter",
+      paragraphs: [
+        "If you subscribe to Kuova Letter, our newsletter, we store your email, your language, the date and the version of the consent text you accepted, where you subscribed (the form under a guide or the waitlist checkbox), when you confirmed the subscription from the email we send you and how you arrived at the website, as in section 12. We use it only to send you the newsletter, with health topics and Kuova news, based on your consent (Art. 6(1)(a) GDPR and Art. 21 of Spanish Law 34/2002, LSSI). Until you confirm the subscription from that email, we send you nothing.",
+        "To see how each issue performs we count, in aggregate, how many emails are delivered, how many bounce, how many clicks their links get and how many visits and sign-ups reach the website from them. We do not measure whether you open the emails. Only if you accept it with the optional checkbox do we store which links you click; you can withdraw that consent at any time without unsubscribing from the newsletter.",
+        "You can unsubscribe at any time with the link in every email, with your email program's unsubscribe button or by writing to news@kuovahealth.com. When you unsubscribe we stop sending you the newsletter; we keep your email blocked on a suppression list, only so as not to write to you again, and the record of your consent and your unsubscription for 3 years, the period during which we may be asked to account for it.",
+        "We send it with Brevo (Sendinblue SAS, France), which processes the data on our behalf and stores it in the European Union. Subscription data is also stored with Supabase on servers in the European Union. So as not to offer it to you again, your browser remembers that you have subscribed (only that and the date, never your email).",
+      ],
+    },
+    {
+      title: "15. Changes",
       paragraphs: [
         "If we materially change this policy, we will notify you in the app before the change applies and ask for your consent again where required.",
       ],
