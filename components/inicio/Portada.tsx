@@ -6,9 +6,14 @@ import Senales from "./Senales";
 import type { Inicio } from "@/lib/content";
 import { localePath, type Lang } from "@/lib/i18n";
 
+// En Playfair cursiva la T, U, V, W e Y empiezan ~0,11 em más a la derecha que las rectas: sin
+// compensarlo, «Vive mejor.» parece sangrado respecto a la primera línea del titular.
+const CURSIVAS_CON_AIRE = "TUÚVWY";
+
 // Portada: foto (o vídeo) a pantalla completa con el cielo libre para el titular, que va en verde
 // sobre un velo crema; abajo a la derecha, una tarjeta de cristal con "tus señales" que van cambiando.
 export default function Portada({ copy, lang }: { copy: Inicio["hero"]; lang: Lang }) {
+  const conAire = CURSIVAS_CON_AIRE.includes(copy.titulo_2.trim().charAt(0));
   return (
     <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-bg-soft">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -31,7 +36,7 @@ export default function Portada({ copy, lang }: { copy: Inicio["hero"]; lang: La
           </p>
           <h1 className="aparece-arriba mt-6 font-display text-[3.3rem] font-normal leading-[1] tracking-tight text-accent [animation-delay:120ms] sm:text-7xl lg:text-[5.5rem]">
             {copy.titulo}
-            <span className="block italic text-accent-light">{copy.titulo_2}</span>
+            <span className={`block italic text-accent-light ${conAire ? "-ml-[0.11em]" : ""}`}>{copy.titulo_2}</span>
           </h1>
           <p className="aparece-arriba mt-6 max-w-xl text-balance text-lg text-text/80 [animation-delay:240ms] sm:text-xl">{copy.subtitulo}</p>
           <div className="aparece-arriba mt-9 flex flex-col gap-3 [animation-delay:360ms] sm:flex-row">
