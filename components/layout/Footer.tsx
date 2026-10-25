@@ -19,10 +19,13 @@ export default function Footer() {
             </p>
             <p className="mt-3 max-w-sm text-sm text-text-muted">{marca.descripcion_corta}</p>
             <div className="mt-5 flex gap-4">
-              {footer.redes.map((red) => (
+              {/* Las redes con "#" aún no tienen perfil y no se enseñan */}
+              {footer.redes.filter((red) => red.href.startsWith("http")).map((red) => (
                 <a
                   key={red.label}
                   href={red.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-text-muted transition-colors hover:text-accent-light"
                 >
                   {red.label}
