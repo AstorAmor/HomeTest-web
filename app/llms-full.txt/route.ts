@@ -32,5 +32,6 @@ Resumen con enlaces: ${SITE_URL}/llms.txt · Índice para personas: ${SITE_URL}/
 
 ${paginas.join("\n\n---\n\n")}
 `;
-  return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
+  // Como /llms.txt: para los asistentes, fuera de los resultados de Google (repite las guías enteras)
+  return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex" } });
 }

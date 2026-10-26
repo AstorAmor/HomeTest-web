@@ -63,5 +63,7 @@ ${section("biomarcadores")}
 ## Kuova compared with Apple Health, Google Health, Oura, Garmin, Huawei Health and WHOOP (Spanish)
 ${section("comparativas")}
 `;
-  return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
+  // Para los asistentes, no para los resultados de Google: repite textos de la web (sin noindex sale
+  // como "Duplicada sin canonical elegida por el usuario")
+  return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex" } });
 }

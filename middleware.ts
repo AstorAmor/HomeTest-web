@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PRELAUNCH, RETIRADAS } from "@/lib/launch";
+import { localePath } from "@/lib/locale";
 
 // Idioma por URL (bueno para Google y los buscadores con IA: cada idioma tiene su dirección):
 //   /...     -> español
 //   /en/...  -> inglés (se sirve la misma página con la cabecera x-lang=en)
-// El botón de idioma enlaza a "?lang=es|en": se guarda la elección en una cookie y se va a la
-// URL de ese idioma. El español es el idioma principal: nadie se redirige a /en automáticamente.
+// El botón de idioma enlaza directamente a la URL del otro idioma. El español es el idioma
+// principal: nadie se redirige a /en automáticamente.
+// Las redirecciones que no van a cambiar son permanentes (308): así Google se queda con la nueva.
 const SOLO_ES = ["/conocimiento", "/comparativas", "/biomarcadores", "/aprende"];
 
 export function middleware(req: NextRequest) {
@@ -19,7 +21,7 @@ export function middleware(req: NextRequest) {
     url.pathname = isEn && !PRELAUNCH ? "/en" : "/";
     url.search = "";
     url.hash = PRELAUNCH ? "" : RETIRADAS[base];
-    return NextResponse.redirect(url);
+    return NextResponse.redirect(url, 308);
   }
 
   // Secciones que solo existen en español (artículos, comparativas, fichas de biomarcadores y el índice
@@ -27,7 +29,7 @@ export function middleware(req: NextRequest) {
   if (isEn && SOLO_ES.some((p) => base === p || base.startsWith(`${p}/`))) {
     const url = req.nextUrl.clone();
     url.pathname = base;
-    return NextResponse.redirect(url);
+    return NextResponse.redirect(url, 308);
   }
 
   // Pre-lanzamiento (lib/launch.ts): sin direcciones /en (todo va en inglés primero)
@@ -38,14 +40,13 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(url);
   }
 
+  // Enlaces antiguos del botón de idioma ("?lang=es|en"): a la URL de ese idioma, sin cookie
   const chosen = searchParams.get("lang");
   if (chosen === "es" || chosen === "en") {
     const url = req.nextUrl.clone();
     url.searchParams.delete("lang");
-    url.pathname = chosen === "en" ? (base === "/" ? "/en" : `/en${base}`) : base;
-    const res = NextResponse.redirect(url);
-    res.cookies.set("lang", chosen, { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
-    return res;
+    url.pathname = localePath(chosen, base);
+    return NextResponse.redirect(url, 308);
   }
 
   const headers = new Headers(req.headers);

@@ -3,7 +3,6 @@ import { PRELAUNCH } from "./launch";
 import type { Lang } from "./locale";
 
 export { LANGS, localePath, stripLang, type Lang } from "./locale";
-export const LANG_COOKIE = "lang";
 // Cabecera que pone middleware.ts: "/en/..." es inglés; el resto, español.
 export const LANG_HEADER = "x-lang";
 

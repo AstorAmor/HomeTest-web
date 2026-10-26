@@ -12,8 +12,10 @@ export default function Header({ copy, lang }: { copy: SiteCopy; lang: Lang }) {
   const [open, setOpen] = useState(false);
   const { marca, nav, ui } = copy;
   const path = stripLang(usePathname() ?? "/");
-  // Recarga completa (no <Link>): el middleware guarda el idioma y lleva a su URL
-  const langSwitch = `${localePath(lang, path)}?lang=${ui.idioma_cambiar_codigo}`;
+  // La misma página en el otro idioma, enlazada directamente; si solo existe en español, la portada
+  // en inglés. Recarga completa (no <Link>): el idioma lo decide la URL en el servidor.
+  const enIngles = localePath("en", path);
+  const langSwitch = lang === "en" ? path : enIngles === path ? "/en" : enIngles;
   const to = (href: string) => localePath(lang, href);
 
   return (
