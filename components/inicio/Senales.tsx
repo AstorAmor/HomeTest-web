@@ -4,15 +4,26 @@ import { useEffect, useState } from "react";
 import { useMenosMovimiento } from "./escenas/animacion";
 
 // Tarjeta de la portada: una señal cada vez (reloj, registro, analítica, plan), que se cambia por
-// la siguiente subiendo suavemente. Con "reducir movimiento" se ven todas, quietas.
+// la siguiente subiendo suavemente. Con el carrusel de la portada cambia en cada corte de plano
+// («portada:plano», de HeroVideo); hasta el primer corte, o si el vídeo no arranca, va a su ritmo.
+// Con "reducir movimiento" se ven todas, quietas.
 export default function Senales({ titulo, senales }: { titulo: string; senales: { fuente: string; texto: string }[] }) {
   const menos = useMenosMovimiento();
   const [i, setI] = useState(0);
 
   useEffect(() => {
     if (menos) return;
-    const t = setInterval(() => setI((n) => (n + 1) % senales.length), 2800);
-    return () => clearInterval(t);
+    const siguiente = () => setI((n) => (n + 1) % senales.length);
+    const t = setInterval(siguiente, 2800);
+    const alCortar = () => {
+      clearInterval(t);
+      siguiente();
+    };
+    window.addEventListener("portada:plano", alCortar);
+    return () => {
+      clearInterval(t);
+      window.removeEventListener("portada:plano", alCortar);
+    };
   }, [menos, senales.length]);
 
   return (

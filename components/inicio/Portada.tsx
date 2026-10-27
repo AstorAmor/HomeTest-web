@@ -23,9 +23,10 @@ export default function Portada({ copy, lang }: { copy: Inicio["hero"]; lang: La
           fill
           priority
           sizes="100vw"
-          className={`object-cover object-[72%_60%] sm:object-[60%_60%] ${copy.video ? "" : "deriva-lenta"}`}
+          // En el móvil, el 64 % deja la foto donde arranca el recorte vertical del primer plano
+          className={`object-cover object-[64%_60%] sm:object-[60%_60%] ${copy.video ? "" : "deriva-lenta"}`}
         />
-        {copy.video && <HeroVideo src={copy.video} bucle={copy.video_bucle || undefined} />}
+        {copy.video && <HeroVideo src={copy.video} bucle={copy.video_bucle || undefined} planos={copy.video_planos} />}
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-bg/85 via-bg/50 to-transparent sm:bg-gradient-to-r sm:from-bg/80 sm:via-bg/30" />
       </div>
 

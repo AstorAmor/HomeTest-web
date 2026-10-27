@@ -4,15 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import { medir } from "@/lib/medicion";
 import { useMenosMovimiento } from "./escenas/animacion";
 
-// Vídeo de fondo de la portada (content/inicio.json → hero.video y hero.video_bucle): primero el
-// giro de cámara, una sola vez (la chica lejos y quieta en el acantilado; la cámara gira hacia el mar
-// hasta dejarla fuera y se para en el horizonte), y luego un bucle de mar con cámara fija desde ese
-// mismo encuadre, con un fundido entre los dos. Sin bucle, el vídeo principal se repite. El vídeo
-// aparece con un fundido sobre la foto. En el móvil se usan los recortes verticales, con el mismo
-// nombre acabado en "-movil.mp4". Con "reducir movimiento" no hay vídeo y se queda la foto.
+// Vídeo de fondo de la portada (content/inicio.json → hero.video, hero.video_bucle y hero.video_planos).
+// Desde el 27/10/2026 es un carrusel de primeros planos (seis clips de 3,5 s con corte seco) que se
+// repite: con `planos`, cada corte avisa a la tarjeta de señales («portada:plano») para que cambie a la
+// vez que la imagen. Con bucle, el vídeo principal se ve una vez y se funde con el bucle (así era el
+// giro hacia el horizonte de octubre). El vídeo aparece con un fundido sobre la foto. En el móvil se
+// usan los recortes verticales, con el mismo nombre acabado en "-movil.mp4". Con "reducir movimiento"
+// no hay vídeo y se queda la foto.
 const recorteMovil = (src: string) => src.replace(/\.mp4$/, "-movil.mp4");
 
-export default function HeroVideo({ src, bucle }: { src: string; bucle?: string }) {
+export default function HeroVideo({ src, bucle, planos = 0 }: { src: string; bucle?: string; planos?: number }) {
   const menos = useMenosMovimiento();
   const [movil, setMovil] = useState<boolean | null>(null);
   const [enBucle, setEnBucle] = useState(false);
@@ -27,9 +28,39 @@ export default function HeroVideo({ src, bucle }: { src: string; bucle?: string 
     refGiro.current?.play().catch(() => {});
   }, [movil]);
 
+  // Carrusel: en cada corte de plano avisa a la tarjeta de señales y, al dar la primera vuelta entera,
+  // lo mide. Se mira en cada fotograma del vídeo (o, si el navegador no deja, unas 4 veces por segundo)
+  useEffect(() => {
+    const v = refGiro.current;
+    if (!v || bucle || planos < 2) return;
+    let anterior = 0;
+    let id = 0;
+    const mirar = () => {
+      if (!v.duration) return;
+      const plano = Math.min(planos - 1, Math.floor((v.currentTime / v.duration) * planos));
+      if (plano === anterior) return;
+      if (plano < anterior && !medido.current) {
+        medido.current = true;
+        medir("video", "carrusel de portada visto entero");
+      }
+      anterior = plano;
+      window.dispatchEvent(new Event("portada:plano"));
+    };
+    if (typeof v.requestVideoFrameCallback === "function") {
+      const cada = () => {
+        mirar();
+        id = v.requestVideoFrameCallback(cada);
+      };
+      id = v.requestVideoFrameCallback(cada);
+      return () => v.cancelVideoFrameCallback(id);
+    }
+    v.addEventListener("timeupdate", mirar);
+    return () => v.removeEventListener("timeupdate", mirar);
+  }, [movil, menos, bucle, planos]);
+
   if (menos || movil === null) return null;
   const elegir = (s: string) => (movil ? recorteMovil(s) : s);
-  // El recorte del móvil ya va centrado en la chica; en pantallas anchas, el mismo encuadre que la foto
+  // El recorte del móvil ya va centrado en el sujeto; en pantallas anchas, el mismo encuadre que la foto
   const clase = `absolute inset-0 h-full w-full object-cover ${movil ? "object-center" : "object-[60%_60%]"}`;
 
   const alAcabar = () => {

@@ -7,10 +7,11 @@
     "subtitulo": "How you feel, what your body does every day and what your tests say, finally in one place. So you know where you stand and what to do next.",
     "cta": "Join the waitlist",
     "cta_2": "How it works",
-    "imagen": "/images/inicio/portada-horizonte.jpg",
-    "imagen_alt": "Woman in sportswear looking out to sea from a cliff at sunrise",
-    "video": "/videos/inicio/portada-horizonte.mp4",
-    "video_bucle": "/videos/inicio/portada-horizonte-bucle.mp4",
+    "imagen": "/images/inicio/portada-carrusel.jpg",
+    "imagen_alt": "Woman running against the light on a dirt path, seen up close from behind",
+    "video": "/videos/inicio/portada-carrusel.mp4",
+    "video_bucle": "",
+    "video_planos": 6,
     "senales_titulo": "Your signals, together",
     "senales": [
       {
