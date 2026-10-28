@@ -111,14 +111,45 @@ Dirección: `/conocimiento` (índice) y `/conocimiento/<nombre-del-archivo>` (ca
 Tres secciones que **sí salen en kuovahealth.com** (no dependen de `NEXT_PUBLIC_KNOWLEDGE`), solo en español. Su índice común es **`/aprende`** (enlazado desde el menú y el pie de página; textos en `aprende.json`, también en el editor):
 
 - **Guías**, en la raíz de la web para que la dirección sea corta: `/longevidad`, `/salud-preventiva`, `/edad-biologica`, `/analisis-de-sangre`, `/ciclo-menstrual`, `/alimentacion` y `/ejercicio`, en `guias/*.md`. Una guía nueva = un archivo nuevo (el nombre es la dirección: que no coincida con una página que ya exista, como `privacy` o `biomarcadores`). Campo extra de la cabecera: `sameas`, la página de Wikipedia del tema (ayuda a Google y a los asistentes de IA a saber de qué trata). Las fichas de biomarcadores que enlaza una guía muestran solas un enlace de vuelta a ella.
-- **`/biomarcadores`**: una ficha por biomarcador en `biomarcadores/*.md` (ferritina, vitamina D, B12, LDL, HDL, triglicéridos, ApoB, Lp(a), glucosa, HbA1c, TSH, PCR ultrasensible). El índice las agrupa por `categoria` y las ordena por `orden`.
+- **`/biomarcadores`**: una ficha por biomarcador en `biomarcadores/*.md` (hemograma, hierro y vitaminas, colesterol y lipoproteínas, glucosa y HbA1c, tiroides, inflamación…). El índice las agrupa por `categoria` y, dentro de cada una, las ordena por `orden`. El orden de las categorías está en `FAMILIAS`, en `lib/knowledge.ts`: una categoría nueva se añade ahí (si no, sale al final).
 - **`/comparativas`**: Kuova frente a Apple Salud, Google Health, Oura, Garmin, Huawei Health y WHOOP, en `comparativas/*.md`.
 
 Se escriben igual que los artículos de Conocimiento (ver arriba), con dos añadidos:
 - **Tablas**: líneas que empiezan por `|`; la primera fila es la cabecera y la de guiones (`|---|---|`) se salta.
 - **Preguntas frecuentes**: cada `### ¿Pregunta?` (acabada en «?») con su respuesta debajo pasa sola a los datos estructurados para Google (FAQPage) y a `/llms.txt`.
 - **El primer párrafo es la respuesta corta**: es lo que leen Google y los asistentes de IA en primer lugar, lo que sale en las tarjetas de `/aprende` y en `/llms.txt`. Que responda a la pregunta del título en dos o tres frases.
-- Campos de la cabecera: `revisado` (fecha en que se comprobaron las cifras con sus fuentes; sale bajo el título), `orden`, `titulo_seo` (título para Google, opcional) y `otros_nombres` (sinónimos, separados por comas).
+- Campos de la cabecera: `revisado` (fecha en que se comprobaron las cifras con sus fuentes; sale bajo el título), `orden`, `titulo_seo` (título para Google, opcional; que empiece por lo que busca la gente) y `otros_nombres` (sinónimos y siglas, también las inglesas que imprimen los analizadores, como MCV o WBC, separados por comas). La `descripcion`, 155 caracteres como mucho, con la búsqueda principal en los primeros 120: Google corta el resto.
+
+### Regla de cifras («escribe tu cifra»)
+
+En algunas fichas (glucosa y HbA1c, de momento) hay una barra con los tramos de la guía y un campo «Escribe tu cifra»: la persona escribe el resultado de su informe y ve en qué tramo cae, qué significa y qué mirar a la vez. Debajo salen los mismos tramos en una tabla, que es lo que leen Google y los asistentes de IA (y lo que se ve sin JavaScript). **La cifra no sale del navegador**: no se guarda, no va a la dirección ni a la medición; lo único que se mide es que alguien usó la regla en esa ficha, sin la cifra.
+
+Se pone escribiendo `[[regla]]` en una línea sola, donde tenga que salir (normalmente en «Cómo se interpreta», en lugar de la tabla de tramos), y los datos van en la cabecera, en un bloque `regla:` con las líneas de debajo con dos espacios delante:
+
+```
+regla:
+  nombre: Glucosa en ayunas
+  titulo: ¿En qué tramo cae tu glucosa en ayunas?
+  unidad: mg/dL
+  otra_unidad: mmol/L
+  factor: 0,05551
+  equivalencia: Para pasar de mg/dL a mmol/L se multiplica por 0,0555 (o se divide entre 18)[^3].
+  extremos: 60 | 150
+  posible: 20 | 700
+  ejemplo: 92
+  tramo: - | Normal | Texto del tramo, con su fuente[^1].
+  tramo: 100 | Prediabetes | …
+  tramo: 126 | Rango de diabetes | …
+  mirar: Tu [hemoglobina glicada](/biomarcadores/hemoglobina-glicada)…
+```
+
+- `nombre`: lo que se mide, para la cabecera de la tabla. `titulo`: el título de la caja.
+- `unidad`: la de los informes españoles. Si algunos informes usan otra, `otra_unidad`, con `factor` (y `suma`, si hace falta) para pasar de una a otra: otra = cifra × factor + suma. Por ejemplo, la HbA1c: `factor: 10,931` y `suma: -23,524` pasan de % a mmol/mol. `equivalencia` es la frase con la fuente que sale bajo la tabla. `decimales: 1 | 0` fija los decimales de cada unidad (si no, se deducen de los tramos).
+- `tramo`: uno por línea, de menor a mayor: `desde | etiqueta | texto`. `desde` es la primera cifra del tramo (incluida), en la unidad principal; `-` en el primero, que no tiene límite por abajo. Si la guía da el límite también en la otra unidad, se puede poner los dos: `126 = 7,0`; si no, se calcula. Las cifras «hasta» de la tabla («de 100 a 125») salen solas del tramo siguiente. El texto, dos o tres frases, con su `[^n]` y, si encaja, las cifras que más se buscan nombradas con naturalidad («por ejemplo 105 o 110»).
+- `extremos`: dónde empieza y acaba la barra. `posible`: cifras con sentido en la unidad principal; si alguien escribe algo fuera (por ejemplo 40 en una HbA1c en %), se le dice que revise la unidad y, si encaja en la otra, se le ofrece cambiarla.
+- `normal`: el número del tramo de referencia (1 si no se pone). Los demás se pintan con tonos más intensos cuanto más lejos están de él, con los colores de la marca, nunca en rojo.
+- `mirar`: qué conviene mirar a la vez (sale con el resultado). `ejemplo`: la cifra de muestra del campo.
+- Donde el objetivo depende del riesgo, del sexo o de la edad (LDL, ApoB, ferritina, filtrado), la regla no pinta un único «normal»: dice la condición en cada tramo.
 
 Reglas para estas páginas:
 - **Cada cifra con su fuente** (`[^n]`): guías clínicas (ESC/EAS, ADA, NICE, OMS…), organismos oficiales (NIH, NHS, MedlinePlus) o artículos de PubMed. Nada de cifras sin cita.
@@ -130,6 +161,8 @@ Reglas para estas páginas:
 
 - Cada página tiene título, descripción, versión en el otro idioma (hreflang) y tarjeta para redes; salen de `seo` en `site-copy.json`.
 - `/sitemap.xml`, `/robots.txt` (abierto también a ChatGPT, Claude, Perplexity y Gemini), `/llms.txt` (resumen para asistentes de IA) y `/llms-full.txt` (el texto completo de guías, fichas y comparativas) se generan solos con estos mismos textos.
+- **Fechas del sitemap** (`lastmod`): siempre la del último cambio real, nunca la hora de publicación, porque Google deja de fiarse de `lastmod` si se mueve sin cambios. Guías, fichas y comparativas usan su `revisado` (o `fecha`); los índices (`/aprende`, `/biomarcadores`, `/comparativas`), la de la página más reciente que listan; las legales, su «Última actualización» de `legal.ts`; y la portada, el campo `actualizado` de `inicio.json` y de `en/inicio.json`. **Si cambias la portada (textos, fotos o vídeos), pon la fecha de ese día en `actualizado`.** `/newsletter` va sin fecha mientras sus textos no tengan una.
+- **IndexNow (Bing)**: después de cada publicación en producción, una GitHub Action (`.github/workflows/indexnow.yml`) avisa a Bing, y por el mismo protocolo a Yandex, Seznam y Naver, de las páginas cuyo contenido cambió desde la publicación anterior (las que salen de los archivos de `content/` tocados; los cambios de código no cuentan). Google no lo usa; Bing alimenta a Copilot y en parte a ChatGPT. La clave es pública por diseño y está en `public/<clave>.txt` y en `scripts/indexnow.mjs`. Se ve en GitHub → Actions → IndexNow y en Bing Webmaster Tools → IndexNow. A mano: `node scripts/indexnow.mjs --desde <commit> --hasta <commit> --prueba` dice qué enviaría sin enviarlo.
 - La sección `en_breve` ("Kuova en pocas palabras") es la que más ayuda a que los asistentes de IA describan bien la empresa: mantenla corta, concreta y verdadera.
 - Cuando haya dominio propio, se cambia la variable `NEXT_PUBLIC_SITE_URL` en Vercel y todo lo demás lo sigue.
 - El nombre de la marca está en `marca.nombre` (y en los títulos de `seo`): es lo único que hay que cambiar cuando haya nombre definitivo.

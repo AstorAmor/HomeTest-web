@@ -54,7 +54,7 @@ The full text of every guide, biomarker sheet and comparison is at ${SITE_URL}/l
 ## FAQ
 ${faq}
 
-## Guides (Spanish, with cited sources): longevity, preventive health, biological age, blood tests, menstrual cycle, diet and exercise
+## Guides (Spanish, with cited sources): longevity, preventive health, biological age, blood tests and how to read them, menstrual cycle, diet and exercise
 ${section("guias")}
 
 ## Biomarker guides (Spanish, with cited sources)

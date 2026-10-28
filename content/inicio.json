@@ -1,5 +1,6 @@
 {
-  "_como_editar": "Textos de la portada completa (la que se verá en kuovahealth.com cuando se quite el pre-lanzamiento). Cambia solo lo que va entre comillas a la derecha de los dos puntos. Fotos en public/images/inicio y vídeos en public/videos/inicio. Las cifras de las animaciones son ejemplos ilustrativos.",
+  "_como_editar": "Textos de la portada completa (la que se verá en kuovahealth.com cuando se quite el pre-lanzamiento). Cambia solo lo que va entre comillas a la derecha de los dos puntos. Fotos en public/images/inicio y vídeos en public/videos/inicio. Las cifras de las animaciones son ejemplos ilustrativos. Si cambias algo de la portada (textos, fotos o vídeos), pon la fecha de ese día en «actualizado» (AAAA-MM-DD): es la que ve Google en el sitemap.",
+  "actualizado": "2026-10-27",
   "hero": {
     "eyebrow": "Salud preventiva · Muy pronto en España",
     "titulo": "Conócete mejor.",

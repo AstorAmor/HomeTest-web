@@ -1,24 +1,24 @@
 ---
-titulo: Análisis de sangre completo: qué incluye y cómo leerlo
-subtitulo: Qué mide una analítica básica, qué se puede añadir según tus objetivos, cómo prepararte y cómo entender los resultados sin alarmarte.
-descripcion: Qué incluye un análisis de sangre completo (hemograma, bioquímica y perfil lipídico), qué marcadores se pueden añadir según tus objetivos, si hay que ir en ayunas, qué significa un valor fuera de rango y por qué cambian los resultados de un análisis a otro.
-titulo_seo: Análisis de sangre completo: qué incluye y cómo interpretarlo · Kuova Health
+titulo: Análisis de sangre completo: qué incluye y qué pedir
+subtitulo: Qué mide una analítica básica, qué se puede añadir según tus objetivos y cómo prepararte para que los resultados sean comparables.
+descripcion: Análisis de sangre completo: qué incluye (hemograma, bioquímica y lípidos), qué añadir según tus objetivos, si hay que ir en ayunas y cómo prepararte.
+titulo_seo: Análisis de sangre completo: qué incluye y qué pedir · Kuova Health
 otros_nombres: analítica completa, analítica de sangre, análisis clínicos, chequeo de sangre, hemograma y bioquímica
 sameas: https://es.wikipedia.org/wiki/An%C3%A1lisis_de_sangre
 orden: 4
 fecha: 2026-10-20
-revisado: 2026-10-20
+revisado: 2026-10-28
 lectura: 5 min
 estado: publicado
 ---
 
-Un análisis de sangre completo no es una lista fija. Suele incluir un hemograma (glóbulos rojos, glóbulos blancos y plaquetas), una bioquímica (glucosa, riñón, hígado y sales) y el perfil de colesterol, y a partir de ahí se añaden marcadores según tu edad, tus objetivos y tus antecedentes[^1][^2]. Para leerlo, compara cada valor con el rango de tu laboratorio y, sobre todo, con tus resultados anteriores.
+Un análisis de sangre completo no es una lista fija. Suele incluir un hemograma (glóbulos rojos, glóbulos blancos y plaquetas), una bioquímica (glucosa, riñón, hígado y sales) y el perfil de colesterol, y a partir de ahí se añaden marcadores según tu edad, tus objetivos y tus antecedentes[^1][^2]. Para leerlo, compara cada valor con el rango de tu laboratorio y, sobre todo, con tus resultados anteriores; qué significa cada sigla lo explicamos en [cómo interpretar un análisis de sangre](/interpretar-analisis-de-sangre).
 
 ## Qué incluye una analítica básica
 
 | Bloque | Qué mide | Ejemplos |
 |---|---|---|
-| Hemograma | Las células de la sangre | Hemoglobina, hematíes, volumen corpuscular medio, leucocitos y plaquetas[^1] |
+| Hemograma | Las células de la sangre | [Hemoglobina](/biomarcadores/hemoglobina), [hematocrito](/biomarcadores/hematocrito), hematíes, [volumen corpuscular medio (VCM)](/biomarcadores/vcm), [HCM y CHCM](/biomarcadores/hcm-chcm), [RDW](/biomarcadores/rdw), [leucocitos](/biomarcadores/leucocitos) y [plaquetas](/biomarcadores/plaquetas)[^1] |
 | Bioquímica | El azúcar, el riñón, el hígado y las sales | [Glucosa](/biomarcadores/glucosa), creatinina, urea, sodio, potasio, transaminasas, fosfatasa alcalina, bilirrubina y albúmina[^2] |
 | Perfil lipídico | Las grasas de la sangre | Colesterol total, [LDL](/biomarcadores/colesterol-ldl), [HDL](/biomarcadores/colesterol-hdl) y [triglicéridos](/biomarcadores/trigliceridos)[^3] |
 
@@ -41,13 +41,9 @@ Un análisis de sangre completo no es una lista fija. Suele incluir un hemograma
 
 ## Cómo leer los resultados
 
-**El rango de referencia no es una frontera entre sano y enfermo.** Casi siempre se calcula para que incluya al 95 % central de las personas sanas[^7]. Eso significa que, en cada prueba, 1 de cada 20 personas sanas sale fuera del rango. Si te miden 20 marcadores, es normal que alguno salga ligeramente fuera sin que pase nada.
+**El rango de referencia no es una frontera entre sano y enfermo.** Casi siempre se calcula para que incluya al 95 % central de las personas sanas[^7], así que en cada prueba 1 de cada 20 personas sanas sale fuera. Compara además con tus resultados anteriores: un cambio grande dice más que un valor suelto ligeramente fuera[^8].
 
-**Las unidades cambian.** La glucosa puede aparecer en mg/dL o en mmol/L (100 mg/dL equivalen a 5,6 mmol/L)[^4]. Compara siempre con el rango que trae tu propio informe.
-
-**La tendencia dice más que un valor suelto.** Un resultado dentro del rango puede merecer atención si ha cambiado mucho respecto a los tuyos anteriores, y uno ligeramente fuera puede ser ruido de la medición. Lo explicamos en [salud preventiva](/salud-preventiva).
-
-**Lo que sale marcado, coméntalo con tu médico,** que tiene el contexto clínico para valorarlo.
+Qué significa cada sigla del informe (VCM, HCM, RDW, GPT, GGT…), los valores orientativos por sexo, las combinaciones que más preocupan y cuándo consultar lo explicamos en la guía [cómo interpretar un análisis de sangre](/interpretar-analisis-de-sangre).
 
 ## Cómo te ayuda Kuova
 

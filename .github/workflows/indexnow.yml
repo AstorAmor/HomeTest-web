@@ -1,0 +1,41 @@
+# Después de cada publicación en producción (Vercel crea un «deployment» en GitHub y le pone el
+# estado «success» cuando termina), avisa a Bing por IndexNow de las páginas que han cambiado desde
+# la publicación anterior. Detalles en scripts/indexnow.mjs y en content/README.md § SEO.
+name: IndexNow
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+  deployments: read
+
+jobs:
+  avisar:
+    if: github.event.deployment_status.state == 'success' && startsWith(github.event.deployment.environment, 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+          fetch-depth: 0
+
+      # El commit de la publicación de producción anterior que terminó bien
+      - name: Publicación anterior
+        id: anterior
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for id in $(gh api "repos/${{ github.repository }}/deployments?environment=${{ github.event.deployment.environment }}&per_page=30" --jq '.[].id'); do
+            [ "$id" = "${{ github.event.deployment.id }}" ] && continue
+            if gh api "repos/${{ github.repository }}/deployments/$id/statuses" --jq '.[].state' | grep -qx success; then
+              sha=$(gh api "repos/${{ github.repository }}/deployments/$id" --jq .sha)
+              # Si era el mismo commit (se volvió a publicar), no ha cambiado nada
+              [ "$sha" != "${{ github.event.deployment.sha }}" ] && echo "sha=$sha" >> "$GITHUB_OUTPUT"
+              break
+            fi
+          done
+
+      - name: Avisar a IndexNow
+        if: steps.anterior.outputs.sha != ''
+        run: node scripts/indexnow.mjs --desde ${{ steps.anterior.outputs.sha }} --hasta ${{ github.event.deployment.sha }}

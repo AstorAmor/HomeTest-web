@@ -2,7 +2,7 @@
   "_como_editar": "Textos de la página /aprende (índice de guías, fichas de biomarcadores, comparativas y temas que se aprenden en la app). Las guías salen solas de content/guias. En «temas_app», «href» es la guía de la web que amplía ese tema (vacío = sin enlace).",
   "eyebrow": "Aprende",
   "titulo": "Entiende tu salud, con fuentes",
-  "texto": "Guías claras sobre longevidad, salud preventiva, tu ciclo, tu alimentación y tu entrenamiento, y una ficha para cada biomarcador. Todo con las fuentes citadas, para que sepas de dónde sale cada dato.",
+  "texto": "Guías claras sobre longevidad, salud preventiva, cómo leer tu análisis de sangre, tu ciclo, tu alimentación y tu entrenamiento, y una ficha para cada biomarcador. Todo con las fuentes citadas, para que sepas de dónde sale cada dato.",
   "guias_titulo": "Guías",
   "biomarcadores_titulo": "Fichas de biomarcadores",
   "biomarcadores_texto": "Qué mide cada marcador, cómo se interpreta según las guías oficiales, qué lo cambia y cómo prepararte.",
@@ -41,7 +41,7 @@
     {
       "titulo": "Tus biomarcadores",
       "texto": "Qué te cuenta tu sangre y por qué la tendencia importa más que un valor suelto.",
-      "href": "/analisis-de-sangre"
+      "href": "/interpretar-analisis-de-sangre"
     },
     {
       "titulo": "Sueño",

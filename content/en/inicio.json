@@ -1,5 +1,6 @@
 {
-  "_como_editar": "English version of content/inicio.json (same structure; the Spanish file is the main one). Numbers in the animations are illustrative examples.",
+  "_como_editar": "English version of content/inicio.json (same structure; the Spanish file is the main one). Numbers in the animations are illustrative examples. If you change anything on the home page (texts, photos or videos), set «actualizado» to that day (YYYY-MM-DD): it is the date Google sees in the sitemap.",
+  "actualizado": "2026-10-27",
   "hero": {
     "eyebrow": "Preventive health · Coming soon to Spain",
     "titulo": "Know more.",

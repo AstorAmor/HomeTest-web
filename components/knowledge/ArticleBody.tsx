@@ -1,6 +1,9 @@
 import type { ComponentType } from "react";
 import type { Article } from "@/lib/knowledge";
 import Inline from "./Inline";
+import Rangos from "./Rangos";
+import Regla from "./Regla";
+import Tabla from "./Tabla";
 import IndividualityChart from "./charts/IndividualityChart";
 import KineticsChart from "./charts/KineticsChart";
 import OutOfRangeChart from "./charts/OutOfRangeChart";
@@ -14,9 +17,6 @@ const CHARTS: Record<string, ComponentType> = {
   vrc: RcvChart,
   tiempos: KineticsChart,
 };
-
-// Nombre de columna sin Markdown ni citas, para la etiqueta de cada dato en el móvil
-const label = (s = "") => s.replace(/\[\^\w+\]/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\*/g, "").trim();
 
 export default function ArticleBody({ article }: { article: Article }) {
   return (
@@ -61,43 +61,14 @@ export default function ArticleBody({ article }: { article: Article }) {
             );
           }
           case "table":
-            // En el ordenador, una tabla normal. En el móvil cada fila es una tarjeta y cada dato lleva
-            // encima el nombre de su columna (data-label), para no tener que deslizar de lado.
-            return (
-              <div key={i} className="my-8 overflow-hidden rounded-xl border border-border">
-                <table className="w-full border-collapse text-left text-[0.95rem] leading-snug">
-                  <thead className="hidden bg-bg-soft sm:table-header-group">
-                    <tr>
-                      {b.head.map((h, j) => (
-                        <th key={j} scope="col" className="border-b border-border px-4 py-3 font-semibold text-text">
-                          <Inline text={h} />
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {b.rows.map((row, r) => (
-                      <tr key={r} className="block border-b border-border px-4 py-4 last:border-0 sm:table-row sm:p-0">
-                        {row.map((c, j) =>
-                          j === 0 ? (
-                            <th key={j} scope="row" className="block pb-1 font-semibold text-text sm:table-cell sm:px-4 sm:py-3 sm:align-top sm:font-medium">
-                              <Inline text={c} />
-                            </th>
-                          ) : (
-                            <td
-                              key={j}
-                              data-label={label(b.head[j])}
-                              className="block pt-2 text-text/85 before:block before:text-xs before:font-semibold before:uppercase before:tracking-wide before:text-accent-light before:content-[attr(data-label)] sm:table-cell sm:px-4 sm:py-3 sm:align-top sm:before:hidden"
-                            >
-                              <Inline text={c} />
-                            </td>
-                          ),
-                        )}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+            return b.rangos ? <Rangos key={i} head={b.head} rows={b.rows} /> : <Tabla key={i} head={b.head} rows={b.rows} />;
+          case "regla":
+            return article.regla ? (
+              <Regla key={i} regla={article.regla} ficha={article.slug} />
+            ) : (
+              <p key={i} className="my-6 rounded-lg border border-dashed border-border p-4 text-sm text-text-muted">
+                Falta el bloque «regla:» en la cabecera de esta ficha, o le falta la unidad, los extremos o algún tramo.
+              </p>
             );
           case "image":
             return (

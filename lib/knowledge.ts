@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { parseRegla, reglaEnMarkdown, type Regla } from "./regla";
 
 // Textos largos de la web, un archivo .md por página (el nombre del archivo es la dirección):
 // - content/conocimiento/   → /conocimiento/<archivo>  (artículos)
@@ -13,6 +14,10 @@ import path from "node:path";
 // [[grafica:nombre]] en una línea para una gráfica y ![texto alternativo](/images/...) en una línea
 // para una imagen (las líneas que la siguen en el mismo párrafo son su pie). En la cabecera,
 // "imagen" e "imagen_alt" ponen una imagen grande arriba del texto, que también sale al compartir.
+// En las fichas, el bloque "regla:" de la cabecera (líneas con sangría debajo) son los tramos de la
+// regla de cifras, que se pinta donde el texto pone [[regla]] (lib/regla.ts). Una tabla con
+// [[rangos]] en la línea de encima es de rangos por grupo (p. ej. mujeres y hombres) y se pinta con
+// una barra por grupo (components/knowledge/Rangos.tsx).
 
 export type Coleccion = "conocimiento" | "comparativas" | "biomarcadores" | "guias";
 
@@ -48,14 +53,30 @@ export type Block =
   | { type: "h2" | "h3"; text: string; id: string }
   | { type: "p" | "quote"; text: string }
   | { type: "ul" | "ol"; items: string[] }
-  | { type: "table"; head: string[]; rows: string[][] }
+  | { type: "table"; head: string[]; rows: string[][]; rangos?: boolean }
   | { type: "chart"; id: string }
+  | { type: "regla" }
   | { type: "image"; src: string; alt: string; caption: string };
 
 export interface Article extends ArticleMeta {
   blocks: Block[];
   refs: { id: string; text: string }[];
+  // Regla de cifras de la ficha (bloque "regla:" de la cabecera), si la tiene
+  regla?: Regla;
 }
+
+// Orden de las familias en /biomarcadores (el campo "categoria" de cada ficha); las que no estén
+// aquí van al final, en el orden en que aparecen
+export const FAMILIAS = [
+  "Hemograma",
+  "Hierro y vitaminas",
+  "Corazón y lípidos",
+  "Metabolismo y azúcar",
+  "Hígado",
+  "Riñón",
+  "Tiroides",
+  "Inflamación",
+];
 
 export const slugify = (s: string) =>
   s
@@ -76,9 +97,21 @@ function parse(slug: string, raw: string): Article {
   const text = raw.replace(/\r\n/g, "\n");
   const fm = text.match(/^---\n([\s\S]*?)\n---\n/);
   const meta: Record<string, string> = {};
+  // Un campo sin valor ("regla:") abre un bloque: las líneas con sangría que le siguen son suyas
+  const bloques: Record<string, string[]> = {};
+  let bloque: string | null = null;
   for (const line of fm?.[1].split("\n") ?? []) {
+    if (bloque && /^\s+\S/.test(line)) {
+      bloques[bloque].push(line.trim());
+      continue;
+    }
+    bloque = null;
     const i = line.indexOf(":");
-    if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim();
+    if (i <= 0) continue;
+    const key = line.slice(0, i).trim();
+    const value = line.slice(i + 1).trim();
+    if (value) meta[key] = value;
+    else bloques[(bloque = key)] = [];
   }
   const body = fm ? text.slice(fm[0].length) : text;
 
@@ -91,6 +124,7 @@ function parse(slug: string, raw: string): Article {
     const chart = first.match(/^\[\[grafica:([\w-]+)\]\]$/);
     const image = first.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
     if (chart) blocks.push({ type: "chart", id: chart[1] });
+    else if (first === "[[regla]]") blocks.push({ type: "regla" });
     else if (image) blocks.push({ type: "image", alt: image[1], src: image[2], caption: lines.slice(1).join(" ") });
     else if (first.startsWith("### ")) blocks.push({ type: "h3", text: first.slice(4), id: slugify(first.slice(4)) });
     else if (first.startsWith("## ")) blocks.push({ type: "h2", text: first.slice(3), id: slugify(first.slice(3)) });
@@ -99,10 +133,11 @@ function parse(slug: string, raw: string): Article {
         const m = l.match(/^\[\^(\w+)\]:\s*(.*)$/)!;
         refs.push({ id: m[1], text: m[2] });
       }
-    else if (lines.every((l) => l.startsWith("|"))) {
+    else if (lines.every((l) => l.startsWith("|")) || (first === "[[rangos]]" && lines.slice(1).every((l) => l.startsWith("|")))) {
+      const rangos = first === "[[rangos]]";
       // La fila de guiones (|---|---|) separa la cabecera y no se pinta
-      const rows = lines.filter((l) => !/^\|[\s:|-]+\|?$/.test(l)).map(cells);
-      blocks.push({ type: "table", head: rows[0] ?? [], rows: rows.slice(1) });
+      const rows = lines.slice(rangos ? 1 : 0).filter((l) => !/^\|[\s:|-]+\|?$/.test(l)).map(cells);
+      blocks.push({ type: "table", head: rows[0] ?? [], rows: rows.slice(1), ...(rangos && { rangos }) });
     } else if (lines.every((l) => l.startsWith("- "))) blocks.push({ type: "ul", items: lines.map((l) => l.slice(2)) });
     else if (lines.every((l) => /^\d+\.\s/.test(l))) blocks.push({ type: "ol", items: lines.map((l) => l.replace(/^\d+\.\s/, "")) });
     else if (lines.every((l) => l.startsWith(">"))) blocks.push({ type: "quote", text: lines.map((l) => l.replace(/^>\s?/, "")).join(" ") });
@@ -123,6 +158,7 @@ function parse(slug: string, raw: string): Article {
     meta,
     blocks,
     refs,
+    regla: bloques.regla ? parseRegla(bloques.regla, meta.titulo ?? slug) : undefined,
   };
 }
 
@@ -180,11 +216,15 @@ export const guiasQueEnlazan = (href: string) =>
   getArticles("guias").filter((g) => g.estado === "publicado" && JSON.stringify(g.blocks).includes(`](${href})`));
 
 // El Markdown de una página tal cual (sin la cabecera) y con los enlaces internos como direcciones
-// completas: para /llms-full.txt, donde los asistentes de IA leen el texto entero de cada página
+// completas: para /llms-full.txt, donde los asistentes de IA leen el texto entero de cada página.
+// La regla de cifras va como su tabla de tramos, y las tablas de rangos, como tablas normales.
 export function markdownOf(coleccion: Coleccion, slug: string, base: string) {
   const raw = fs.readFileSync(path.join(DIRS[coleccion], `${slug}.md`), "utf8").replace(/\r\n/g, "\n");
+  const regla = parse(slug, raw).regla;
   return raw
     .replace(/^---\n[\s\S]*?\n---\n/, "")
+    .replace(/^\[\[regla\]\]$/m, () => (regla ? reglaEnMarkdown(regla) : ""))
+    .replace(/^\[\[rangos\]\]\n/gm, "")
     .replace(/\]\(\//g, `](${base}/`)
     .trim();
 }
