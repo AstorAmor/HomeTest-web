@@ -1,13 +1,13 @@
 ---
 titulo: PCR ultrasensible
-subtitulo: Un marcador de inflamación de bajo grado: cómo se lee, por qué hay que repetirlo y qué lugar tiene en el riesgo cardiovascular.
+subtitulo: Un marcador de inflamación de bajo grado: cómo se lee, por qué un valor suelto dice poco y qué lugar tiene en el riesgo cardiovascular.
 descripcion: Proteína C reactiva ultrasensible (PCR-us o hs-CRP): rangos de riesgo de la AHA y los CDC, por qué un valor por encima de 10 mg/L suele ser una infección, qué la sube y qué dicen las guías europeas.
 titulo_seo: PCR ultrasensible (hs-CRP): valores y qué significa · Kuova Health
 otros_nombres: Proteína C reactiva de alta sensibilidad, PCR-us, hs-CRP
 categoria: Inflamación
 orden: 40
 fecha: 2026-10-19
-revisado: 2026-10-19
+revisado: 2026-10-28
 lectura: 3 min
 estado: publicado
 ---
@@ -24,9 +24,9 @@ La declaración conjunta de la Asociación Americana del Corazón (AHA) y los CD
 | De 1 a 3 mg/L | Medio |
 | Más de 3 mg/L | Alto |
 
-**Por encima de 10 mg/L** lo más probable es una infección o una inflamación en curso, no un riesgo cardiovascular: se repite cuando se haya resuelto[^1].
+**Por encima de 10 mg/L** lo más probable es una infección o una inflamación en curso, no un riesgo cardiovascular, y ese valor no sirve para valorarlo[^1].
 
-Para valorar el riesgo se recomienda la **media de dos mediciones**, separadas unas dos semanas y en un momento sin infecciones[^1]. Es de los marcadores que más varían de un análisis a otro en la misma persona[^3].
+Es de los marcadores que más varían de un análisis a otro en la misma persona[^3], así que un valor suelto dice poco: lo que más informa es **cómo evoluciona** entre análisis, siempre medida en un momento sin infecciones[^1].
 
 ## Su lugar en el riesgo cardiovascular
 
@@ -53,7 +53,7 @@ Miden la misma proteína. La PCR normal se usa para infecciones e inflamaciones 
 
 ### Tengo la PCR en 4 mg/L y me encuentro bien, ¿es grave?
 
-Un valor aislado no basta: repítela en unas semanas, sin infección reciente. Si se mantiene alta, coméntalo con tu médico para valorar el conjunto de tu riesgo[^1].
+Un valor aislado no basta: la PCR varía mucho de un análisis a otro, y un catarro o un entrenamiento duro la suben. Coméntalo con tu médico, que valorará si conviene repetirla y el conjunto de tu riesgo[^1].
 
 *Contenido informativo. No sustituye la valoración de un profesional sanitario.*
 

@@ -7,7 +7,7 @@ otros_nombres: medicina preventiva, prevención, chequeo preventivo, chequeo mé
 sameas: https://es.wikipedia.org/wiki/Medicina_preventiva
 orden: 2
 fecha: 2026-10-20
-revisado: 2026-10-20
+revisado: 2026-10-28
 lectura: 6 min
 estado: publicado
 ---
@@ -60,7 +60,7 @@ Por eso es más útil comparar cada resultado con los tuyos anteriores que mirar
 
 ## Cómo te ayuda Kuova
 
-Kuova guarda todos tus análisis en un mismo historial, compara cada resultado con los tuyos anteriores y solo te avisa de un cambio cuando es real, no cuando es ruido de la medición. Los cruza con tu actividad, tu sueño, tu ciclo y cómo te sientes, y te recuerda cuándo volver a medir. No sustituye las revisiones con tu médico ni los cribados del sistema público: los complementa, y te ayuda a llegar a la consulta con tus datos ordenados.
+Kuova guarda todos tus análisis en un mismo historial y compara cada resultado con los tuyos anteriores, para que veas cómo evolucionan. Los cruza con tu actividad, tu sueño, tu ciclo y cómo te sientes, y te recuerda cuándo volver a medir. No sustituye las revisiones con tu médico ni los cribados del sistema público: los complementa, y te ayuda a llegar a la consulta con tus datos ordenados.
 
 ## Preguntas frecuentes
 
