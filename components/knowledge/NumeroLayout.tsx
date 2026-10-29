@@ -104,7 +104,7 @@ export default function NumeroLayout({ article: a, jsonLd = [], children }: { ar
                 </section>
               );
             })}
-            {a.refs.length > 0 && <Referencias refs={a.refs} titulo="Fuentes" numerada />}
+            {a.refs.length > 0 && <Referencias refs={a.refs} titulo="Fuentes" />}
             <p className="mt-8 text-sm text-text-muted">Esta newsletter es informativa y no sustituye el consejo de tu médico.</p>
           </div>
         </div>

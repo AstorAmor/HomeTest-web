@@ -125,15 +125,15 @@ function Bloque({ b, article }: { b: Block; article: Article }) {
   }
 }
 
-// Las referencias del final ([^n]: ...), cada una con su vuelta al texto. Con «numerada», cada una
-// lleva su número delante, como en la lista del email de Kuova Letter
-export function Referencias({ refs, titulo = "Referencias", numerada = false }: { refs: Article["refs"]; titulo?: string; numerada?: boolean }) {
+// Las referencias del final ([^n]: ...), cada una con su número delante (el de la cita del texto) y su
+// vuelta al texto
+export function Referencias({ refs, titulo = "Referencias" }: { refs: Article["refs"]; titulo?: string }) {
   return (
     <section aria-labelledby="referencias" className="mt-16 border-t border-border pt-8">
       <h2 id="referencias" className="font-display text-2xl font-medium text-text">
         {titulo}
       </h2>
-      <ol className={`mt-5 space-y-2.5 pl-5 text-sm leading-relaxed text-text-muted ${numerada ? "list-decimal marker:text-text-muted" : ""}`}>
+      <ol className="mt-5 list-decimal space-y-2.5 pl-5 text-sm leading-relaxed text-text-muted marker:text-text-muted">
         {refs.map((r) => (
           <li key={r.id} id={`ref-${r.id}`} value={Number(r.id) || undefined} className="scroll-mt-28 pl-1 [overflow-wrap:anywhere]">
             <Inline text={r.text} />{" "}

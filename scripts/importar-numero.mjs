@@ -19,8 +19,8 @@
 // Traducción de texto.md (formato en Newsletter/Herramientas/GUIA_NUMEROS.md; la misma que hace
 // construir_numero.py para la vista previa): «## El tema» es el comienzo del texto (su titular es el
 // título de la página); «## Etiqueta | Titular» se queda igual; «::grafico id | alt | pie» pasa a
-// «![alt](kg:id)» con el pie debajo; «::web id | frase» pinta la calculadora (la frase es la del email,
-// queda como texto alternativo); las citas [1] o [2, 3] pasan a [^1] o [^2][^3]; «## Fuentes» pasa a
+// «![alt](kg:id)» con el pie debajo; «::web id | frase» pinta la calculadora (la frase solo va en el
+// email, que invita a la versión web: aquí la calculadora ya está); las citas [1] o [2, 3] pasan a [^1] o [^2][^3]; «## Fuentes» pasa a
 // notas [^n] con sus direcciones enlazadas; los enlaces a kuovahealth.com quedan como rutas de la web.
 
 import { createHash } from "node:crypto";
@@ -170,8 +170,7 @@ function md(bs) {
       const [gid, alt = "", pie = ""] = v;
       out.push(`![${alt}](kg:${grafico(gid)})` + (pie ? `\n${texto(pie)}` : ""));
     } else if (tipo === "web") {
-      const [gid, frase = ""] = v;
-      out.push(`![${frase}](kg:${grafico(gid)})`);
+      out.push(`![](kg:${grafico(v[0])})`);
     } else if (tipo === "ref") fallo(`línea numerada fuera de «## Fuentes»: «${v.slice(0, 60)}…» (el formato la toma por una fuente)`);
     else fallo(`bloque «::${tipo}» desconocido (solo ::grafico y ::web)`);
   }
