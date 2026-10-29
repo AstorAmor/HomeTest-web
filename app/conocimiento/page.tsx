@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
-import { getArticles } from "@/lib/knowledge";
+import { getArticles, paginaVisible } from "@/lib/knowledge";
 import { KNOWLEDGE } from "@/lib/launch";
 
-// Índice de /conocimiento: todos los artículos de content/conocimiento/, el más reciente primero.
+// Índice de /conocimiento: todos los artículos de content/conocimiento/, el más reciente primero
+// (de Kuova Letter, solo los números publicados: paginaVisible en lib/knowledge.ts).
 
 export function generateMetadata(): Metadata {
   if (!KNOWLEDGE) return {};
-  const drafts = getArticles().every((a) => a.estado === "borrador");
+  const drafts = getArticles()
+    .filter(paginaVisible)
+    .every((a) => a.estado === "borrador");
   return {
     title: "Conocimiento · Kuova Health",
     description: "Cómo medir y entender tus biomarcadores, con datos y fuentes científicas.",
@@ -20,7 +23,7 @@ export function generateMetadata(): Metadata {
 
 export default function KnowledgeIndex() {
   if (!KNOWLEDGE) notFound();
-  const articles = getArticles();
+  const articles = getArticles().filter(paginaVisible);
 
   return (
     <div lang="es" className="bg-bg">

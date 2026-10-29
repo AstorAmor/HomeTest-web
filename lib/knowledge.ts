@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { KNOWLEDGE } from "./launch";
 import { parseRegla, reglaEnMarkdown, type Regla } from "./regla";
 
 // Textos largos de la web, un archivo .md por página (el nombre del archivo es la dirección):
@@ -13,7 +14,13 @@ import { parseRegla, reglaEnMarkdown, type Regla } from "./regla";
 // [texto](enlace), [^n] para citar la referencia n (definida al final con "[^n]: ..."),
 // [[grafica:nombre]] en una línea para una gráfica y ![texto alternativo](/images/...) en una línea
 // para una imagen (las líneas que la siguen en el mismo párrafo son su pie). En la cabecera,
-// "imagen" e "imagen_alt" ponen una imagen grande arriba del texto, que también sale al compartir.
+// "imagen" e "imagen_alt" ponen una imagen grande arriba del texto, que también sale al compartir
+// (o "imagen_og", si al compartir va otra). "## Etiqueta | Titular" pone una etiqueta pequeña sobre
+// el titular.
+// Los números de Kuova Letter (con "numero" en la cabecera) los escribe scripts/importar-numero.mjs
+// desde la carpeta del número: no se editan a mano. Sus gráficos son los de kuova-graficos.js, como
+// en el email: ![texto alternativo](kg:id), con el pie debajo y los datos en
+// content/conocimiento/kuova-letter/<archivo>.json.
 // En las fichas, el bloque "regla:" de la cabecera (líneas con sangría debajo) son los tramos de la
 // regla de cifras, que se pinta donde el texto pone [[regla]] (lib/regla.ts). Una tabla con
 // [[rangos]] en la línea de encima es de rangos por grupo (p. ej. mujeres y hombres) y se pinta con
@@ -50,7 +57,7 @@ export interface ArticleMeta {
 }
 
 export type Block =
-  | { type: "h2" | "h3"; text: string; id: string }
+  | { type: "h2" | "h3"; text: string; id: string; kicker?: string }
   | { type: "p" | "quote"; text: string }
   | { type: "ul" | "ol"; items: string[] }
   | { type: "table"; head: string[]; rows: string[][]; rangos?: boolean }
@@ -63,6 +70,8 @@ export interface Article extends ArticleMeta {
   refs: { id: string; text: string }[];
   // Regla de cifras de la ficha (bloque "regla:" de la cabecera), si la tiene
   regla?: Regla;
+  // Gráficos de kuova-graficos.js de un número de Kuova Letter: id → gráfico y sus opciones
+  graficos?: Record<string, { grafico: string; opciones: object }>;
 }
 
 // Orden de las familias en /biomarcadores (el campo "categoria" de cada ficha); las que no estén
@@ -127,7 +136,11 @@ function parse(slug: string, raw: string): Article {
     else if (first === "[[regla]]") blocks.push({ type: "regla" });
     else if (image) blocks.push({ type: "image", alt: image[1], src: image[2], caption: lines.slice(1).join(" ") });
     else if (first.startsWith("### ")) blocks.push({ type: "h3", text: first.slice(4), id: slugify(first.slice(4)) });
-    else if (first.startsWith("## ")) blocks.push({ type: "h2", text: first.slice(3), id: slugify(first.slice(3)) });
+    else if (first.startsWith("## ")) {
+      const [kicker, titular] = first.slice(3).split(/\s+\|\s+/);
+      const text = titular ?? kicker;
+      blocks.push({ type: "h2", text, id: slugify(text), ...(titular && { kicker }) });
+    }
     else if (lines.every((l) => /^\[\^\w+\]:/.test(l)))
       for (const l of lines) {
         const m = l.match(/^\[\^(\w+)\]:\s*(.*)$/)!;
@@ -168,9 +181,24 @@ export function getArticles(coleccion: Coleccion = "conocimiento"): Article[] {
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".md") && !f.startsWith("_") && f !== "README.md")
-    .map((f) => parse(f.replace(/\.md$/, ""), fs.readFileSync(path.join(dir, f), "utf8")))
+    .map((f) => {
+      const a = parse(f.replace(/\.md$/, ""), fs.readFileSync(path.join(dir, f), "utf8"));
+      const graficos = path.join(dir, "kuova-letter", `${a.slug}.json`);
+      if (esNumero(a) && fs.existsSync(graficos)) a.graficos = JSON.parse(fs.readFileSync(graficos, "utf8"));
+      return a;
+    })
     .sort((a, b) => (a.orden ?? 999) - (b.orden ?? 999) || b.fecha.localeCompare(a.fecha));
 }
+
+// Un número de Kuova Letter (lo importa scripts/importar-numero.mjs, con "numero" en la cabecera)
+export const esNumero = (a: ArticleMeta) => Boolean(a.meta.numero);
+
+// ¿Existe esta página de /conocimiento? Los artículos, cuando la sección está encendida (KNOWLEDGE en
+// lib/launch.ts), también en borrador, con su aviso. Los números de Kuova Letter van aparte, porque el
+// botón de cada email lleva a su página: en kuovahealth.com solo existen publicados (cada uno con su
+// OK), esté la sección encendida o no, y nunca en borrador; en local se ven también en borrador.
+export const paginaVisible = (a: ArticleMeta) =>
+  esNumero(a) ? a.estado === "publicado" || process.env.NODE_ENV !== "production" : KNOWLEDGE;
 
 export function getArticle(slug: string, coleccion: Coleccion = "conocimiento"): Article | undefined {
   return getArticles(coleccion).find((a) => a.slug === slug);

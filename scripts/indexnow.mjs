@@ -22,6 +22,8 @@ function direccionesDe(archivo) {
   let m;
   if ((m = archivo.match(/^content\/guias\/([\w-]+)\.md$/))) return [`/${m[1]}`, "/aprende"];
   if ((m = archivo.match(/^content\/(biomarcadores|comparativas|conocimiento)\/([\w-]+)\.md$/))) return [`/${m[1]}/${m[2]}`, `/${m[1]}`, "/aprende"];
+  // Datos de los gráficos de un número de Kuova Letter (scripts/importar-numero.mjs)
+  if ((m = archivo.match(/^content\/conocimiento\/kuova-letter\/([\w-]+)\.json$/))) return [`/conocimiento/${m[1]}`];
   if (archivo === "content/aprende.json") return ["/aprende"];
   if (archivo === "content/inicio.json" || /^public\/(images|videos)\/inicio\//.test(archivo)) return ["/"];
   if (archivo === "content/en/inicio.json") return ["/en"];

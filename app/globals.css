@@ -408,3 +408,43 @@ html:has(.prelaunch-home) body {
     animation: none;
   }
 }
+
+/* Kuova Letter en la web (/conocimiento/<número>, components/knowledge/NumeroLayout.tsx): los gráficos
+   de kuova-graficos.js con los fondos y las tipografías de la web. El resto de colores (--kg-*) son los
+   suyos, validados para el email. La web no tiene tema oscuro: los gráficos se quedan en claro, como la
+   página (su paleta oscura está en kuova-graficos.js por si algún día lo tiene). */
+.kuova-letter {
+  --kg-surface: rgb(var(--color-bg));
+  --kg-sand: rgb(var(--color-bg-soft));
+  --kg-chip: rgb(var(--color-bg-soft));
+}
+.kuova-letter .kg,
+.kuova-letter .kg text {
+  font-family: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+}
+.kuova-letter .kg-cifra strong,
+.kuova-letter .kg-calc .kg-res strong {
+  font-family: var(--font-display), Georgia, serif;
+}
+/* El reset de Tailwind deja transparentes los botones: los chips recuperan su fondo */
+.kuova-letter .kg-chip {
+  background: var(--kg-chip);
+}
+.kuova-letter .kg-chip[aria-pressed="true"] {
+  background: var(--kg-chip-on);
+}
+/* Calculadoras en móvil (como en la vista previa de la newsletter): los campos no se salen */
+.kuova-letter .kg-calc fieldset {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.kuova-letter .kg-calc label {
+  min-width: 0;
+}
+.kuova-letter .kg-calc fieldset input {
+  width: 100%;
+  min-width: 0;
+}
+/* Hueco del gráfico hasta que se pinta, para que el texto no salte al cargar */
+.kuova-letter [data-kg]:not([data-kg-hecho]) {
+  min-height: 16rem;
+}

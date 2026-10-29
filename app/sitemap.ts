@@ -3,7 +3,7 @@ import inicioEn from "@/content/en/inicio.json";
 import inicioEs from "@/content/inicio.json";
 import { privacyEn, privacyEs, termsEn, termsEs } from "@/content/legal";
 import { localePath } from "@/lib/i18n";
-import { getArticles, hrefOf, type Coleccion } from "@/lib/knowledge";
+import { esNumero, getArticles, hrefOf, type Coleccion } from "@/lib/knowledge";
 import { KNOWLEDGE, NEWSLETTER, PRELAUNCH } from "@/lib/launch";
 import { SITE_URL } from "@/lib/seo";
 
@@ -57,7 +57,13 @@ const knowledge = (): MetadataRoute.Sitemap => [
   // La página de Kuova Letter, solo en español y con la newsletter activa. Sin fecha: sus textos no
   // llevan una (mejor ninguna que la del build)
   ...(NEWSLETTER ? [{ url: `${SITE_URL}/newsletter`, priority: 0.5 }] : []),
-  ...(KNOWLEDGE ? section("conocimiento", 0.6) : []),
+  // Con /conocimiento apagado, los números publicados de Kuova Letter siguen en la web (el email
+  // enlaza a ellos: paginaVisible en lib/knowledge.ts), así que van sin el índice
+  ...(KNOWLEDGE
+    ? section("conocimiento", 0.6)
+    : publicadas("conocimiento")
+        .filter(esNumero)
+        .map((a) => ({ url: `${SITE_URL}${hrefOf("conocimiento", a.slug)}`, lastModified: dia(fechaDe(a)), priority: 0.6 }))),
   ...section("biomarcadores", 0.7),
   ...section("comparativas", 0.5),
 ];

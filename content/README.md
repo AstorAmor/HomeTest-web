@@ -106,6 +106,16 @@ Dirección: `/conocimiento` (índice) y `/conocimiento/<nombre-del-archivo>` (ca
   - Un artículo nuevo = un archivo `.md` nuevo en esa carpeta (el nombre del archivo es la dirección, sin tildes ni espacios).
 - **Números de las gráficas**: `conocimiento/datos.json` (variación biológica de cada marcador, vidas medias, datos del ejemplo). Las gráficas se recalculan solas.
 
+### Kuova Letter: una página por número
+
+Cada email de Kuova Letter acaba con el botón «Ver los gráficos interactivos», que lleva a `/conocimiento/<slug>`: la versión web del número, con el mismo texto, los gráficos interactivos (el mismo `kuova-graficos.js` que hace las imágenes del email), las fuentes numeradas y el alta en la newsletter. **Estas páginas no se editan a mano**: salen de la carpeta del número en OneDrive (`05 Marca/Newsletter/<NNN Título>/`) con el importador. Si algo del texto no encaja, se cambia en su `texto.md` y se vuelve a importar.
+
+- **Importar** (en borrador, solo se ve en local): `node scripts/importar-numero.mjs "C:/Users/Astor/OneDrive/2. Entrepreneurship/05 Marca/Newsletter/002 Noviembre cansa"`. Escribe `conocimiento/<slug>.md`, `conocimiento/kuova-letter/<slug>.json` (los gráficos y sus datos), la portada en `public/images/kuova-letter/<slug>/` y `public/kuova-letter/kuova-graficos.js`. Se ve en http://localhost:3000/conocimiento/<slug>.
+- **Publicar** (solo cuando hayas dado el OK a ese número): lo mismo con `--publicar` (y `--fecha AAAA-MM-DD` si la fecha de envío no es la de `enviar:` en `texto.md`), commit y push. Sale en kuovahealth.com, en el sitemap y en IndexNow aunque `/conocimiento` siga apagado, porque el email enlaza a él.
+- **Despublicar**: volver a importarlo sin `--publicar` (queda en borrador), commit y push: la página da 404 en la siguiente publicación. Para quitarlo del todo, borra con `git rm` los archivos de esos tres sitios.
+- A diferencia de los artículos, un número en borrador **no existe** en kuovahealth.com, ni con `/conocimiento` encendido (no se enseña con el aviso de borrador).
+- Si ha cambiado `kuova-graficos.js`, el importador lo copia y avisa: cambian los gráficos de todos los números publicados.
+
 ## Guías, biomarcadores y comparativas (páginas con fuentes)
 
 Tres secciones que **sí salen en kuovahealth.com** (no dependen de `NEXT_PUBLIC_KNOWLEDGE`), solo en español. Su índice común es **`/aprende`** (enlazado desde el menú y el pie de página; textos en `aprende.json`, también en el editor):
