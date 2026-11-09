@@ -1,7 +1,7 @@
 ---
 titulo: Ejercicio: fuerza, cardio y cómo saber si te está funcionando
 subtitulo: Cuánto moverse según la OMS, por qué la fuerza importa tanto como el cardio, qué señales seguir y qué análisis ayudan a entrenar mejor.
-descripcion: Guía de ejercicio para la salud: las recomendaciones de la OMS, cuánto entrenamiento de fuerza se asocia a más beneficio (30-60 minutos a la semana), el VO2 máx y los pasos diarios, qué señales de tu reloj seguir y qué análisis de sangre conviene mirar si entrenas.
+descripcion: Ejercicio y salud: recomendaciones de la OMS, cuánta fuerza a la semana, VO2 máx y pasos, qué señales de tu reloj seguir y qué análisis mirar si entrenas.
 titulo_seo: Ejercicio y salud: cuánto entrenar y cómo medir tu progreso · Kuova Health
 otros_nombres: ejercicio físico, entrenamiento, actividad física, entrenamiento de fuerza, cardio, VO2 máx, pasos diarios
 sameas: https://es.wikipedia.org/wiki/Ejercicio_f%C3%ADsico

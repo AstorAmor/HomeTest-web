@@ -1,7 +1,7 @@
 ---
 titulo: Salud preventiva: qué revisar, cada cuánto y por qué importa la tendencia
 subtitulo: Las revisiones que recomiendan las guías españolas para adultos sanos, qué puede añadir un seguimiento más completo y cómo leer tus resultados sin alarmarte.
-descripcion: Qué es la salud preventiva, qué revisiones recomiendan las guías españolas (PAPPS) a los adultos sanos (tensión arterial, colesterol, riesgo cardiovascular, glucosa y cribados de cáncer), qué aportan otros análisis y por qué la tendencia importa más que un valor suelto.
+descripcion: Salud preventiva: qué revisiones recomienda el PAPPS a los adultos sanos (tensión, colesterol, glucosa, cribados de cáncer) y por qué importa la tendencia.
 titulo_seo: Salud preventiva: qué revisiones hacerse y cada cuánto · Kuova Health
 otros_nombres: medicina preventiva, prevención, chequeo preventivo, chequeo médico, revisión médica anual, check-up
 sameas: https://es.wikipedia.org/wiki/Medicina_preventiva

@@ -1,7 +1,7 @@
 ---
 titulo: Lipoproteína(a)
 subtitulo: Un factor de riesgo cardiovascular que heredas y que conviene medir al menos una vez en la vida.
-descripcion: Lipoproteína(a) o Lp(a): qué es, por qué las guías europeas recomiendan medirla una vez en la vida, desde qué cifra aumenta el riesgo (50 mg/dL), qué se puede hacer y qué pasó con los nuevos fármacos en 2026.
+descripcion: Lipoproteína(a) o Lp(a): qué es, por qué las guías europeas piden medirla una vez en la vida, desde qué cifra sube el riesgo (50 mg/dL) y qué se puede hacer.
 titulo_seo: Lipoproteína(a) alta: qué es, valores y por qué medirla · Kuova Health
 otros_nombres: Lp(a), lipoproteína a, lipoproteína pequeña a
 categoria: Corazón y lípidos

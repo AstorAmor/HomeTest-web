@@ -1,7 +1,7 @@
 ---
 titulo: Alimentación: por qué apuntar lo que comes y cómo se ve en tus análisis
 subtitulo: Qué marcadores responden a la dieta, lo que enseñó la dieta mediterránea en España, cuánta agua necesitas y cómo comprobar si un cambio te funciona.
-descripcion: Cómo se refleja la alimentación en tus análisis de sangre (colesterol, triglicéridos, glucosa, hierro, vitamina B12 y D), qué demostró el estudio español PREDIMED sobre la dieta mediterránea, por qué ayuda registrar lo que comes, cuánta agua se recomienda y cuándo volver a medir.
+descripcion: Cómo se refleja lo que comes en tus análisis de sangre (colesterol, triglicéridos, glucosa, hierro, B12 y D), qué demostró PREDIMED y cuánta agua se recomienda.
 titulo_seo: Alimentación y análisis de sangre: cómo se refleja lo que comes · Kuova Health
 otros_nombres: dieta, nutrición, alimentación saludable, dieta mediterránea, registro de comidas, diario de alimentación
 sameas: https://es.wikipedia.org/wiki/Dieta_mediterr%C3%A1nea

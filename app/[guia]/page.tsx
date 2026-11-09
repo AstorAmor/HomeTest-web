@@ -6,7 +6,7 @@ import FormularioNewsletter from "@/components/newsletter/FormularioNewsletter";
 import { faqsOf, getArticle, getArticles, hrefOf, plain } from "@/lib/knowledge";
 import { getLang } from "@/lib/i18n";
 import { NEWSLETTER } from "@/lib/launch";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, tituloSeo } from "@/lib/seo";
 
 // Guía larga en la raíz de la web (/longevidad, /salud-preventiva...), con el texto en
 // content/guias/<slug>.md. Solo existen las guías que hay en esa carpeta: cualquier otra dirección
@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { guia: string } }): Meta
   const url = hrefOf("guias", a.slug);
   const image = `${SITE_URL}${a.meta.imagen ?? "/images/kuova-og.jpg"}`;
   return {
-    title: a.meta.titulo_seo ?? `${a.titulo} · Kuova Health`,
+    title: tituloSeo(a.meta.titulo_seo ?? `${a.titulo} · Kuova Health`),
     description: a.descripcion,
     alternates: { canonical: url },
     robots: a.estado === "borrador" ? { index: false, follow: false } : undefined,

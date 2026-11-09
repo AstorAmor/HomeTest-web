@@ -1,7 +1,7 @@
 ---
 titulo: Edad biológica: qué es, cómo se calcula y cuánto fiarse
 subtitulo: Relojes que usan una analítica de sangre, relojes epigenéticos, las edades de WHOOP, Oura, Garmin o Apple, y lo que todavía no se sabe.
-descripcion: Qué es la edad biológica, cómo se estima con un análisis de sangre (PhenoAge) o con la metilación del ADN (Horvath, GrimAge, DunedinPACE), qué miden la WHOOP Age, la edad cardiovascular de Oura, la edad física de Garmin y la edad de salud de Apple, y cuál es más completa.
+descripcion: Edad biológica: cómo se estima con un análisis de sangre (PhenoAge) o con el ADN, qué miden WHOOP Age, Oura, Garmin y Apple, y cuál es más completa.
 titulo_seo: Edad biológica: cómo se calcula y qué miden WHOOP, Oura o Garmin · Kuova Health
 otros_nombres: edad fisiológica, edad fenotípica, PhenoAge, reloj epigenético, edad epigenética, test de edad biológica, WHOOP Age, edad WHOOP, edad cardiovascular de Oura, edad Oura, Fitness Age de Garmin, edad física Garmin, edad de salud de Apple
 sameas: https://es.wikipedia.org/wiki/Edad_biol%C3%B3gica

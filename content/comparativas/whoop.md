@@ -1,5 +1,6 @@
 ---
 titulo: Kuova y WHOOP
+titulo_seo: WHOOP Advanced Labs en España: disponibilidad y alternativas
 subtitulo: WHOOP mide tu esfuerzo y tu recuperación. Kuova le añade tus análisis de laboratorio y un plan que se comprueba.
 descripcion: ¿Kuova sustituye a WHOOP? No: se complementan. Diferencias, si WHOOP Advanced Labs está en España, qué datos de WHOOP llegan a Kuova y cómo conectarlos.
 marca: WHOOP

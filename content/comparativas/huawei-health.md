@@ -1,5 +1,6 @@
 ---
 titulo: Kuova y Huawei Health
+titulo_seo: Huawei Health: qué datos comparte con otras apps
 subtitulo: Tu reloj Huawei mide mucho, pero comparte poco con otras apps. Qué se puede hacer hoy y qué añade Kuova.
 descripcion: ¿Kuova funciona con relojes Huawei? Qué comparte Huawei Health en Android y en iPhone, cómo llevar tus datos a Kuova y qué aporta frente a la app de Huawei.
 marca: Huawei Health

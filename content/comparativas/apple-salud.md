@@ -1,7 +1,8 @@
 ---
 titulo: Kuova y Apple Salud
+titulo_seo: Análisis de sangre de Apple en España: qué hay hoy
 subtitulo: La app Salud del iPhone guarda lo que miden tu iPhone y tu Apple Watch. Kuova le añade tus análisis en España y un plan.
-descripcion: ¿Kuova es una alternativa a Apple Salud? No: se complementan. Qué anunció Apple en 2026 (análisis de sangre, edad de salud), qué está disponible en España y cómo encaja Kuova con tu iPhone.
+descripcion: ¿Kuova es una alternativa a Apple Salud? Se complementan. Qué anunció Apple en 2026 (análisis de sangre, edad de salud) y qué está disponible en España.
 marca: Apple Salud
 orden: 1
 fecha: 2026-10-19

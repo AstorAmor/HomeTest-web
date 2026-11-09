@@ -1,7 +1,7 @@
 ---
 titulo: Ferritina
 subtitulo: Tu reserva de hierro, y el análisis más útil para saber si te falta.
-descripcion: Qué es la ferritina, qué valores indican falta o exceso de hierro según la OMS y la Sociedad Americana de Hematología (2026), por qué sale baja o alta y cómo prepararte.
+descripcion: Qué es la ferritina, qué valores indican falta o exceso de hierro según la OMS y la Sociedad Americana de Hematología (2026) y por qué sale baja o alta.
 titulo_seo: Ferritina baja o alta: qué significa y valores de referencia · Kuova Health
 otros_nombres: Ferritina sérica, Serum ferritin
 categoria: Hierro y vitaminas

@@ -1,7 +1,7 @@
 ---
 titulo: TSH (tirotropina)
 subtitulo: La hormona que manda sobre la tiroides, y el primer análisis para saber cómo funciona.
-descripcion: TSH o tirotropina: valores de referencia, qué significa tenerla alta o baja, el hipotiroidismo subclínico, la interferencia de la biotina y los fármacos que la alteran.
+descripcion: TSH (tirotropina): valores de referencia, qué significa alta o baja, hipotiroidismo subclínico, interferencia de la biotina y fármacos que la alteran.
 titulo_seo: TSH alta o baja: qué significa y valores normales · Kuova Health
 otros_nombres: Tirotropina, hormona estimulante de la tiroides
 categoria: Tiroides

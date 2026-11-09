@@ -1,5 +1,6 @@
 ---
 titulo: Kuova y Oura
+titulo_seo: Análisis de sangre con Oura en España: qué se puede hacer
 subtitulo: El anillo mide cómo duermes y te recuperas. Kuova le pone al lado tus análisis, cómo te sientes y un plan.
 descripcion: ¿Kuova sustituye a Oura? No: se complementan. Diferencias, qué datos de Oura lee Kuova, si Oura hace análisis de sangre en España y cómo conectarlos.
 marca: Oura

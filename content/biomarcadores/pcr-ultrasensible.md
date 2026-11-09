@@ -1,7 +1,7 @@
 ---
 titulo: PCR ultrasensible
 subtitulo: Un marcador de inflamación de bajo grado: cómo se lee, por qué un valor suelto dice poco y qué lugar tiene en el riesgo cardiovascular.
-descripcion: Proteína C reactiva ultrasensible (PCR-us o hs-CRP): rangos de riesgo de la AHA y los CDC, por qué un valor por encima de 10 mg/L suele ser una infección, qué la sube y qué dicen las guías europeas.
+descripcion: PCR ultrasensible (hs-CRP): rangos de riesgo de la AHA y los CDC, por qué más de 10 mg/L suele ser una infección, qué la sube y qué dicen las guías europeas.
 titulo_seo: PCR ultrasensible (hs-CRP): valores y qué significa · Kuova Health
 otros_nombres: Proteína C reactiva de alta sensibilidad, PCR-us, hs-CRP
 categoria: Inflamación

@@ -1,8 +1,8 @@
 ---
 titulo: Heces y orina: qué es normal y por qué merece la pena fijarse
 subtitulo: La escala de Bristol, cuántas veces es habitual ir al baño, qué te dice el color de la orina y por qué apuntarlo unos días te ayuda a ti y a tu médico.
-descripcion: Qué es normal en tus heces y tu orina: la escala de Bristol (tipos 1 a 7), la frecuencia habitual (de tres veces al día a tres por semana), el color de la orina y la hidratación, qué alimentos lo cambian y cuándo comentarlo con tu médico. Con fuentes científicas.
-titulo_seo: Heces y orina: qué es normal (escala de Bristol y color de la orina) · Kuova Health
+descripcion: Qué es normal en tus heces y tu orina: escala de Bristol (tipos 1 a 7), frecuencia habitual, color de la orina e hidratación, y cuándo comentarlo con tu médico.
+titulo_seo: Heces y orina: qué es normal, escala de Bristol y color · Kuova Health
 otros_nombres: escala de Bristol, deposiciones, hábito intestinal, color de la orina, caca, pis
 sameas: https://es.wikipedia.org/wiki/Escala_de_heces_de_Bristol
 orden: 8

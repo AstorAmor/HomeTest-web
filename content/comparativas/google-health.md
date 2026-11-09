@@ -1,7 +1,8 @@
 ---
 titulo: Kuova y Google Health
+titulo_seo: Google Health (antes Fitbit) y Health Connect: diferencias
 subtitulo: La antigua app de Fitbit ahora se llama Google Health. Qué hace, en qué se diferencia de Health Connect y qué añade Kuova.
-descripcion: Google Health (antes Fitbit), Health Connect y Kuova: qué es cada uno, qué está disponible en España, si Kuova lee tus datos de Fitbit o Pixel Watch y qué aporta.
+descripcion: Google Health (antes Fitbit), Health Connect y Kuova: qué es cada uno, qué hay en España y si Kuova lee tus datos de Fitbit o Pixel Watch.
 marca: Google Health
 orden: 2
 fecha: 2026-10-19

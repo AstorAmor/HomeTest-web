@@ -1,7 +1,7 @@
 ---
 titulo: Ciclo menstrual: qué te cuenta y por qué merece la pena seguirlo
 subtitulo: Sus fases, qué se considera normal, tus días fértiles, cuándo consultar si buscas un embarazo y cómo cambia el ciclo con los años.
-descripcion: Guía del ciclo menstrual: las cuatro fases, qué ciclo se considera normal según la FIGO, los días fértiles y la temperatura basal, cuándo consultar si buscas un embarazo, el suelo pélvico, la perimenopausia y qué análisis conviene leer junto a tu ciclo.
+descripcion: Ciclo menstrual: las cuatro fases, qué ciclo es normal según la FIGO, días fértiles y temperatura basal, perimenopausia y qué análisis leer junto a tu ciclo.
 titulo_seo: Ciclo menstrual: fases, qué es normal y por qué registrarlo · Kuova Health
 otros_nombres: ciclo menstrual, regla, menstruación, periodo, días fértiles, ovulación, fertilidad, perimenopausia
 sameas: https://es.wikipedia.org/wiki/Ciclo_menstrual

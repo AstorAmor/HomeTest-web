@@ -7,8 +7,17 @@ import Logo from "@/components/ui/Logo";
 import type { SiteCopy } from "@/lib/content";
 import { localePath, stripLang, type Lang } from "@/lib/locale";
 
+// Solo los textos que usa la cabecera. Es un componente de cliente: todo lo que reciba va dentro
+// del HTML de cada página y los buscadores lo leen aunque no se vea, así que no se le pasa el
+// site-copy.json entero (tiene textos de páginas retiradas). El recorte se hace en app/layout.tsx.
+export type HeaderCopy = {
+  marca: Pick<SiteCopy["marca"], "nombre">;
+  nav: SiteCopy["nav"];
+  ui: Pick<SiteCopy["ui"], "idioma_cambiar" | "idioma_cambiar_codigo" | "abrir_menu">;
+};
+
 // Cabecera flotante tipo "píldora": se lee igual sobre la foto del hero que sobre el crema.
-export default function Header({ copy, lang }: { copy: SiteCopy; lang: Lang }) {
+export default function Header({ copy, lang }: { copy: HeaderCopy; lang: Lang }) {
   const [open, setOpen] = useState(false);
   const { marca, nav, ui } = copy;
   const path = stripLang(usePathname() ?? "/");

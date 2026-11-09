@@ -1,7 +1,7 @@
 ---
 titulo: Vitamina D
 subtitulo: Qué mide el análisis de 25(OH)D, qué cifras se consideran suficientes y cuándo tiene sentido medirla.
-descripcion: Vitamina D (25-hidroxivitamina D): valores de referencia según los NIH, qué dice la guía de la Endocrine Society de 2024, qué la hace bajar, el exceso por suplementos y cuándo repetir el análisis.
+descripcion: Vitamina D (25-hidroxivitamina D): valores de referencia, qué dice la guía de la Endocrine Society de 2024, qué la hace bajar y el exceso por suplementos.
 titulo_seo: Vitamina D baja: valores normales de 25(OH)D y cuándo medirla · Kuova Health
 otros_nombres: 25-hidroxivitamina D, 25(OH)D, calcidiol
 categoria: Hierro y vitaminas

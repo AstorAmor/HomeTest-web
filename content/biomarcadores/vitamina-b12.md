@@ -1,7 +1,7 @@
 ---
 titulo: Vitamina B12
 subtitulo: Cuándo un resultado indica falta de B12, cuándo es dudoso y qué puede hacerla bajar.
-descripcion: Vitamina B12 en sangre: umbrales de la guía NICE de 2024 (déficit, resultado dudoso, déficit improbable), B12 activa, causas como la dieta vegana, la metformina o el omeprazol, y cómo prepararte.
+descripcion: Vitamina B12 en sangre: umbrales de la guía NICE de 2024, B12 activa y causas de déficit como la dieta vegana, la metformina o el omeprazol.
 titulo_seo: Vitamina B12 baja: valores, causas y cuándo preocuparse · Kuova Health
 otros_nombres: Cobalamina, B12 total, holotranscobalamina, B12 activa
 categoria: Hierro y vitaminas

@@ -3,15 +3,15 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import JsonLd from "@/components/seo/JsonLd";
 import { getArticles, leadOf } from "@/lib/knowledge";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, tituloSeo } from "@/lib/seo";
 
 // Índice de /comparativas: Kuova frente a las apps de salud y wearables más usadas en España.
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Kuova frente a Apple Salud, Oura, Garmin y más · Kuova Health",
+    title: tituloSeo("Kuova frente a Apple Salud, Oura, Garmin y más · Kuova Health"),
     description:
-      "En qué se diferencia Kuova de las apps de tu reloj o tu anillo y cómo se complementan: preguntas y respuestas claras sobre Apple Salud, Google Health, Oura, Garmin, Huawei Health y WHOOP.",
+      "En qué se diferencia Kuova de las apps de tu reloj o tu anillo y cómo se complementan: Apple Salud, Google Health, Oura, Garmin, Huawei Health y WHOOP.",
     alternates: { canonical: "/comparativas" },
   };
 }

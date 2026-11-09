@@ -2,7 +2,7 @@
 titulo: Hemoglobina glicada (HbA1c)
 subtitulo: La media de tu azúcar en sangre de los últimos dos o tres meses, en un solo número.
 descripcion: Hemoglobina glicada (HbA1c): valores normales y de prediabetes según la ADA 2026, tabla de % a mmol/mol (IFCC) y en qué tramo cae tu cifra.
-titulo_seo: Hemoglobina glicada (HbA1c): valores normales, prediabetes y tabla IFCC · Kuova Health
+titulo_seo: HbA1c (hemoglobina glicada): valores normales, % y mmol/mol · Kuova Health
 otros_nombres: HbA1c, A1c, hemoglobina glucosilada, hemoglobina glicosilada, HbA1c IFCC, HbA1c DCCT
 categoria: Metabolismo y azúcar
 orden: 21

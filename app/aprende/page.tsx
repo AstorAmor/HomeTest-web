@@ -6,7 +6,7 @@ import FormularioNewsletter from "@/components/newsletter/FormularioNewsletter";
 import copy from "@/content/aprende.json";
 import { getArticles, hrefOf, leadOf } from "@/lib/knowledge";
 import { NEWSLETTER } from "@/lib/launch";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, tituloSeo } from "@/lib/seo";
 
 // /aprende: el índice de todo lo que se puede leer en la web (guías, fichas de biomarcadores y
 // comparativas), el alta en la newsletter Kuova Letter y los temas que se aprenden dentro de la app.
@@ -14,9 +14,9 @@ import { SITE_URL } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Aprende: guías de longevidad, salud preventiva, ciclo, dieta y ejercicio · Kuova Health",
+    title: tituloSeo("Aprende: guías de salud preventiva, longevidad y análisis · Kuova Health"),
     description:
-      "Guías con fuentes sobre longevidad, salud preventiva, edad biológica, análisis de sangre, ciclo menstrual, alimentación y ejercicio, fichas de biomarcadores y comparativas con las apps de salud que ya usas.",
+      "Guías con fuentes sobre salud preventiva, longevidad, edad biológica, análisis de sangre, ciclo, alimentación y ejercicio, y fichas de cada biomarcador.",
     alternates: { canonical: "/aprende" },
   };
 }

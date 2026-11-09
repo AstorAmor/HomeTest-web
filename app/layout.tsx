@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Inter, Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
+import Header, { type HeaderCopy } from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 import Medicion from "@/components/inicio/Medicion";
@@ -50,7 +50,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const lang = getLang();
-  const { siteCopy } = getContent(lang);
+  const { marca, nav, ui } = getContent(lang).siteCopy;
+  // La cabecera es de cliente: recibe solo sus textos (ver HeaderCopy en components/layout/Header.tsx)
+  const headerCopy: HeaderCopy = {
+    marca: { nombre: marca.nombre },
+    nav,
+    ui: { idioma_cambiar: ui.idioma_cambiar, idioma_cambiar_codigo: ui.idioma_cambiar_codigo, abrir_menu: ui.abrir_menu },
+  };
   return (
     <html lang={lang} className={`${fontSans.variable} ${fontDisplay.variable} ${fontLogo.variable}`}>
       <body className="min-h-screen bg-bg font-sans text-text antialiased">
@@ -64,7 +70,7 @@ export default function RootLayout({
           </>
         ) : (
           <>
-            <Header copy={siteCopy} lang={lang} />
+            <Header copy={headerCopy} lang={lang} />
             <main>{children}</main>
             <Footer />
           </>

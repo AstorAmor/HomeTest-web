@@ -1,7 +1,7 @@
 ---
 titulo: Longevidad: qué se puede medir para vivir más años con salud
 subtitulo: Lo que dice la ciencia sobre vivir más y mejor, cuánto depende de ti y qué señales de tu cuerpo merece la pena seguir.
-descripcion: Longevidad con base científica: años de vida frente a años con salud, el peso real de la genética y de los hábitos, la forma física (VO2 máx), la fuerza, los pasos, el sueño y los análisis de sangre que más se relacionan con vivir más años con salud.
+descripcion: Longevidad con base científica: genética frente a hábitos, VO2 máx, fuerza, pasos, sueño y los análisis de sangre que más se relacionan con vivir más con salud.
 titulo_seo: Longevidad: cómo vivir más años con salud, según la ciencia · Kuova Health
 otros_nombres: longevidad saludable, healthspan, esperanza de vida saludable, años de vida saludable, envejecimiento saludable
 sameas: https://es.wikipedia.org/wiki/Longevidad

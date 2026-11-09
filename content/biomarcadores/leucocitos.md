@@ -2,7 +2,7 @@
 titulo: Leucocitos y fórmula leucocitaria
 subtitulo: Tus glóbulos blancos, las defensas, y los cinco tipos que cuenta el análisis: qué significa tenerlos altos o bajos.
 descripcion: Leucocitos (WBC) altos o bajos en sangre: qué significa, cuándo preocuparse, neutrófilos bajos y linfocitos altos, y valores normales de la fórmula.
-titulo_seo: Leucocitos altos o bajos en sangre: qué significa y cuándo preocuparse · Kuova Health
+titulo_seo: Leucocitos altos o bajos: qué significa y cuándo preocuparse · Kuova Health
 otros_nombres: WBC, glóbulos blancos, leucocitos totales, fórmula leucocitaria, recuento diferencial, neutrófilos, linfocitos, monocitos, eosinófilos, basófilos, NEUT, LYMPH, MONO, EOS, BASO
 categoria: Hemograma
 orden: 6

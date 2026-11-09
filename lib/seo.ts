@@ -9,6 +9,16 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://hometest-w
 
 type SeoKey = keyof SiteCopy["seo"];
 
+// Google corta los títulos hacia los 60 caracteres y ya enseña el nombre del sitio (Kuova Health)
+// encima de cada resultado. Si el título con « — Kuova Health» o « · Kuova Health» no cabe, va sin
+// la marca, para que se lea entero lo que la persona busca. Sirve para guías, fichas y comparativas
+// (titulo_seo en el frontmatter puede seguir llevando la marca: se quita aquí cuando sobra).
+export const TITULO_MAX = 60;
+export function tituloSeo(titulo: string): string {
+  if (titulo.length <= TITULO_MAX) return titulo;
+  return titulo.replace(/\s+[—·|-]\s+Kuova Health\s*$/, "");
+}
+
 // Metadatos de cada página: título, descripción, canonical, versiones por idioma (hreflang)
 // y tarjetas para compartir en redes (Open Graph / Twitter).
 // La imagen se genera con scripts/make-og.py; si cambia, cambia también su nombre (OG_IMAGE): WhatsApp

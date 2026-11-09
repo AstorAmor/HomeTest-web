@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ArticleLayout from "@/components/knowledge/ArticleLayout";
 import Relacionados from "@/components/knowledge/Relacionados";
 import { faqsOf, getArticle, getArticles, guiasQueEnlazan, hrefOf, plain } from "@/lib/knowledge";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, tituloSeo } from "@/lib/seo";
 
 // Ficha de un biomarcador (texto en content/biomarcadores/<slug>.md): qué es, cómo se interpreta,
 // qué lo cambia y cómo prepararse, con las cifras de guías y organismos oficiales citadas.
@@ -19,7 +19,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const url = `/biomarcadores/${a.slug}`;
   const image = `${SITE_URL}/images/kuova-og.jpg`;
   return {
-    title: a.meta.titulo_seo ?? `${a.titulo}: qué es y valores normales · Kuova Health`,
+    title: tituloSeo(a.meta.titulo_seo ?? `${a.titulo}: qué es y valores normales · Kuova Health`),
     description: a.descripcion,
     alternates: { canonical: url },
     robots: a.estado === "borrador" ? { index: false, follow: false } : undefined,
@@ -50,6 +50,7 @@ export default function BiomarcadorPage({ params }: { params: { slug: string } }
           inLanguage: "es",
           url,
           datePublished: a.fecha,
+          dateModified: a.revisado ?? a.fecha,
           lastReviewed: a.revisado ?? a.fecha,
           audience: { "@type": "Patient" },
           about: {
@@ -57,6 +58,7 @@ export default function BiomarcadorPage({ params }: { params: { slug: string } }
             name: a.titulo,
             ...(a.meta.otros_nombres ? { alternateName: a.meta.otros_nombres.split(",").map((s) => s.trim()) } : {}),
           },
+          author: { "@id": `${SITE_URL}/#organization` },
           publisher: { "@id": `${SITE_URL}/#organization` },
           citation: a.refs.map((r) => plain(r.text)),
         },

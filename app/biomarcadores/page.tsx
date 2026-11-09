@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import JsonLd from "@/components/seo/JsonLd";
 import { FAMILIAS, getArticles } from "@/lib/knowledge";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, tituloSeo } from "@/lib/seo";
 
 // Índice de /biomarcadores: las fichas de content/biomarcadores/*.md, agrupadas por familia
 // (el campo "categoria" de cada ficha, en el orden de FAMILIAS en lib/knowledge.ts) y, dentro de
@@ -11,7 +11,7 @@ import { SITE_URL } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Biomarcadores: qué mide cada análisis y cómo se interpreta · Kuova Health",
+    title: tituloSeo("Biomarcadores: qué mide cada análisis y cómo se interpreta · Kuova Health"),
     description:
       "Qué significa cada valor de tu análisis de sangre (hemograma, hierro, colesterol, glucosa, tiroides…): sus rangos según las guías y qué los cambia.",
     alternates: { canonical: "/biomarcadores" },

@@ -1,5 +1,6 @@
 ---
 titulo: Kuova y Garmin
+titulo_seo: Garmin y Health Connect: qué datos se comparten
 subtitulo: Tu Garmin sabe cómo entrenas y cómo duermes. Kuova le suma tus análisis y un plan para tu salud.
 descripcion: ¿Kuova sustituye a Garmin Connect? No: se complementan. Qué datos de Garmin llegan a Kuova por Health Connect, qué se queda en Garmin y qué añade Kuova.
 marca: Garmin

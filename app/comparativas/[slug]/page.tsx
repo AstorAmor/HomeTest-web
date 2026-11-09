@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ArticleLayout from "@/components/knowledge/ArticleLayout";
 import Relacionados from "@/components/knowledge/Relacionados";
 import { faqsOf, getArticle, getArticles, hrefOf, plain } from "@/lib/knowledge";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, tituloSeo } from "@/lib/seo";
 
 // Una comparativa: Kuova frente a otra app o marca (texto en content/comparativas/<slug>.md).
 // Solo en español. Se enlazan desde el pie de página, no desde el menú.
@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const url = `/comparativas/${a.slug}`;
   const image = `${SITE_URL}/images/kuova-og.jpg`;
   return {
-    title: `${a.titulo} · Kuova Health`,
+    title: tituloSeo(a.meta.titulo_seo ?? `${a.titulo} · Kuova Health`),
     description: a.descripcion,
     alternates: { canonical: url },
     robots: a.estado === "borrador" ? { index: false, follow: false } : undefined,
@@ -49,7 +49,9 @@ export default function ComparativaPage({ params }: { params: { slug: string } }
           description: a.descripcion,
           inLanguage: "es",
           url,
+          datePublished: a.fecha,
           dateModified: a.revisado ?? a.fecha,
+          author: { "@id": `${SITE_URL}/#organization` },
           publisher: { "@id": `${SITE_URL}/#organization` },
           citation: a.refs.map((r) => plain(r.text)),
         },
