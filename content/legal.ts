@@ -26,7 +26,7 @@ const CONTROLLER_EN =
 
 export const privacyEs: LegalDocument = {
   title: "Política de privacidad",
-  updated: "Última actualización: 22 de octubre de 2026",
+  updated: "Última actualización: 11 de noviembre de 2026",
   intro:
     "Kuova es una aplicación de salud preventiva que te permite registrar y entender tus análisis, tus mediciones y tus hábitos, y compartirlos, si tú quieres, con los profesionales que elijas. Tus datos de salud son tuyos: solo los tratamos para prestarte el servicio, con tu consentimiento explícito, y nunca los vendemos ni los usamos para publicidad.",
   sections: [
@@ -71,7 +71,7 @@ export const privacyEs: LegalDocument = {
         "— Supabase: alojamiento de la base de datos, los archivos y la autenticación, en servidores de la Unión Europea (Frankfurt, Alemania).",
         "— Google (API de Gemini): procesa los documentos, fotos y audios que envías para extraer los datos. Solo recibe lo necesario para cada petición.",
         "— Expo (EAS): distribución de la app y de sus actualizaciones. No recibe tus datos de salud.",
-        "— Brevo (Sendinblue SAS, Francia): envío de la newsletter Kuova Letter y de su email de confirmación, con los datos en la Unión Europea. No recibe tus datos de salud.",
+        "— Brevo (Sendinblue SAS, Francia): envío de los emails de tu cuenta (como el código para cambiar la contraseña y el aviso de que ha cambiado) y de la newsletter Kuova Letter y su email de confirmación, con los datos en la Unión Europea. No recibe tus datos de salud.",
         "Servicios que tú conectas (Health Connect, Huawei Health): solo leemos los datos que autorizas en su propia pantalla de permisos.",
         "Profesionales sanitarios que tú elijas: solo pueden leer las categorías que les compartas, mientras el permiso esté activo, y nunca pueden modificar tus datos. Siempre verán tu nombre. Kuova verifica su identidad y colegiación antes de que puedas compartir datos con ellos.",
         "Autoridades, solo cuando una ley nos obligue.",
@@ -149,7 +149,7 @@ export const privacyEs: LegalDocument = {
 
 export const privacyEn: LegalDocument = {
   title: "Privacy Policy",
-  updated: "Last updated: 22 October 2026",
+  updated: "Last updated: 11 November 2026",
   intro:
     "Kuova is a preventive-health app that lets you record and understand your lab tests, measurements and habits, and share them, if you want, with the professionals you choose. Your health data is yours: we only process it to provide the service, with your explicit consent, and we never sell it or use it for advertising.",
   sections: [
@@ -191,7 +191,7 @@ export const privacyEn: LegalDocument = {
         "— Supabase: database, file storage and authentication hosting in the European Union (Frankfurt, Germany).",
         "— Google (Gemini API): processes the documents, photos and audio you submit in order to extract data; it receives only what each request needs.",
         "— Expo (EAS): app and update distribution. It does not receive your health data.",
-        "— Brevo (Sendinblue SAS, France): sending the Kuova Letter newsletter and its confirmation email, with data stored in the European Union. It does not receive your health data.",
+        "— Brevo (Sendinblue SAS, France): sending your account emails (such as the code to change your password and the notice that it has changed) and the Kuova Letter newsletter and its confirmation email, with data stored in the European Union. It does not receive your health data.",
         "Services you connect (Health Connect, Huawei Health): we only read the data you authorise on their own permission screens.",
         "Healthcare professionals you choose: they can only read the categories you share, while the permission is active, and can never modify your data. They will always see your name. Kuova verifies their identity and registration before you can share with them.",
         "Authorities, only where required by law.",
