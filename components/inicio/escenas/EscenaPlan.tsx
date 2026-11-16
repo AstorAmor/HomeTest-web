@@ -22,8 +22,8 @@ export default function EscenaPlan({ datos, activa }: { datos: DatosPlan; activa
   return (
     <div className="vidrio entra w-[68%] p-[1.2em] sm:w-[56%]" data-on={fase >= 1}>
       <div className="flex items-baseline justify-between gap-[0.8em]">
-        <p className="font-display text-[1.3em]">{datos.titulo}</p>
-        <p className="text-[0.72em] font-semibold text-text-muted">{datos.subtitulo}</p>
+        <p className="text-[1.2em] font-medium">{datos.titulo}</p>
+        <p className="text-[0.72em] text-text-muted">{datos.subtitulo}</p>
       </div>
 
       <ul className="mt-[0.8em] space-y-[0.55em]">
@@ -35,12 +35,12 @@ export default function EscenaPlan({ datos, activa }: { datos: DatosPlan; activa
         ))}
       </ul>
 
-      <div className="mt-[0.9em] border-t border-accent/10 pt-[0.7em]">
+      <div className="mt-[0.9em] border-t border-text/10 pt-[0.7em]">
         <p className="etiqueta-escena">{datos.proyeccion}</p>
         <svg viewBox="0 0 200 56" className="mt-[0.4em] h-auto w-full overflow-visible" aria-hidden>
-          <rect x="0" y="6" width="200" height="18" rx="4" fill="#6F8C7C" opacity="0.16" />
-          <path d="M4 48 C 30 46, 46 42, 70 38" fill="none" stroke="#0E2A24" strokeWidth="2.5" strokeLinecap="round" />
-          <circle cx="70" cy="38" r="3.5" fill="#0E2A24" />
+          <rect x="0" y="6" width="200" height="18" rx="4" fill="#83D6B4" opacity="0.13" />
+          <path d="M4 48 C 30 46, 46 42, 70 38" fill="none" stroke="#F0EFE6" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="70" cy="38" r="3" fill="#F7F3E6" />
           {/* La proyección (discontinua) se descubre de izquierda a derecha con una máscara */}
           <mask id="kuova-proyeccion" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="56">
             <path d="M70 38 C 100 32, 130 22, 196 14" fill="none" stroke="white" strokeWidth="8" pathLength={1} className="trazo trazo-lento" data-on={proyeccion} />
@@ -48,13 +48,13 @@ export default function EscenaPlan({ datos, activa }: { datos: DatosPlan; activa
           <path
             d="M70 38 C 100 32, 130 22, 196 14"
             fill="none"
-            stroke="#C9A36B"
-            strokeWidth="2.5"
+            stroke="#83D6B4"
+            strokeWidth="1.8"
             strokeLinecap="round"
             strokeDasharray="5 5"
             mask="url(#kuova-proyeccion)"
           />
-          <circle cx="196" cy="14" r="4" fill="#C9A36B" className="transition-opacity duration-500" style={{ opacity: proyeccion ? 1 : 0, transitionDelay: proyeccion ? "1200ms" : "0ms" }} />
+          <circle cx="196" cy="14" r="3.5" fill="#83D6B4" className="transition-opacity duration-500" style={{ opacity: proyeccion ? 1 : 0, transitionDelay: proyeccion ? "1200ms" : "0ms" }} />
         </svg>
       </div>
     </div>

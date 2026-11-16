@@ -20,7 +20,7 @@ export default function EscenaContexto({ datos, activa }: { datos: DatosContexto
   return (
     <div className="flex w-[68%] flex-col gap-[0.8em] sm:w-[62%]">
       <div className="vidrio entra p-[1.15em]" data-on={fase >= 1}>
-        <p className="font-display text-[1.3em] leading-snug">{datos.pregunta}</p>
+        <p className="text-[1.2em] font-medium leading-snug">{datos.pregunta}</p>
         <div className="mt-[0.9em] flex flex-wrap gap-[0.45em]">
           {datos.opciones.map((opcion, i) => (
             <span key={opcion} className="opcion" data-elegida={fase >= 2 && i === datos.elegida}>

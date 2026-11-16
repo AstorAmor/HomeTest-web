@@ -23,14 +23,14 @@ export default function EscenaAnalitica({ datos, activa }: { datos: DatosAnaliti
   return (
     <div className="vidrio entra w-[66%] p-[1.2em] sm:w-[54%]" data-on={fase >= 1}>
       <div className="flex items-baseline justify-between gap-[0.8em]">
-        <p className="font-display text-[1.3em]">{datos.titulo}</p>
-        <p className={`text-[0.72em] font-semibold transition-colors duration-500 ${listo ? "text-accent-light" : "text-text-muted"}`}>
+        <p className="text-[1.2em] font-medium">{datos.titulo}</p>
+        <p className={`text-[0.72em] font-semibold transition-colors duration-500 ${listo ? "text-accent" : "text-text-muted"}`}>
           {listo ? datos.listo : datos.procesando}
         </p>
       </div>
 
-      <div className="mt-[0.7em] h-[0.3em] overflow-hidden rounded-full bg-accent/[0.08]">
-        <div className="h-full rounded-full bg-gradient-to-r from-[#6F8C7C] to-gold transition-[width] duration-500 ease-out" style={{ width: `${(hechos / n) * 100}%`, transitionDelay: hechos === 0 ? `${REINICIO_MS}ms` : "0ms" }} />
+      <div className="mt-[0.7em] h-[0.2em] overflow-hidden rounded-full bg-text/10">
+        <div className="h-full rounded-full bg-gradient-to-r from-[#2F8F70] to-accent transition-[width] duration-500 ease-out" style={{ width: `${(hechos / n) * 100}%`, transitionDelay: hechos === 0 ? `${REINICIO_MS}ms` : "0ms" }} />
       </div>
 
       <ul className="mt-[0.8em] space-y-[0.5em]">

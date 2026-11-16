@@ -201,15 +201,54 @@ html:has(.prelaunch-home) body {
   line-height: 1.35;
 }
 
-/* Cristal esmerilado claro */
+/* Cristal de la app: esmeralda oscuro con texto marfil, como la app, que es solo oscura desde 2026-11-16 (antes
+   era un cristal claro). Dentro, los colores de Tailwind (text, text-muted, accent, gold…) pasan a la paleta
+   de la app (hometest-app, src/theme/fine.ts): marfil, apagado, jade para lo que se marca o avanza y oro para
+   lo que hay que revisar. Así las tarjetas de las escenas no llevan colores de texto a mano. */
 .vidrio {
-  background: rgb(255 255 255 / 0.66);
-  -webkit-backdrop-filter: blur(18px) saturate(1.3);
-  backdrop-filter: blur(18px) saturate(1.3);
-  border: 1px solid rgb(255 255 255 / 0.8);
+  --color-text: 240 239 230;
+  --color-text-muted: 150 166 158;
+  --color-accent: 131 214 180;
+  --color-accent-light: 216 185 120;
+  --color-on-accent: 10 29 25;
+  --color-gold: 216 185 120;
+  --color-bg-soft: 18 48 42;
+  background: linear-gradient(150deg, rgb(21 54 47 / 0.9), rgb(10 29 25 / 0.88));
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgb(240 239 230 / 0.13);
   border-radius: 1.15em;
-  box-shadow: 0 1.2em 3em -1.4em rgb(14 42 36 / 0.45);
+  box-shadow: 0 1.4em 3em -1.4em rgb(0 0 0 / 0.6);
   color: rgb(var(--color-text));
+}
+/* La letra de la app es Inter también en títulos y cifras */
+.vidrio .font-display {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+/* Las etiquetas pequeñas de la app van apagadas, no en oro */
+.vidrio .etiqueta-escena {
+  color: rgb(var(--color-text-muted));
+  letter-spacing: 0.1em;
+}
+/* Opciones, casillas y estados sobre el cristal oscuro: borde fino marfil; lo elegido, en jade */
+.vidrio .opcion {
+  border-color: rgb(240 239 230 / 0.16);
+  background: transparent;
+  color: rgb(var(--color-text-muted));
+}
+.vidrio .opcion[data-elegida="true"] {
+  background: rgb(131 214 180 / 0.1);
+  border-color: rgb(131 214 180 / 0.55);
+  color: rgb(131 214 180);
+}
+.vidrio .check,
+.vidrio .estado-sistema {
+  border-color: rgb(240 239 230 / 0.28);
+}
+.vidrio .check::after,
+.vidrio .estado-sistema[data-estado="hecho"]::after {
+  border-color: rgb(10 29 25);
 }
 
 .etiqueta-escena {
